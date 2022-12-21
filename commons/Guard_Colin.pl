@@ -10,5 +10,5 @@ sub EVENT_ITEM {
 		quest::say("It is best you donate to the Freeport Militia. I would hate to see something happen to you.");
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

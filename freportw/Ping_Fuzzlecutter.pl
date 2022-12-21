@@ -47,5 +47,5 @@ sub EVENT_ITEM {
 		quest::faction(336,3); 	#:: + Coalition of Tradefolk Underground
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

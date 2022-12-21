@@ -38,5 +38,5 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
 	plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

@@ -35,5 +35,5 @@ sub EVENT_ITEM {
 		quest::unique_spawn(12181, 0, 0, -8000, -3400, 23, 102.9);
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

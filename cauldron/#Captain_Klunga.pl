@@ -12,7 +12,7 @@ sub EVENT_ITEM {
 		quest::moveto(-395.87, 807.04, 71.78, 0, 1);
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }
 
 sub EVENT_WAYPOINT_ARRIVE {

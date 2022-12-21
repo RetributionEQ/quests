@@ -26,5 +26,5 @@ sub EVENT_ITEM {
 		quest::signalwith(10107,1,0);
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

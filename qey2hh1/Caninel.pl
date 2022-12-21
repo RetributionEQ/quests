@@ -31,5 +31,5 @@ sub EVENT_ITEM {
 		quest::set_data($key, 1, 300);
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

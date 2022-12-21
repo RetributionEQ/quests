@@ -65,5 +65,5 @@ sub EVENT_ITEM {
 		quest::faction(330, -10); 		#:: - Freeport Militia
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

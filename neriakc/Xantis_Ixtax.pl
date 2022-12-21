@@ -27,7 +27,7 @@ sub EVENT_ITEM {
 		}
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }
 
 #END of FILE Zone:neriakc  ID:42063 -- Xantis_Ixtax

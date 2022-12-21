@@ -51,5 +51,5 @@ sub EVENT_ITEM {
 		$npc->CastSpell(203,$client);
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

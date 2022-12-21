@@ -36,7 +36,7 @@ sub EVENT_ITEM {
 		quest::summonitem(71706); # Item: Glowing Magma Ring
 		quest::exp(1000);
 	} 
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }
 
 sub EVENT_SPAWN {

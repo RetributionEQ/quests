@@ -18,5 +18,5 @@ sub EVENT_TIMER {
 
 sub EVENT_ITEM {
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

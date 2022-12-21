@@ -62,5 +62,5 @@ sub EVENT_ITEM {
 		quest::faction(222, -4);	#:: - Broken Skull Clan
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

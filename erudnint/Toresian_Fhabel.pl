@@ -25,5 +25,5 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

@@ -5,5 +5,5 @@ sub EVENT_DEATH_COMPLETE {
 
 sub EVENT_ITEM {
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

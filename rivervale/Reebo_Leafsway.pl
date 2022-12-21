@@ -105,7 +105,7 @@ sub EVENT_ITEM {
 		quest::summonitem(113974);
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }
 
 sub EVENT_WAYPOINT_ARRIVE {

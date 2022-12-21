@@ -45,5 +45,5 @@ sub EVENT_ITEM {
 	}
 	quest::say("Bog n Goo.. Blanket too!!");
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

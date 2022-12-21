@@ -112,5 +112,5 @@ sub EVENT_ITEM {
 		#:: Else eat the items
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

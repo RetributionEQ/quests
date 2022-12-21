@@ -39,5 +39,5 @@ sub EVENT_ITEM {
 		quest::faction(263,20);		#:: + Guardians of the Vale
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

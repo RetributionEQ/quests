@@ -78,7 +78,7 @@ sub EVENT_ITEM {
 			quest::summonitem(25269); # Large Supply Sack for Bekerak
 		}
 	}
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }
 
 # EOF

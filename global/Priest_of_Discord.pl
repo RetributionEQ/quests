@@ -22,5 +22,5 @@ sub EVENT_ITEM {
 		quest::pvp("on");
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

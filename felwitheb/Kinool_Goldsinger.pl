@@ -76,5 +76,5 @@ sub EVENT_ITEM {
 		quest::exp(5000);
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

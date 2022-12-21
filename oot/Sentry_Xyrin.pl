@@ -77,7 +77,7 @@ sub EVENT_ITEM {
 		quest::start(62);
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }
 
 sub KillUndead {

@@ -50,5 +50,5 @@ sub EVENT_ITEM {
 		quest::faction(311, 10);		#:: + Steel Warriors
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

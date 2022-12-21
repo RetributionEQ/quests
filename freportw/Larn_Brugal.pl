@@ -43,6 +43,6 @@ sub EVENT_ITEM {
 		quest::givecash($cash{copper},$cash{silver},$cash{gold},$cash{platinum});
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 #:: 	quest::say("This is only one sword. I requested four altogether. You shall not get your payment until I get my fourth sword");
 }

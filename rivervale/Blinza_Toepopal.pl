@@ -78,5 +78,5 @@ sub EVENT_ITEM {
 		quest::faction(329, -1);	#:: + Carson McCabe
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

@@ -7,5 +7,5 @@ sub EVENT_COMBAT {
 
 sub EVENT_ITEM {
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

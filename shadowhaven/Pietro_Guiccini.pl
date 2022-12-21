@@ -17,7 +17,7 @@ sub EVENT_ITEM {
 	}
 	else {
 		quest::say("I have no need for this $name. You can have it back");
-		#plugin::returnUnusedItems();
+		plugin::returnUnusedItems();
 	}
 }
 

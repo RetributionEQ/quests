@@ -58,5 +58,5 @@ sub EVENT_ITEM {
 		quest::MerchantSetItem(12103, 13014, 20);
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

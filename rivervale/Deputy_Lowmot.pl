@@ -24,5 +24,5 @@ sub EVENT_ITEM {
 		quest::faction(334, -1);	#:: + Dreadguard Outer
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

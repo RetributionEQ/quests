@@ -38,7 +38,7 @@ sub EVENT_ITEM {
 		quest::settimer("dance", 3);
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }
 
 sub EVENT_TIMER {

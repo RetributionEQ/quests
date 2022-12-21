@@ -76,5 +76,5 @@ sub EVENT_ITEM {
 		#:: Test handin with no epic in progress--eat item?
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

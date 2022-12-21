@@ -30,5 +30,5 @@ sub EVENT_ITEM {
 		quest::faction(324, -1);	#:: - Unkempt Druids
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

@@ -139,7 +139,7 @@ sub EVENT_ITEM {
 		}
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }
 
 sub EVENT_DEATH_COMPLETE {

@@ -42,5 +42,5 @@ sub EVENT_ITEM {
 		quest::faction(344, 10);		#:: +Beta Neutral
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

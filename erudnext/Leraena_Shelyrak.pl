@@ -200,5 +200,5 @@ sub EVENT_ITEM {
 		#quest::faction(265,-20); 	#:: - Heretics
 	#}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

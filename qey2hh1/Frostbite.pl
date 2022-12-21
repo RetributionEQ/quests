@@ -21,7 +21,7 @@ sub EVENT_ITEM {
 		quest::settimer("depop", 1200);
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }
 
 sub EVENT_TIMER {

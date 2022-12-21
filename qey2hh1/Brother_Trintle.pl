@@ -19,5 +19,5 @@ sub EVENT_WAYPOINT_ARRIVE {
 
 sub EVENT_ITEM {
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

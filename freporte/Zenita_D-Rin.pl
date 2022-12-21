@@ -40,5 +40,5 @@ sub EVENT_ITEM {
 		quest::say("I see you have drawn the card that best represents a $class such as yourself. You lose! $name");
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

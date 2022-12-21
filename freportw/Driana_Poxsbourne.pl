@@ -25,5 +25,5 @@ sub EVENT_ITEM {
 		quest::faction(341, -1); 		#:: - Priests of Life
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }	

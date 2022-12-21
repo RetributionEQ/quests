@@ -29,5 +29,5 @@ sub EVENT_ITEM {
 		$client->AddLevelBasedExp(14,1);
 	}
 	#:: Return unused items
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }

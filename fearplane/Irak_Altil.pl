@@ -34,9 +34,9 @@ sub EVENT_ITEM {
 	}
 	else {
 		quest::emote("ignores your offer.");
-		#plugin::returnUnusedItems();
+		plugin::returnUnusedItems();
 	}
-	#plugin::returnUnusedItems();
+	plugin::returnUnusedItems();
 }
 
 sub EVENT_SIGNAL {
