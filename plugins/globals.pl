@@ -314,7 +314,7 @@ sub returnUnusedItems
     {
       $items++;
       
-      quest::summonitem(1$k);
+      quest::summonfixeditem(1$k);
     }
     
     delete $itemcount->{$k};

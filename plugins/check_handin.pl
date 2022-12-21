@@ -42,14 +42,14 @@ sub return_items {
 			{
 				if ($client)
 				{
-					$client->SummonItem($k, $ItemHash{$r}[1], $ItemHash{$r}[2]);
+					$client->SummonFixedItem($k, $ItemHash{$r}[1], $ItemHash{$r}[2]);
 					quest::say("I have no need for this $name, you can have it back.");
 					$items_returned = 1;
 				}
 				else
 				{
 					# This shouldn't be needed, but just in case
-					quest::summonitem(1$k, 0);
+					quest::summonfixeditem(1$k, 0);
 					$items_returned = 1;
 				}
 				$rcount--;

@@ -31,7 +31,7 @@ sub QuestHandIn{
 			plugin::ClientSay("$NPCMESSAGE");
 			$client->Message(15, "You have obtained [$Reward]!");
 			plugin::DoAnim("$NPCANIMATION");
-			quest::summonitem(1$RewardID);
+			quest::summonfixeditem(1$RewardID);
 			quest::write("HandIn/$npc_name$zonesn.txt","[$timestamp] : $name the $ulevel has handed in $Item1, $Item2, $Item3, $item4 into $npc_name, and gotten $RewardID.");			
 			my $Npc_Name = $npc->GetCleanName();
 			quest::we(13, "$Npc_Name shouts, 'Congratulations $name on their [$Reward!]");
@@ -43,7 +43,7 @@ sub QuestHandIn{
 			plugin::ClientSay("$NPCMESSAGE");
 			$client->Message(15, "You have obtained [$Reward]!");
 			plugin::DoAnim("$NPCANIMATION");
-			quest::summonitem(1$RewardID);
+			quest::summonfixeditem(1$RewardID);
 			quest::write("HandIn/$npc_name$zonesn.txt","[$timestamp] : $name the $ulevel has handed in $Item1, $Item2, $Item3, $item4 into $npc_name, and gotten $RewardID.");	
 			my $Npc_Name = $npc->GetCleanName();
 			quest::we(13, "$Npc_Name shouts, 'Congratulations $name on their [$Reward!]");
@@ -55,7 +55,7 @@ sub QuestHandIn{
 			plugin::ClientSay("$NPCMESSAGE");
 			$client->Message(15, "You have obtained [$Reward]!");
 			plugin::DoAnim("$NPCANIMATION");
-			quest::summonitem(1$RewardID);
+			quest::summonfixeditem(1$RewardID);
 			quest::write("HandIn/$npc_name$zonesn.txt","[$timestamp] : $name the $ulevel has handed in $Item1, $Item2, $Item3, $item4 into $npc_name, and gotten $RewardID.");	
 			my $Npc_Name = $npc->GetCleanName();
 			quest::we(13, "$Npc_Name shouts, 'Congratulations $name on their [$Reward!]");
@@ -67,7 +67,7 @@ sub QuestHandIn{
 			plugin::ClientSay("$NPCMESSAGE");
 			$client->Message(15, "You have obtained [$Reward]!");
 			plugin::DoAnim("$NPCANIMATION");
-			quest::summonitem(1$RewardID);
+			quest::summonfixeditem(1$RewardID);
 			quest::write("HandIn/$npc_name$zonesn.txt","[$timestamp] : $name the $ulevel has handed in $Item1, $Item2, $Item3, $item4 into $npc_name, and gotten $RewardID.");	
 			my $Npc_Name = $npc->GetCleanName();
 			quest::we(13, "$Npc_Name shouts, 'Congratulations $name on their [$Reward!]");

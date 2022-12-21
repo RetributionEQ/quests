@@ -66,7 +66,7 @@ sub defaultSay{
 
 sub defaultItem
 {
-  #plugin::returnUnusedItems();
+  plugin::returnUnusedItems();
 }
 
 sub defaultDeath
