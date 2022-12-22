@@ -2,13 +2,13 @@ sub EVENT_SAY {
     $key = $client->AccountID() . "-kunark-flag";
     $expansion = quest::get_data($key);
     if ($text=~/hail/i) {
-        if ($expansion >= 14) {
+        if ($expansion >= 6) {
             plugin::Whisper("You have already unlocked Velious!");
             return;
         }
         
  
-        if ($expansion < 14) {
+        if ($expansion < 6) {
             plugin::Whisper("Ah... I see you have yet to unlock Velious! You have two options. One is the route of the [hero]. The other, is the route of the [collector].");
         }
         return;

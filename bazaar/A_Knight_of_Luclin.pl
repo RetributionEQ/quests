@@ -82,6 +82,7 @@ sub EVENT_ITEM {
       quest::ding();
       quest::exp(1000000);
     }
+
     
     if (plugin::takeItems(99102 => 1)){
       plugin::Whisper("Beware of the evils that lurk Luclin $name!");
@@ -98,5 +99,7 @@ sub EVENT_ITEM {
       quest::set_data($key, 14);
     }       
   }
+
   plugin::returnUnusedItems();
+
 }

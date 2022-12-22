@@ -8,4 +8,3 @@ sub EVENT_SAY {
     $client->MovePC($client->GetBindZoneID, $client->GetBindX, $client->GetBindY, $client->GetBindZ, $client->GetBindHeading);
     }
 }
-s
