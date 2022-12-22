@@ -34,7 +34,7 @@ $apocmath2 = $item1 - 800000;
 		
 		quest::say("Feh, that item wasn’t very good anyways!");
 	}
-
+plugin::return_items(\%itemcount);
 }
 
 

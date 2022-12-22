@@ -75,4 +75,5 @@ sub EVENT_ITEM {
       quest::set_data($key, 6);
     }       
   }
+  plugin::return_items(\%itemcount);
 }

@@ -76,4 +76,5 @@ $voxkey = $client->AccountID() . "vox";
     quest::set_data($talkey, 1);
     }
       }
+      plugin::return_items(\%itemcount);
 }

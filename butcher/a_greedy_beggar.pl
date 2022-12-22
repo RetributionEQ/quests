@@ -29,6 +29,7 @@ sub EVENT_ITEM {
 		#:: Set appearance to Stand
 		$npc->SetAppearance(0);
 	}
+	plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

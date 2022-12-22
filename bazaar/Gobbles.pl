@@ -18,6 +18,7 @@ sub EVENT_ITEM {
 	quest::summonitem(1399);
   quest::say("That bastard! Cursed to live forever! Without a heart! Well... take this reward. Happy Thanksgiving...")
   }
+  plugin::return_items(\%itemcount);
 }
 
 

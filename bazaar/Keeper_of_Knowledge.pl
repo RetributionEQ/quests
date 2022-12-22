@@ -51,4 +51,5 @@ if ($platinum ==200){
 if ($platinum ==300){
   quest::scribespells(50, 41);
 }
+plugin::return_items(\%itemcount);
 }
