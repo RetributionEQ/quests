@@ -27,7 +27,7 @@ sub EVENT_ITEM {
     quest::faction(279, 20); # Faction: King Tearis Thex
     quest::exp(300);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_WAYPOINT_ARRIVE {

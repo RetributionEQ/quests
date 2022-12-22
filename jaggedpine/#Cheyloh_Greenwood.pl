@@ -111,7 +111,7 @@ quest::summonitem(8759); # Item: Circlet of the Pine
 
 #return items
 
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #end of file

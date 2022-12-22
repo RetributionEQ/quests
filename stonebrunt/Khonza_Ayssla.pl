@@ -39,6 +39,6 @@ sub EVENT_ITEM {
   quest::summonitem(6976); # Item: Vial of Healing Liquid
  }
 
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:stonebrunt

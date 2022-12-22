@@ -38,5 +38,5 @@ sub EVENT_ITEM{
 		quest::signal(160252,1); #signal Incanter to depop
 		quest::signal(160253,1); #signal Preecantor to depop
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }

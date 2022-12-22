@@ -16,7 +16,7 @@ sub EVENT_ITEM {
     quest::summonitem(4461); # Item: Earring of the Owlbear
     quest::summonitem(8467); # Item: Note for General Avilah
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:sharvahl  ID:155228 -- Historian_Sharar

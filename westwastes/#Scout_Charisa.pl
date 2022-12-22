@@ -49,7 +49,7 @@ sub EVENT_ITEM {
       quest::say("Right back where we started!  While this is an interesting game of dress-up, I have to resume my duties.  So, make up your mind!");
     }
 	}
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
 }
 
 #End of File, Zone:westwastes  NPC:120000 -- #Scout_Charisa

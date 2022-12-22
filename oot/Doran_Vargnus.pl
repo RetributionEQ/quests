@@ -4,5 +4,5 @@ sub EVENT_ITEM {
     quest::say("Thank you, here is your reward.");
     quest::ChooseRandom(3301,3048,3042,3050,3044,20809,7012,3103,3111,3110,7015);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

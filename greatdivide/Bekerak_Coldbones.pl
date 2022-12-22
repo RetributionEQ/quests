@@ -34,7 +34,7 @@ sub EVENT_ITEM {
 		quest::exp(250);
 		quest::summonitem(25268); # Kromrif Battle Totem
 	}
-	#plugin::return_items(\%itemcount);	
+	plugin::return_items(\%itemcount);	
 }
 
 

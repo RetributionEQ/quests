@@ -18,7 +18,7 @@ sub EVENT_ITEM {
     quest::summonitem(28790);#Intermediate Combat Manual
     quest::exp(500000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:poknowledge  ID:202043 -- Xasri_Virek 
 

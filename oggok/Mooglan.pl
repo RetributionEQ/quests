@@ -49,7 +49,7 @@ sub EVENT_ITEM {
     quest::summonitem(55211); # Item: Mooglan's Sword of Darkness
     quest::exp(100);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # Quests by mystic414

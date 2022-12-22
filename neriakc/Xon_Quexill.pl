@@ -66,5 +66,5 @@ sub EVENT_ITEM {
 		quest::faction(1522,-200); #Primodial Malice
 		quest::exp(100);
 	}
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

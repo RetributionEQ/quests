@@ -12,7 +12,7 @@ sub EVENT_ITEM {
     quest::unique_spawn(15167,0,0,300,-3657,3,366); #spawn nuien
     quest::signalwith(15044,15178,0); # NPC: Althele
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_SIGNAL {

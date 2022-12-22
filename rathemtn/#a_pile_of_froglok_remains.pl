@@ -30,5 +30,5 @@ sub EVENT_ITEM {
     quest::summonitem(67020); # He gives you back Marr's retribution.
     quest::depop();
     }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

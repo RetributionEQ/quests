@@ -14,6 +14,6 @@ sub EVENT_ITEM {
     quest::summonitem(18246); #Legion Order (6 signed)
     quest::exp(200);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:cabwest  ID:5133 -- Trooper_Ogmire

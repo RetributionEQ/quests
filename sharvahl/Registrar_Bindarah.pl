@@ -65,7 +65,7 @@ sub EVENT_ITEM
     quest::faction(1584,400); # Faction: Citizens of Shar Vahl
     quest::exp(100);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE ZONE:sharvahl ID:155078 -- Registrar_Bindarah

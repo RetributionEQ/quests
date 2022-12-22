@@ -30,7 +30,7 @@ sub EVENT_ITEM {
     quest::faction(262,10);#Guards of Qeynos
     quest::faction(296,10);#Opal Dark Briar
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone: lakerathe ID:51025 -- Eldreth

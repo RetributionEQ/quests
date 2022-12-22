@@ -26,7 +26,7 @@ sub EVENT_ITEM {
   #Summon: Foobscale Coif (12448)
     quest:summonitem(12448); # Item: Foobscale Coif
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 

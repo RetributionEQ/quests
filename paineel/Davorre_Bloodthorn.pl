@@ -50,6 +50,6 @@ sub EVENT_ITEM {
     quest::faction(233,-5);  #Crimson Hands
   }
   plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight'); #Disciplines
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #EndFile: Davorre_Bloodthorn.pl

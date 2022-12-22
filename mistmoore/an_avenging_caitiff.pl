@@ -30,7 +30,7 @@ sub EVENT_ITEM {
    quest::say("Mother? Father? May you find peace at last. I shall avenge your suffering! I will grow stronger and set free the souls of the others.");
    quest::exp(7500);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 

@@ -32,7 +32,7 @@ sub EVENT_ITEM {
 		# Summon: Disciple Symbol of Brell Serilis
 		quest::summonitem(1431); # Item: Disciple Symbol of Brell Serilis
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }
 
 

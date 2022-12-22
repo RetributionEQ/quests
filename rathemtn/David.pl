@@ -32,6 +32,6 @@ sub EVENT_ITEM {
     quest::say("Two Deepwater goblin nets are required.");
     quest::summonitem(12311); # Item: Deepwater Goblin Net
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:rathemtn  ID:50108 -- David

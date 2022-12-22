@@ -29,7 +29,7 @@ sub EVENT_ITEM {
      quest::summonitem(5378); # Item: Solvedi Scimitar
      quest::exp(25000);
    }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:rathemtn  ID:50333 -- Solvedi Aldeberan

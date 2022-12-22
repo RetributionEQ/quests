@@ -27,7 +27,7 @@ sub EVENT_ITEM {
     quest::exp(1000);
     quest::ding();
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #random 18837 and 18838 for two sepearte quests beginnings Red V and duster

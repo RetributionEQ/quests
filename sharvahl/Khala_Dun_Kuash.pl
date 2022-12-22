@@ -32,7 +32,7 @@ sub EVENT_ITEM {
     quest::summonitem(6158); # Item: Sonic Wolf Bane Dagger
     quest::exp(10000);
       }
-      #plugin::return_items(\%itemcount);
+      plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:155295 -- Khala_Dun_Kuash 
 

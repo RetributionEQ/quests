@@ -13,7 +13,7 @@ sub EVENT_ITEM {
 		quest::exp(150);
 	}
 	#:: Return unused items
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }
 
 # Converted to Perl by SS

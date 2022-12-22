@@ -14,5 +14,5 @@ sub EVENT_ITEM {
     quest::ding();
     quest::depop();
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

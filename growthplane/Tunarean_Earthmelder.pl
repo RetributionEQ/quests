@@ -24,7 +24,7 @@ sub EVENT_ITEM {
     quest::summonitem(1207); # Item: Helm of the Tracker
   }
   else {
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
     return 1;
   }
   quest::say("You have done well, $name.  Here, take this item and use it well! Your efforts will not be forgotten.");

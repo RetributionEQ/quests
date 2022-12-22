@@ -205,6 +205,6 @@ sub EVENT_ITEM
          quest::summonitem(31846); # Item: Mark of Suffocation
       }
    }
-   #plugin::return_items(\%itemcount);
+   plugin::return_items(\%itemcount);
 }
 

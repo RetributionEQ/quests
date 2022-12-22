@@ -132,7 +132,7 @@ sub EVENT_ITEM {
     }
     else {
         quest::say("You have either handed me an item I don't need or no longer qualify for a grand prize. You can have this back.");
-        #plugin::return_items(\%itemcount);
+        plugin::return_items(\%itemcount);
     }
 
 }

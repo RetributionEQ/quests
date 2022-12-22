@@ -20,7 +20,7 @@ sub EVENT_ITEM(){
     quest::summonitem(quest::ChooseRandom(19368,19346,19355,19357)); # Item(s): Spell: Boon of Immolation (19368), Spell: Scintillation (19346), Spell: Vocarate: Fire (19355), Spell: Vocarate: Air (19357)
     quest::exp(1000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 

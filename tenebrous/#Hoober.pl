@@ -16,5 +16,5 @@ sub EVENT_ITEM {
     quest::summonitem(5996); # Item: Aisha'a Locket
     quest::depop();
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

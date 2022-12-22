@@ -28,5 +28,5 @@ sub EVENT_ITEM{
 		quest::say("This is terrible news most definitely. I do not know how this could have happened. Gerod was one of the most skilled weapon masters that the Brotherhood has ever seen. I do certainly appreciate your work and dedication to this matter, please take this charm as a token of my appreciation.");
 		quest::summonitem(61002);#Charm of the Brotherhood
 	}	
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
 }#Done

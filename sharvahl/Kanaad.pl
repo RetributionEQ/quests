@@ -36,5 +36,5 @@ sub EVENT_ITEM {
     quest::summonitem(5994); # Item: Elixir of Obsession
     quest::say("Thanks for gathering the supplies.  Here is your potion!");
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

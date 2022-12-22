@@ -81,7 +81,7 @@ sub EVENT_ITEM {
       quest::summonitem(69334); # Item: Lendiniara's Trinket
     }
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # Quest edited and updated by mystic414

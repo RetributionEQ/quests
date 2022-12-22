@@ -14,5 +14,5 @@ sub EVENT_ITEM {
     quest::ding();
     quest::summonitem(7815); # Item: Deathmaw Claw Club
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

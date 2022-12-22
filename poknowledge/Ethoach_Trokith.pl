@@ -16,6 +16,6 @@ sub EVENT_ITEM {
     quest::summonitem(28794); #Advanced Stealth Manual
     quest::exp(500000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:poknowledge  ID:202047 -- Ethoach_Trokith 
 

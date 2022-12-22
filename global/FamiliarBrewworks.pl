@@ -10,5 +10,5 @@ sub EVENT_ITEM{
       quest::say("Ale brewed, Master.");
       quest::summonitem(13039); # Item: Ale
    }
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
 }

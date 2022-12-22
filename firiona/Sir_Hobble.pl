@@ -10,7 +10,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 # For Wurmslayer quest
 # Quest depends on Squire_Fuzzmin.pl in Firiona for complete functionality

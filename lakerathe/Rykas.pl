@@ -27,7 +27,7 @@ sub EVENT_ITEM {
     quest::summonitem(18958); # Item: Power of the Orb
     quest::exp(2000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone: lakerathe  ID:51045 -- Rykas

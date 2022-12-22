@@ -32,6 +32,6 @@ sub EVENT_ITEM {
     quest::givecash(5,4,6,1);
     quest::exp(1000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:paineel  ID:75089 -- Antus_Shelbra

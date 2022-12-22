@@ -7,5 +7,5 @@ sub EVENT_ITEM {
     quest::summonitem(6979); #Soulforge Hammer
     quest::exp(10000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

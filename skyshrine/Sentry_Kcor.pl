@@ -27,6 +27,6 @@ sub EVENT_ITEM {
     quest::faction(436,5);  #Yelinak
     quest::faction(448,-5); #Kromzek
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:skyshrine  ID:Not_Found -- Sentry_Kcor

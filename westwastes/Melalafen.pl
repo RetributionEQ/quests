@@ -48,7 +48,7 @@ sub EVENT_ITEM {
       quest::summonitem(2698); # Item: Essence Lens
     }
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: westwastes ID: 120126 NPC: Melalafen

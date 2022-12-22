@@ -35,5 +35,5 @@ sub EVENT_ITEM {
 		quest::emote("reads over the report, his face begins to turn red with anger. Drioc shouts, 'How can this be?! I sent you a squad of some of our best trained men and you had them destroyed!! This was supposed to be a routine raid and you return in FAILURE!! I would crush you under my boot right now if I wasn't so angry but I think I'll send you to my finacier. YOU can explain what happened and why his investments have been lost. Now take your carcass out of here!'");
 		quest::summonitem(1709); # Report of Failure
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }

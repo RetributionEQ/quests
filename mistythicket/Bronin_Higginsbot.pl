@@ -57,5 +57,5 @@ sub EVENT_ITEM {
       quest::summonitem(12193); # H.K. 106
    }
    
-   #plugin::return_items(\%itemcount);
+   plugin::return_items(\%itemcount);
 }

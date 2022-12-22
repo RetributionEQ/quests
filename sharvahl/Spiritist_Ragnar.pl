@@ -75,7 +75,7 @@ quest::say("Nicely done $name. This anchor should be sufficient to keep Siver bo
 quest::say("In the meantime, you can seek out a shield made of Xakra. Xakra made of the ethereal fabric of the spirit realm. I know the Shak Dratha within the thicket are weavers of this rare form of shadow silk. Such a shield can help us strengthen the anchor, making it easier for Siver to aid you. It will also improve her health greatly. She has been through a lot and is in rather poor condition as it stands now.");
 quest::summonitem(15021,1); # Item: Spell: Berserker Strength
 }
-#plugin::return_items(\%itemcount);
+plugin::return_items(\%itemcount);
 }
 
 #End of FILE Zone:sharvahl  ID:155198 -- Spiritist_Ragnar 

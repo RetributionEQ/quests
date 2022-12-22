@@ -32,7 +32,7 @@ sub EVENT_ITEM {
     quest::summonitem(30041); # Item: Ice Forged Shackles
     quest::exp(10000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone: iceclad ID:110065 -- Nilham_the_Chef

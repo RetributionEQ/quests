@@ -22,5 +22,5 @@ sub EVENT_ITEM {
 		quest::faction(1505, -10); #Nathyn Illuminious
 		quest::faction(1503, 2); #Validus Custodus
 	}
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }#Done

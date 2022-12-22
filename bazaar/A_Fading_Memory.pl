@@ -159,6 +159,6 @@ my $PCClass = $client->GetClass();
     #quest::say("Hmmm I don’t want to risk sending you into shock or an existential crisis. Just do what feels natural and try to remember who needs your help and whose demise you must bring about. When you’ve regained your bearings, there are many important memories to be re-lived in the Temple of Sol Ro. Good luck $name.");
     }
     }
-
+  plugin::returnUnusedItems();
   }
 }

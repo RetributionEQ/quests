@@ -14,6 +14,6 @@ sub EVENT_ITEM {
     quest::summonitem(18242); #Legion Order (2 signed)
     quest::exp(500);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:cabeast  ID:5104 -- Trooper_Fryp

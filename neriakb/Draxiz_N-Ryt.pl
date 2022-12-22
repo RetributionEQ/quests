@@ -16,5 +16,5 @@ sub EVENT_ITEM {
 		quest::faction(239, -30);#The Dead
 		quest::faction(363, 10);#The Spurned
 	}
-  	#plugin::return_items(\%itemcount);
+  	plugin::return_items(\%itemcount);
 }#Done

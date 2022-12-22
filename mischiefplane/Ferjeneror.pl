@@ -25,5 +25,5 @@ sub EVENT_ITEM {
     quest::summonitem(17054); # Item: Deck of Spontaneous Generation
     quest::exp(100);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 } 

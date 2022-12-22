@@ -21,5 +21,5 @@ sub EVENT_ITEM {
     quest::say("Plants and flowers are a special treasure I keep close to my heart. Did you ever stop to marvel at how beautiful these specimens are? I thank you greatly for them. Here, take this in return.");
     quest::summonitem(28238);#Fine Antique Corset
   }
-   #plugin::return_items(\%itemcount);
+   plugin::return_items(\%itemcount);
 }#Done

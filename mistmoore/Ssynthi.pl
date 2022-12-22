@@ -21,6 +21,6 @@ sub EVENT_ITEM {
     quest::faction(416,-15); #Shadowed Men
     quest::exp(1000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 # Quest by mystic414

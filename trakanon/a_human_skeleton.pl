@@ -22,6 +22,6 @@ sub EVENT_ITEM {
     quest::summonitem(12965); # Bottle of swirling smoke (Hampton's soul)
     quest::depop();
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 

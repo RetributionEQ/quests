@@ -29,6 +29,6 @@ sub EVENT_ITEM {
     quest::say("Take this wrinkled map I found just the other day and give it to a friend of mine. Her name is Kery and you can find her upstairs in that building over there. Do this, and she will help you upgrade those claws of yours.");
     quest::summonitem(5571); # Item: Worn Map of the Area
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:155062 -- Animist_Mahron_Sood

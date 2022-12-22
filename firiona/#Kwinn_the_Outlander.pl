@@ -24,7 +24,7 @@ sub EVENT_ITEM {
     quest::exp(25000);
     quest::summonitem(12822); # Item: Mechanical Iksar Tail
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: firiona ID: 84061 NPC: #Kwinn_the_Outlander

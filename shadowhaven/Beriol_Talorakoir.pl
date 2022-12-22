@@ -28,7 +28,7 @@ sub EVENT_ITEM {
     quest::faction(1511,10); #house of midst
     quest::faction(1508,10); #traders of the haven
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: shadowhaven ID: 150087 NPC: Beriol_Talorakoir

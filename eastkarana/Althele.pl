@@ -91,7 +91,7 @@ sub EVENT_ITEM {
     }
     quest::depop_withtimer();
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_SIGNAL {

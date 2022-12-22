@@ -39,7 +39,7 @@ sub EVENT_ITEM {
     quest::emote("grins and goes back to reading.");
     quest::summonitem(18962); # Item: Pirate Grammar Manual
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone: iceclad ID:110062 -- Ami

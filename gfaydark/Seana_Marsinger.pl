@@ -100,5 +100,5 @@ sub EVENT_ITEM {
     }
 	$npc->AddToHateList($client, 1); 
 	}	
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 } 

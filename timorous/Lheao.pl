@@ -27,7 +27,7 @@ sub EVENT_ITEM {
   # Summon: Celestial Fists (Book)
   quest::summonitem(1683); # Item: Celestial Fists
  }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 

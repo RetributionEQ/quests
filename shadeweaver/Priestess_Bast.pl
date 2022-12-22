@@ -15,6 +15,6 @@ sub EVENT_ITEM {
 		quest::faction(1513, 30);#Guardians of Shar Vahl faction
 	}
   	
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 
 }#END of FILE Zone:shadeweaver  ID:165132--Priestess_Bast.pl

@@ -53,7 +53,7 @@ sub EVENT_ITEM {
       quest::faction(274,2); #Kazon Stormhammer
       quest::faction(293,2); #Miner's guild 249
    }
-   #plugin::return_items(\%itemcount);
+   plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:kaladimb  ID:67024 -- Priestess_Ghalea

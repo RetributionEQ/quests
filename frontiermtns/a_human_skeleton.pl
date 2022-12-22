@@ -8,7 +8,7 @@ sub EVENT_ITEM {
     quest::summonitem(20476); # Item: Silver Chained Locket
     quest::depop_withtimer();
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: frontiermtns ID: 92084 NPC: a_human_skeleton

@@ -11,6 +11,6 @@ sub EVENT_ITEM {
     quest::say("Here ya go!");
     quest::summonitem(19050); #Crushed Dufrenite
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:lakerathe  ID:51073 -- Grud

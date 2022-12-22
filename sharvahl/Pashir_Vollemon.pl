@@ -108,5 +108,5 @@ this axe wisely in your coming adventures.");   #adlib text
 	quest::exp(1000);
 	quest::summonitem(55423);	#savageclaw axe
 }
-#plugin::return_items(\%itemcount);
+plugin::return_items(\%itemcount);
 }

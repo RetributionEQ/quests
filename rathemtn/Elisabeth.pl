@@ -27,7 +27,7 @@ sub EVENT_ITEM {
          quest::summonitem(12303); #Mold of Ro Greaves
       }
    }
-   #plugin::return_items(\%itemcount);
+   plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:rathemtn  ID:50109 -- Elisabeth
 
@@ -43,6 +43,6 @@ sub EVENT_ITEM {
       quest::faction(330, -3); #The Freeport Militia
     }
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:rathemtn  ID:50109 -- Elisabeth

@@ -68,7 +68,7 @@ sub EVENT_ITEM {
       quest::summonitem(31160); # Item: Icicle Boots
     }
     else {
-      #plugin::return_items(\%itemcount);
+      plugin::return_items(\%itemcount);
       return 1;
     }
     quest::emote("smiles warmly as he hands you your reward.");
@@ -80,7 +80,7 @@ sub EVENT_ITEM {
   }
   else {
     quest::say("I do not know you well enough to entrust such an item to you, yet.");
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
   }
 }
 

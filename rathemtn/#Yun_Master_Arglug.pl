@@ -65,7 +65,7 @@ sub EVENT_ITEM {
 	quest::say("Thank you for retrieving the artifact, young one.  Your training is now complete, and I present to you the last of the equipment granted to Yun Initiates, the cudgel of our order.  May it serve you well in your travels.");
 	quest::summonitem(51095); # Item: Cudgel of the Yun Initiate
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #end of file

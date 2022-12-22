@@ -36,5 +36,5 @@ sub EVENT_ITEM {
     quest::setglobal("pov_key_quest", 5, 5, "F");
     quest::summonitem(25596); # Item: Crystalline Globe
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

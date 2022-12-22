@@ -117,7 +117,7 @@ sub EVENT_ITEM {
    		quest::say("These are not the pieces I need."); 
   	} 
   }
-  #plugin::return_items(\%itemcount); 
+  plugin::return_items(\%itemcount); 
 } 
 
 #END of FILE Zone:thurgadina  ID:115218 & 115150 -- Cobi_Frostbeard

@@ -15,7 +15,7 @@ sub EVENT_ITEM {
     quest::faction(1512,10); #house of stout
     quest::faction(1508,10); #traders of the haven
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: shadowhaven ID: 150091 NPC: Aliane_Steelknuckle

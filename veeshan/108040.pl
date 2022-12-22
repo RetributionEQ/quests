@@ -28,7 +28,7 @@ sub EVENT_ITEM {
 			quest::ding();
 		}
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }
 
 #End of File, Zone:veeshan  NPC:108012 -- Druushk

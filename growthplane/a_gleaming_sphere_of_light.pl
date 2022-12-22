@@ -29,7 +29,7 @@ sub EVENT_ITEM {
     quest::summonitem(1325); # Item: Wreath of Nature
     quest::exp(1000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # Quest by mystic414

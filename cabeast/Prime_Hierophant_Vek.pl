@@ -61,7 +61,7 @@ sub EVENT_ITEM {
 		quest::summonitem(14786); # Item: Vek's Reference: Vambraces
 		quest::exp(10000);
 	}
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #Submitted by Jim Mills, with thanks to BWStripes

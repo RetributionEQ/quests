@@ -89,7 +89,7 @@ to your tool and will enable you to craft owlbear feather darts. These darts are
  fletching kit. May your new skill serve you well, $name.");
 }
 
-#plugin::return_items(\%itemcount);
+plugin::return_items(\%itemcount);
 }
 
 

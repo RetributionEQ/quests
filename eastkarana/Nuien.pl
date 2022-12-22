@@ -11,7 +11,7 @@ sub EVENT_ITEM {
     quest::unique_spawn(15170,0,0,-2854,-3840,126.5,123.6); #spawn teola
     quest::signalwith(15044,15167,0); # NPC: Althele
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_SIGNAL {

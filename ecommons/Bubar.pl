@@ -17,7 +17,7 @@ sub EVENT_ITEM {
     quest::exp(15000);
   }
   quest::say("I need at least two of the case keys and the gem case.");
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
    
 #EOF -- ZONE: ecommons -- NAME: Bubar -- ID: 22033

@@ -19,7 +19,7 @@ sub EVENT_ITEM {
     quest::say("Tip-top work! Barkhem has done well by himself choosing you for an apprentice."); 
     quest::summonitem(29806); # koby work order
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 # END of FILE Zone:sharvahl  ID:7039 -- Khala_Dun_Koby 
 

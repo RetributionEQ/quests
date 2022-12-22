@@ -21,6 +21,6 @@ sub EVENT_ITEM {
     quest::faction(441,30); #Legion of Cabilis
     quest::exp(1200);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:cabeast  ID:630 -- Clerk_Doval

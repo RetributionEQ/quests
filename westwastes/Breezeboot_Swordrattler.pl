@@ -16,6 +16,6 @@ sub EVENT_ITEM {
     quest::summonitem(27310); # Item: Breezeboot's Frigid Gnasher
     quest::exp(60000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:westwastes  ID:120051 -- Breezeboot_Swordrattler

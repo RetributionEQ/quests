@@ -30,7 +30,7 @@ sub EVENT_ITEM {
       quest::exp(100);
     }
     else {
-      #plugin::return_items(\%itemcount);
+      plugin::return_items(\%itemcount);
     }
   }
   else {

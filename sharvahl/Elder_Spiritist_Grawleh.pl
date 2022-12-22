@@ -48,6 +48,6 @@ sub EVENT_ITEM {
     quest::ding();
     quest::exp(450);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:155167 -- Elder_Spiritist_Grawleh 

@@ -22,5 +22,5 @@ sub EVENT_ITEM {
     quest::faction( 279, 2); # Faction: King Tearis Thex
     quest::faction( 239, -2); # Faction: The Dead
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

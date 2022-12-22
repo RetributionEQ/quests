@@ -15,5 +15,5 @@ sub EVENT_ITEM {
       quest::summonitem(13418); # Item: Gnome Meat
     }
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

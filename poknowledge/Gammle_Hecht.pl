@@ -26,7 +26,7 @@ sub EVENT_ITEM{
       quest::summonitem(28243); # Item: Fine Antique Poniard
 	  #I would love to put 'Improved Damage II' or "Affliction Haste II" on this 'Fine Antique Poniard' as well to complete the focus effect collection, but not necissary.
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:poknowledge Gammle_Hecht
 

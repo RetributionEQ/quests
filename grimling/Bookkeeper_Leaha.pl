@@ -12,7 +12,7 @@ sub EVENT_ITEM {
     quest::faction( 1552,10 ); # Faction: Vah Shir Crusaders
     quest::exp(1000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:grimling  ID:167129 -- Bookkeeper_Leaha 
 

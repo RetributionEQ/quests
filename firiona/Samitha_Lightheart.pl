@@ -19,7 +19,7 @@ sub EVENT_ITEM {
     quest::summonitem(quest::ChooseRandom(19235,19233,19236,19240)); # Item(s): Spell: Call of Karana (19235), Spell: Upheaval (19233), Spell: Egress (19236), Spell: Glamour of Tunare (19240)
     quest::exp(1000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:firiona  ID:84176 -- Samitha_Lightheart

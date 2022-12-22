@@ -25,6 +25,6 @@ sub EVENT_ITEM {
     quest::exp(2000);
     quest::givecash(0,5,0,0); #Silver x 5
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:kaladimb  ID:67023 -- Nultal_Malfoot

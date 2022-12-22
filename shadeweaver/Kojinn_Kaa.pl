@@ -21,5 +21,5 @@ sub EVENT_ITEM {
 		quest::faction(1513, 10);#Guardians of Shar Vahl faction
 	}
   	
-		#plugin::return_items(\%itemcount);
+		plugin::return_items(\%itemcount);
 }#END of FILE Zone:shadeweaver  ID:165133--Kojinn_Kaa.pl

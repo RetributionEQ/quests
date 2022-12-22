@@ -43,7 +43,7 @@ sub EVENT_ITEM {
 		quest::say("You have done well, $name. Take this Rusty Bloodsaber Mace to a forge and clean it up with a Sharpening Stone. It may take you several attempts to get all the rust off if you are not familiar with the process. Once that is done take the Refined Bloodsaber Mace to Torin Krentar with a Giant King Snake Skin and he will put the finishing touches on the weapon.");
 		quest::summonitem(20198); # Item: Rusty Bloodsaber Mace
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }
 
 # EOF zone: qcat ID: 45089 NPC: Xeture Demiagar

@@ -51,7 +51,7 @@ sub EVENT_ITEM {
     # Summon: Draconic Pauldrons
     quest::summonitem(12557); # Item: Draconic Pauldrons
   } 
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 

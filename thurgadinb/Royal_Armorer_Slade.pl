@@ -45,7 +45,7 @@ sub EVENT_ITEM {
       quest::summonitem(31516); # Item: Custom Runed Protector's Helm
     }
     else {
-      #plugin::return_items(\%itemcount);
+      plugin::return_items(\%itemcount);
       return 1;
     }
     quest::say("Here you are $name. Ah, a perfect fit! May it serve you well.");

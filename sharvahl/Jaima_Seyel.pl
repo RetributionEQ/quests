@@ -16,7 +16,7 @@ sub EVENT_ITEM {
    quest::summonitem(6140); # Item: Ceremonial Metal Strainer
    
  }
- #plugin::return_items(\%itemcount);
+ plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:sharvahl  ID:155270 -- Jaima_Seyel 

@@ -25,6 +25,6 @@ sub EVENT_ITEM {
     $truntnpc->AddToHateList($client,1);
     quest::depop_withtimer();
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 # End of File

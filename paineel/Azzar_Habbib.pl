@@ -26,5 +26,5 @@ sub EVENT_ITEM {
     quest::say("Well done $name, here is your new hat wear it with pride");#couldnt find the text
     quest::summonitem(1529);#Dreadful Cap       
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:paineel  ID:75009 -- Azzar_Habbib

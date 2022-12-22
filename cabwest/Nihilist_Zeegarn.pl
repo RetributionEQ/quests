@@ -21,7 +21,7 @@ sub EVENT_ITEM {
   quest::summonitem(12407); # Item: Drape of the Brood
   quest::ding();
  }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #Submitted by Jim Mills

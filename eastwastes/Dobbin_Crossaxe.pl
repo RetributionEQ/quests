@@ -20,7 +20,7 @@ sub EVENT_ITEM {
     $ring_seven_final=undef;
   }
 
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:eastwastes  ID:116129 -- Dobbin_Crossaxe

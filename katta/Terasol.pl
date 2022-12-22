@@ -23,7 +23,7 @@ sub EVENT_ITEM {
     quest::exp(1000);
     $notecheck = 1;
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: katta ID: 160214 NPC: Terasol

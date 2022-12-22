@@ -23,7 +23,7 @@ sub EVENT_ITEM {
     quest::faction(1503,-30); #validus custodus
     quest::faction(1504,-30); #magus conlegium
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: katta ID: 159148 NPC: Aderyn_Goldleaf

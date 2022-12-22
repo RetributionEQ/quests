@@ -71,7 +71,7 @@ sub EVENT_ITEM {
       quest::exp(100);
 
    }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:grobb  ID: 40074

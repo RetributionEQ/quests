@@ -13,7 +13,7 @@ sub EVENT_ITEM {
     quest::exp(5000);
   }
   else {
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
     return 1;
   }
   quest::faction(406,10); #coldain

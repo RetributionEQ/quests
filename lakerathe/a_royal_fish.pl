@@ -15,5 +15,5 @@ sub EVENT_ITEM {
 		quest::faction( 279, 10); # Faction: King Tearis Thex
 		quest::depop_withtimer();
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }

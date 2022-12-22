@@ -30,6 +30,6 @@ sub EVENT_ITEM {
     quest::faction(221, -5); # Bloodsabers
     quest::faction(219, 3); # Antonius Bayle
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:rathemtn  ID:50114 -- Marianna

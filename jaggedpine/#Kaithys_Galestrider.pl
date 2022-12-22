@@ -110,5 +110,5 @@ if ($faction == 1) {
     quest::delglobal("silverbladeofthunder");
   }
  }
- #plugin::return_items(\%itemcount);
+ plugin::return_items(\%itemcount);
 }

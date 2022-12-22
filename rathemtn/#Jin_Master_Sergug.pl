@@ -72,5 +72,5 @@ sub EVENT_ITEM {
     quest::summonitem(63079); # Item: Wand of the Jin
     quest::exp(1000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

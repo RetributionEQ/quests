@@ -33,6 +33,6 @@ sub EVENT_ITEM
 		quest::faction(430, -20);#Claws of Veeshan
 	}
    
-	##plugin::return_items(\%itemcount); #return items if not the ones required
+	#plugin::return_items(\%itemcount); #return items if not the ones required
 
 }#END of FILE Zone:kael ID:113020 and 113258 --Clrakk_Blackfist.pl

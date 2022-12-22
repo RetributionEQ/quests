@@ -40,7 +40,7 @@ sub EVENT_ITEM {
     quest::faction(1485,-30); #eye of seru
     quest::faction(1541,-30); #hand legionnaires
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: katta ID: 160207 NPC: Rowle_Shieldson

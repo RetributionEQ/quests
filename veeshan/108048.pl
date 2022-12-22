@@ -60,6 +60,6 @@ sub EVENT_ITEM {
 			quest::summonitem(69390); #Earring of Phara Dar
 		}
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:veeshan ID:108048 -- Phara_Dar.pl

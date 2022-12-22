@@ -23,7 +23,7 @@ sub EVENT_ITEM {
     quest::exp(300);
     quest::depop_withtimer();
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone: warrens ID:101068 -- an_erudite_prisoner

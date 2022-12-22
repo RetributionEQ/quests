@@ -68,5 +68,5 @@ sub EVENT_ITEM {
     quest::faction(262,10); #Guards of Qeynos
     quest::summonitem(8967); # Item: The Gale Weaver
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

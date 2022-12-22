@@ -42,7 +42,7 @@ sub EVENT_ITEM {
    quest::faction( 444,2); # Faction: Swift Tails
    quest::faction( 442,2); # Faction: Crusaders of Greenmist
       }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #Scripted By: Fatty Beerbelly

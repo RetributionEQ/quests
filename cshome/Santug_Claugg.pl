@@ -54,6 +54,7 @@ sub EVENT_ITEM {
 	quest::summonitem(995);
   quest::say("This can't be... Well, I always reward a good deed. Here you go. Merry Christmas $name");
    }
+   plugin::returnUnusedItems();
 }
 
 

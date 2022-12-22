@@ -30,5 +30,5 @@ sub EVENT_ITEM {
 		quest::faction(310,1); 		#:: + Soldiers of Tunare
 		quest::faction(234,-1); 		#:: - Crushbone Orcs
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }

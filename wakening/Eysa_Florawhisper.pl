@@ -28,6 +28,6 @@ sub EVENT_ITEM {
     quest::exp(5000);
     quest::summonitem(24864); # Item: Crest of the Wood Nymphs
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 # EOF zone: wakening ID: 119081 NPC: Eysa_Florawhisper

@@ -25,6 +25,6 @@ sub EVENT_ITEM {
     quest::summonitem(59568); # Item: Spell: Summon Steel Bracelet
     quest::exp(4088112);#3% of level 47 exp
   }  
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #Done

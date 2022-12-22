@@ -26,6 +26,6 @@ sub EVENT_ITEM {
       quest::say("What's dis? A receipt frum a $race? You cud not have gottun dis from Bregna, dis must be a forgury. I'll keep dis so you can't fool anywun else whif dis again.");
     }
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:poknowledge  ID:202123 -- Aid_Garuuk

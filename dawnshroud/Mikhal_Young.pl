@@ -23,7 +23,7 @@ sub EVENT_ITEM {
 	quest::summonitem(69946); # Item: Drema's Fingerbone
 	quest::setglobal("paladin_epic",5,5,"F");
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:dawnshroud  ID:174100 -- Mikhal_Young 
 

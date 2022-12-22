@@ -11,7 +11,7 @@ sub EVENT_ITEM {
 		quest::summonitem(1709); # Report of Failure
 		quest::depop();
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

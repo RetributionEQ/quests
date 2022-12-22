@@ -19,7 +19,7 @@ sub EVENT_ITEM {
   quest::summonitem($Tome);
   quest::ding();
  }
- #plugin::return_items(\%itemcount);
+ plugin::return_items(\%itemcount);
 }
 
 #Submitted by: Jim Mills

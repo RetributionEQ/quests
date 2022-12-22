@@ -23,6 +23,6 @@ sub EVENT_ITEM {
     quest::faction(394,20); # Faction: Shamen of War
     quest::summonitem(quest::ChooseRandom(15270,15226,15279,15211)); # Item(s): Spell: Drowsy (15270), Spell: Endure Disease (15226), Spell: Spirit of Bear (15279), Spell: Summon Drink (15211)
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:oggok  ID:49038 -- Marda

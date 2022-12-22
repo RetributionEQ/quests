@@ -18,5 +18,5 @@ sub EVENT_ITEM{
 		quest::exp(10000);
 		quest::depop();
 	}
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

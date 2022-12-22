@@ -36,7 +36,7 @@ sub EVENT_ITEM {
       quest::faction(5015,-1); # -Coalition of Trade Folk III
      }
 }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 

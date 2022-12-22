@@ -62,7 +62,7 @@ sub EVENT_ITEM {
     quest::summonitem(3787); # Item: Steel Tipped Bo Stick
     quest::exp(10000);
      } 
-     #plugin::return_items(\%itemcount);
+     plugin::return_items(\%itemcount);
 }
 
 #END of FILE

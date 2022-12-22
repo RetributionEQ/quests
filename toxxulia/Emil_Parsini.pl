@@ -22,6 +22,6 @@ sub EVENT_ITEM {
     quest::faction(267, 10); # +High Guard of Erudin
     quest::exp(2432);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:toxxulia  ID:414035 -- Emil_Parsini

@@ -50,6 +50,6 @@ sub EVENT_ITEM {
     quest::faction(293, 15); #Miner's guild 249
     quest::exp(100000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:rathemtn  ID:50110 -- Nicholas

@@ -32,6 +32,6 @@ sub EVENT_ITEM{
       quest::setglobal("RegalBandBathezid",1,5,"Y1");
     }
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 

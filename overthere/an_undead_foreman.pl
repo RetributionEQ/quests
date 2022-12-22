@@ -16,7 +16,7 @@ sub EVENT_ITEM {
  if($faction <= 4){
  if(plugin::check_handin(\%itemcount, 10023 => 1)){
  }  else {
-      #plugin::return_items(\%itemcount);
+      plugin::return_items(\%itemcount);
       return 1;
     }
   # The New Worker [Part 3][End]

@@ -23,7 +23,7 @@ sub EVENT_ITEM {
 		quest::faction(238,-30);		#:: Dark Reflection -30
 		quest::faction(1604,-10);		#:: Clan Grikbar -10
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }
 
 sub EVENT_COMBAT {

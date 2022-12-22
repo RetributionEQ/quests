@@ -47,7 +47,7 @@ sub EVENT_ITEM {
 		quest::summonitem(1723); # Noble's Seal
 		quest::exp(2000);
   }	
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }
 
 # EOF zone: kael ID: 113108 NPC: Noble_Helssen

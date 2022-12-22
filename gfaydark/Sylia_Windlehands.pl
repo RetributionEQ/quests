@@ -43,7 +43,7 @@ sub EVENT_ITEM {
 	}
 	#do all other handins first with plugin, then let it do disciplines
 	plugin::try_tome_handins(\%itemcount, $class, 'Bard');
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:gfaydark  ID:54088 -- Sylia_Windlehands 

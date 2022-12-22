@@ -10,5 +10,5 @@ sub EVENT_ITEM {
     quest::summonitem(19611); # Item: Ebon Short Bow
     quest::say("Here's your bow. Use it well, young rogue.");
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

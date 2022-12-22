@@ -19,7 +19,7 @@ sub EVENT_ITEM {
   quest::faction(444,10); # +Swifttails
   quest::exp(25);  
  }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #Scripted By: Fatty Beerbelly

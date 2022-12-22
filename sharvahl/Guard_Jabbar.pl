@@ -12,6 +12,6 @@ sub EVENT_ITEM {
     quest::say("Ah the tea! I've been anxiously awaiting your arrival $name! We'd almost run out of this wonderful Gravel leaf tea. Take this seal back to Ahlam, and give him my thanks.");
     quest::summonitem(31775); # Item: Jabbar's seal
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #endoffile  Zone Shar Vhal  Guard_Jabbar  ID  155085 

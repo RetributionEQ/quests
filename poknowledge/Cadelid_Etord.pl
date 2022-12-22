@@ -20,7 +20,7 @@ sub EVENT_ITEM {
     quest::say("Very impressive, $name. This proves you have clearly graduated to the next phase of training we have to offer. Keep this book by your side and speak to Zalil Nyvin when you are ready for your next lesson.");#Text borrowed from intermediate combat manual, instructor's name changed to match advanced magic manual.
     quest::summonitem(28796);#Intermediate Magic Manual
   }
-   #plugin::return_items(\%itemcount);
+   plugin::return_items(\%itemcount);
   }
 #END of FILE Zone:poknowledge  ID:202038 -- Cadelid_Etord 
 

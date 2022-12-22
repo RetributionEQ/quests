@@ -87,6 +87,6 @@ sub EVENT_ITEM {
 		quest::faction(1577,10); # Faction: The Truth
 		quest::exp(1000000);
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }
 

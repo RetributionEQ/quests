@@ -35,5 +35,5 @@ sub EVENT_ITEM
 		quest::summonitem(61195);#Flowing Cloak of the Shai`Din 
 	}
    
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:chardokb ID:277081 --Palardiag_Dax-Kunoksan.pl

@@ -17,5 +17,5 @@ sub EVENT_ITEM {
     quest::ding();
     quest::summonitem(7813); # Item: Firefall Claw Club
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

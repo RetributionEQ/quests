@@ -39,5 +39,5 @@ sub EVENT_ITEM {
   	quest::exp(1750000);#1% of level 51 exp
   	quest::summonitem(25026);#Coldain Skin Gloves
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }#Done

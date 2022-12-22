@@ -22,6 +22,6 @@ sub EVENT_ITEM {
     quest::summonitem(12966); # Bottle of swirling smoke (Mardon's soul)
     quest::depop();
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 

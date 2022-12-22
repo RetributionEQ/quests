@@ -14,5 +14,5 @@ sub EVENT_ITEM {
     quest::ding();
     quest::summonitem(7812); # Item: Claw Beast Talon Club
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

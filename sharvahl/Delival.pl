@@ -32,7 +32,7 @@ sub EVENT_ITEM {
 		quest::faction(1513,5); #Guardian of Shar Vahl
 		quest::signalwith(155339,1,10); # NPC: Shainai
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

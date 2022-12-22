@@ -33,6 +33,6 @@ sub EVENT_ITEM {
       }
     }
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:povalor  ID:208029 -- Grenic_Drere

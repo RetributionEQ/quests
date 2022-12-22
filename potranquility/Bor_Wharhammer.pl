@@ -120,7 +120,7 @@ sub EVENT_ITEM {
         quest::say("Tis not enuff!");
         quest::givecash($copper,$silver,$gold,$platinum); #Return money
       }
-      #plugin::return_items(\%itemcount);
+      plugin::return_items(\%itemcount);
       return 1;
     }
   }
@@ -130,6 +130,6 @@ sub EVENT_ITEM {
       quest::givecash($copper,$silver,$gold,$platinum); #Return money
     }
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:potranquility  ID:203064 -- Bor_Wharhammer

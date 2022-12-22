@@ -35,5 +35,5 @@ sub EVENT_ITEM {
 			quest::summonitem(69388); # Item: Shield of Dark Hues
 		}
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }

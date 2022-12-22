@@ -46,5 +46,5 @@ sub EVENT_ITEM{
 			quest::delglobal("EirodBrother");
 		}
 	}	
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
 }

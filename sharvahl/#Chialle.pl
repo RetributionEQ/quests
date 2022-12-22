@@ -13,7 +13,7 @@ sub EVENT_ITEM {
     quest::ding();
     quest::faction(1513,20); # Faction: Guardians of Shar Vahl
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_WAYPOINT_ARRIVE {

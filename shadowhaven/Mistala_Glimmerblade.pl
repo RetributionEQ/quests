@@ -23,7 +23,7 @@ sub EVENT_ITEM {
     quest::faction(1509,10); #haven defenders
     quest::faction(1508,10); #traders of the haven
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: shadowhaven ID: 150090 NPC: Mistala_Glimmerblade

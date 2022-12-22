@@ -16,6 +16,6 @@ sub EVENT_ITEM {
   quest::faction( 1513,10 ); # Faction: Guardians of Shar Vahl
     
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #Endoffile  Hana_Sulm  Shar Vhal  ID 155051

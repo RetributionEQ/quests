@@ -34,7 +34,7 @@ sub EVENT_ITEM {
     quest::ding();
     quest::depop_withtimer();
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: thurgadina ID: 115120 NPC: Erdarf_Restil

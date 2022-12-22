@@ -52,7 +52,7 @@ sub EVENT_ITEM {
       quest::summonitem(2612); #Custom Cowl of Mortality
     }
   }   
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END OF FILE

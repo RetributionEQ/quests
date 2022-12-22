@@ -16,6 +16,6 @@ if (plugin::check_handin(\%itemcount, 5544 =>1, 6268 =>1 )) {
   quest::summonitem(6267); # Item: Cloak of the Dar Khura Journeyman
   quest::exp(10000);
 }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:Not_Found -- Amat_Iuziq

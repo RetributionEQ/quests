@@ -35,7 +35,7 @@ sub EVENT_ITEM {
     quest::summonitem(1884); # Item: Key of Veeshan
     quest::set_zone_flag(108);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # Quest by mystic414

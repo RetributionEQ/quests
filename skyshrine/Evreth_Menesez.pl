@@ -27,7 +27,7 @@ sub EVENT_ITEM {
       quest::exp(1250);
      }
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # Quest edited and updated by mystic414

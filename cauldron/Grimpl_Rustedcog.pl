@@ -20,5 +20,5 @@ sub EVENT_ITEM {
     quest::summonitem(67005); # Item: Venom Filled Scales
     quest::summonitem(67004); # Item: Note to Saeko
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

@@ -76,7 +76,7 @@ sub EVENT_ITEM {
         quest::summonitem(31083); # Item: Beguiler's Slippers
       }
       else {
-        #plugin::return_items(\%itemcount);
+        plugin::return_items(\%itemcount);
         return 1;
       }
       quest::exp(100000);

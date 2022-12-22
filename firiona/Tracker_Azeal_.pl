@@ -18,7 +18,7 @@ sub EVENT_ITEM {
     quest::spawn2(84311,0,0,-1822,617,142.5,206); # NPC: a_drachnid_spy
     quest::depop();
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

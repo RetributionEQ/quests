@@ -53,5 +53,5 @@ sub EVENT_ITEM {
      quest::summonitem(3746); # Item: Talisman of the Holy Rite
      quest::exp(10000);    
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 } 

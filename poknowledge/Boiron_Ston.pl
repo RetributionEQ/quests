@@ -20,7 +20,7 @@ sub EVENT_ITEM {
     quest::exp(250);
   }
 
-   #plugin::return_items(\%itemcount);
+   plugin::return_items(\%itemcount);
  
     
 }#END of FILE Zone:poknowledge  ID:202086 -- Boiron_Ston 

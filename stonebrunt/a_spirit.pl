@@ -30,7 +30,7 @@ sub EVENT_ITEM {
     quest::exp(10000);
     quest::summonitem(2297); #Idol of Fear
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

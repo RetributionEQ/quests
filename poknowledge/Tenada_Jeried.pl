@@ -22,7 +22,7 @@ sub EVENT_ITEM {
     quest::summonitem(28798);#Secrets of the Planes
     quest::exp(1000000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:poknowledge  ID:202046 -- Tenada_Jeried 
 

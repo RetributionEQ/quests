@@ -22,5 +22,5 @@ sub EVENT_ITEM {
     quest::spawn(208177,0,0,$x,$y,$z); #A Wandering Spirit
     quest::depop_withtimer();
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

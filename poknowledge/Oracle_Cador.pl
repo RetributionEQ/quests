@@ -31,5 +31,5 @@ sub EVENT_ITEM {
     	quest::summonitem(quest::ChooseRandom(10028, 10037, 22503, 15981));#Random gem: Peridot, Diamond, Blue Diamond, Raw Diamond
     	quest::exp(698775);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:poknowledge  ID:202238 -- Oracle_Cador 

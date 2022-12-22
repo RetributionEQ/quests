@@ -31,7 +31,7 @@ if (plugin::check_handin(\%itemcount, 3451 =>1, 3445=>1, 2878=>1 )) {
   quest::summonitem(3452); # Item: Buckler of the Recruit
   quest::summonitem(3454); # Item: Skeletonbane Short Sword
 }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:155082 -- Khala_Dun_Hebijeb 
 

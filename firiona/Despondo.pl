@@ -56,6 +56,6 @@ sub EVENT_ITEM {
     quest::faction(441,-60); # Legions of Cabilis
     quest::faction(313,-60); # Pirates of Guntak
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 

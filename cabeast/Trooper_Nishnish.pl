@@ -31,6 +31,6 @@ sub EVENT_ITEM {
     quest::say("You shall get my signature when I have the legion order and two barracuda teeth.");
     quest::summonitem(12465); # Item: Barracuda Tooth
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:cabeast  ID:5131 -- Trooper_Nishnish

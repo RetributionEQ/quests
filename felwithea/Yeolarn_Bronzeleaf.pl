@@ -114,5 +114,5 @@ sub EVENT_ITEM {
 		quest::faction(5001,15); 		#:: + Anti-mage
 	}
 	#:: Return unused items
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }

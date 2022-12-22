@@ -28,5 +28,5 @@ sub EVENT_ITEM {
 		quest::signalwith(155340,2,10); # NPC: Delival
 		quest::depop();
 	}
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

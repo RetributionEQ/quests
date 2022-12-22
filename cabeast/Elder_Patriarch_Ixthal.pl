@@ -52,5 +52,5 @@ sub EVENT_ITEM {
     quest::summonitem(48049); #Claw of the Mature Patriarch
     quest::exp(25000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

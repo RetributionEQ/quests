@@ -98,7 +98,7 @@ deeply.");
     quest::exp(1000);
     quest::ding();
    }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: shadeweaver ID: 165130 NPC: Spiritist_Karina

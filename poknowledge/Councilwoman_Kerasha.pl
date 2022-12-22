@@ -47,6 +47,6 @@ sub EVENT_ITEM {
     quest::say("I understand. Take this, may it serve you well, $name.");
     quest::summonitem(32106); #Jade Hoop of Speed
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:poknowledge  ID:202125 -- Councilwoman_Kerasha

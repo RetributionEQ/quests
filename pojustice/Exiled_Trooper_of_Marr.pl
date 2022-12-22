@@ -16,5 +16,5 @@ sub EVENT_ITEM
 		quest::summonitem(29281); # Item: Box of Souls
 		quest::summonitem(29292); # Item: Soul Sphere
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }

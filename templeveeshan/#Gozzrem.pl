@@ -43,7 +43,7 @@ sub EVENT_ITEM {
       quest::summonitem(31465); # Item: White Dragon Idol
     }
     else {
-      #plugin::return_items(\%itemcount);
+      plugin::return_items(\%itemcount);
       return 1;
     }
     quest::say("You have done well, $race. You have proven that you are strong, but do you dare enter those halls again?");

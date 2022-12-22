@@ -35,5 +35,5 @@ sub EVENT_ITEM {
       quest::summonitem(8413); # Item: Taruun Garrison Cloak
     }
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

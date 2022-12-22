@@ -92,7 +92,7 @@ sub EVENT_ITEM {
     quest::exp(500);
     quest::summonitem(29827); # Barkhem Fancy Pantaloons
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:sharvahl  ID:155200 -- Master_Barkhem

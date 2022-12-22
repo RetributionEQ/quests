@@ -25,7 +25,7 @@ sub EVENT_ITEM {
     quest::summonitem(1198); # Item: Embroidered Coldain Prayer Shawl
     quest::summonitem(1849); # Item: Runed Prayer Shawl pattern
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: thurgadina ID: 115168 Name: Betti_Frostweaver

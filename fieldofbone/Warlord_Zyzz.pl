@@ -32,7 +32,7 @@ sub EVENT_ITEM {
     quest::say("Great work!! You have helped keep the gate safe. I reward you with the geozite tool. You may find its purpose within Cabils' warriors guild. A true Iksar warrior should always have one.");  #text not from live
     quest::summonitem(12657); # Item: Geozite Tool
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 

@@ -31,6 +31,6 @@ sub EVENT_ITEM {
       quest::say("Sorry stranger, but that is not enough to barter with.");
       quest::givecash($copper, $silver, $gold, $platinum);
     }
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
   }
 }

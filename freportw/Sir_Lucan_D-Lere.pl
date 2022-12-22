@@ -44,5 +44,5 @@ sub EVENT_ITEM {
 		quest::faction(362,-40); 	#:: - Priests of Marr
 	}
 	#:: Return unused items
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }

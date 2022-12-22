@@ -27,5 +27,5 @@ sub EVENT_ITEM {
     quest::say("This is a sad day indeed. Thank you for your valorous deeds, $name. Please accept this along with our gratitude for finding out what became of Elisi.");
     quest::summonitem(61001); # Item: Runed Brooch of Erudin
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

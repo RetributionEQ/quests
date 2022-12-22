@@ -29,7 +29,7 @@ sub EVENT_ITEM {
    #Summon: Vision of Sebilite
    quest::summonitem(12949); # Item: Vision of Sebilite
   }
-   #plugin::return_items(\%itemcount);
+   plugin::return_items(\%itemcount);
 }
 
 

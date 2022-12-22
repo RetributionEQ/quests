@@ -47,7 +47,7 @@ sub EVENT_ITEM {
 	quest::setglobal('Fatestealer_page',1, 5, 'F' );
 	$client->message(15,"You have learned how to imbue a blade with dark energy. ");
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE  Zone:steamfontmts  ID:448035 -- Yendar_Starpyre

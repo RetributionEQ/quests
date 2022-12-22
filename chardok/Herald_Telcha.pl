@@ -57,6 +57,6 @@ sub EVENT_ITEM {
     quest::summonitem(5727); # 5727  Regal Band of Bathezid
   }
   
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 

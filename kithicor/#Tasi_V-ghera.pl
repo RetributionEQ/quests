@@ -19,7 +19,7 @@ sub EVENT_ITEM {
     quest::spawn2(20205,0,0,2316,797,275,387); # NPC: General_V`ghera
  }
 
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 
 }
 

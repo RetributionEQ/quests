@@ -23,7 +23,7 @@ sub EVENT_ITEM {
   quest::spawn2(104075,0,0,$x,$y,$z,$h); # NPC: Haggle_Baron_Dalnir
   quest::depop_withtimer();
  }
- #plugin::return_items(\%itemcount);
+ plugin::return_items(\%itemcount);
 }
 
 #Submitted by Jim Mills

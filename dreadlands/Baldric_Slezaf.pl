@@ -39,5 +39,5 @@ sub EVENT_ITEM {
     quest::summonitem(20542); # Item: Singing Short Sword
     quest::exp(350000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

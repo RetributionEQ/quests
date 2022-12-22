@@ -44,6 +44,6 @@ sub EVENT_ITEM {
     quest::say("Well done, shiny enough to eat off of. My compliments to you $name, Barkhem would be most pleased."); 
     quest::summonitem(29815); # Item: Bokh's work order
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:7038 -- Khala_Dun_Bokh

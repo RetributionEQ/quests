@@ -129,7 +129,7 @@ if (plugin::check_handin(\%itemcount, 55296 => 1)) { # Grand Robe of the Oracle
 	quest::summonitem(55297); # Grand Tunic of the Oracle
 	}
 
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # END of FILE Zone:oot  ID:69086 -- Raotin_teawel.pl

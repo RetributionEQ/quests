@@ -17,6 +17,6 @@ sub EVENT_ITEM{
     quest::unique_spawn(161077,0,0,-372,-95,10,176); # NPC: #Bregun_Dorey
   }
   
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 

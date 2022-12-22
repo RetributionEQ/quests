@@ -37,7 +37,7 @@ sub EVENT_ITEM {
     quest::exp(10000);
      
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:cabwest  ID:3433 -- Master_Rixiz 

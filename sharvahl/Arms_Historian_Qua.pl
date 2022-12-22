@@ -19,5 +19,5 @@ sub EVENT_ITEM {
     quest::say("Take him this receipt and I'm sure that he'll get you the weapons as soon as possible. Take care. It appears that a lot of people are relying on you in this matter. You may be the only person that can do this.");
     quest::summonitem(9050); # Item: Qua's Receipt
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

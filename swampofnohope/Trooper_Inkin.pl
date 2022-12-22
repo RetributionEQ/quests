@@ -23,6 +23,6 @@ sub EVENT_ITEM {
     quest::say("No deal! You bring me the legion order and the froglok skipping stone.");
     quest::summonitem(12425); # Item: Skipping Stone
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:swampofnohope  ID:83063 -- Trooper_Inkin

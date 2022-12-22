@@ -30,5 +30,5 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_ITEM {
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

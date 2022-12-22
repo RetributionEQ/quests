@@ -77,7 +77,7 @@ sub EVENT_ITEM {
 	quest::setglobal('Fatestealer_sv',1, 5, 'F' );
 	quest::setglobal('Fatestealer_gem',1, 5, 'F' );
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:sharvahl  ID:155169 -- Master_Taruun_Rakutah

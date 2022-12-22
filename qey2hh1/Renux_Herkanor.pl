@@ -38,7 +38,7 @@ sub EVENT_ITEM {
   }
   else {
     quest::say("Go away! We don't have time for the likes of you.");
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
   }
 }
 #END of FILE zone: ID:12 -- Renux_Herkanor.pl

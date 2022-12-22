@@ -23,6 +23,6 @@ quest::setglobal("Shar_Vahl_Cit",5,5,"F");
 quest::summonitem("18304");
 quest::ding();
 quest::exp(300); }
-#plugin::return_items(\%itemcount);
+plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:155154 -- King_Raja_Kerrath 

@@ -25,6 +25,6 @@ sub EVENT_ITEM {
     quest::summonitem(6275); # Item: Cloak of the Taruun Journeyman
     quest::summonitem(6158); # Item: Sonic Wolf Bane Dagger
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #end of file  Zone:sharvahl  ID:155057 -- Elder_Taruun_Ternq

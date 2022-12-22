@@ -258,7 +258,7 @@ sub EVENT_ITEM {
   #   quest::exp(2000000);
   # }
 
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_WAYPOINT_ARRIVE {

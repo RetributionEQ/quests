@@ -24,6 +24,6 @@ sub EVENT_ITEM {
     quest::summonitem(20647); # Item: Symbol of Testing
     quest::say("You must ask the master about the symbol of testing. Do not hand the symbol to him for he may interpret that as a breach of conduct.");
   }
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
 }
 #END of FILE  Quest by: Solid11  Zone:lakerathe  ID:51047 -- Emkel_Kabae

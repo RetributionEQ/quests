@@ -51,7 +51,7 @@ sub EVENT_ITEM {
     quest::faction(430,-90); #CoV
 	quest::exp(20000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: kael ID: 113044 NPC: Captain_Bvellos

@@ -42,5 +42,5 @@ sub EVENT_ITEM {
     quest::say("Perfect! Now, you must return the gems and platinum to the Spirit of Enlightenment. I've put it in a purse to keep them safe. You truly are beginning to surpass all of our expectations, $name.");
     quest::summonitem(57614); # Item: Runed Purse of the McShannels
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

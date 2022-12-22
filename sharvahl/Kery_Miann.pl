@@ -37,6 +37,6 @@ sub EVENT_ITEM {
     quest::exp(10000);
     quest::faction(1532,1); # Faction: Khati Sha
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #End of FILE Zone:sharvahl  ID:155061 -- Kery_Miann

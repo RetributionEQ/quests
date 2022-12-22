@@ -58,5 +58,5 @@ quest::say("Great work.  These notes will help us in our cause.");
   quest::summonitem(51096); # Item: Maul of the Kor Initiate
     quest::exp(1000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

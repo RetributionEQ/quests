@@ -66,7 +66,7 @@ sub EVENT_ITEM {
     quest::exp(1000);
   }
   plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #Submitted By: Senzo

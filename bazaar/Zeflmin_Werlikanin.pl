@@ -88,7 +88,7 @@ sub EVENT_ITEM {
     quest::emote("takes the crystal from you and mutters some arcane words over it. 'The floating map is now active, just go step on up and you'll be whisked away to your destination! I hope you don't get motion sickness!'");
     quest::ze(15,'The Guildhall Portal has been aligned to Brell\'s Rest');
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #[Sat May 05 10:12:10 2012] LOADING, PLEASE WAIT...

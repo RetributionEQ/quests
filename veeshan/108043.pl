@@ -29,7 +29,7 @@ sub EVENT_ITEM {
 			quest::summonitem(69380); # Item: Wand of the Lava Shaper
 		}
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 
 }
 

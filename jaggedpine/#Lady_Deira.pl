@@ -89,5 +89,5 @@ sub EVENT_ITEM {
       quest::exp(2000);
    }
   }
-   #plugin::return_items(\%itemcount);
+   plugin::return_items(\%itemcount);
 }

@@ -23,7 +23,7 @@ sub EVENT_ITEM {
     quest::summonitem(12940); # Item: Nostrolo Tambourine
   }
   
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # Nostrolo Tambourine, Firiona Vie, Assistant Bufford (id 84201)

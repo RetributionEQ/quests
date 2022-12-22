@@ -34,6 +34,6 @@ sub EVENT_ITEM{
     quest::faction(1541,-30); # Hand legionnaries
   }
   
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 

@@ -15,6 +15,6 @@ sub EVENT_ITEM {
     quest::say(""); #Need real text
     quest::summonitem(3643); #Fareed's Note to Ayyad
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:155280 -- Khala_Dun_Fareed

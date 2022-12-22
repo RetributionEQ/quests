@@ -19,5 +19,5 @@ sub EVENT_ITEM {
     quest::exp(6987750);#2% of level 56 xp, quest intended for level 55 characters
   }
   
-   #plugin::return_items(\%itemcount);
+   plugin::return_items(\%itemcount);
 }#Done

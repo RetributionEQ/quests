@@ -23,7 +23,7 @@ sub EVENT_ITEM {
     quest::summonitem(3466); # Item: Hardened Buckler of the Beetle
     quest::summonitem(3465); # Item: Cloak of the Taruun Recruit
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:sharvahl  ID:155079 -- Harbin_Gernawl 

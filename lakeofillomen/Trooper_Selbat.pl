@@ -14,6 +14,6 @@ sub EVENT_ITEM {
     quest::summonitem(18249); #Legion Order (9 signed)
     quest::exp(200);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:lakeofillomen  ID:5139 -- Trooper_Selbat

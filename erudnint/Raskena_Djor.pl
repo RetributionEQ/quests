@@ -21,5 +21,5 @@ sub EVENT_ITEM {
 		#:: Grant a small amount of XP
 		quest::exp(100);
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }

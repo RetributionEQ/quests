@@ -70,7 +70,7 @@ sub EVENT_ITEM {
         # Silent Fist Clan Faction ID-300
         quest::faction("309","10");
     }
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:kithicor ID:20220 -- Grim_Oakfist
 

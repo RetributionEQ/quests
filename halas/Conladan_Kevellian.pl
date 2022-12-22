@@ -60,7 +60,7 @@ sub EVENT_ITEM {
     quest::summonitem(55148); # Item: Dagger of the White Rose
     quest::faction(305,30); # Faction: Rogues of the White Rose
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: halas ID: 29080 NPC: Conladan_Kevellian

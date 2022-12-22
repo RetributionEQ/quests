@@ -41,7 +41,7 @@ sub EVENT_ITEM {
       quest::summonitem(10194); # Item: Pulsating Hyacinth Telesm
       quest::exp(10000);
    }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:rathemtn  ID:50271 -- Xenyari_Lisariel 

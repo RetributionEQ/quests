@@ -45,6 +45,6 @@ sub EVENT_ITEM {
     quest::exp(300);
     quest::faction(1513,2); # Guardians of Shar Vahl
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:155274 -- Weapons_Master_Wygans

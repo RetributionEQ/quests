@@ -19,6 +19,6 @@ sub EVENT_ITEM {
     quest::exp(100000);
     quest::summonitem(20650); # Item: Refined Manisi Herb
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE  Quest by: Solid11  Zone:swampofnohope  ID:83074 -- Ssessthrass

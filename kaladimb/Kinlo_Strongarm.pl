@@ -62,7 +62,7 @@ sub EVENT_ITEM {
       quest::summonitem(20483); # Item: Refined Mithril Blade
     }
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: kaladimb ID: 67030 NPC: Kinlo_Strongarm

@@ -54,6 +54,6 @@ sub EVENT_ITEM {
     quest::exp(1000);
     quest::faction(1513,10); # Faction: Guardians of Shar Vahl
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:155207 -- Cook_Yalkiin

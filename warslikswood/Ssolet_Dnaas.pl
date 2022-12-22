@@ -16,6 +16,6 @@ sub EVENT_ITEM {
     quest::summonitem(19958); # Item: Piece of a medallion
     quest::exp(1000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 # Quest by mystic414

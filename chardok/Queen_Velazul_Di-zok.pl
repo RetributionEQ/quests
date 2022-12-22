@@ -31,7 +31,7 @@ sub EVENT_ITEM{
     }
   } # end faction=1
   
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 

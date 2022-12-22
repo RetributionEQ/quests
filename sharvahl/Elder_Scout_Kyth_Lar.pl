@@ -39,6 +39,6 @@ sub EVENT_ITEM {
     quest::setglobal("Shar_Vahl_Cit", 7, 5, "F");
   }
   plugin::try_tome_handins(\%itemcount, $class, "Rogue");
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:155253 -- Elder_Scout_Kyth_Lar

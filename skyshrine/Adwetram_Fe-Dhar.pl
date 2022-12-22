@@ -65,7 +65,7 @@ sub EVENT_ITEM {
       quest::summonitem(31125); # Item: Scaled Knight's Boots
     }
     else {
-      #plugin::return_items(\%itemcount);
+      plugin::return_items(\%itemcount);
       return 1;
     }
     quest::emote("smiles warmly as he hands you your reward.");
@@ -76,7 +76,7 @@ sub EVENT_ITEM {
     quest::faction(448,-60); # Kromzek
   }
   else {
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
   }
 }
 

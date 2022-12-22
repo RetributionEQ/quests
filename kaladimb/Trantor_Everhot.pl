@@ -51,6 +51,6 @@ sub EVENT_ITEM {
       $ItemCount = 0;
     }
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:kaladimb ID:67033 -- Trantor_Everhot.pl

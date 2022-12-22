@@ -18,7 +18,7 @@ sub EVENT_ITEM {
   quest::summonitem(9035); # Item: Wrapped Wolf Totem
     
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:lfaydark  ID:5796 -- Scout_Rahjiq 
 

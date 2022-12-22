@@ -30,6 +30,6 @@ sub EVENT_ITEM {
   elsif (($client->GetModCharacterFactionLevel(226) > 24) && plugin::check_handin(\%itemcount, 12309 => 1)) {
     quest::say("I instructed you to return with no less than two dark pots.");
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:rathemtn  ID:50113 -- Abigail

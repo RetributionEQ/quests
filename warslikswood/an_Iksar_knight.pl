@@ -29,6 +29,6 @@ sub EVENT_ITEM {
  else{ 
  quest::emote("spits flarefire seeds on your chest. 'Listen up!! I asked for the misscribed spells; Fear, Lifetap and Gate, and also, a shovel.'");
  }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #Submitted by: Jim Mills

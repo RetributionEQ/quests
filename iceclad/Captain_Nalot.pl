@@ -40,7 +40,7 @@ sub EVENT_ITEM {
     quest::exp(50000);
     quest::summonitem(30008); # Item: Eyepatch of Plunder
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 my $shawlsignal = 0;

@@ -51,5 +51,5 @@ sub EVENT_ITEM {
     quest::summonitem(4155); # Item: Lambent Vambraces
   }
 
-	  #plugin::return_items(\%itemcount);
+	  plugin::return_items(\%itemcount);
 }

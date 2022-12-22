@@ -24,7 +24,7 @@ sub EVENT_ITEM {
     quest::summonitem(quest::ChooseRandom(19329,19320,19324,19317)); # Item(s): Spell: Tears of Solusek (19329), Spell: Abscond (19320), Spell: Thunderbolt (19324), Spell: Tishan`s Discord (19317)
     quest::exp(1000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 

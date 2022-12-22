@@ -17,5 +17,5 @@ sub EVENT_ITEM {
   quest::say("Oh, this is a fine piece of armor I made for ya!");
   quest::exp(25000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

@@ -14,6 +14,6 @@ sub EVENT_ITEM {
     quest::exp(85000);
     quest::summonitem(1573); # Item: Ring of the Messenger
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 # EOF zone: toxxulia ID: 414091 NPC: Lanivon_Baxer

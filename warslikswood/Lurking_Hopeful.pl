@@ -47,6 +47,6 @@ sub EVENT_ITEM {
       quest::givecash($copper, $silver, $gold, $platinum);
     }
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #EndFile: warslikswood\Lurking_Hopeful.pl (79115)

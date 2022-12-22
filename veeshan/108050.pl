@@ -36,5 +36,5 @@ sub EVENT_ITEM {
 			quest::summonitem(69381); # Item: Earring of the Brood
 		}
 	}
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
 }

@@ -17,7 +17,7 @@ sub EVENT_ITEM {
     quest::faction(1509,10); #haven defenders
     quest::faction(1508,10); #traders of the haven
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:dawnshroud  ID:174085 -- Lieutenant_Broansas 

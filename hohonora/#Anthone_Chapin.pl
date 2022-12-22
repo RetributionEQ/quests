@@ -12,5 +12,5 @@ sub EVENT_ITEM {
     quest::setglobal("anthone",0,2,"M30");
     quest::depop();
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

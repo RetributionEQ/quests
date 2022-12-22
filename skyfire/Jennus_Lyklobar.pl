@@ -22,7 +22,7 @@ sub EVENT_ITEM {
     quest::summonitem(28009); # Item: Element of Fire
     quest::exp(3000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone: skyfire ID:91046 -- Jennus_Lyklobar

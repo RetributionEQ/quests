@@ -27,7 +27,7 @@ sub EVENT_ITEM {
       quest::faction("330","-1"); #Freeport Militia
       quest::faction("362","1"); #Priests of Marr
    }
-   #plugin::return_items(\%itemcount);
+   plugin::return_items(\%itemcount);
 }
 
 

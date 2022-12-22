@@ -23,7 +23,7 @@ sub EVENT_ITEM {
   else {
     quest::givecash($copper, $silver, $gold, $platinum);
   }
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
 }
 
 # Quest by mystic414

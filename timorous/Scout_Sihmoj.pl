@@ -17,5 +17,5 @@ sub EVENT_ITEM {
     quest::say("I knew that this creature had power, but how do you explain this? That fight was well beyond my comprehension. I'm not sure what to do other than have you return the bag to Elder Dumul. I'm sure that he will know what to do next. Take care and be swift.");
     quest::summonitem(9048); # Item: Sack of Broken Glass
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

@@ -67,7 +67,7 @@ sub EVENT_ITEM {
 		quest::spawn2(119167,0,0,-4954,-671,-182,126);  # Berzerker_Voldak
 		quest::spawn2(119169,0,0,-4976,-672,-182,126);  # Disciple_Atharm
 	}	
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }
 
 sub EVENT_SIGNAL {

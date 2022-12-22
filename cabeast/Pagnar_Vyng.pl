@@ -20,6 +20,6 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:cabeast  ID:106118 -- Pagnar_Vyng

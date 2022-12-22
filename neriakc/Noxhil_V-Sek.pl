@@ -60,5 +60,5 @@ sub EVENT_ITEM {
 		#list of rewards on live, so I'm adding it for completeness. -Kilelen
 		quest::summonitem(quest::ChooseRandom(15035, 15362, 15445, 28216));#Random level 12 Necromancer spell (Bind Affinity, Convoke Shadow, Lifedraw, Lesser Summon Corpse
 	}
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:neriakc  ID:42042 -- Noxhil_V`Sek 

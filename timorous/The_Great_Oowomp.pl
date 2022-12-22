@@ -59,7 +59,7 @@ sub EVENT_ITEM {
     quest::summonitem(12941); # Item: Spell: Cannibalize II
     quest::exp(45000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

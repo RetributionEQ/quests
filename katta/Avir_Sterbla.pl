@@ -22,7 +22,7 @@ sub EVENT_ITEM {
   quest::faction(1485,-10);  # -Eye of Seru
   quest::faction(1541,-10); # -Hand Legionnaries
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #Quest: Vampyre Ash & Blood (Submitted By: Senzo)

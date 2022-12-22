@@ -23,7 +23,7 @@ sub EVENT_ITEM {
     quest::summonitem(28032); # Item: Element of Earth
     quest::exp(5000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone: firiona ID:84160 -- Tiblner_Milnik

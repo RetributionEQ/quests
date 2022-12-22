@@ -15,7 +15,7 @@ sub EVENT_ITEM {
     quest::say("Thank you for setting his spirit free. Keep his memory alive with this.");
     quest::summonitem(19010); # Item: Icon of the Reverent
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # Quest by mystic414

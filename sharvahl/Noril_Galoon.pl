@@ -27,6 +27,6 @@ sub EVENT_ITEM {
     quest::exp(2000);
     quest::faction( 1513,10 ); # Faction: Guardians of Shar Vahl
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #endoffile  Noril_Galoon  ID 155059

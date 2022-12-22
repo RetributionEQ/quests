@@ -27,5 +27,5 @@ sub EVENT_ITEM {
     quest::say("Me been waitin for doze. Dank yoo, $name.  Take dis.");
     quest::summonitem(28740); # Item: Troll Receipt
   }
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
 } 

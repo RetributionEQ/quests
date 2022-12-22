@@ -107,7 +107,7 @@ sub EVENT_ITEM {
     quest::summonitem(3935); # Vambraces
 }
 
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
 
 }
 

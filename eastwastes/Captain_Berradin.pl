@@ -6,7 +6,7 @@ sub EVENT_ITEM {
     quest::say("Glug, glug, glug...");
     quest::settimer(1,5);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

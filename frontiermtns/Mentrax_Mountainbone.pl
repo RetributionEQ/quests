@@ -14,7 +14,7 @@ sub EVENT_ITEM {
     quest::summonitem(20666); # Item: Rejesiam Ore
     quest::exp(25000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: frontiermtns ID: 92148 NPC: Mentrax_Mountainbone

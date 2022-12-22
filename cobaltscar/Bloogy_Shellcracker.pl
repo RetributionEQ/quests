@@ -16,5 +16,5 @@ sub EVENT_ITEM {
     quest::faction(432, 30); #Othmir
     quest::faction(431, -60); #Ulthork
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

@@ -19,7 +19,7 @@ sub EVENT_ITEM {
     quest::say("Run onward, my friend, to the far off Desert of Ro and give this torch to Andad Filla.");
     quest::summonitem(20533); # Item: Torch of Ro
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:misty  ID:33092 -- Fajio_Knejo

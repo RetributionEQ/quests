@@ -61,5 +61,5 @@ sub EVENT_ITEM {
     quest::summonitem(3768); # Item: Earth Blessed Boots
     quest::exp(10000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 } 

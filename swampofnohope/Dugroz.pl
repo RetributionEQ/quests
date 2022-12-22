@@ -26,7 +26,7 @@ sub EVENT_ITEM {
     quest::summonitem(1600); # Item: Key to Charasis
     quest::set_zone_flag(105);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # Quest by mystic414

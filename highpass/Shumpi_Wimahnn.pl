@@ -76,5 +76,5 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-   #plugin::return_items(\%itemcount);
+   plugin::return_items(\%itemcount);
 }

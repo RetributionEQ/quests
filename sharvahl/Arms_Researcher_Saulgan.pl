@@ -52,7 +52,7 @@ quest::faction(1513,2); # Guardians of Shar Vahl
 
 }
 
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
 
 }
 

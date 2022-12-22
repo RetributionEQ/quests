@@ -32,5 +32,5 @@ sub EVENT_ITEM {
     quest::summonitem(51117); # Item: Reinforced Leathery Girdle
   }
   
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

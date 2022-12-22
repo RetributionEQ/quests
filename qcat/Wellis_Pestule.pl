@@ -43,5 +43,5 @@ sub EVENT_ITEM {
     quest::say("A fine weapon for a Knight of the Bloodsabers. Go now and spread the Disease!");
     quest::summonitem(20260); # Item: Scourge Knight Saber
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

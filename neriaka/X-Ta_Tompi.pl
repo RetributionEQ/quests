@@ -157,7 +157,7 @@ sub EVENT_ITEM
    #Approx half a blue at level 31
    quest::exp(62000);
  }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:neriaka -- X`Ta_Tompi

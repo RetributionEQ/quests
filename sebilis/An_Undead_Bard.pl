@@ -39,7 +39,7 @@ sub EVENT_ITEM {
     quest::attack($name);
     $spawn = 1;
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_DEATH_COMPLETE {

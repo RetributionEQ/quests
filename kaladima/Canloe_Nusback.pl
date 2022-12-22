@@ -97,6 +97,6 @@ sub EVENT_ITEM {
     quest::exp(32000);
   }
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:kaladima  ID:60005 -- Canloe_Nusback

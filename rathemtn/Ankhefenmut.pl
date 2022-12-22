@@ -75,5 +75,5 @@ if ($client->GetGlobal("beast_epic") ==13) {
 	quest::setglobal("beast_epic",14,5,"F");
   }
 }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

@@ -14,5 +14,5 @@ sub EVENT_ITEM {
     quest::summonitem(quest::ChooseRandom(8960, 8961)); # Item(s): Shiny Robe of the Underfoot (8960)
     quest::exp(5000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

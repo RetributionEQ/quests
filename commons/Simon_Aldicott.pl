@@ -24,7 +24,7 @@ sub EVENT_ITEM {
     quest::faction(281,100); #knights of truth
     quest::exp(200000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_SIGNAL {

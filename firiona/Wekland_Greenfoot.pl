@@ -16,5 +16,5 @@ sub EVENT_ITEM {
     quest::say("Thank you for your assistance. Here is the reward that you were promised.");
     quest::summonitem(62197); # Item: Silken Cape of Exploration
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

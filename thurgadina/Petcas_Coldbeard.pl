@@ -19,7 +19,7 @@ sub EVENT_ITEM {
     quest::say("Here ya go!");
     quest::summonitem(30145); #The Icy Mug Souvenir Stein
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_SIGNAL {

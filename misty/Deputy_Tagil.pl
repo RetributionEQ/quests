@@ -14,7 +14,7 @@ sub EVENT_ITEM {
     quest::say("What's this? Oh dear. I am very sorry. Please take this to Uner with my apologies.");
     quest::summonitem(13240); # Item: Deputy Tagil's Payment
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #End of File, Zone:misty  NPC:33090 -- Deputy_Tagil

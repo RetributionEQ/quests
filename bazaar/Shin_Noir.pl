@@ -17,5 +17,5 @@ sub EVENT_ITEM
         quest::say("(Log out to see your changes)");
         $client->SetBaseRace(6);
     }
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
 }

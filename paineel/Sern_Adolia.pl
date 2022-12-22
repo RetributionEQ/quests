@@ -72,7 +72,7 @@ sub EVENT_ITEM {
     quest::faction(242, -30); # Faction: Deepwater Knights
     quest::faction(254, -30); # Faction: Gate Callers
   } 
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:paineel  ID:75072 -- Sern_Adolia

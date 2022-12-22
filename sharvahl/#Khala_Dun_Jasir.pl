@@ -23,6 +23,6 @@ sub EVENT_ITEM {
   }
   
   # return unused items
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:155294 -- Khala_Dun_Jasir

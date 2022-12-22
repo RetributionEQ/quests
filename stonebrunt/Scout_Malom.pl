@@ -18,5 +18,5 @@ sub EVENT_ITEM {
         quest::summonitem(9031); # Item: Official Seal of the Khati Sha
         quest::summonitem(9041); # Item: Wrapped Watcher Totem
       }
-      #plugin::return_items(\%itemcount);
+      plugin::return_items(\%itemcount);
 }

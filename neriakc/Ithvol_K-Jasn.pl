@@ -47,6 +47,6 @@ sub EVENT_ITEM {
     quest::faction(362, -30); #Priests of Marr
     quest::faction(1522, -30); #Primordial Malice
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #Done

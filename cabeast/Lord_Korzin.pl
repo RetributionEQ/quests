@@ -27,7 +27,7 @@ sub EVENT_ITEM {
   quest::faction(441,10); # Faction: Legion of Cabilis
  }
  plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
- #plugin::return_items(\%itemcount);
+ plugin::return_items(\%itemcount);
 }
 
 #Submitted by: Jim Mills

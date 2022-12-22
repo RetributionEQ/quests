@@ -25,6 +25,6 @@ sub EVENT_ITEM {
    quest::say("You have served us well and now I may get to work. You are indeed ready and should seek out the Elder Spirit of Enlightenment as soon as you are able. Should he deem you worthy and wise enough, he will have much work for you to do to preserve the way of the shaman."); 
    quest::setglobal("shaman_pre",3,5,"F");
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
   $qglobals{shaman_pre}=undef;
 }

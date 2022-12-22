@@ -23,7 +23,7 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
 	#:: Return unused items
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }
 
 # Converted to Perl by SS

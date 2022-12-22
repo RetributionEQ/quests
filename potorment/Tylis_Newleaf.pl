@@ -62,7 +62,7 @@ sub EVENT_ITEM {
 		quest::settimer(1,300);
 		$sphere = 1;
 	}
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 

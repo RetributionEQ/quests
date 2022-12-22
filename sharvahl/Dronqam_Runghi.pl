@@ -13,6 +13,6 @@ sub EVENT_ITEM {
     quest::say("Wonderful! I have little to offer you for your trouble aside from my gratitude. Here is a pinch of acrylia dust. I know it's not much. If you have no need for it go to Mignah, he can always use all kinds of acrylia.");
     quest::summonitem(3449); # Item: Pinch of Acrylia Dust
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:155080 -- Dronqam_Runghi

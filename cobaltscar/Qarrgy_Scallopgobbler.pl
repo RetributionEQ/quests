@@ -43,7 +43,7 @@ sub EVENT_ITEM {
     quest::faction(431, -60); # Faction: Ulthork
     quest::exp(10000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # Quest by mystic414

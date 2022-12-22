@@ -55,7 +55,7 @@ sub EVENT_ITEM {
 		quest::summonitem(26077); # Item: Underfoot Defenders Claymore
 	}
 	plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 
 }
 

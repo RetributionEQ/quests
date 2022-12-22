@@ -19,6 +19,6 @@ sub EVENT_ITEM {
     quest::summonitem(28087);#Narik's Ring
     quest::exp(250);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:poknowledge  ID:202133 -- Elisha_Dirtyshoes 
 

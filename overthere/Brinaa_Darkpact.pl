@@ -17,7 +17,7 @@ sub EVENT_ITEM {
     quest::summonitem(quest::ChooseRandom(19210,19224,19420,19206)); # Item(s): Spell: Unswerving Hammer (19210), Spell: Heroic Bond (19224), Spell: Sunskin (19420), Spell: Word of Vigor (19206)
     quest::exp(1000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:overthere  ID:93103 -- Brinaa_Darkpact 

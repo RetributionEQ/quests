@@ -18,5 +18,5 @@ sub EVENT_ITEM {
     quest::summonitem(9043); # Item: Wrapped Alligator Totem
     quest::summonitem(9031); # Item: Official Seal of the Khati Sha
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

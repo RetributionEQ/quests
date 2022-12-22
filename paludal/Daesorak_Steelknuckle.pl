@@ -32,7 +32,7 @@ sub EVENT_ITEM {
     $picks = 2;
   }
   else {
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
     return 1;
   }
   quest::exp(2500);

@@ -22,5 +22,5 @@ sub EVENT_ITEM {
     quest::spawn2(110118,0,0,$x,$y,$z,$h); # NPC: General_Bragmur_
     quest::depop_withtimer();
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

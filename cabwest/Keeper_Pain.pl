@@ -23,7 +23,7 @@ sub EVENT_ITEM {
     quest::faction(443,2); #Brood of Kotiz
     quest::faction(441,2); #Legion of Cabilis
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #End of File zone:cabwest ID: 82034 -- Keeper Pain

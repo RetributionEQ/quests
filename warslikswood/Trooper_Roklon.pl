@@ -21,6 +21,6 @@ sub EVENT_ITEM {
     quest::say("No, NO! I want the goblin scout beads and the legion order.");
     quest::summonitem(12672); # Item: Goblin Scout Beads
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:warslikswood  ID:79090 -- Trooper_Roklon

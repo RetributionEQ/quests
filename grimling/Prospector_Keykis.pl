@@ -36,7 +36,7 @@ sub EVENT_ITEM {
     quest::faction(1552,10); # VahShir Crusaders
   }
 
-  ##plugin::return_items(\%itemcount); # return unused items
+  #plugin::return_items(\%itemcount); # return unused items
 }
 
 #End of File, Zone:grimling  NPC:167113 -- Prospector_Keykis

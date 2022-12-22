@@ -27,7 +27,7 @@ sub EVENT_ITEM {
 		$client->Message(15, "You have received a character flag!");
 	}  
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #End of File zone:hohonora ID: 211037 -- Minok Targsk

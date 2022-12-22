@@ -24,7 +24,7 @@ sub EVENT_ITEM {
   quest::faction(442,20); # Faction: Crusaders of Greenmist
   quest::faction(441,10); # Faction: Legion of Cabilis
  }
- #plugin::return_items(\%itemcount);
+ plugin::return_items(\%itemcount);
 }
 
 #Submitted by: Jim Mills

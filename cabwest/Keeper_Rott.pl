@@ -28,5 +28,5 @@ sub EVENT_ITEM {
     quest::faction(441, 3); # Faction: Legion of Cabilis
     quest::exp(1000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

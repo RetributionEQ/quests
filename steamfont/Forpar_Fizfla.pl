@@ -46,7 +46,7 @@ sub EVENT_ITEM {
     quest::say("I hope you find a good use for that! I bet you could play it from the mountaintops and the people below would hear you. Thank you, $name, for making my lifelong dream come true!");
     quest::summonitem(20538); #Mystical Lute
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:steamfont  ID:56130 -- Forpar_Fizfla

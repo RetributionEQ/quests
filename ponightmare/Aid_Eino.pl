@@ -121,5 +121,5 @@ sub EVENT_ITEM {
     quest::setglobal("AidEinoDone",1,5,"F");
     quest::depop();
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

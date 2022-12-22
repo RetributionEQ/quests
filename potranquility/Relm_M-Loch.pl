@@ -17,5 +17,5 @@ sub EVENT_ITEM {
 		quest::say("Bah. Off you go.");
 		quest::movepc(71,539,1384,-664); # Zone: airplane
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }

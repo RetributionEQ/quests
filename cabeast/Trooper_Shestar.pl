@@ -14,7 +14,7 @@ sub EVENT_ITEM {
     quest::emote("quickly inserts the scales into a half finished coif and hands you the coif. 'I am afraid that is not enough and I cannot possibly complete the task while on duty. You must go and find an additional three Scaled Wolf Scales and take them, along with the Unfinished Coif, to the nearest forge and complete the smithing yourself. I hope you are a blacksmith.'");
     quest::summonitem(12468); # Item: Shestar's Unfinished Coif
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:cabeast  ID:106069 -- Trooper_Shestar

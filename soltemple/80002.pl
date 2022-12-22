@@ -49,7 +49,7 @@ sub EVENT_ITEM {
     $priestattack->AddToHateList($client, 1);
     quest::depop_withtimer();
   }
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
 }
 
 #End of File, Zone:soltemple  NPC:80002 -- a_seeker (quest)

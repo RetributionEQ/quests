@@ -32,7 +32,7 @@ sub EVENT_ITEM {
     quest::summonitem(6159); # Item: Cloak of the Jharin Journeyman
     quest::exp(10000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #End of File  Aljuum_Mohim Shar Vhal  ID 155052

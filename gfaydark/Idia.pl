@@ -42,6 +42,6 @@ if (plugin::check_handin(\%itemcount, 18167 => 1)) {
     quest::faction(304,-1); #ring of scale
     quest::faction(285,-1); #mayong mistmoore
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:gfaydark

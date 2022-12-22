@@ -32,7 +32,7 @@ quest::summonitem(5542); # Item: Mydi's Token
 quest::faction(1533,10); # Faction: Dar Khura
 quest::exp(3500); }
 
-#plugin::return_items(\%itemcount);
+plugin::return_items(\%itemcount);
 }
 #End of FILE Zone:sharvahl  ID:155068 -- Mydi_Darjik 
 

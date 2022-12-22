@@ -69,7 +69,7 @@ sub EVENT_ITEM {
     quest::summonitem(3781); # Item: Steel Threaded Sandals
     quest::exp(10000);
      } 
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 

@@ -25,7 +25,7 @@ sub EVENT_ITEM {
     quest::summonitem(1223); # Item: Symbol of Tunarian Worship
   }
   else {
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
     return 1;
   }
   quest::say("May Tunare's blessing be upon thee! Here, take this item and use it wisely.");

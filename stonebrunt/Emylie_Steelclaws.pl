@@ -16,5 +16,5 @@ sub EVENT_ITEM {
     quest::emote("takes the supplies and begins to work on the hammer. She works swiftly and efficiently then cools the finished hammer and hands it to you.");
     quest::summonitem(6981); #Kejekan Smithy Hammer
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

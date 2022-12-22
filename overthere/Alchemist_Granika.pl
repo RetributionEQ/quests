@@ -23,7 +23,7 @@ sub EVENT_ITEM {
   quest::spawn2(93303,0,0,1915,2825,-49,380); # NPC: #an_undead_marine
   quest::signalwith(93077,0,0); # NPC: a_cliff_golem
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

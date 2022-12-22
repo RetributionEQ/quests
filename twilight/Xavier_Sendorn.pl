@@ -123,7 +123,7 @@ sub EVENT_ITEM {
 
   }
 
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 
 }
 #END of FILE zone:twilight  ID:170145 -- Xavier_Sendorn.pl

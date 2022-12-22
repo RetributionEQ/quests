@@ -49,6 +49,6 @@ sub EVENT_ITEM {
     quest::say("I wasn't sure you would part with such a great amount of coin. I am impressed. Here is your statuette to work with. You will need to tailor the leather adornments you create and work with them into the statue itself, making it your own.");
     quest::summonitem(52931); # Item: Plain Beastlord Statuette
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:155243 -- Weapons_Master_Rahoul

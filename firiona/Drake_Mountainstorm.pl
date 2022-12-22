@@ -10,7 +10,7 @@ sub EVENT_ITEM {
   else {
     quest::say("I have no need for this, $name.");
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: firiona ID: 84301 NPC: Drake_Mountainstorm

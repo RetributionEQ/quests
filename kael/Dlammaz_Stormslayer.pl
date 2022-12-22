@@ -50,7 +50,7 @@ sub EVENT_ITEM {
     }
 
     else {
-      #plugin::return_items(\%itemcount);
+      plugin::return_items(\%itemcount);
       return 1;
     }
   

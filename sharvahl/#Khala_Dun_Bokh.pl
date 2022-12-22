@@ -50,7 +50,7 @@ properly.");
     quest::summonitem(29815); # Item: Bokh's work order
   }
   
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 

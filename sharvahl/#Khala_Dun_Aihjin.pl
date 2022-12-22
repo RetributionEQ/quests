@@ -20,7 +20,7 @@ sub EVENT_ITEM {
     quest::summonitem(29812); # Item: Aihjin's work order
   }
   
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:sharvahl  ID:7047 -- Khala_Dun_Aihjin 

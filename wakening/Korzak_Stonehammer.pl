@@ -19,7 +19,7 @@ sub EVENT_ITEM {
 		quest::faction(430,-30); # Claws of Veeshan
 		quest::exp(250);
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }
 
 

@@ -65,7 +65,7 @@ sub EVENT_ITEM {
     quest::faction("416","-15");
     quest::exp(1000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # Quest edited by mystic414

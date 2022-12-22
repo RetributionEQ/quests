@@ -67,7 +67,7 @@ sub EVENT_ITEM {
          quest::summonitem(55330); # Item: Boots of Fire's Fury
       }
       else {
-         #plugin::return_items(\%itemcount);
+         plugin::return_items(\%itemcount);
          return 1;
       }
       quest::emote("smiles wildly as he hands you your reward.");

@@ -60,5 +60,5 @@ sub EVENT_ITEM {
     quest::faction(1636, 5);#Inhabitants of Tanaan
     quest::givecash(0, 0, 0, 14);#14pp is specified exactly as part of the reward.
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }#Done

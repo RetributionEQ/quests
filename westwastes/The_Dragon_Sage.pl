@@ -44,7 +44,7 @@ sub EVENT_ITEM {
     quest::say("You will need a reagent to channel the magical energies through to enhance the power of the spell. Two peridots will be required to cast this spell. I wish you good fortune in your fight.");
     quest::summonitem(19469); #Porlos' Fury
   } 
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #EOF

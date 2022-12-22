@@ -35,7 +35,7 @@ sub EVENT_ITEM {
    quest::say("Ahahaha! Dat witch sur did get wat was commin ta her!");
    quest::givecash(0,0,1,5);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:oggok  ID:49046 -- Clurg

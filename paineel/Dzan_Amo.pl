@@ -19,6 +19,6 @@ sub EVENT_ITEM {
     quest::faction(233, -5);  #Crimson Hands
     quest::exp(1000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:paineel  ID:75018 -- Dzan_Amo

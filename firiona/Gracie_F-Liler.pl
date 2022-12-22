@@ -17,6 +17,6 @@ sub EVENT_ITEM() {
     quest::summonitem(quest::ChooseRandom(19386,19379,19381,19215)); # Item(s): Spell: Boon of the Clear Mind (19386), Spell: Clarity II (19379), Spell: Recant Magic (19381), Spell: Wake of Tranquility (19215)
     quest::exp(1000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:firiona  ID:84169 -- Gracie_F`Liler

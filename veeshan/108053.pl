@@ -24,7 +24,7 @@ sub EVENT_ITEM {
 			quest::summonitem(69385); # Item: Necklace of the Melodic Dragon
 		}
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }
 
 # Quest by mystic414

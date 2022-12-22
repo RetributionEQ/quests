@@ -34,7 +34,7 @@ sub EVENT_ITEM {
       quest::summonitem(4188); # Item: Small Crafted Plate Boots
     }
     else {
-      #plugin::return_items(\%itemcount);
+      plugin::return_items(\%itemcount);
       return 1;
     }
     quest::say("Here is your armor. I hope it fits better now.");

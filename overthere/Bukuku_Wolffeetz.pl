@@ -24,6 +24,6 @@ sub EVENT_ITEM {
     quest::summonitem(quest::ChooseRandom(19267,19271,19274,19266)); # Item(s): Spell: Talisman of Shadoo (19267), Spell: Shroud of the Spirits (19271), Spell: Torrent of Poison (19274), Spell: Insidious Decay (19266)
     quest::exp(1000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:overthere  ID:93100 -- Bukuku_Wolffeetz

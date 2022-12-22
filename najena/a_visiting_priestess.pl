@@ -43,7 +43,7 @@ sub EVENT_ITEM {
       quest::depop_withtimer();
     }
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:najena ID:44107 -- a_visiting_priestess 

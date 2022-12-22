@@ -22,6 +22,6 @@ sub EVENT_ITEM {
     quest::summonitem(19955); # Item: Medallion of the Kylong
     quest::exp(1000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 # Quest by mystic414

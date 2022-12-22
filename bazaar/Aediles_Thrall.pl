@@ -223,7 +223,7 @@ sub EVENT_ITEM {
          quest::givecash($copper, $silver, $gold, $platinum);
       }
    }
-   #plugin::return_items(\%itemcount);
+   plugin::return_items(\%itemcount);
    quest::settimer("face", 45);
 }
 

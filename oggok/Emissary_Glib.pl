@@ -22,5 +22,5 @@ sub EVENT_ITEM {
     quest::givecash(0,0,1,0);
     quest::summonitem(quest::ChooseRandom(17928,13371)); # Item(s): Forager Bag (17928), Hopper Spear (13371)
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

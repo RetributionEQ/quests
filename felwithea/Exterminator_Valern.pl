@@ -12,7 +12,7 @@ sub EVENT_ITEM {
     quest::faction(5001,5); # Faction: Anti-mage
     quest::givecash(1,1,1,0);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #Submitted by Senzo : PEQ Quest Team

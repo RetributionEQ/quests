@@ -36,7 +36,7 @@ sub EVENT_ITEM {
     quest::exp(100000);
     quest::summonitem(10610); # Item: 1st Piece of Staff
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF Zone: overthere ID: 93150 NPC: Modani_Qu'Loni

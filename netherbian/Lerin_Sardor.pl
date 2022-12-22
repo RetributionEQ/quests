@@ -22,6 +22,6 @@ sub EVENT_ITEM {
     quest::say("Thank you so much for your help! As I promised here is a small token of my appreciation.");
     quest::summonitem(5984); # Item: Jasper Kundan Earring
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:netherbian  ID:Not_Found -- Lerin_Sardor

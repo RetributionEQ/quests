@@ -68,6 +68,6 @@ sub EVENT_ITEM {
     quest::say("Excellent. I think this was the last of the organized Plasmatic Priests. You have done well. I will send you to my brother with my blessing. Thank you for your assistance.");
     $client->SetGlobal("cleric15pre", "1", 5, "F"); #Set prequest complete flag
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #End of File, Zone:timorous  NPC:96033 -- Omat_Vastsea

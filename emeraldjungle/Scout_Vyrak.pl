@@ -17,7 +17,7 @@ quest::emote("You here a massive creature roar as if awakened from a deep sleep.
     quest::summonitem(9031); # Item: Official Seal of the Khati Sha
     quest::summonitem(9039); # Item: Wrapped Gorilla Totem
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:emeraldjungle  ID:6289 -- Scout_Vyrak 
 

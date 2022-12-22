@@ -43,5 +43,5 @@ sub EVENT_ITEM {
   	quest::emote("beams 'Thank you, take this.'");#text made up
   	quest::summonitem(27265);#Sleeper's Key
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:eastwastes  ID:116086 -- Nelef_the_Trader 

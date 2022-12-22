@@ -44,6 +44,6 @@ sub EVENT_ITEM {
     quest::say("Now you need to get three Piles of Granite Pebbles and then you can tailor a Monk Training Bag for your caste.");
     quest::summonitem(12687); #Training Bag Husk
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:cabeast  ID:106059 -- Klok_Mugruk

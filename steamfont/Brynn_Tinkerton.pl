@@ -14,7 +14,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #EndFile: steamfont\Brynn_Tinkerton.pl (56160)

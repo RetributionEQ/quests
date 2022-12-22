@@ -22,7 +22,7 @@ sub EVENT_ITEM {
   }	
 	
 		plugin::try_tome_handins(\%itemcount, $class, 'Monk');
-		#plugin::return_items(\%itemcount);
+		plugin::return_items(\%itemcount);
 		#quest::say("I don't need this.");#Text made up
 	}
 #END of FILE Zone:poknowledge  ID:202010 -- Grandmaster_Chendra 

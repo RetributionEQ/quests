@@ -41,6 +41,6 @@ sub EVENT_ITEM {
 		quest::summonitem(85062); # Item: Bristlebane's Ticket of Admission
           quest::setglobal("halloween_zombie_heart",1,0,"D1");
     }
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
 }
 

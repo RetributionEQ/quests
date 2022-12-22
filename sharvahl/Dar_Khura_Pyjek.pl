@@ -27,6 +27,6 @@ sub EVENT_ITEM {
     quest::ding();
     quest::faction(1513,20); # Faction: Guardians of Shar Vahl
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:155285 -- Dar_Khura_Pyjek

@@ -19,7 +19,7 @@ sub EVENT_ITEM {
     quest::exp(15000);
     quest::summonitem(12352);    #Tiny Key 2
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #EOF -- ZONE: commons -- NAME: Noresa_Sparkle -- ID: 21069

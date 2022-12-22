@@ -23,7 +23,7 @@ sub EVENT_ITEM {
     $npc->SetAppearance(3);
     quest::settimer(1,5);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_SAY {

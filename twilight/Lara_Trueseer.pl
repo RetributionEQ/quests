@@ -54,5 +54,5 @@ sub EVENT_ITEM {
     quest::summonitem(3702); # Item: Bracer of Enrapturement
     quest::exp(10000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

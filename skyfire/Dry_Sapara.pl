@@ -31,5 +31,5 @@ sub EVENT_ITEM {
     quest::say("This appears to be a vessel that housed Rithnok's soul. However, it appears to be missing a few shards. Take this soulstone and piece it back together. I have a feeling once this item becomes whole it will lead you to whoever did this to our poor Rithnok. Thank you for releasing him, $name.");
 	quest::summonitem(69936); # Item: Rithnok's Soulstone
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

@@ -20,6 +20,6 @@ sub EVENT_ITEM {
     quest::emote("opens the box carefully and inspects the contents.  'These will do.  Thank ye.  Take this as a reward.'");#Text made up, no reference
     quest::summonitem(28235);#Fine Antique Pelisse
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:poknowledge  ID:202018 -- Renni_Stone 
 

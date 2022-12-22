@@ -49,6 +49,6 @@ sub EVENT_ITEM {
      quest::setglobal("beast_epic", "16", 5, "F");    
    }
  }
-   #plugin::return_items(\%itemcount);
+   plugin::return_items(\%itemcount);
    $qglobals{muadalet}=undef;
 }

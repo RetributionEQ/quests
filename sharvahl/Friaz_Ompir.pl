@@ -11,5 +11,5 @@ sub EVENT_ITEM {
     quest::say("I thank you, $name. I should make Noril come get these horns himself, but I guess that I can understand what it feels like to be too busy to get everything done. You've been a great help to me today. Give these horns to Noril and tell him that I thank him for your assistance. Take care, young one.");
     quest::summonitem(5549); # Item: Bag of Beetle Horns
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

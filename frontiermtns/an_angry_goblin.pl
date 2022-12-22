@@ -23,6 +23,6 @@ sub EVENT_ITEM{
       quest::unique_spawn(92185,0,0,$x,$y,$z); # NPC: Warlord_Skargus
     }
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 

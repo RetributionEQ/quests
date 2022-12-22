@@ -14,6 +14,6 @@ sub EVENT_ITEM {
 		quest::exp(1000);
 		quest::summonitem(1712); # Arcanum of Roth
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }
 

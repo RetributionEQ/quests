@@ -46,7 +46,7 @@ sub EVENT_ITEM {
     quest::exp("3000");
     quest::settimer("cutting",4);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

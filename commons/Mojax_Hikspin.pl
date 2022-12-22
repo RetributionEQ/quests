@@ -24,5 +24,5 @@ sub EVENT_ITEM {
     quest::faction( 362,1 ); # Faction: Priests of Marr
     quest::spawn2(21136,0,0,2750,-307,-62); # NPC: Duggin_Scumber
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

@@ -70,5 +70,5 @@ sub EVENT_ITEM {
 	quest::say("You are quite the noble Paladin $name. Take this gem and see if it fits into that set of prayer beads. If my memory is correct I believe you will find a similar gem on Odus. You should head that way to continue your journey. Be well $name.");
   }  
   plugin::try_tome_handins(\%itemcount, $class, 'Paladin');
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

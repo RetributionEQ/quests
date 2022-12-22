@@ -27,7 +27,7 @@ sub EVENT_ITEM {
     quest::faction(1511,30); #house of midst
     quest::faction(1508,30); #traders of the haven
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: shadowhaven ID: 150088 NPC: Palomidiar_Allakhaji

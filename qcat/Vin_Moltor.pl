@@ -16,5 +16,5 @@ sub EVENT_ITEM {
     quest::say("Ah thanks, here is what I promised you.");
     quest::summonitem(17014); # Item: Severed Paw
  }
- #plugin::return_items(\%itemcount);
+ plugin::return_items(\%itemcount);
 }

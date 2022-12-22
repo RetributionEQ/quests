@@ -22,6 +22,6 @@ sub EVENT_ITEM{
       quest::faction(1541,-2); # Faction: Hand Legionnaries
       quest::summonitem(7394); #Magus Conlegium Token
    }
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }
 

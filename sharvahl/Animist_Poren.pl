@@ -33,6 +33,6 @@ sub EVENT_ITEM {
     #Do all other handins first With plugin, then let it Do disciplines
     plugin::try_tome_handins(\%itemcount, $class, 'Beastlord');
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #End of FILE Zone:sharvahl  ID:155073 -- Animist_Poren

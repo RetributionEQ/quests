@@ -27,7 +27,7 @@ sub EVENT_ITEM {
     quest::gainexp(150000);#Can do at 30, giving 5% of 31 xp...gotta run to droga, bit of a pain.
   }
   
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 

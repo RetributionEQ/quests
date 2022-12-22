@@ -56,7 +56,7 @@ sub EVENT_ITEM {
     quest::faction(328,30); # Faction: Merchants of Halas
     quest::faction(311,30); # Faction: Steel Warriors
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: halas ID: 29078 NPC: Rollian_Galothar

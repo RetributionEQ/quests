@@ -61,6 +61,6 @@ if (plugin::check_handin(\%itemcount, 63088 =>1, 51038 =>1, 51019=>1  )) {
   quest::summonitem(63063); # Item: Swampblade of the Dar
   quest::exp(1000);
 }
-#plugin::return_items(\%itemcount);
+plugin::return_items(\%itemcount);
 plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
 }

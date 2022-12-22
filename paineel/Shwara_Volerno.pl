@@ -63,7 +63,7 @@ sub EVENT_ITEM {
     quest::faction(233, -3); # Faction: Crimson Hands
     quest::ding();
 }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:paineel  ID:75015 -- Shwara_Volerno 
 

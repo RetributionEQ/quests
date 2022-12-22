@@ -14,5 +14,5 @@ sub EVENT_ITEM {
     quest::summonitem(20481); # Item: Refined Ancient Sword
     quest::depop();
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

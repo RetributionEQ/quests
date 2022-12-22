@@ -18,7 +18,7 @@ sub EVENT_ITEM {
     quest::summonitem(29064); # Item: Shipment of Velium Ore
     quest::delglobal("shipment");
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: thurgadina ID: 115008 NPC: Ungdin

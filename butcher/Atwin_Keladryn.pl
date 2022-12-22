@@ -21,7 +21,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #EndFile: butcher\Atwin_Keladryn.pl (68076)

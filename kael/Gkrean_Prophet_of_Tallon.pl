@@ -25,7 +25,7 @@ sub EVENT_ITEM {
     quest::faction(429,30); #tormax
     quest::faction(430,-90); #CoV
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: kael ID: 113155 NPC: Gkrean_Prophet_of_Tallon

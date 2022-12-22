@@ -17,7 +17,7 @@ sub EVENT_ITEM {
     quest::exp(10);
     quest::givecash(0,0,1,0);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_WAYPOINT_ARRIVE {

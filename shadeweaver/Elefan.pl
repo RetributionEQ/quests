@@ -21,7 +21,7 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 4758 => 1)) {
     quest::say("Ah I see you are sent from master Zimloro eh, $name. This note reads that he needs some specific items at once. Perhaps he could find some use out of all of this research I have recently collected.");
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:shadeweaver  ID:165178 -- Elefan 

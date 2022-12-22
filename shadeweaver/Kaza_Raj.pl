@@ -73,5 +73,5 @@ sub EVENT_ITEM {
 		quest::summonitem(2459);#Ghulam Tunic
 	}
   	
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }#END of FILE Zone:shadeweaver  ID:165117--Kaza_Raj.pl

@@ -13,7 +13,7 @@ sub EVENT_ITEM
     quest::faction(1504,-2); #Magus Conlegium
     quest::exp(100);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #End of File zone: sseru ID: 159311 159574 -- Percontorius Ontu

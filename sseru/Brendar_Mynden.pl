@@ -16,7 +16,7 @@ sub EVENT_ITEM {
     quest::depop_withtimer();
     quest::summonitem(29863); # Item: Unadorned Ring
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: sseru ID: 159408 NPC: Brendar_Mynden

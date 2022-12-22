@@ -20,6 +20,6 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:neriaka  ID:40072 -- Javen_TaVos

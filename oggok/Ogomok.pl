@@ -51,7 +51,7 @@ sub EVENT_ITEM {
     quest::exp(25);
     quest::summonitem(55399); #Axe of the Strongbear
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF

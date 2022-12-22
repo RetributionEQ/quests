@@ -36,6 +36,6 @@ sub EVENT_ITEM {
     quest::faction(293,5); #Miners Guild 249
     quest::faction(312,5); #Storm Guard
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:kaladimb  ID: -- Harnoff_Splitrock

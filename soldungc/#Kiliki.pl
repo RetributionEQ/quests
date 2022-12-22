@@ -18,5 +18,5 @@ sub EVENT_ITEM {
     quest::faction(258, 10);#Goblins of Fire Peak
     quest::faction(1732, -30);#Tribe Vrodak
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }#Done

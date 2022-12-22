@@ -45,7 +45,7 @@ sub EVENT_ITEM {
     quest::summonitem(8257); #Panther Fang Necklace
     quest::faction(1598,50); #Anchorites of Brell Serilis
   } 
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:jaggedpine  ID:181125 -- Snarla_the_Fang

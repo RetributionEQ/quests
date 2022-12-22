@@ -79,7 +79,7 @@ if (plugin::check_handin(\%itemcount, 55274 => 1)) { # Letter for the Oracle
 	quest::setglobal("phylactory", 1, 5, "F");
 	}
 
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 
 }
 

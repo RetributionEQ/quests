@@ -14,7 +14,7 @@ sub EVENT_ITEM {
 	quest::say("Very well, I have turned this collection of bones into powder. Take this powder to Drema and see if it awakens her. Good luck, knight.");
 	quest::summonitem(69949); # Item: Enchanted Bone Powder
   }  
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:dawnshroud  ID:174098 -- Denns_Rootenpaw 
 

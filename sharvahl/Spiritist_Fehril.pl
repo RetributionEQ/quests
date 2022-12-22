@@ -78,7 +78,7 @@ quest::summonitem(5544); # Item: Cloak of the Dar Khura Apprentice
 quest::summonitem(15282); }
 
 
-#plugin::return_items(\%itemcount);}
+plugin::return_items(\%itemcount);}
 
 #End of FILE Zone:sharvahl  ID:155070 -- Spiritist_Fehril 
 

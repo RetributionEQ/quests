@@ -50,5 +50,5 @@ sub EVENT_ITEM {
 		quest::faction(267,10);		#:: + High Guard of Erudin							
 	}
 	#:: Return unused items
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }

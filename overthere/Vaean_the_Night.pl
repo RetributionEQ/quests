@@ -22,7 +22,7 @@ sub EVENT_ITEM {
   quest::summonitem(quest::ChooseRandom(19297,19421,19408,19409)); # Item(s): Spell: Minion of Shadows (19297), Spell: Sacrifice (19421), Spell: Scent of Terris (19408), Spell: Shadowbond (19409)
   quest::exp(500);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 

@@ -15,6 +15,6 @@ sub EVENT_ITEM {
       quest::summonitem(6138); # Item: Sinew Stretching Dowels
       
     }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:Not_Found -- Jhimis_Khadwi

@@ -80,7 +80,7 @@ sub EVENT_ITEM {
     quest::faction(278, 1);   #King Naythox Thex
     quest::faction(362, -3);  #Priests of Marr
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:neriakc  ID:42084 -- Perrir_Zexus

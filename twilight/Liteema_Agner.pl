@@ -98,7 +98,7 @@ sub EVENT_ITEM {
     quest::summonitem(3800); # Dirk
 }
 
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
 
 }
 

@@ -33,5 +33,5 @@ sub EVENT_ITEM {
     quest::givecash(0,0,1,0);
     quest::summonitem(12614); # Item: Dried Froglok Leg
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

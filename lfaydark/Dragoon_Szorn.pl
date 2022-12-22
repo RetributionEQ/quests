@@ -21,6 +21,6 @@ sub EVENT_ITEM {
 		quest::summonitem(12499);#Voucher of Service to Naythox
 		quest::givecash(0,0,0,1);
 	}
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
 }#END of FILE Zone:lfaydark  ID:57063 -- Dragoon_Szorn 
 

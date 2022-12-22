@@ -63,5 +63,5 @@ sub EVENT_ITEM {
 		quest::faction(246,1);		#:: + Faydark's Champions
 	}
 	#:: Return unused items
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }

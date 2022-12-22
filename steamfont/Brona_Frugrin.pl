@@ -22,7 +22,7 @@ sub EVENT_ITEM {
     quest::faction(333, 15);  # King Ak'Anon
     quest::faction(245, 15);  # Eldrich COllective... I'm not sure about this, but quest text seems to indicate it should be here
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # Quest by mystic414

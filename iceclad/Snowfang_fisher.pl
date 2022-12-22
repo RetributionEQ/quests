@@ -34,7 +34,7 @@ sub EVENT_ITEM {
     my $mobnpc = $mob->CastToNPC();
     $mobnpc->AddToHateList($npc, 1);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone: iceclad  ID:110047 -- Snowfang_fisher

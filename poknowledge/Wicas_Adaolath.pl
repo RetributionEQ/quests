@@ -19,7 +19,7 @@ sub EVENT_SAY {
   
   
 sub EVENT_ITEM { #Doesn't take any turn ins
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #Done

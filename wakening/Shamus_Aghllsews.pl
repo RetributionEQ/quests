@@ -37,7 +37,7 @@ sub EVENT_ITEM {
     quest::faction(449,50); # Faction: Tunarean Court
     quest::exp(10000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: wakening ID: 119080 NPC: Shamus_Aghllsews

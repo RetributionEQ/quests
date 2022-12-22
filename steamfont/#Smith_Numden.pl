@@ -9,5 +9,5 @@ sub EVENT_ITEM {
     quest::summonitem(54435); # Item: Bundle of Shiny New Picks
     quest::exp(1000);
   } 
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

@@ -29,6 +29,6 @@ sub EVENT_ITEM {
     quest::summonitem(3658); # Item: Cloak of the Jharin Recruit
     quest::summonitem(3659); # Item: Buckler of the Jharin Recruit
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:155075 -- Gherik_Alarhun

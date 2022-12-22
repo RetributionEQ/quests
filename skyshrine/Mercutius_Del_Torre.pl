@@ -54,7 +54,7 @@ sub EVENT_ITEM {
     quest::summonitem(12554); # Item: Draconic Fellowship Horn
   }
   else {
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
     return 1;
   }
   quest::exp(50000);

@@ -33,7 +33,7 @@ quest::faction(292, 4); # Faction: Merchants of Rivervale
 quest::faction(334, -10); # Faction: Dreadguard Outer
 quest::exp(100);
  }
-#plugin::return_items(\%itemcount);
+plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:misty  ID:33081 -- Deputy_Budo 
 

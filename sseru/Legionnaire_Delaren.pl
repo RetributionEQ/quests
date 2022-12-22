@@ -36,7 +36,7 @@ sub EVENT_ITEM
     quest::faction(1487,2); #Shoulder of Seru
     quest::faction(1502,-4); #Katta Castellum Citizen
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 

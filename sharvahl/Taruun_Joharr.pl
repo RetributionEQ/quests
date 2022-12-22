@@ -47,7 +47,7 @@ if(plugin::check_handin(\%itemcount,5568=>1)){
    quest::exp(1500);
    quest::faction(1530,10); # Faction: Taruun
 }
-#plugin::return_items(\%itemcount);
+plugin::return_items(\%itemcount);
 }
 
 

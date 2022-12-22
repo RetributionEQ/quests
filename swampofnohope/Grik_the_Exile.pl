@@ -28,5 +28,5 @@ sub EVENT_ITEM {
    quest::say("Well done");
    quest::exp(10000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

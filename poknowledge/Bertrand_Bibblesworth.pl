@@ -30,7 +30,7 @@ sub EVENT_ITEM {
     quest::emote("Here you go, $name!");#text made up
     quest::summonitem(59997); #Burning Crystal Shard
   }
-   #plugin::return_items(\%itemcount);
+   plugin::return_items(\%itemcount);
   }
     
 #Done

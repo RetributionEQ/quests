@@ -61,5 +61,5 @@ sub EVENT_ITEM {
     quest::faction(440,5); # Faction: Cabilis Residents
     quest::ding();
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

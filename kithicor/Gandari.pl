@@ -65,7 +65,7 @@ sub EVENT_ITEM {
 		quest::faction(324,-60); # unkempt druids
 		quest::exp(10000);
     } 
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }
 
 # END of FILE Zone:kithicor  ID:20095 -- Gandari

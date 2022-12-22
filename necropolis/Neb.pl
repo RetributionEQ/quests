@@ -37,7 +37,7 @@ are joyful, Neb is joyful! Misu na tona Vaniki esa Zlandicar, no re Paebala soka
   quest::summonitem(69344); # Item: Neb's Note
   quest::exp(10000);    
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: necropolis ID: 123045 NPC: Neb

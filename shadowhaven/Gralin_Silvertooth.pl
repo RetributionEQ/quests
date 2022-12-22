@@ -40,5 +40,5 @@ sub EVENT_ITEM {
       quest::say("Better luck next time, $name!");
     }
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

@@ -60,7 +60,7 @@ sub EVENT_ITEM {
     quest::summonitem(11582); #Green Dragon Scales
     quest::delglobal("Green_Scale_Quest");
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:nro  ID:34049 --#Verrell_Cogswin.pl

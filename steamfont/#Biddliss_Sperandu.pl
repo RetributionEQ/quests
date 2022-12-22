@@ -18,6 +18,6 @@ sub EVENT_ITEM {
     quest::summonitem(21799); #Biddliss's Research Tools
     quest::depop_withtimer();
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #EndFile: steamfont\#Biddliss_Sperandu.pl (56181)

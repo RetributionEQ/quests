@@ -10,6 +10,6 @@ sub EVENT_ITEM {
     quest::summonitem(18863); #Sealed Letter
     quest::exp(2000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:cabeast  ID:Not_Found -- Half Elf Maiden

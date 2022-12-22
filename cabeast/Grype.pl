@@ -23,7 +23,7 @@ sub EVENT_ITEM {
     quest::givecash(1,0,0,0);
     quest::exp(100);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #End of File zone:cabeast ID:106004 -- Grype

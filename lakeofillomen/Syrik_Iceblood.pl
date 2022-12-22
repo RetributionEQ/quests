@@ -64,7 +64,7 @@ sub EVENT_ITEM {
     quest::doanim(48);
   }
   else {
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
     return 1;
   }
   quest::say("Excellent work, $name. We will study the architecture of these weapons to better the legions of Cabilis. Soon your name will be known among the Iksar.");

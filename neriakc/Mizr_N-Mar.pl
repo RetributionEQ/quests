@@ -46,5 +46,5 @@ sub EVENT_ITEM {
     quest::faction(416, -10); # Faction: Shadowed Men
     quest::exp(1000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 } 

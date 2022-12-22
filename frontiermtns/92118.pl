@@ -25,7 +25,7 @@ sub EVENT_ITEM {
   quest::faction(444,20); # Faction: Swift Tails
   quest::faction(441,10); # Faction: Legion of Cabilis
  }
- #plugin::return_items(\%itemcount);
+ plugin::return_items(\%itemcount);
 }
 
 #Submitted by: Jim Mills

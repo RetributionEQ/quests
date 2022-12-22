@@ -36,7 +36,7 @@ sub EVENT_ITEM {
     quest::ding;
     quest::summonitem(5057); # Item: Wurmslayer
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # Turn-ins:

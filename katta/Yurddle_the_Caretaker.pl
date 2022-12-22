@@ -67,7 +67,7 @@ sub EVENT_ITEM{
 		quest::faction(1487,-10); #Shoulders of Seru
 		quest::exp(1000);
 	}
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:katta  ID:160132 -- Yurddle_the_Caretaker 

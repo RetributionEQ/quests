@@ -4,5 +4,5 @@ sub EVENT_ITEM {
 		quest::say("Ahhhhhhhh! I can't believe that you ---- ahhhhhhhh! Die you, you, you evil evil heretic!");
 		quest::attack($name);
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }

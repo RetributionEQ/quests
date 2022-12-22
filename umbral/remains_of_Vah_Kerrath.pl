@@ -33,6 +33,6 @@ sub EVENT_ITEM {
     quest::faction(1521,-5);  #Akheva
     quest::exp(1000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:umbral ID:176013 -- remains_of_Vah_Kerrath

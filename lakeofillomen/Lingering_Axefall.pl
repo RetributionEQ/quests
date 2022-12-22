@@ -17,7 +17,7 @@ sub EVENT_ITEM {
     quest::summonitem(60191); # Item: Bore Axes of the Spirit
     quest::summonitem(60191); # Item: Bore Axes of the Spirit
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_SAY {

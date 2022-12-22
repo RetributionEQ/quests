@@ -12,6 +12,6 @@ sub EVENT_ITEM {
     quest::exp(137180);
     quest::summonitem(1775);#Heretics Report
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:paineel  ID:75083 -- Keletha_Nightweaver 

@@ -50,12 +50,10 @@ $voxkey = $client->AccountID() . "vox";
     quest::set_data($nagkey, 1);
     quest::set_data($voxkey, 1);
 	}
-	#:: Return unused items
+  }
+  	#:: Return unused items
 	      plugin::returnUnusedItems();
-       
-
-}
-    }
+  }
   
   
   #  quest::set_data($nagkey, 1);

@@ -50,5 +50,5 @@ sub EVENT_ITEM {
     quest::say("Very good my friend. You've definitely proven yourself. Find the Master Sergeant. He should be able to help you this time.");
     quest::setglobal("pov_key_quest", 3, 5, "F");
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

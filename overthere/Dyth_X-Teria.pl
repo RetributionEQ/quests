@@ -47,5 +47,5 @@ sub EVENT_ITEM {
 		quest::faction(318, 30);#Add some Venril Sathir faction
 		quest::giveexp(3322176);#3% level 45 xp,
 	}
-  	#plugin::return_items(\%itemcount);
+  	plugin::return_items(\%itemcount);
 }#END of FILE Zone:overthere  ID:93116--Dyth_X-Teria.pl

@@ -34,6 +34,6 @@ sub EVENT_ITEM {
     quest::summonitem(52900); # Item: Sealed Note for Muada
   }
  }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
   $qglobals{muadalet}=undef;
 }

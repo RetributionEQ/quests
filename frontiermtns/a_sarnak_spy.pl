@@ -21,6 +21,6 @@ sub EVENT_ITEM{
   if (plugin::check_handin(\%itemcount,6472=>1)) { # Traitor's note, from goblin traitor
     quest::emote("reads the note slowly, turning it around in his claws a few times before completing it. 'I see you spoke with that half-wit goblin! I hate hate hate it when he sends me a note, his penmanship is almost illegible. I hope he informed you of the situation, he's really not the most dependable agent of Di'zok, and sadly his note doesn't really make much sense. No matter though, are you ready to [proceed] in this mission?'");
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 

@@ -29,7 +29,7 @@ sub EVENT_ITEM {
     quest::summonitem(10695); # Item: Foraging Machette
   }
   else {
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
     return 1;
   }
   quest::say("Oh! Thank you so much! You have saved much time and trouble! Now if only those tinkerers in the Illuminarium Industria could figure out how to get that artificial light working!"); #using reward text from the rare plants quest for both quests

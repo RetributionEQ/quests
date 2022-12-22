@@ -58,7 +58,7 @@ quest::summonitem(30694); # Item: Dharr's Lure
 quest::exp(1000);   
 quest::ding(); }
 
-#plugin::return_items(\%itemcount);
+plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:sharvahl  ID:155097 -- Dharr_Nadim

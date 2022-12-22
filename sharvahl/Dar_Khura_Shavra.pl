@@ -5,6 +5,6 @@ sub EVENT_ITEM {
     quest::summonitem(30962); # Item: Frosted Bag
     #quest::faction("Not_Found","1"); Need faction to replace Not_Found
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:155113 -- Dar_Khura_Shavra

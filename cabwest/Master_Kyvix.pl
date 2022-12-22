@@ -51,6 +51,6 @@ takes your cap which disintegrates in his palm. He hands you another cap.");
     quest::faction(443,20); # Faction: Brood of Kotiz
     quest::givecash(0,0,6,0);
   }
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:cabwest  ID:3430 -- Master_Kyvix

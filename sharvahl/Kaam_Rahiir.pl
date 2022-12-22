@@ -42,6 +42,6 @@ sub EVENT_ITEM {
     quest::faction(1532,5); # Faction: Khati Sha
     quest::exp(50000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:sharvahl  ID:155056 -- Kaam_Rahiir

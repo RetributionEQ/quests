@@ -41,6 +41,6 @@ sub EVENT_ITEM {
     quest::summonitem(4944); # Item: Totemic Greaves
     quest::say("I have crafted your leggings, use them well.");
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:lakerathe  ID:51059 -- Vrynn

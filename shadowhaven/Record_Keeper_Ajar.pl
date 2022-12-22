@@ -12,7 +12,7 @@ sub EVENT_ITEM{
 		quest::summonitem(18352); #Old Merchant Records
 		quest::exp(1000000);
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:shadowhaven  ID:150258 -- Record_Keeper_Ajar

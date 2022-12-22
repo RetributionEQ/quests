@@ -26,7 +26,7 @@ sub EVENT_ITEM {
     quest::faction(420,20); # Faction: Fallen of Bloody Kithicor
     quest::depop();
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #Originally submitted by ShadowBlade, corrected turn-in text by Jim Mills

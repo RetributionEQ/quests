@@ -32,6 +32,6 @@ sub EVENT_ITEM {
     quest::say("I told you that I need two sabertooth kitten canines and the legion order.");
     quest::summonitem(12670); # Item: Sabertooth Kitten Canine
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:cabwest  ID:5135 -- Trooper_Ozlot

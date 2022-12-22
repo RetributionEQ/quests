@@ -28,7 +28,7 @@ sub EVENT_ITEM {
     quest::faction(447, 30); # Faction: Pirates of Iceclad
     quest::exp(1000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

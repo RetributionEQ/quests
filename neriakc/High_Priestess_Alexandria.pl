@@ -62,6 +62,6 @@ sub EVENT_ITEM {
     quest::say("Your prowess both in the classroom and on the battlefield has certainly amazed me. Please take this relic that is only presented to the most dedicated initiates and carry it with pride. You have made your house very proud on this day.");
     quest::summonitem(22698); #Mace of the Darkpriest
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 # Quest by Blaz - Dark Elf Cleric Newbie Armor quests

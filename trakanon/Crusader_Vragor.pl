@@ -24,7 +24,7 @@ sub EVENT_ITEM {
   quest::faction(441,10); # Faction: Legion of Cabilis
   quest::depop_withtimer();
  }
- #plugin::return_items(\%itemcount);
+ plugin::return_items(\%itemcount);
 }
 
 #Submitted by: Jim Mills

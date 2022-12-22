@@ -21,5 +21,5 @@ sub EVENT_ITEM {
     quest::emote("inspects each instrument carefully. 'These are in much better condition then I thought I would get them in. Adding these to my exhibit pleases me greatly. As promised, here is something for you.'");#Borrowed text, no final turn in text.
     quest::summonitem(28239);#Fine Antique Amice
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }#Done

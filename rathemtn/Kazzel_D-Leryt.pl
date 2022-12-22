@@ -67,7 +67,7 @@ sub EVENT_ITEM {
      quest::summonitem(15692); # Item: Spell: Life Leech
      quest::exp(25000);
    }
-   #plugin::return_items(\%itemcount);
+   plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:rathemtn  ID:50272 -- Kazzel_D-Leryt 

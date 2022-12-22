@@ -27,6 +27,6 @@ sub EVENT_ITEM {
     quest::say("What?! I need the Legion Lager and the legion order.");
     quest::summonitem(12463); # Item: Legion Lager
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:fieldofbone  ID:78069 -- Trooper_Gummin

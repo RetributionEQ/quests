@@ -4,7 +4,7 @@ quest::say("Ah. good day to thee. $name and welcome to New Tanaan. If you are se
  }
 }
 sub EVENT_ITEM {
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:poknowledge  ID:202230 -- Minstrel_Silnon 
 

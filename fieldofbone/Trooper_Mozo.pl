@@ -25,7 +25,7 @@ sub EVENT_ITEM {
    quest::givecash(0,$a,0,0);
    quest::exp(250);
   } 
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 

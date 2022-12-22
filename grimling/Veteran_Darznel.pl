@@ -16,5 +16,5 @@ Bring me any grimling intelligence reports or documents that you may have found.
     quest::say("I cannot help but think that your presence and leadership are what made those missions such wonderful successes. I have been authorized to give you a field promotion for your valor and bravery in combat. Your ability to lead was the keystone in the success of those engagements. Welcome to the rank of Garrison Officer, #name.");
     quest::summonitem(63168); # Item: Officer`s Cloak of Service
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

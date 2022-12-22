@@ -32,7 +32,7 @@ sub EVENT_ITEM {
     # Summon: Shrine Key
     quest::summonitem(28602); # Item: Shrine Key
    } 
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 

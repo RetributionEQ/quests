@@ -6,5 +6,5 @@ sub EVENT_ITEM {
     quest::faction(437,51); # Faction: Denizens of Mischief
     quest::exp(100);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 } 

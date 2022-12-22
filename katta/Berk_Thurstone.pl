@@ -29,7 +29,7 @@ sub EVENT_ITEM {
   quest::faction(1483,-30); # -Seru
   quest::exp(500);
  }
- #plugin::return_items(\%itemcount);
+ plugin::return_items(\%itemcount);
 }
 
 

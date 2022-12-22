@@ -58,6 +58,6 @@ sub EVENT_ITEM {
     quest::faction(296,1); # Faction: Opal Darkbriar
     quest::faction(341,-1); # Faction: Priests of Life
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:qcat  ID:45065 -- Bruax_Grengar

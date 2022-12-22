@@ -5,7 +5,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #End of File, Zone:soltemple  NPC:80005 -- a_seeker (generic)

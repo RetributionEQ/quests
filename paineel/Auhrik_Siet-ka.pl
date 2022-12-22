@@ -21,6 +21,6 @@ sub EVENT_ITEM {
     quest::faction(231,-5);  #Craftkeepers
     quest::faction(233,-5);  #Crimson Hands
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #EndFile: Auhrik_Siet`ka.pl

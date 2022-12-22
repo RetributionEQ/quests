@@ -24,6 +24,6 @@ sub EVENT_ITEM {
   else {
     quest::givecash($copper, $silver, $gold, $platinum);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:shadowhaven  ID:150231 -- Bestive_Farworth

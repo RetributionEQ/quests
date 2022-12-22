@@ -31,7 +31,7 @@ sub EVENT_ITEM {
 		quest::faction(239,-15); #The Dead
 		quest::exp(100);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:neriakb  ID:41053 -- Gath_N`Mare

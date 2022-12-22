@@ -9,6 +9,6 @@ sub EVENT_ITEM {
     quest::unique_spawn(96086,21,0,-1886,-11661,1,384); #Avatar of water
     quest::depop();
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #End of File, Zone:timorous  NPC:96074 -- Jhassad Oceanson

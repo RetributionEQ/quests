@@ -29,6 +29,6 @@ sub EVENT_ITEM {
     quest::exp(500);
     quest::summonitem(20649); # Item: Rolling Stone Moss
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE  Quest by: Solid11  Zone:nektulos  ID:25099 -- Venenzi_Oberzendi

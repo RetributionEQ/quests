@@ -54,7 +54,7 @@ sub EVENT_ITEM {
    quest::exp(75000);
   }
  }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #Submitted by: Jim Mills

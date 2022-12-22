@@ -53,5 +53,5 @@ sub EVENT_ITEM {
     quest::summonitem(13314); # Item: Bloodforge Hammer
   }
   plugin::try_tome_handins(\%itemcount, $class, 'Warrior');
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

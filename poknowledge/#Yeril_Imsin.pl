@@ -56,7 +56,7 @@ sub EVENT_ITEM {
     #Depop myself
     quest::depop_withtimer();
   }
-   #plugin::return_items(\%itemcount);
+   plugin::return_items(\%itemcount);
   }
     
 #Done

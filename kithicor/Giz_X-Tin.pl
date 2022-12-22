@@ -25,7 +25,7 @@ sub EVENT_ITEM {
     my $reaverattack = $attack->CastToNPC();
     $reaverattack->AddToHateList($client, 1);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: kithicor ID: 20058 NPC: Giz_X`tin

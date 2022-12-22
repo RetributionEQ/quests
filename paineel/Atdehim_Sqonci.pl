@@ -14,6 +14,6 @@ sub EVENT_ITEM {
     quest::summonitem(1438); #Disciple Symbol of Cazic Thule
     quest::exp(2000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:paineel  ID:75019 -- Atdehim_Sqonci

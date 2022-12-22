@@ -26,5 +26,5 @@ quest::emote("perks up when you hand her the jar. 'Many thanks,' she exlaims, as
 quest::say("Your assistance is greatly appreciated. Please take this tincture. It will help to strengthen your buckler. Mydi Darjik can help you apply it. She is a friend and a wonderful alchemist. Tell her that you need her to [treat] your buckler. Take care, $name!");
 quest::summonitem(5537); }
 
-#plugin::return_items(\%itemcount);
+plugin::return_items(\%itemcount);
 }

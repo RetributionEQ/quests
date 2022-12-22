@@ -30,7 +30,7 @@ sub EVENT_ITEM {
       quest::faction(406,-30); #coldain
     }
     else {
-      #plugin::return_items(\%itemcount);
+      plugin::return_items(\%itemcount);
     }
   }
 }

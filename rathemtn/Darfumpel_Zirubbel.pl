@@ -35,7 +35,7 @@ sub EVENT_ITEM {
       quest::summonitem(10192); # Item: Faceted Hyacinth
       quest::exp(1000);
    }
-   #plugin::return_items(\%itemcount);
+   plugin::return_items(\%itemcount);
 }
 
 #END of FILE Zone:rathemtn  ID:50270 -- Darfumpel_Zirubbel 

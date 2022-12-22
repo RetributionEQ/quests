@@ -21,7 +21,7 @@ sub EVENT_ITEM {
   quest::summonitem(5120); # Item: Pawn's Khukri
   quest::ding();
  }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #Submitted by Jim Mills

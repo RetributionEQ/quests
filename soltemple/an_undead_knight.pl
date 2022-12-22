@@ -37,7 +37,7 @@ sub EVENT_ITEM {
       quest::givecash($copper, $silver, $gold, $platinum);
     }
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 # Updated and corrected by mystic414
 # END of FILE Zone:soltemple  ID:80000 -- an_undead_knight

@@ -43,7 +43,7 @@ sub EVENT_ITEM {
 		quest::exp(2000);
 		quest::ding();
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }
 
 sub EVENT_SIGNAL {

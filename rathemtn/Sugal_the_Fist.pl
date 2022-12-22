@@ -142,5 +142,5 @@ sub EVENT_ITEM {
       quest::summonitem(63108); # Sugal's Shield
     }
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

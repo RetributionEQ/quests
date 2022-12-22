@@ -14,6 +14,6 @@ sub EVENT_ITEM {
     quest::summonitem(18241); #Legion Order (1 signed)
     quest::exp(200);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:lakeofillomen  ID:5103 -- Trooper_Frogzin

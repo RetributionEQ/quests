@@ -23,6 +23,6 @@ sub EVENT_ITEM {
     quest::summonitem(48008); # Item: Sealed Message
     quest::say("Take this sealed note back to whoever you need to. I dare not say what it reads out loud.");
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 

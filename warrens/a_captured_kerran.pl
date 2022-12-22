@@ -19,7 +19,7 @@ sub EVENT_ITEM {
     quest::depop_withtimer();
   }
   else {
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
   }
 }
 #END of FILE Zone:warrens  ID:101085 -- a_captured_kerran

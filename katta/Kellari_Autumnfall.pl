@@ -27,7 +27,7 @@ sub EVENT_ITEM {
     quest::exp(1000);
 	quest::givecash(7,12,13,5);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }  
 #END of FILE Zone:katta  ID:160190 -- Kellari_Autumnfall 
 

@@ -21,5 +21,5 @@ sub EVENT_ITEM {
     quest::say("I live to study and quench my thirst. I live to Bash the Faces of Pariah and entangle myself in the ivy of evergreen. I live. I want to remember.");
     quest::summonitem(12848); # Item: Spectacle
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

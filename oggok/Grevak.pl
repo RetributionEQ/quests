@@ -78,7 +78,7 @@ elsif(plugin::check_handin(\%itemcount, 13367 => 2))
 
   #do all other handins first with plugin, then let it do disciplines
   plugin::try_tome_handins(\%itemcount, $class, 'Shadowknight');
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 
 }
 #END of FILE Zone:oggok  ID:49034 -- Grevak 

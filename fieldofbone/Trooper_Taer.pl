@@ -19,6 +19,6 @@ sub EVENT_ITEM {
     quest::faction(444,5); #Swift Tails
     quest::exp(200);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:fieldofbone  ID:78020 -- Trooper_Taer

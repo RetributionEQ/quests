@@ -33,6 +33,6 @@ sub EVENT_ITEM {
     quest::faction(404,7); # Faction: Truespirit
     $npc->AddItem(18099, 1);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 # Quest by mystic414

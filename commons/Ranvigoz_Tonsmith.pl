@@ -34,7 +34,7 @@ sub EVENT_ITEM {
       quest::summonitem(4182); # Item: Small Crafted Breastplate
     }
     else {
-      #plugin::return_items(\%itemcount);
+      plugin::return_items(\%itemcount);
       return 1;
     }
     quest::say("Here is your armor. I hope it fits better now.");

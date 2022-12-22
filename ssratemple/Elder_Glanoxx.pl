@@ -18,5 +18,5 @@ sub EVENT_ITEM {
   if (plugin::check_handin(\%itemcount, 13006 => 1)) {
     quest::say("Are you here for them... are you here to release us?");
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

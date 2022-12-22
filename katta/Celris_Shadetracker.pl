@@ -19,5 +19,5 @@ sub EVENT_ITEM {
     quest::faction(1483, -10); #Seru
     quest::faction(1484, -10); #Hand of Seru
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

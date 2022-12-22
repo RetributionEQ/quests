@@ -25,6 +25,6 @@ sub EVENT_ITEM {
     quest::summonitem(28788); #Beginner Combat Manual
     quest::exp(500000);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:poknowledge  ID:202044 -- Zauvudd_Gigoth

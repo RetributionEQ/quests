@@ -53,6 +53,6 @@ sub EVENT_ITEM {
     quest::faction("242","-1");        # Deepwater Knights
     quest::faction("254","-1");       # Gate Callers
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 } 
 #END of FILE Zone:paineel  ID:75074 -- Royal_Guard_Lilkus

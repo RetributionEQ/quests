@@ -43,7 +43,7 @@ sub EVENT_ITEM {
    #Summon: Red Dragonscale Armor 
    quest::summonitem(11623); # Item: Red Dragonscale Armor
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 

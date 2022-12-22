@@ -56,6 +56,6 @@ sub EVENT_ITEM {
     quest::summonitem(8496); # Item: Claw of the Savage Spirit
   }
 
-  ##plugin::return_items(\%itemcount); # return unused items
+  #plugin::return_items(\%itemcount); # return unused items
   $qglobals{bstepic}=undef;
 }

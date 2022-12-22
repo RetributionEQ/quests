@@ -11,7 +11,7 @@ sub EVENT_ITEM {
     quest::say("Excellent! You have done well.  I can sense that you are in tune with the spirits around you. Take this, for you will need it in your next task. When you are [ready] for your next lesson let me know.");
     quest::summonitem(15093,1); # Item: Spell: Burst of Flame
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #END of FILE Zone:shadeweaver  ID:165101 -- Groo_McManus 
 

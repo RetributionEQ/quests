@@ -11,7 +11,7 @@ sub EVENT_ITEM {
 	quest::faction(429,10); #King_Tormax
     quest::givecash(5,5,2,1);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: wakening ID: various mercenaries NPC: various mercenaries

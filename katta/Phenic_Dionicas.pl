@@ -91,5 +91,5 @@ sub EVENT_ITEM{
 			quest::delglobal("ready_for_ashes");		
 		}
 	}
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

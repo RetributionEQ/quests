@@ -35,6 +35,6 @@ sub EVENT_ITEM {
     quest::faction(441,-30); #legion of cabilis
     quest::faction(313,-30); #pirates of gunthak
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 # EOF zone: firiona ID: 84193 NPC: Shrub_Marwood

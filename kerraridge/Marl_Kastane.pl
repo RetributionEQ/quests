@@ -52,7 +52,7 @@ sub EVENT_ITEM {
     quest::faction(404, 7); # Faction: Truespirit
     quest::summonitem(14370); # Item: Will of Innoruuk
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # Quest by mystic414

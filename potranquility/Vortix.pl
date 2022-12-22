@@ -99,7 +99,7 @@ sub EVENT_ITEM {
     $client->SetGlobal("mnk_epic20", 6, 5, "F");
   }
  }
- #plugin::return_items(\%itemcount);
+ plugin::return_items(\%itemcount);
 }
 
 

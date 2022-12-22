@@ -13,7 +13,7 @@ sub EVENT_ITEM {
    #Summon: The Skull of Torture
    quest::summonitem(59526); # Item: The Skull of Torture
   }
-   #plugin::return_items(\%itemcount);
+   plugin::return_items(\%itemcount);
 }
 
 

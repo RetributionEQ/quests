@@ -6,5 +6,5 @@ sub EVENT_ITEM {
     quest::unique_spawn(157116,0,0,-112,595,-259); # NPC: Draz_Nurakk
   }
   
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

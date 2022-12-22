@@ -128,5 +128,5 @@ sub EVENT_ITEM
 		}
 	}
 	
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:potranquility ID:203428 --#Veriok_Dreik.pl

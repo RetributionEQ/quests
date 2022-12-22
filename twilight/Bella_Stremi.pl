@@ -70,7 +70,7 @@ sub EVENT_ITEM {
     quest::summonitem(3729); # Item: Sandals of Pestilence
     quest::exp(10000);
      } 
-     #plugin::return_items(\%itemcount);
+     plugin::return_items(\%itemcount);
 }
 
 #END of FILE 

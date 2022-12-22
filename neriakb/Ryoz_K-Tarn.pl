@@ -27,5 +27,5 @@ sub EVENT_ITEM {
     quest::say("EXCELLENT! This is the best news I've received since those dirty trolls moved in. You have done so well, I may have use for you in the future. For now, I will grant you a spell from my personal library.");
     quest::summonitem(67011); # Item: Spell: Illusion Guktan
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

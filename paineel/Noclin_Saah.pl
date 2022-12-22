@@ -23,7 +23,7 @@ sub EVENT_ITEM {
   quest::faction(233,-1);  # -Crimson Hands
   quest::exp(5);  
  }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 

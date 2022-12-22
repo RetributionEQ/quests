@@ -37,7 +37,7 @@ sub EVENT_ITEM {
    #Summon: Hsagra's Wrath (19470)
    quest::summonitem(19470); # Item: Spell: Hsagra's Wrath
   } 
-   #plugin::return_items(\%itemcount);
+   plugin::return_items(\%itemcount);
 }
 
 

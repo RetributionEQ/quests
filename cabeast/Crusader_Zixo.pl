@@ -21,7 +21,7 @@ sub EVENT_ITEM {
   quest::summonitem(5130); # Item: Partisan's Pike
   quest::ding();
  }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 #Submitted by Jim Mills

@@ -56,5 +56,5 @@ sub EVENT_ITEM {
     quest::exp(500);
   }
   plugin::try_tome_handins(\%itemcount, $class, 'Bard');
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

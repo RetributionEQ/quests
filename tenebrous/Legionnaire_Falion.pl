@@ -21,5 +21,5 @@ sub EVENT_ITEM{
 		quest::unique_spawn(172186,0,0,-1414,-1265,-38,0); # NPC: #Trigger_Kerzar_Clawtore
 		quest::exp(1000000);
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }

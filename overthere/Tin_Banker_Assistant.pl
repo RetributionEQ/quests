@@ -28,7 +28,7 @@ sub EVENT_ITEM {
     quest::summonitem(55978); # Item: Dusty Tome
 
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # END of FILE zone:overthere ID: 93151 -- Tin_Banker_Assistant.pl

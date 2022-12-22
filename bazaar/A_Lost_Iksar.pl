@@ -71,6 +71,7 @@ sub EVENT_ITEM {
             quest::set_data($voxkey, 1);
 	    }
 	    #:: Return unused items
-	    plugin::returnUnusedItems();
     }
+    
+	    plugin::returnUnusedItems();
 }

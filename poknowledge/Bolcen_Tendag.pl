@@ -19,6 +19,6 @@ sub EVENT_ITEM {
     quest::summonitem(28092);#New Sewing Needles
     quest::exp(250);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }#END of FILE Zone:poknowledge  ID:202036 -- Bolcen_Tendag 
 

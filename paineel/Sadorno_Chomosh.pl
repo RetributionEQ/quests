@@ -51,5 +51,5 @@ sub EVENT_ITEM {
    quest::faction(265,10); # Faction: Heretics
    quest::exp(500);
    }
-   #plugin::return_items(\%itemcount);
+   plugin::return_items(\%itemcount);
 }

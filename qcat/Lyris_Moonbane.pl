@@ -23,5 +23,5 @@ sub EVENT_ITEM {
 		quest::faction(230,5); #Corrupt Qeynos Guards
 		quest::exp(100);
 	}
-	#plugin::return_items(\%itemcount);
+	plugin::return_items(\%itemcount);
 }

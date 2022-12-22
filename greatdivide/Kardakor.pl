@@ -31,7 +31,7 @@ sub EVENT_ITEM {
       quest::exp(50000);
     }
   }
-  ##plugin::return_items(\%itemcount); # return unused items
+  #plugin::return_items(\%itemcount); # return unused items
 }
 
 #End of File, Zone:greatdivide  NPC:118087 -- Kardakor

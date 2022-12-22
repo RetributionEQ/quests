@@ -26,7 +26,7 @@ sub EVENT_ITEM {
     $gaveblood = 1;
   }
   else {
-    #plugin::return_items(\%itemcount);
+    plugin::return_items(\%itemcount);
     return 1;
   }
   quest::exp(5000);

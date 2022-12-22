@@ -8,7 +8,7 @@ sub EVENT_ITEM {
     quest::selfcast(1644); #pillar of fire
     quest::depop_withtimer();
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 

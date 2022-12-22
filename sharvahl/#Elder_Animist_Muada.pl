@@ -213,7 +213,7 @@ sub EVENT_ITEM {
     quest::emote("appears overwhelmed. 'There is no limit to your greatness, is there? You have done more than any other to save us -- the masters of the wild. Your time has come, savage lord. You are about to meet one of the very first beastlords of Luclin. Her name is Alladnu Eshiara. She is often found in the wild, studying nature and the ways of feral creatures. Find her, give her this letter and your Savage Lord Totem and she will complete your journey. I will be there in spirit friend.");
 	quest::summonitem(57053); #Sealed Letter from Muada
   }  
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 sub EVENT_TIMER {

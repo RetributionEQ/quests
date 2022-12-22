@@ -19,5 +19,5 @@ quest::emote("stares at the swirling bottle of essence. His eyes open wide as he
 quest::summonitem("20699");
 quest::depop_withtimer();
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

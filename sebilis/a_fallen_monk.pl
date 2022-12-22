@@ -17,7 +17,7 @@ sub EVENT_ITEM {
   quest::spawn2(89183,0,0,$x,$y,$z,$h); # NPC: a_fallen_monk_master
   quest::depop_withtimer();
  }
- #plugin::return_items(\%itemcount);
+ plugin::return_items(\%itemcount);
 }
 
 #Submitted by: Jim Mills

@@ -23,7 +23,7 @@ sub EVENT_ITEM {
       quest::faction(448,-37); #Kromzek
     }
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 
 # EOF zone: westwastes ID: 120057 NPC: Harla_Dar

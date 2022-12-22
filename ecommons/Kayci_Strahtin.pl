@@ -8,5 +8,5 @@ sub EVENT_ITEM {
     quest::summonitem(55269); #Kayci's Note
     quest::summonitem(55265); #Rujarkian Orc Hide
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

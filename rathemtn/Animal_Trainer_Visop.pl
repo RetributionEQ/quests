@@ -66,5 +66,5 @@ this as a token of my gratitude.");
   quest::exp(25000);
   quest::summonitem(54002); # Item: Trainer's Bauble
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }

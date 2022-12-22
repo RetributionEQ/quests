@@ -23,6 +23,6 @@ sub EVENT_ITEM {
     quest::say("Vile creature! Child of heresy! My love's death shall be avenged! How dare you bring me his head in a box!");
     quest::attack($name);
   }
-  #plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
 #EndFile: #Veisha_Fathomwalker.pl
