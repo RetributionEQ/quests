@@ -9,9 +9,10 @@ sub EVENT_SAY {
 
         if ($expansion < 14) {
             plugin::Whisper("Ah... I see you have yet to unlock Luclin! You have two options. One is the route of the [hero]. The other, is the route of the [collector].");
+    
         }
-
-            if ($text =~/hero/i) {
+    }
+            if (($text =~/hero/i) && ($expansion <14)){
             plugin::Whisper("Refinement by fire is the only way we will be ready for Aten Ha Ra. Slay the mighty dragons of Velious.");
             $progressionCount = 8;
 		    $progressCount = 0;
@@ -61,12 +62,14 @@ sub EVENT_SAY {
             plugin::Whisper("You have defeated $progressCount of $progressionCount targets: $progressText.");
             }
         }
+        
 
      if (($text =~/collector/i) && ($expansion <14)){
       plugin::Whisper("You are one of patience, I see. All you need to do is bring me an Apocryphal Stronghorn's Horn, an Apocryphal Shackle of Auctoritias, an Apocryphal Sword of Pain, and an Apocryphal Siren Hair Earring");
       return;
-    }
-}
+      }
+    
+  }
 
 sub EVENT_ITEM {
   $key = $client->AccountID() . "-kunark-flag";
@@ -74,7 +77,7 @@ sub EVENT_ITEM {
 
   if ($expansion < 14){
     if (plugin::takeItems(827200 => 1, 84189 => 1, 825319 => 1, 824741 =>1)) {
-      plugin::Whisper("Here are three tokens. Hand them back to me for your flag!");
+      plugin::Whisper("Here are three tokens. Hand one back to me for your flag!");
       quest::summonfixeditem(99102);
       quest::summonfixeditem(99102);
       quest::summonfixeditem(99102);
