@@ -19,7 +19,7 @@ sub EVENT_ITEM {
     quest::ding();
   }
 
-  #plugin::return_items(\%itemcount); # return unused items
+  plugin::return_items(\%itemcount); # return unused items
 }
 
 #End of File, Zone:iceclad  NPC:110073 -- #Translocator_Kurione

@@ -11,6 +11,6 @@ sub EVENT_ITEM {
 if (plugin::check_handin(\%itemcount, 62093=> 1, 62092=> 3)){
 quest::summonitem(62202); # Item: Copper Medal of Rapture
 }
-#plugin::return_items(\%itemcount); # return unused items
+plugin::return_items(\%itemcount); # return unused items
  }
 #END of FILE Zone: Firiona ID:84 - Gillia_Brissok (Gillia_Brissok.pl) 

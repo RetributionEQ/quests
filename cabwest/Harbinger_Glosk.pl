@@ -67,7 +67,7 @@ sub EVENT_ITEM {
 		quest::emote("watches you carefully as you leave.");
 		quest::summonitem(14793); # Item: Illegible Note: Greaves
 	}
-	#plugin::return_items(\%itemcount); # return unused items
+	plugin::return_items(\%itemcount); # return unused items
 }
 
 #END of FILE Zone:cabwest  ID:2517 -- Harbinger_Glosk

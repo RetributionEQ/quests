@@ -33,5 +33,5 @@ sub EVENT_ITEM {
   else {
     quest::say("All is not complete. A cap and the rest, which was asked for, is required.");
   }
-  #plugin::return_items(\%itemcount); # return unused items
+  plugin::return_items(\%itemcount); # return unused items
 }
