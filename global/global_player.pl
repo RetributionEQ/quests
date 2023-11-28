@@ -1,73 +1,16 @@
 
 sub EVENT_CONNECT {
-    #$client->SendToGuildHall();
+	if (!(plugin::is_eligible_for_race($client) && plugin::is_eligible_for_class($client))) {
+		$client->SendToGuildHall();
+	}
 
-#if (quest::get_data($pvp) == 1) {
-	#quest::pvp(off);
-   # quest::set_data($pvp, 2);
-#}
+	if (plugin::is_stage_complete($client, 'RoK') && $client->GetBucket("CharMaxLevel") == "51") {
+		$client->SetBucket("CharMaxlevel", 60);
+	}
 
-my $PCRace = $client->GetRace();
-my $PCClass = $client->GetClass();
-#my $level = $client->GetLevel();
-my $global_bucket_key 	= "froglok-unlock";
-my $unlock_progress = quest::get_data($global_bucket_key);
-
-
- if($PCRace == 128){ 
-	$key = $client->AccountID() . "-kunark-flag";
-	$expansion = quest::get_data($key);
-	if ($expansion < 2){
-    $client->SendToGuildHall();
-  }
- }
-if($PCRace == 130){
-	$key = $client->AccountID() . "-kunark-flag";
-	$expansion = quest::get_data($key);
-	if ($expansion < 14){
-    $client->SendToGuildHall();
-  }
-}
-
-if($PCRace == 330){
-	#if ($unlock_progress < 500){
-    $client->SendToGuildHall();
- # }
-}
-if($PCClass == 15){
-	$key = $client->AccountID() . "-kunark-flag";
-	$expansion = quest::get_data($key);
-	if ($expansion < 14){
-    $client->SendToGuildHall();
-  }
-}
-if($PCClass == 16){
-	$key = $client->AccountID() . "-kunark-flag";
-	$expansion = quest::get_data($key);
-	if ($expansion < 19){ #Zerker unlock -1/20/23 - changed to 19. All below this value will be kicked to Guild Hall
-    $client->SendToGuildHall();
-  }
-}
-
-#if($level > 19){
-#	if($PCClass == 4)
-#	{
-#	if (quest::get_data($AM11) == "") {
-#	$client->IncrementAA(199); #AM1
- #   quest::set_data($AM11, 1);
-#}
-#	}
-#}
-
-#if($level > 39){
-#	if($PCClass == 4)
-#	{
-#	if (quest::get_data($AM22) == "") {
-#	$client->IncrementAA(200); #AM1
- #   quest::set_data($AM22, 1);
-#}
-#	}
-#}
+	if (plugin::is_stage_complete($client, 'PoP') && $client->GetBucket("CharMaxLevel") == "60") {
+		$client->SetBucket("CharMaxlevel", 65);
+	}
 
 $bazkey = $client->CharacterID() . "baz";
 
@@ -359,68 +302,7 @@ if (($text =~ /Expansions/i) && ($expansion == 0)) {
 }
 
 sub EVENT_ZONE {
-
-	
-    
-
-my $PCRace = $client->GetRace();
-my $PCClass = $client->GetClass();
-#my $level = $client->GetLevel();
-#if (quest::get_data($pvp) == 1) {
-	#quest::pvp(off);
-    #quest::set_data($pvp, 2);
-#}
-$key = $client->AccountID() . "-kunark-flag";
-$expansion = quest::get_data($key);
-
-$maxlvl = $client->GetBucket("CharMaxLevel");
-
-
-if ($expansion > 1) { #Kunark-Luclin
-if (($maxlvl) == "51") {
-	$client->SetBucket("CharMaxlevel", 60);
 }
-}
-
-if ($expansion > 18) { #Change this to >18
-if (($maxlvl) == "60") {
-	$client->SetBucket("CharMaxLevel", 65);
-}
-}
-
-
-#	if (quest::get_data($AM11) == "") {
-#	$client->IncrementAA(199); #AM1
- #   quest::set_data($AM11, 1);
-#}
-
-
-#	if (quest::get_data($AM22) == "") {
-#	$client->IncrementAA(200); #AM1
- #   quest::set_data($AM22, 1);
-#}
-
-}
-
-	#if ($client->GetPetID()) {
-	#	$PetID = $entity_list->GetMobByID($client->GetPetID());
-	#	$PetID->Kill();
-	#}
-	#if ($name eq "TurmoilToad") {
-	#	quest::playerrace(27);
-	#	quest::playersize(4);
-	#}
-	#if ($name eq "Fippy") {
-	#	quest::playerrace(39);
-	#	quest::playersize(5);
-	#	quest::playertexture(2);
-	#}
-	#if ($name eq "Sergeant") {
-	#	quest::playerrace(44);
-	#	quest::playersize(6);
-	#	quest::playertexture(1);
-	#	quest::playerfeature("helm", 1);
-	#}
 
 sub EVENT_DISCOVER_ITEM {
 	$itemname = quest::getitemname($itemid);

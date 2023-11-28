@@ -1,26 +1,10 @@
 
-
-
-sub EVENT_ENTERZONE {
-$key = $client->AccountID() . "-kunark-flag";
-$expansion = quest::get_data($key);
-
-$bind = $client->GetBindZoneID;
-$bindh = $client->GetBindHeading;
-$bindx = $client->GetBindX;
-$bindy = $client->GetBindY;
-$bindz = $client->GetBindZ;
-
-if ($expansion < 2){ #Kunark
-    $client->Message(7, "You don't belong here!");
-    $client->MovePC($bind, $bindx, $bindy, $bindz, $bindh);
-  }
-
-}
-
 sub EVENT_CLICKDOOR {
-
-if($doorid == 135) {
-  quest::movepc(108,1682,41,25.9); # Zone: veeshan
-}
+  if($doorid == 135) {
+    if (plugin::is_stage_complete($client, 'PoP')) {
+      quest::movepc(108,1682,41,25.9); # Zone: veeshan
+    } else {
+      $client->Message(4, "You are not yet ready to experience this memory.");
+    }
+  }
 }
