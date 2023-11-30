@@ -3,6 +3,8 @@ sub EVENT_CLICKDOOR {
 	quest::debug("doorid " . $doorid);
 	quest::debug("version " . $version);
 	quest::debug("door " . $door);
+
+	return 1;
 }
 
 sub EVENT_CONNECT {
