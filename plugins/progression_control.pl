@@ -336,8 +336,8 @@ sub is_eligible_for_class {
 }
 
 sub is_eligible_for_zone {
-    my ($client, $zone_name) = @_;    
-    my $inform = shift // 0;
+    my ($client, $zone_name, $inform) = @_;    
+    $inform //= 0; # Set to 0 if not defined
 
     quest::debug($client . ":" . $zone_name . ":" . $inform);
 
