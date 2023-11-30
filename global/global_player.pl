@@ -11,9 +11,18 @@ sub EVENT_CLICKDOOR {
 
 sub EVENT_ENTERZONE {
 	quest::debug("Just entered: $zonesn");
+	quest::safemove();
+
 }
 
 sub EVENT_ZONE {
+	my $zone_counter = $client->GetBucket("zone_counter") || 0;
+
+	if ($zone_counter > 1) {
+		return 0;
+	}
+
+	$client->SetBucket("zone_counter", $zone_counter++);
 	return 1;
 }
 
