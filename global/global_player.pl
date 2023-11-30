@@ -9,7 +9,7 @@ sub EVENT_CLICKDOOR {
 	}
 }
 
-sub EVENT_ENTER_ZONE {
+sub EVENT_ENTERZONE {
 	quest::debug("Just entered: $zonesn");
 }
 
