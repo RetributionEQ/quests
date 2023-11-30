@@ -74,9 +74,14 @@ sub EVENT_CONNECT {
 		'16' => "You have learned Killing Spree and Rampage! Open up your AA window (Default V) to find them!"
 	);
 
-	foreach my $aa (@{$aa_list{'0'}}, @{$aa_list{$client->GetClass()}}) {
-		quest::debug($aa);
-		$client->IncrementAA($aa);
+	if (!$client->GetBucket("InitialLoginTask")) {
+		foreach my $aa (@{$aa_list{'0'}}, @{$aa_list{$client->GetClass()}}) {
+			quest::debug($aa);
+			$client->IncrementAA($aa);
+		}
+		$client->Message(15, $aa_list{'0'});
+		$client->Message(15, $aa_list{$client->GetClass()});
+		$client->SetBucket("InitialLoginTask", 1);
 	}
 
 	#if (!($zonesn != 'guildhall' && (plugin::is_eligible_for_race($client) || plugin::is_eligible_for_class($client)))) {
