@@ -74,7 +74,7 @@ sub EVENT_CONNECT {
 		'16' => "You have learned Killing Spree and Rampage! Open up your AA window (Default V) to find them!"
 	);
 
-	foreach my $aa (@{$aa_list{'0'}}, @{$aa_list{$PCClass}}) {
+	foreach my $aa (@{$aa_list{'0'}}, @{$aa_list{$client->GetClass()}}) {
 		$client->IncrementAA($aa);
 	}
 
