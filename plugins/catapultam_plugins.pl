@@ -104,11 +104,11 @@ sub DeserializeHash {
 }
 
 sub SerializeHashComplex {
-    # Check if the input is an empty string
-    return encode_json({}) if @_ == 1 && $_[0] eq '';
+    # Check if the input is an empty string or not a reference
+    return encode_json({}) if @_ != 1 || ref($_[0]) ne 'HASH';
 
-    my %hash = @_;
-    return encode_json(\%hash);
+    my $hash_ref = shift;
+    return encode_json($hash_ref);
 }
 
 sub DeserializeHashComplex {
