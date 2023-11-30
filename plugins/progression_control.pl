@@ -269,7 +269,7 @@ sub is_stage_complete {
         unless ($objective_progress{$prerequisite}) {
             quest::debug("Prerequisite not met: $prerequisite");
             if ($inform) {
-                 $client->Message(4, "You are not yet ready to experience this memory.");
+                 $client->Message(4, "You are not yet ready to experience that memory.");
             }
             return 0;
         }

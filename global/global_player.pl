@@ -2,16 +2,20 @@
 sub EVENT_CLICKDOOR {
 	my $target_zone = plugin::get_target_door_zone($zonesn, $doorid, $version);
 
-	if (plugin::is_eligible_for_zone($client, $target_zone, 1)) {
-		return 0;
-	} else {
+	if (!plugin::is_eligible_for_zone($client, $target_zone, 1)) {
+		#Disallow Zone
 		return 1;
 	}
 }
 
 sub EVENT_ENTERZONE {
-	if (!plugin::is_eligible_for_zone($client, $zonesn, 1)) {
+	if (!plugin::is_eligible_for_zone($client, $zonesn)) {
+		$client->SetBucket("force-relocated", 1);
+		$client->Message(4, "Your vision blurs. You lose conciousness and wake up in a familiar place.");
 		$client->MovePC(151, 185, -835, 4, 390); # Bazaar Safe Location.
+	} elsif ($client->GetBucket("force-relocated")) {
+		$client->Message(4, "You are not yet ready to experience that memory.");
+		$client->Message(4, "Your vision blurs. You fall asleep, and awaken in a familiar location.");
 	}
 }
 
