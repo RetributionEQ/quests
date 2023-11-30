@@ -234,7 +234,7 @@ sub set_subflag {
     # Update the flag
     $account_progress{$stage}{$objective} = $value;
 
-    quest::debug($account_progress{$stage}{$objective} . " : WTF?");
+    quest::debug($account_progress{$stage}{$objective} . " : WTF : " . plugin::SerializeHashComplex(\%account_progress));
 
     # Serialize and save the updated account progress
     quest::set_data($client->AccountID() . "-progress-flag", plugin::SerializeHashComplex(\%account_progress));
