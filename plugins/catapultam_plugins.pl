@@ -111,9 +111,12 @@ sub SerializeHashComplex {
     return encode_json(%hash);
 }
 
-
 sub DeserializeHashComplex {
     my $string = shift;
+
+    # Check for an empty string and return an empty hash
+    return {} if $string eq '';
+
     return decode_json($string);
 }
 
