@@ -108,7 +108,7 @@ sub SerializeHashComplex {
     return encode_json({}) if @_ == 1 && $_[0] eq '';
 
     my %hash = @_;
-    return encode_json(%hash);
+    return encode_json(\%hash);
 }
 
 sub DeserializeHashComplex {
