@@ -216,10 +216,8 @@ sub get_subflag {
 
 
 sub set_subflag {
-    my ($client, $stage, $objective) = @_;
-
-    # Default value is 1 if not otherwise defined
-    my $value = shift // 1;
+    my ($client, $stage, $objective, $value) = @_;
+    $value //= 1; # Default value is 1 if not otherwise defined
 
     # Check if the stage is valid
     return 0 unless exists $VALID_STAGES{$stage};
