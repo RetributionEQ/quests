@@ -79,6 +79,6 @@ sub EVENT_CONNECT {
 	}
 
 	if (!($zonesn != 'guildhall' && (plugin::is_eligible_for_race($client) || plugin::is_eligible_for_class($client)))) {
-		$client->SendToGuildHall();
+		#$client->SendToGuildHall();
 	}
 }
