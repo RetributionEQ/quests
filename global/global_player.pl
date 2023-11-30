@@ -18,6 +18,8 @@ sub EVENT_ZONE {
 	quest::debug("target_instance_version " . $target_instance_version);
 
 	$client->SetBucket($client->GetX() . ":" . $client->GetY() . ":" . $client->GetZ());
+
+	return 1;
 }
 
 sub EVENT_CONNECT {
