@@ -104,9 +104,6 @@ sub DeserializeHash {
 }
 
 sub SerializeHashComplex {
-    # Check if the input is an empty string or not a reference
-    return encode_json({}) if @_ != 1 || ref($_[0]) ne 'HASH';
-
     my $hash_ref = shift;
     return encode_json($hash_ref);
 }
