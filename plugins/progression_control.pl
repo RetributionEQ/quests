@@ -132,19 +132,42 @@ sub set_subflag {
     my ($client, $stage, $objective, $value) = @_;
     $value //= 1; # Default value is 1 if not otherwise defined
 
+    quest::debug("set_subflag called with: stage=$stage, objective=$objective, value=$value");
+
     # Check if the stage is valid
-    return 0 unless exists $VALID_STAGES{$stage};
+    unless (exists $VALID_STAGES{$stage}) {
+        quest::debug("Invalid stage: $stage");
+        return 0;
+    }
+    quest::debug("Stage $stage is valid");
 
     # Deserialize the current account progress into a hash
-    my %flag = plugin::DeserializeHash(quest::get_data($client->AccountID() . "-progress-flag-$stage"));
+    my $data = quest::get_data($client->AccountID() . "-progress-flag-$stage");
+    quest::debug("Data retrieved for $stage: $data");
+    my %account_progress = plugin::DeserializeHash($data);
+
+    # Check if the flag is already set to the desired value
+    if (defined $account_progress{$objective} && $account_progress{$objective} == $value) {
+        quest::debug("Objective $objective is already set to the desired value: $value");
+        return 0;
+    }
 
     # Update the flag
-    $flag{$objective} = $value;
+    quest::debug("Setting objective $objective to value $value");
+    $account_progress{$objective} = $value;
 
     # Serialize and save the updated account progress
-    quest::set_data($client->AccountID() . "-progress-flag-$stage", plugin::SerializeHash(%flag));
+    my $serialized_data = plugin::SerializeHash(%account_progress);
+    quest::debug("Serialized data: $serialized_data");
+    quest::set_data($client->AccountID() . "-progress-flag-$stage", $serialized_data);
+
+    # Verify that data is saved correctly
+    my $test_data = quest::get_data($client->AccountID() . "-progress-flag-$stage");
+    quest::debug("Data saved for $stage: $test_data");
 
     $client->Message(4, "You have gained a progression flag!");
+
+    quest::debug("Flag set for $objective under stage $stage with value $value");
 
     return 1;
 }
