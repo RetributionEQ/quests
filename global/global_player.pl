@@ -324,9 +324,6 @@ if (($text =~ /Expansions/i) && ($expansion == 0)) {
 
 }
 
-sub EVENT_ZONE {
-}
-
 sub EVENT_DISCOVER_ITEM {
 	$itemname = quest::getitemname($itemid);
 	quest::discordsend("ooc", "$name discovered $itemname!");
