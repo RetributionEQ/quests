@@ -268,12 +268,14 @@ sub is_stage_complete {
 
     # Return false if the stage is not valid
     return 0 unless exists $VALID_STAGES{$stage};
+    quest::debug("Invalid Stage Queried");
 
     # Check prerequisites
     my $eligible = 1;
     for my $prerequisite (@{$STAGE_PREREQUISITES{$stage}}) {
         unless ($account_progress{$stage}{$prerequisite}) {
             $eligible = 0;
+            quest::debug($prerequisite . " was not met");
             last; # Exit the loop as soon as one prerequisite is not met
         }
     }
