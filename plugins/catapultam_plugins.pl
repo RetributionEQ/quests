@@ -103,20 +103,6 @@ sub DeserializeHash {
     return %hash;
 }
 
-sub SerializeHashComplex {
-    my $hash_ref = shift;
-    return encode_json($hash_ref);
-}
-
-sub DeserializeHashComplex {
-    my $string = shift;
-
-    # Check for an empty string and return an empty hash
-    return {} if $string eq '';
-
-    return decode_json($string);
-}
-
 sub GetRoman {
     my ($level) = @_;
 

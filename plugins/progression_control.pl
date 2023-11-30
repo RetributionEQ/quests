@@ -108,11 +108,6 @@ my %STAGE_PREREQUISITES = (
     'GoD' => ['Quarm'],
     # ... and so on for each stage
 );
-
-# The new data structure for flag is the top level 'AccountID-progress-flag', which is a serialized 2-level hash
-# The first layer of the hash uses 'stages' as keys, (such as RoK, SoV, SoL, PoP, GoD, OoW, DoN), and the 2nd layer hash as value
-# The second layer uses objective names as the keys and truthy\falsey value.
-
 # Breakpoints for original flagging system:
 # Kunark: 2
 # Velious: 3
@@ -120,13 +115,16 @@ my %STAGE_PREREQUISITES = (
 # Planes of Power: 19
 # 'Fabled Classic'/Quarm-Kill: 20
 
+# The new data structure will be independent flag variables for each stage, ie AccountID-progress-flag-RoK
+# This is stored as a serialized hash using plugin::SerializeHash and plugin::DeserializeHash
+# set_subflag does all the heavy lifting of setting flags
+
 # This method is used to bridge the old system to the new system.
 # When full cut-over happens and everything is confirmed to work, this should be updated remove the original values.
 sub convert_expansion_flag {
     my $client = shift;
 
     my $original_flag = quest::get_data($client->AccountID() . "-kunark-flag") || 0;
-    my %account_progress = plugin::DeserializeHashComplex(quest::get_data($client->AccountID() . "-progress-flag"));
 
     if (quest::get_data($client->AccountID() . "vox")) {
         set_subflag($client, 'RoK', "Lady Vox");
@@ -210,7 +208,7 @@ sub get_subflag {
 
     return 0 unless exists $VALID_STAGES{$stage};
 
-    my %account_progress = plugin::DeserializeHashComplex(quest::get_data($client->AccountID() . "-progress-flag"));
+    my %account_progress = plugin::DeserializeHash(quest::get_data($client->AccountID() . "-progress-flag-$stage"));
     return $account_progress{$stage}{$objective} ? 1 : 0;
 }
 
@@ -223,7 +221,7 @@ sub set_subflag {
     return 0 unless exists $VALID_STAGES{$stage};
 
     # Deserialize the current account progress
-    my %account_progress = plugin::DeserializeHashComplex(quest::get_data($client->AccountID() . "-progress-flag"));
+    my %account_progress = plugin::DeserializeHash(quest::get_data($client->AccountID() . "-progress-flag-$stage"));
 
     # Check if the flag is already set to the desired value
     if (exists $account_progress{$stage} && (defined $account_progress{$stage}{$objective}) && ($account_progress{$stage}{$objective} == $value)) {
@@ -234,10 +232,10 @@ sub set_subflag {
     # Update the flag
     $account_progress{$stage}{$objective} = $value;
 
-    quest::debug($account_progress{$stage}{$objective} . " : WTF : " . plugin::SerializeHashComplex(\%account_progress));
+    quest::debug($account_progress{$stage}{$objective} . " : WTF : " . plugin::SerializeHash(\%account_progress));
 
     # Serialize and save the updated account progress
-    quest::set_data($client->AccountID() . "-progress-flag", plugin::SerializeHashComplex(\%account_progress));
+    quest::set_data($client->AccountID() . "-progress-flag-$stage", plugin::SerializeHash(\%account_progress));
 
     $client->Message(4, "You have gained a progression flag!");
 
@@ -266,7 +264,7 @@ sub is_stage_complete {
 
     quest::debug($stage);
 
-    my %account_progress = plugin::DeserializeHashComplex(quest::get_data($client->AccountID() . "-progress-flag"));
+    my %account_progress = plugin::DeserializeHash(quest::get_data($client->AccountID() . "-progress-flag-$stage"));
 
     # Return false if the stage is not valid
     return 0 unless exists $VALID_STAGES{$stage};
