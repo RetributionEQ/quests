@@ -132,42 +132,32 @@ sub set_subflag {
     my ($client, $stage, $objective, $value) = @_;
     $value //= 1; # Default value is 1 if not otherwise defined
 
-    quest::debug("set_subflag called with: stage=$stage, objective=$objective, value=$value");
-
     # Check if the stage is valid
-    unless (exists $VALID_STAGES{$stage}) {
-        quest::debug("Invalid stage: $stage");
-        return 0;
-    }
-    quest::debug("Stage $stage is valid");
+    return 0 unless exists $VALID_STAGES{$stage};
 
     # Deserialize the current account progress into a hash
-    my $data = quest::get_data($client->AccountID() . "-progress-flag-$stage");
-    quest::debug("Data retrieved for $stage: $data");
-    my %account_progress = plugin::DeserializeHash($data);
-
-    # Check if the flag is already set to the desired value
-    if (defined $account_progress{$objective} && $account_progress{$objective} == $value) {
-        quest::debug("Objective $objective is already set to the desired value: $value");
-        return 0;
-    }
+    my %account_progress = plugin::DeserializeHash(quest::get_data($client->AccountID() . "-progress-flag-$stage"));
 
     # Update the flag
-    quest::debug("Setting objective $objective to value $value");
     $account_progress{$objective} = $value;
 
     # Serialize and save the updated account progress
-    my $serialized_data = plugin::SerializeHash(%account_progress);
-    quest::debug("Serialized data: $serialized_data");
-    quest::set_data($client->AccountID() . "-progress-flag-$stage", $serialized_data);
-
-    # Verify that data is saved correctly
-    my $test_data = quest::get_data($client->AccountID() . "-progress-flag-$stage");
-    quest::debug("Data saved for $stage: $test_data");
+    quest::set_data($client->AccountID() . "-progress-flag-$stage", plugin::SerializeHash(%account_progress));
 
     $client->Message(4, "You have gained a progression flag!");
 
-    quest::debug("Flag set for $objective under stage $stage with value $value");
+    # Check if the stage is now complete
+    if (is_stage_complete($client, $stage)) {
+        if ($stage eq 'RoK' && $client->GetBucket("CharMaxLevel") == 51) {
+            $client->SetBucket("CharMaxlevel", 60);
+        }
+
+        if ($stage eq 'PoP' && $client->GetBucket("CharMaxLevel") == 60) {
+            $client->SetBucket("CharMaxlevel", 65);
+        }
+
+        $client->Message(4, "You have completed a progression stage!");
+    }
 
     return 1;
 }
@@ -260,37 +250,37 @@ sub convert_expansion_flag {
 # Optional final parameter is used to inform player if they fail the check
 # Example; is_stage_complete($client, 'SoL') == 1 indicates that the player has unlocked access to Luclin.
 sub is_stage_complete {
-    my ($client, $stage, $inform) = @_;    
+    my ($client, $stage, $inform) = @_;
     $inform //= 0; # Set to 0 if not defined
 
-    quest::debug($stage);
-
-    my %account_progress = plugin::DeserializeHash(quest::get_data($client->AccountID() . "-progress-flag-$stage"));
+    quest::debug("Checking if stage is complete: $stage");
 
     # Return false if the stage is not valid
-    return 0 unless exists $VALID_STAGES{$stage};
-    quest::debug("Valid Stage Queried");
-
-    # Check prerequisites
-    my $eligible = 1;
-    for my $prerequisite (@{$STAGE_PREREQUISITES{$stage}}) {
-        unless ($account_progress{$stage}{$prerequisite}) {
-            $eligible = 0;
-            quest::debug($prerequisite . " was not met");
-            last; # Exit the loop as soon as one prerequisite is not met
-        }
-    }
-
-    # If not all prerequisites are met, send the message
-    unless ($eligible) {
-        if ($inform) {
-            $client->Message(4, "You are not yet ready to experience this memory.");
-        }
+    unless (exists $VALID_STAGES{$stage}) {
+        quest::debug("Invalid stage: $stage");
         return 0;
     }
+    quest::debug("Valid Stage: $stage");
 
+    # Check prerequisites
+    foreach my $prerequisite (@{$STAGE_PREREQUISITES{$stage}}) {
+        my %objective_progress = plugin::DeserializeHash(quest::get_data($client->AccountID() . "-progress-flag-$stage-$prerequisite"));
+
+        unless ($objective_progress{$prerequisite}) {
+            quest::debug("Prerequisite not met: $prerequisite");
+            if ($inform) {
+                $client->Message(4, "You have not yet completed $prerequisite required for $stage.");
+            }
+            return 0;
+        }
+        quest::debug("Prerequisite met: $prerequisite");
+    }
+
+    # If all prerequisites are met
+    quest::debug("All prerequisites for stage $stage have been met");
     return 1;
 }
+
 
 sub is_eligible_for_race {
     my $client = shift;
