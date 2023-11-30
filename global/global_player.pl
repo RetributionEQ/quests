@@ -2,7 +2,7 @@
 sub EVENT_CLICKDOOR {
 	my $target_zone = plugin::get_target_door_zone($zonesn, $doorid, $version);
 
-	if (is_eligible_for_zone($client, $target_zone, 1)) {
+	if (plugin::is_eligible_for_zone($client, $target_zone, 1)) {
 		return 0;
 	} else {
 		return 1;
