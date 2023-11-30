@@ -336,12 +336,13 @@ sub is_eligible_for_class {
 }
 
 sub is_eligible_for_zone {
-    my ($client, $zone_name) = @_;
+    my ($client, $zone_name) = @_;    
+    my $inform = shift // 0;
 
     # Check if the zone exists in the atlas
     if (exists $atlas{$zone_name}) {
         # Use is_stage_complete to check if the client has completed the required stage
-        return is_stage_complete($client, $atlas{$zone_name});
+        return is_stage_complete($client, $atlas{$zone_name}, $inform);
     } else {
         # If the zone is not in the atlas, assume it's accessible or handle as needed
         return 1;
