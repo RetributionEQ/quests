@@ -4,7 +4,7 @@ sub EVENT_CLICKDOOR {
 	quest::debug("version " . $version);
 	quest::debug("door " . $door);
 
-	return 1;
+	quest::debug("target_zone: " . plugin::get_target_door_zone($zonesn, $doorid, $version));
 }
 
 sub EVENT_CONNECT {
