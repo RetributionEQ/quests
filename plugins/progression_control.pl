@@ -264,6 +264,8 @@ sub is_stage_complete {
     my ($client, $stage, $inform) = @_;    
     $inform //= 0; # Set to 0 if not defined
 
+    quest::debug($stage);
+
     my %account_progress = plugin::DeserializeHashComplex(quest::get_data($client->AccountID() . "-progress-flag"));
 
     # Return false if the stage is not valid
