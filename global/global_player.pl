@@ -78,7 +78,7 @@ sub EVENT_CONNECT {
 		$client->IncrementAA($aa);
 	}
 
-	if (!(plugin::is_eligible_for_race($client) && plugin::is_eligible_for_class($client))) {
+	if (!($zonesn != 'guildhall' && (plugin::is_eligible_for_race($client) || plugin::is_eligible_for_class($client)))) {
 		$client->SendToGuildHall();
 	}
 }
