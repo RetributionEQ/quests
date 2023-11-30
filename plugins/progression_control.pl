@@ -1,3 +1,11 @@
+#Some Constants
+my $BERSERKER = 16;
+my $BEASTLORD = 15;
+my $IKSAR     = 128;
+my $VAH_SHIR  = 130;
+my $DRAKKIN   = 522;
+my $GUKTAN    = 330;
+
 my %atlas = (
     'cabeast'        => 'RoK',
     'cabwest'        => 'RoK',
@@ -88,14 +96,6 @@ my %atlas = (
     'veeshan'        => 'PoP', # Out of Era
 );
 
-#Some Constants
-my $BERSERKER = 16;
-my $BEASTLORD = 15;
-my $IKSAR     = 128;
-my $VAH_SHIR  = 130;
-my $DRAKKIN   = 522;
-my $GUKTAN    = 330;
-
 # Global hash of valid stages
 my %VALID_STAGES = map { $_ => 1 } qw(RoK SoV SoL PoP GoD OoW DoN);
 
@@ -108,6 +108,7 @@ my %STAGE_PREREQUISITES = (
     'GoD' => ['Quarm'],
     # ... and so on for each stage
 );
+
 # Breakpoints for original flagging system:
 # Kunark: 2
 # Velious: 3
@@ -118,6 +119,35 @@ my %STAGE_PREREQUISITES = (
 # The new data structure will be independent flag variables for each stage, ie AccountID-progress-flag-RoK
 # This is stored as a serialized hash using plugin::SerializeHash and plugin::DeserializeHash
 # set_subflag does all the heavy lifting of setting flags
+
+sub get_subflag {
+    my ($client, $stage, $objective) = @_;
+
+    my %flag = plugin::DeserializeHash(quest::get_data($client->AccountID() . "-progress-flag-$stage"));
+
+    return $flag{$objective};
+}
+
+sub set_subflag {
+    my ($client, $stage, $objective, $value) = @_;
+    $value //= 1; # Default value is 1 if not otherwise defined
+
+    # Check if the stage is valid
+    return 0 unless exists $VALID_STAGES{$stage};
+
+    # Deserialize the current account progress into a hash
+    my %flag = plugin::DeserializeHash(quest::get_data($client->AccountID() . "-progress-flag-$stage"));
+
+    # Update the flag
+    $flag{$objective} = $value;
+
+    # Serialize and save the updated account progress
+    quest::set_data($client->AccountID() . "-progress-flag-$stage", plugin::SerializeHash(%flag));
+
+    $client->Message(4, "You have gained a progression flag!");
+
+    return 1;
+}
 
 # This method is used to bridge the old system to the new system.
 # When full cut-over happens and everything is confirmed to work, this should be updated remove the original values.
@@ -203,58 +233,6 @@ sub convert_expansion_flag {
     }
 }
 
-sub get_subflag {
-    my ($client, $stage, $objective) = @_;
-
-    return 0 unless exists $VALID_STAGES{$stage};
-
-    my %account_progress = plugin::DeserializeHash(quest::get_data($client->AccountID() . "-progress-flag-$stage"));
-    return $account_progress{$stage}{$objective} ? 1 : 0;
-}
-
-
-sub set_subflag {
-    my ($client, $stage, $objective, $value) = @_;
-    $value //= 1; # Default value is 1 if not otherwise defined
-
-    # Check if the stage is valid
-    return 0 unless exists $VALID_STAGES{$stage};
-
-    # Deserialize the current account progress
-    my %account_progress = plugin::DeserializeHash(quest::get_data($client->AccountID() . "-progress-flag-$stage"));
-
-    # Check if the flag is already set to the desired value
-    if (exists $account_progress{$stage} && (defined $account_progress{$stage}{$objective}) && ($account_progress{$stage}{$objective} == $value)) {
-        # No change needed
-        return 0;
-    }
-
-    # Update the flag
-    $account_progress{$stage}{$objective} = $value;
-
-    quest::debug($account_progress{$stage}{$objective} . " : WTF : " . plugin::SerializeHash(%account_progress));
-
-    # Serialize and save the updated account progress
-    quest::set_data($client->AccountID() . "-progress-flag-$stage", plugin::SerializeHash(%account_progress));
-
-    $client->Message(4, "You have gained a progression flag!");
-
-    # Check if the stage is now complete
-    if (is_stage_complete($client, $stage)) {
-        if ($stage == 'RoK' && $client->GetBucket("CharMaxLevel") == "51") {
-            $client->SetBucket("CharMaxlevel", 60);
-        }
-
-        if ($stage == 'PoP' && $client->GetBucket("CharMaxLevel") == "60") {
-            $client->SetBucket("CharMaxlevel", 65);
-        }
-
-        $client->Message(4, "You have completed a progression stage!");
-    }
-
-    return 1;
-}
-
 # Returns 1 if the client has completed all objectives needed to unlock the indicated stage
 # Optional final parameter is used to inform player if they fail the check
 # Example; is_stage_complete($client, 'SoL') == 1 indicates that the player has unlocked access to Luclin.
@@ -289,16 +267,6 @@ sub is_stage_complete {
     }
 
     return 1;
-}
-
-sub is_valid_stage {
-    my $stage_name = shift;
-    if (exists $VALID_STAGES{$stage_name}) {
-        return 1;
-    } else {
-        quest::debug("NON-VALID PROGRESSION STAGE WAS CHECKED!");
-        return 0;
-    }
 }
 
 sub is_eligible_for_race {
@@ -357,6 +325,16 @@ sub is_eligible_for_zone {
     } else {
         # If the zone is not in the atlas, assume it's accessible or handle as needed
         return 1;
+    }
+}
+
+sub is_valid_stage {
+    my $stage_name = shift;
+    if (exists $VALID_STAGES{$stage_name}) {
+        return 1;
+    } else {
+        quest::debug("NON-VALID PROGRESSION STAGE WAS CHECKED!");
+        return 0;
     }
 }
 
