@@ -339,6 +339,8 @@ sub is_eligible_for_zone {
     my ($client, $zone_name) = @_;    
     my $inform = shift // 0;
 
+    quest::debug($client . ":" . $zone_name . ":" . $inform);
+
     # Check if the zone exists in the atlas
     if (exists $atlas{$zone_name}) {
         # Use is_stage_complete to check if the client has completed the required stage
