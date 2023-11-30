@@ -9,10 +9,6 @@ sub EVENT_CLICKDOOR {
 	}
 }
 
-sub EVENT_ZONE {
-	return 1;
-}
-
 sub EVENT_CONNECT {
 	if (!(plugin::is_eligible_for_race($client) && plugin::is_eligible_for_class($client))) {
 		$client->SendToGuildHall();
