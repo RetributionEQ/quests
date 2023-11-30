@@ -1,21 +1,3 @@
-
-sub EVENT_ENTERZONE {
-$key = $client->AccountID() . "-kunark-flag";
-$expansion = quest::get_data($key);
-
-$bind = $client->GetBindZoneID;
-$bindh = $client->GetBindHeading;
-$bindx = $client->GetBindX;
-$bindy = $client->GetBindY;
-$bindz = $client->GetBindZ;
-
-if ($expansion < 19){ #POP
-    $client->Message(7, "You don't belong here!");
-    $client->MovePC($bind, $bindx, $bindy, $bindz, $bindh);
-  }
-
-}
-
 $level_for_tier_two = 55;
 $level_for_tier_three = 62;
 $level_for_tier_three_five = 255;

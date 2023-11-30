@@ -9,6 +9,12 @@ sub EVENT_CLICKDOOR {
 	}
 }
 
+sub EVENT_ENTERZONE {
+	if (!plugin::is_eligible_for_zone($client, $zonesn, 1)) {
+		$client->MovePC(151, 185, -835, 4, 390); # Bazaar Safe Location.
+	}
+}
+
 sub EVENT_CONNECT {
 	if (!(plugin::is_eligible_for_race($client) && plugin::is_eligible_for_class($client))) {
 		$client->SendToGuildHall();
