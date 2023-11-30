@@ -19,10 +19,6 @@ sub EVENT_ENTERZONE {
 		$client->Message(4, "Your vision blurs. You lose conciousness and wake up in a familiar place.");
 		$client->MovePC(151, 185, -835, 4, 390); # Bazaar Safe Location.
 	}
-
-	if ($zonesn != 'guildhall' && (!plugin::is_eligible_for_race($client) || !plugin::is_eligible_for_class($client))) {
-		$client->SendToGuildHall();
-	}
 }
 
 sub EVENT_CONNECT {
