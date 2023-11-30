@@ -10,6 +10,9 @@ sub EVENT_CLICKDOOR {
 }
 
 sub EVENT_ENTERZONE {
+	if (!plugin::is_eligible_for_zone($client, $zonesn, 1)) {
+		$client->MovePC(151, 185, -835, 4, 390); # Bazaar Safe Location.
+	}
 }
 
 sub EVENT_ZONE {
@@ -19,12 +22,6 @@ sub EVENT_ZONE {
 	quest::debug("target_zone_id " . $target_zone_id);
 	quest::debug("target_instance_id " . $target_instance_id);
 	quest::debug("target_instance_version " . $target_instance_version);
-
-	if (plugin::is_eligible_for_zone($client, $zonesn, 1)) {
-		return 0;
-	} else {
-		return 1;
-	}
 }
 
 sub EVENT_CONNECT {
