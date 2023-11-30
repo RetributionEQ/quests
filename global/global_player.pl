@@ -26,10 +26,6 @@ sub EVENT_ENTERZONE {
 }
 
 sub EVENT_CONNECT {
-	if (!(plugin::is_eligible_for_race($client) && plugin::is_eligible_for_class($client))) {
-		$client->SendToGuildHall();
-	}
-
 	if (!$client->GetBucket("CharMaxLevel")) {
 		$client->SetBucket("CharMaxlevel", 51); #By default, on initial log in (first time) we are setting Max Level to 51.
 	}
@@ -84,5 +80,9 @@ sub EVENT_CONNECT {
 
 	foreach my $aa (@{$aa_list{'0'}}, @{$aa_list{$PCClass}}) {
 		$client->IncrementAA($aa);
+	}
+
+	if (!(plugin::is_eligible_for_race($client) && plugin::is_eligible_for_class($client))) {
+		$client->SendToGuildHall();
 	}
 }
