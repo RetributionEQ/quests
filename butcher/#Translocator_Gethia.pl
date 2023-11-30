@@ -8,12 +8,11 @@ sub EVENT_SAY {
 
    
    if ($text =~ /timorous deep/i) {
-      if (plugin::is_stage_complete($client, 'RoK')) {
+      if (plugin::is_stage_complete($client, 'RoK', 1)) {
          quest::say("Off you go!");
          quest::movepc(96, -3260.10, -4544.56, 19.47); # Zone: timorous
       } else {
-         quest::say("That's odd! The translocation magic won't take hold on you. I'll see if I can figure this out, try to come back later.");
-         $client->Message(4, "You are not yet ready to experience this memory.");
+         quest::say("That's odd! The translocation magic won't take hold on you. I'll see if I can figure this out, try to come back later.");         
       }
    }
 }

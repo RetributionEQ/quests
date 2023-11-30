@@ -10,8 +10,8 @@ sub EVENT_CLICKDOOR {
 	}
     else {
     quest::whisper("I must return once I have conquered Luclin");
-}
-}
-}
 
-
+    return 1;
+}
+}
+}

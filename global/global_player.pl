@@ -1,4 +1,10 @@
 
+sub EVENT_CLICKDOOR {
+	quest::debug("doorid " . $doorid);
+	quest::debug("version " . $version);
+	quest::debug("door " . $door);
+}
+
 sub EVENT_CONNECT {
 	if (!(plugin::is_eligible_for_race($client) && plugin::is_eligible_for_class($client))) {
 		$client->SendToGuildHall();
