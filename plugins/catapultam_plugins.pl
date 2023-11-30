@@ -103,16 +103,24 @@ sub DeserializeHash {
     return %hash;
 }
 
-#Use these!
 sub SerializeHashComplex {
+    # Check if the input is an empty string
+    return encode_json({}) if @_ == 1 && $_[0] eq '';
+
     my %hash = @_;
     return encode_json(\%hash);
 }
 
+
 sub DeserializeHashComplex {
     my $string = shift;
+
+    # Check for an empty string and return an empty hash
+    return {} if $string eq '';
+
     return decode_json($string);
 }
+
 
 sub GetRoman {
     my ($level) = @_;
