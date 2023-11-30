@@ -270,7 +270,7 @@ sub is_stage_complete {
 
     # Return false if the stage is not valid
     return 0 unless exists $VALID_STAGES{$stage};
-    quest::debug("Invalid Stage Queried");
+    quest::debug("Valid Stage Queried");
 
     # Check prerequisites
     my $eligible = 1;
