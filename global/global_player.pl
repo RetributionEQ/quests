@@ -20,7 +20,7 @@ sub EVENT_ZONE {
 	quest::debug("target_instance_id " . $target_instance_id);
 	quest::debug("target_instance_version " . $target_instance_version);
 
-	if (plugin::is_eligible_for_zone($client, $zonesn)) {
+	if (plugin::is_eligible_for_zone($client, $zonesn, 1)) {
 		return 0;
 	} else {
 		return 1;
