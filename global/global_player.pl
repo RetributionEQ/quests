@@ -10,20 +10,21 @@ sub EVENT_CLICKDOOR {
 }
 
 sub EVENT_ENTERZONE {
-	quest::debug("Just entered: $zonesn");
-	quest::safemove();
-
 }
 
 sub EVENT_ZONE {
-	my $zone_counter = $client->GetBucket("zone_counter") || 0;
+	quest::debug("from_zone_id " . $from_zone_id);
+	quest::debug("from_instance_id " . $from_instance_id);
+	quest::debug("from_instance_version " . $from_instance_version);
+	quest::debug("target_zone_id " . $target_zone_id);
+	quest::debug("target_instance_id " . $target_instance_id);
+	quest::debug("target_instance_version " . $target_instance_version);
 
-	if ($zone_counter > 1) {
+	if (plugin::is_eligible_for_zone($client, $zonesn)) {
 		return 0;
+	} else {
+		return 1;
 	}
-
-	$client->SetBucket("zone_counter", $zone_counter++);
-	return 1;
 }
 
 sub EVENT_CONNECT {
