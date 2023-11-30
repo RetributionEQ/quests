@@ -264,12 +264,12 @@ sub is_stage_complete {
 
     # Check prerequisites
     foreach my $prerequisite (@{$STAGE_PREREQUISITES{$stage}}) {
-        my %objective_progress = plugin::DeserializeHash(quest::get_data($client->AccountID() . "-progress-flag-$stage-$prerequisite"));
+        my %objective_progress = plugin::DeserializeHash(quest::get_data($client->AccountID() . "-progress-flag-$stage"));
 
         unless ($objective_progress{$prerequisite}) {
             quest::debug("Prerequisite not met: $prerequisite");
             if ($inform) {
-                $client->Message(4, "You have not yet completed $prerequisite required for $stage.");
+                $client->Message(4, "You are not yet ready to experience this memory.");
             }
             return 0;
         }
