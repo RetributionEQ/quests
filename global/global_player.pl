@@ -75,10 +75,11 @@ sub EVENT_CONNECT {
 	);
 
 	foreach my $aa (@{$aa_list{'0'}}, @{$aa_list{$client->GetClass()}}) {
+		quest::debug($aa);
 		$client->IncrementAA($aa);
 	}
 
-	if (!($zonesn != 'guildhall' && (plugin::is_eligible_for_race($client) || plugin::is_eligible_for_class($client)))) {
+	#if (!($zonesn != 'guildhall' && (plugin::is_eligible_for_race($client) || plugin::is_eligible_for_class($client)))) {
 		#$client->SendToGuildHall();
-	}
+	#}
 }
