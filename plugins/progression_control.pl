@@ -261,8 +261,8 @@ sub set_subflag {
 # Optional final parameter is used to inform player if they fail the check
 # Example; is_stage_complete($client, 'SoL') == 1 indicates that the player has unlocked access to Luclin.
 sub is_stage_complete {
-    my ($client, $stage) = @_;
-    my $inform = shift // 0;
+    my ($client, $stage, $inform) = @_;    
+    $inform //= 0; # Set to 0 if not defined
 
     my %account_progress = plugin::DeserializeHashComplex(quest::get_data($client->AccountID() . "-progress-flag"));
 
