@@ -270,13 +270,20 @@ sub is_stage_complete {
     return 0 unless exists $VALID_STAGES{$stage};
 
     # Check prerequisites
+    my $eligible = 1;
     for my $prerequisite (@{$STAGE_PREREQUISITES{$stage}}) {
-        return 0 unless $account_progress{$stage}{$prerequisite};
+        unless ($account_progress{$stage}{$prerequisite}) {
+            $eligible = 0;
+            last; # Exit the loop as soon as one prerequisite is not met
+        }
     }
 
-    # All prerequisites are met
-    if ($inform) {
-        $client->Message(4, "You are not yet ready to experience this memory.");
+    # If not all prerequisites are met, send the message
+    unless ($eligible) {
+        if ($inform) {
+            $client->Message(4, "You are not yet ready to experience this memory.");
+        }
+        return 0;
     }
 
     return 1;
