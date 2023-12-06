@@ -34,26 +34,6 @@ sub EVENT_CONNECT {
 		$client->SetBucket("CharMaxlevel", 65);
 	}
 
-	my %aa_list = (
-		'0' => [1000, 12636, 12637, 8445, 8446, 8447, 16419, 16420, 16421, 1021, 1022, 1023, 1024, 1025],
-		'1' => [6283, 6607, 4739, 1597], # Warrior AA abilities
-		'2' => [12652, 507, 746], # Cleric AA abilities
-		'3' => [188, 6395], # Paladin AA abilities
-		'4' => [205, 1196, 645, 1345], # Ranger AA abilities
-		'5' => [5085, 13165], # Shadow Knight AA abilities
-		'6' => [548, 14264, 767, 6375], # Druid AA abilities
-		'7' => [810, 1352], # Monk AA abilities
-		'8' => [630, 556, 557, 558, 559, 560, 1110, 225], # Bard AA abilities
-		'9' => [287, 605, 4739], # Rogue AA abilities
-		'10' => [10957, 1327], # Shaman AA abilities
-		'11' => [767, 6375, 734, 12770], # Necromancer AA abilities
-		'12' => [155, 516, 5295], # Wizard AA abilities
-		'13' => [8201, 734, 8342], # Mage AA abilities
-		'14' => [158, 643, 10551, 580, 581, 582, 734], # Enchanter AA abilities
-		'15' => [11080, 6984, 734], # Beastlord AA abilities
-		'16' => [4739, 258] # Berserker AA abilities
-	);
-
 	my %message_list = (
 		'0' => "You have learned Bazaar Portal! Open up your AA window (Default V) to find it and other abilities!",
 		'1' => "You have learned Infused by Rage, Killing Spree, and Vehement Rage! Open up your AA window (Default V) to find them!",
@@ -74,12 +54,32 @@ sub EVENT_CONNECT {
 		'16' => "You have learned Killing Spree and Rampage! Open up your AA window (Default V) to find them!"
 	);
 
-	if (!$client->GetBucket("InitialLoginTask")) {
+	my %aa_list = (
+		'0' => [1000, 12636, 12637, 8445, 8446, 8447, 16419, 16420, 16421, 1021, 1022, 1023, 1024, 1025],
+		'1' => [6283, 6607, 4739, 1597], # Warrior AA abilities
+		'2' => [12652, 507, 746], # Cleric AA abilities
+		'3' => [188, 6395], # Paladin AA abilities
+		'4' => [205, 1196, 645, 1345], # Ranger AA abilities
+		'5' => [5085, 13165], # Shadow Knight AA abilities
+		'6' => [548, 14264, 767, 6375], # Druid AA abilities
+		'7' => [810, 1352], # Monk AA abilities
+		'8' => [630, 556, 557, 558, 559, 560, 1110, 225], # Bard AA abilities
+		'9' => [287, 605, 4739], # Rogue AA abilities
+		'10' => [10957, 1327], # Shaman AA abilities
+		'11' => [767, 6375, 734, 12770], # Necromancer AA abilities
+		'12' => [155, 516, 5295], # Wizard AA abilities
+		'13' => [8201, 734, 8342], # Mage AA abilities
+		'14' => [158, 643, 10551, 580, 581, 582, 734], # Enchanter AA abilities
+		'15' => [11080, 6984, 734], # Beastlord AA abilities
+		'16' => [4739, 258] # Berserker AA abilities
+	);
+
+	if (!$client->GetBucket("InitialLoginFlag")) {
 		foreach my $aa (@{$aa_list{'0'}}, @{$aa_list{$client->GetClass()}}) {
 			quest::debug($aa);
 			$client->IncrementAA(int($aa));
 		}
-		$client->SetBucket("InitialLoginTask", 1);
+		$client->SetBucket("InitialLoginFlag", 1);
 	}
 
 	#if (!($zonesn != 'guildhall' && (plugin::is_eligible_for_race($client) || plugin::is_eligible_for_class($client)))) {
