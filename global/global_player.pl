@@ -79,6 +79,10 @@ sub EVENT_CONNECT {
 			quest::debug($aa);
 			$client->IncrementAA(int($aa));
 		}
+
+		$client->Message(14, $message_list{$client->GetClass()});
+		$client->Message(14, $message_list{'0'});
+
 		$client->SetBucket("InitialLoginFlag", 1);
 	}
 
