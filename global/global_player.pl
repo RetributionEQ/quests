@@ -86,7 +86,11 @@ sub EVENT_CONNECT {
 		$client->SetBucket("InitialLoginFlag", 1);
 	}
 
-	if (!($zonesn != 'guildhall' && (plugin::is_eligible_for_race($client) || plugin::is_eligible_for_class($client)))) {
-		$client->SendToGuildHall();
+	if ($zonesn == 'guildhall') {
+		
+	} else {
+		if (!(plugin::is_eligible_for_race($client))) {
+			quest::debug("YOU ARE NOT ELIGIBLE FOR THIS RACE");
+		}
 	}
 }

@@ -287,12 +287,12 @@ sub is_eligible_for_race {
     my $race   = shift // $client->GetRace();
 
     # Iksar
-    if ($race == $IKSAR && is_stage_complete($client, 'RoK')) {
+    if ($race == $IKSAR && !is_stage_complete($client, 'RoK')) {
         return 0;
     }
 
     # Vah Shir
-    if ($race == $VAH_SHIR && is_stage_complete($client, 'SoL')) {
+    if ($race == $VAH_SHIR && !is_stage_complete($client, 'SoL')) {
         return 0;
     }
 
@@ -313,12 +313,12 @@ sub is_eligible_for_class {
     my $client = shift;
     my $class  = shift // $client->GetClass();
 
-    if ($class == $BEASTLORD && is_stage_complete($client, 'SoL')) {
+    if ($class == $BEASTLORD && !is_stage_complete($client, 'PoP')) {
         return 0;
     }
 
     # Vah Shir
-    if ($class == $BERSERKER && is_stage_complete($client, 'GoD')) {
+    if ($class == $BERSERKER && !is_stage_complete($client, 'SoL')) {
         return 0;
     }
 
