@@ -30,9 +30,9 @@ function event_trade(e)
 		e.other:Faction(219,7); -- Antonius Bayle
 		e.other:QuestReward(e.self,{copper = math.random(0,10),itemid = 13724,exp = 4000});
 	end
-	if(--item_lib.return_items(e.self, e.other, e.trade, false) == true) then
-		e.self:Say("I'm... erm, not quite sure what to do with this, but... thanks, I guess.");
-	end
+	--if(item_lib.return_items(e.self, e.other, e.trade, false) == true) then
+		--e.self:Say("I'm... erm, not quite sure what to do with this, but... thanks, I guess.");
+	--end
 end
 
 function event_waypoint_arrive(e)

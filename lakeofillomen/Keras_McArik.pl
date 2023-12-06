@@ -156,7 +156,7 @@ sub EVENT_ITEM {
   }
   elsif(plugin::check_handin(\%itemcount, 60210 => 1, 60211 => 1)) {
     quest::say("I am so impressed and proud of ye, $name. This had been a long journey, hasn't it? That said, this will be the most important adventure of yer life, for now you are a true berserker and a master of all of yer skills. As I promised, the completion of these trials would not only bring ye the honor of being recognized as a true berserker, but also a weapon only a true berserker can wield -- one that I fashioned myself. Use this weapon in yer travels and may it serve ye well in battle. Be well,$name, the Berserker.");
-    quest::summonitem(68299); # Item: Kerasian Axe of Ire
+    quest::summonfixeditem(868299); # Item: Kerasian Axe of Ire
 	quest::setglobal("berserk_epic", 1, 5, "F");
   }
 #1.5 turnins 
@@ -202,7 +202,7 @@ sub EVENT_ITEM {
     quest::setglobal("berserk_epic",9, 5, "F");
   }
   elsif(plugin::check_handin(\%itemcount, 72029 => 1, 18398 => 1, 17349 => 1, 17137 => 1)) {  
-    quest::summonitem(20072); # Item: Unhoned Vengeful Taelosian Blood Axe
+    quest::summonfixeditem(20072); # Item: Unhoned Vengeful Taelosian Blood Axe
     quest::say("Ah ye've returned with the necessary components, me friend? Give me but a moment to look over what you've managed to get yer hands on. Yes, these should do the job quite nicely. We'll see just what potential can be unleashed in this axe of yours! So the Dragorn smith said to reinforce the haft with this ore, eh? I can accomplish that surely. Work with the Moonstone should be easy enough tew as it don't seem to require much enchantment from me. The Lightning Core will require a bit o' work though as I'm not very experienced with it. Still though, I can surely do something with it. I would na ever thought of using one of these on an axe though! Crafty Gnomes indeed.' After some time and a bit of effort, Keras hands you back your axe. 'Here ya go, lad. I tried honing the edge further but I dinnah have a whetstone strong enough. Maybe that smith o' yours can help ye futher?");
   }
   plugin::return_items(\%itemcount);

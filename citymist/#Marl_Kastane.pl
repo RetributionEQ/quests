@@ -16,7 +16,7 @@ sub EVENT_ITEM {
   if ($faction >= 82) {
     if (plugin::check_handin(\%itemcount, 14384 => 1)) { #Lhranc's Token
       quest::say("Very good, I will go deliver this right away.");
-      quest::summonitem(14383); #Innoruuk's Curse
+      quest::summonfixeditem(814383); #Innoruuk's Curse
       quest::depop();
     }
   }

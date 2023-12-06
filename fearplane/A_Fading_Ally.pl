@@ -42,7 +42,7 @@ sub EVENT_SAY {
 	} elsif($text =~/we/i) {
 		$response = "I feel so alone here... I wasn’t always alone. I had friends... and family... didn’t I?. The green orbs, maybe they hold an answer?";
 	} elsif($text =~/Panic/i) {
-        $response = "";
+        $response = "I want to help... But what can I do? Did we ever stand a chance? I wish I could remember.";
     }
 	
 	quest::say($response);
@@ -110,6 +110,7 @@ sub EVENT_ITEM {
 			if (!$entity_list->IsMobSpawnedByNpcTypeID($panic_npctype)) {
 				$response .= " Oh Gods. I remember now! Something unspeakable comes for us!";
 				quest::spawn2($panic_npctype, 0, 0, 352, 803, 205, 385);
+				quest::faction(1080,1000); # Faction: Mith Marr
 			} else {
 				$response .= " The Panic can only harm us if we fall prey to it!";
 				my $panic_id = $entity_list->GetNPCByNPCTypeID($panic_npctype);

@@ -39,7 +39,7 @@ function event_combat(e)
 		e.self:Emote(" let's loose a low gutteral laugh.");
 		e.self:Shout("TREMBLE BEFORE ME! You will ALL be forgotten!");
 		--lets get some pressure on the tank, and anyone around them
-		eq.set_timer("TankAEDMG", math.random(1000,3000));
+		eq.set_timer("TankAEDMG", math.random(3000,5000));
 		eq.stop_timer("reset");
 		
 	else
@@ -107,9 +107,9 @@ function SpawnAll(e)
 		eq.zone_emote(MT.Emote,"WHAT DO YOU FEEL?!");
 	-- spawn randomly around Panic.
 	
-	eq.spawn2(1120001111,0,0,xloc + math.random(-50,50),yloc + math.random(-50,50),zloc,heading); --Fright
-	eq.spawn2(1120001113,0,0,xloc + math.random(-50,50),yloc + math.random(-50,50),zloc,heading); --Terror
-	eq.spawn2(1120001112,0,0,xloc + math.random(-50,50),yloc + math.random(-50,50),zloc,heading); --Dread
+	eq.spawn2(1120001111,0,0,xloc,yloc,zloc,heading); --Fright
+	eq.spawn2(1120001113,0,0,xloc,yloc,zloc,heading); --Terror
+	eq.spawn2(1120001112,0,0,xloc,yloc,zloc,heading); --Dread
 end
 	
 function SpawnFright(e)
@@ -121,7 +121,7 @@ function SpawnFright(e)
 	-- sanity depop
 	eq.depop_all(1120001111);
 	-- spawn randomly around Panic.
-	eq.spawn2(1120001111,0,0,xloc +75,yloc + 25,zloc,heading);
+	eq.spawn2(1120001111,0,0,xloc,yloc,zloc,heading);
 	
 
 end
@@ -134,7 +134,7 @@ function SpawnTerror(e)
 	-- sanity depop
 	eq.depop_all(1120001113);
 	-- spawn randomly around Panic.
-	eq.spawn2(1120001113,0,0,xloc +75,yloc + 25,zloc,heading);
+	eq.spawn2(1120001113,0,0,xloc,yloc,zloc,heading);
 	
 
 end
@@ -147,7 +147,7 @@ function SpawnDread(e)
 	-- sanity depop
 	eq.depop_all(1120001112);
 	-- spawn randomly around Panic.
-	eq.spawn2(1120001112,0,0,xloc +75,yloc + 25,zloc,heading);
+	eq.spawn2(1120001112,0,0,xloc,yloc,zloc,heading);
 	
 
 end
@@ -225,11 +225,13 @@ function event_hp(e)
 		e.self:Shout("WHAT IS PANIC WITHOUT DREAD?!");
 		--SPAWN Dread
 		SpawnDread(e);
-	elseif (e.hp_event <= 3 and phase == 7) then
+	elseif (e.hp_event <= 9 and phase == 7) then
 		phase = 8;
 		e.self:Shout("TOGETHER WE ARE FEAR!");
 		--SPAWN ALL 3
-		SpawnAll(e);
+		SpawnFright(e);
+		SpawnTerror(e);
+		SpawnDread(e);
 	end
 end
 

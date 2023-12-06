@@ -218,11 +218,11 @@ function event_hp(e)
 	elseif (e.hp_event <= 25 and phase == 6) then
 		phase = 7;
 		eq.stop_timer("AE");
-		eq.set_timer("AE", math.random(1000,3000));
+		--eq.set_timer("AE", math.random(1000,3000));
 		e.self:Shout("GUARDS! Assist me!");
 		e.self:CameraEffect(2000,5);
 		eq.zone_emote(MT.Emote,"Thundering footsteps can be heard in the distance.");
-		eq.set_timer("SpawnGiants",6000);
+		eq.set_timer("SpawnGiants",120000);
 	end
 end
 

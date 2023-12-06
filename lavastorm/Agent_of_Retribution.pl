@@ -38,7 +38,7 @@ sub EVENT_SAY {
       $dz->SetCompass("lavastorm", 238.0, 987.0, -24.90); # pointing to guard pineshade
       $dz->SetSafeReturn("lavastorm",532, 964, 55.75, 484.0); # agent of ret
       $dz->SetZoneInLocation(-644.10,-1088.42, 26.75, 421.8); # bridge in crushbone
-      $dz->AddReplayLockout(259200); # immediately add a 3 day replay lockout on creation
+      $dz->AddReplayLockout(79200); # immediately add a 22 hour replay lockout on creation
       quest::say("Tell me when you're [" . quest::saylink("ready to remember") . "], to enter");
     }
   }

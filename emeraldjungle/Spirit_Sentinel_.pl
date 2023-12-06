@@ -41,7 +41,7 @@ sub EVENT_ITEM {
   elsif (($faction==1) && plugin::check_handin(\%itemcount,1674=>1)) { #Part of Shaman Epic 1.0
    quest::emote("What is this? The scale of Rak'Ashiir's father? Then Rak has repented his mistake? But why is the mantle still in place? If Rak has repented, then the mantle should have dissolved since he was the one who initiated its construction. But is its initiation the key? How could we have been so blind? Kirn said Rak'Ashiir had the blood of his people on his hands but that is false. Rak merely pointed to a path that would lead them to destruction. It was the people who chose to follow. Now all [" . quest::saylink("is lost") . "].");
    quest::setglobal("ShmEpic1",1,5,"Y1");
-   quest::summonitem(10651); # Item: Spear of Fate
+   quest::summonfixeditem(810651); # Item: Spear of Fate
    quest::faction(404,-800); # Faction: Truespirit
    quest::exp(350000);
   }

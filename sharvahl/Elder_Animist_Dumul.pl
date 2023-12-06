@@ -52,8 +52,8 @@ sub EVENT_ITEM {
     quest::emote("opens the container and looks at its contents");
     quest::say("$name, you have saved the balance of the spirit realm. Your selflessness has made an impression that will last well beyond the effects of your recent deeds. The inhabitants of this realm are all in your debt. Your efforts to restore balance in the material realm have been worth more than we can reward you for.");
     quest::shout("Citizens of Shar Vahl, please take the time to acknowledge the efforts of a true champion and hero to our people. $name has worked valiantly with great personal risk, to restore balance to our realm. We, the Khati Sha of Shar Vahl, feel that only a spirit as strong as $name can be entrusted with the Claws of the Savage Spirit. Please take this time to give $name your thanks and respect.");
-    quest::summonitem(8495); # Item: Claw of the Savage Spirit
-    quest::summonitem(8496); # Item: Claw of the Savage Spirit
+    quest::summonfixeditem(88495); # Item: Apoc Claw of the Savage Spirit
+    quest::summonfixeditem(88496); # Item: Apoc Claw of the Savage Spirit
   }
 
   #plugin::return_items(\%itemcount); # return unused items

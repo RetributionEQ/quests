@@ -63,7 +63,7 @@ sub EVENT_ITEM {
   elsif(plugin::check_handin(\%itemcount, 20652 => 1)) { #Gkzzallk in a Box
     quest::emote("grins wildly and his eyes flare a deep red. The scythe he promised you flies through the air and into your hand. 'Enjoy your toy, I have no more need of you as a servant.'");
     quest::exp(10000);
-    quest::summonitem(20544); #Scythe of the Shadowed Soul
+    quest::summonfixeditem(820544); #Scythe of the Shadowed Soul
   }
   elsif(plugin::check_handin(\%itemcount, 20612 => 1)) { #Piece of the Staff
     if(defined($qglobals{NecroPre}) && ($qglobals{NecroPre} == 2)) {

@@ -27,9 +27,9 @@ function event_combat(e)
 		e.self:Shout("You puny things, feel the power of my magic!");
 		--lets get some pressure on the tank, and anyone who is stupid enough
 		--be in front of the mob :)
-		eq.set_timer("Heal", math.random(1000,3000));
-		eq.set_timer("CastRain", math.random(3000,4000));
-		eq.set_timer("CastSingleNuke", math.random(3000,4000));
+		eq.set_timer("Heal", math.random(5000,8000));
+		eq.set_timer("CastRain", math.random(5000,8000));
+		eq.set_timer("CastSingleNuke", math.random(5000,8000));
 		eq.set_timer("CastBIGNuke", 20000);
 		--eq.set_timer("CheckCloseHateDistance",  math.random(5000,6000));
 		
@@ -66,7 +66,7 @@ function SummonPlayer(e)
 		if (rand_hate_v.valid) then
 			if(e.self:CalculateDistance(rand_hate:GetX(), rand_hate:GetY(), rand_hate:GetZ()) >20) then
 				e.self:CastSpell(9079, rand_hate:GetID());
-				eq.zone_emote(MT.Emote, "Rokyl rips apart the fabric of space and time to get to his target. Chaos leaks into the room. (Everyone takes 5,000 damage!!!!)");
+				eq.zone_emote(MT.Emote, "Rokyl rips apart the fabric of space and time to get to his target.");
 				e.self:CameraEffect(500,5);
 				--e.self:DamageAreaClients(5000,300);
 				return true;
@@ -83,7 +83,7 @@ function event_timer(e)
 	if(e.timer == "Heal") then
 		eq.stop_timer(e.timer);
 		if(e.self:IsCasting()) then
-			eq.set_timer("Heal", 500);
+			eq.set_timer("Heal", 2500);
 			return;
 		end
 		e.self:Shout("'My Lord, let me heal you!");
@@ -91,21 +91,21 @@ function event_timer(e)
 		eq.set_timer("Heal",15000);
 	elseif(e.timer=="CheckCloseHateDistance") then
 		if(e.self:IsCasting()) then
-			eq.set_timer("CheckCloseHateDistance", 500);
+			eq.set_timer("CheckCloseHateDistance", 2500);
 			return;
 		end
 		SummonPlayer(e);
-		eq.set_timer("CheckCloseHateDistance", 1000);
+		eq.set_timer("CheckCloseHateDistance", 3000);
 	
 	elseif (e.timer=="CastBIGNuke") then
 		eq.stop_timer(e.timer);
 	
 		if(e.self:IsCasting()) then
-			eq.set_timer("CastBIGNuke", 500);
+			eq.set_timer("CastBIGNuke", 2500);
 			return;
 		end
 		e.self:Shout("I call upon the flames to strike you down!");
-		eq.zone_emote(MT.Emote, "Fabled Magus Rokyl begins gather mana for a massive spell!");
+		eq.zone_emote(MT.Emote, "Fabled Magus Rokyl begins gathering mana for a massive spell!");
 		SummonPlayer(e);
 		local rand_hate = e.self:GetHateClosestClient();
 		e.self:CastSpell(19563, rand_hate:GetID());
@@ -115,24 +115,24 @@ function event_timer(e)
 		eq.stop_timer(e.timer);
 		
 		if(e.self:IsCasting()) then
-			eq.set_timer("CastRain", 500);
+			eq.set_timer("CastRain", 2500);
 			return;
 		end
 		
 		e.self:CastSpell(39861, e.self:GetHateClosestClient():GetID());
-		eq.set_timer("CastSingleNuke", 1000);
+		eq.set_timer("CastSingleNuke", 3000);
 		
 		
 	elseif (e.timer=="CastSingleNuke") then
 		eq.stop_timer(e.timer);
 	
 		if(e.self:IsCasting()) then
-			eq.set_timer("CastSingleNuke", 500);
+			eq.set_timer("CastSingleNuke", 2500);
 			return;
 		end
 		--e.self:Shout("'There is no hiding from my magic!");
 		e.self:CastSpell(26588, e.self:GetHateRandom():GetID());
-		eq.set_timer("CastRain", 1000);
+		eq.set_timer("CastRain", 3000);
 	
 	end
 end

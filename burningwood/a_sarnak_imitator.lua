@@ -49,7 +49,7 @@ function event_trade(e)
     e.self:Say("The path you trod was long and hard. Now you are worthy to bear the Serpent. Use it well.");
     e.other:Faction(404,30); -- Faction: Truespirit
     e.other:AddEXP(1500000);
-    e.other:SummonItem(10650); -- Item: Staff of the Serpent
+    e.other:SummonFixedItem(810650); -- Item: Staff of the Serpent
   elseif(item_lib.check_turn_in(e.trade, {item1 = 54267})) then
     e.self:Say("As I suspected, this is something extraordinary. You must go speak to Maelin at once. It has been many moons since I have entered the Plane of Knowledge. He may well have some new information for me. Go at once and tell him I sent you.");
     eq.set_global("ench_epic","2",5,"F");

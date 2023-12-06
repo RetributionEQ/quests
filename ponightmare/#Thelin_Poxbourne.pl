@@ -48,13 +48,15 @@ sub EVENT_SAY{
 
       if($text=~/ready/i && ($entry == 1 || $entry == 2 || $entry == 3 || $entry == 4 || $entry == 5 || $entry == 6 || $entry == 7 || $entry == 8 || $entry == 9 || $entry == 10 || $entry == 11|| $entry == 12 || $entry == 13 || $entry == 14 || $entry == 15 || $entry == 16 || $entry == 17 || $entry == 18) && $pop_pon_hedge_jezith == 1){
       	quest::emote("closes his eyes and falls asleep immediately.  He looks peaceful for a moment and then screams in agony!");
-      	quest::movepc(204,-4774,5198,4); # Zone: ponightmare
+      	#quest::movepc(204,-4774,5198,4); # Zone: ponightmare
+         quest::MovePCInstance(204, $instanceid, -4774, 5198, 4); #zone: ponightmare within current instance
       	$entry=$entry+1
       	}   
 
       if($text=~/ready/i && $entry == undef && $pop_pon_hedge_jezith == 1){
       	quest::emote("closes his eyes and falls asleep immediately.  He looks peaceful for a moment and then screams in agony!");
-      	quest::movepc(204,-4774,5198,4); # Zone: ponightmare
+      	#quest::movepc(204,-4774,5198,4); # Zone: ponightmare
+         quest::MovePCInstance(204, $instanceid, -4774, 5198, 4); #zone: ponightmare within current instance
       	quest::signalwith(204058,5,3000); # NPC: Hedge_Trigger
 	quest::settimer(2,600);
       	$entry=$entry+1
