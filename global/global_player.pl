@@ -75,13 +75,10 @@ sub EVENT_CONNECT {
 	);
 
 	if (!$client->GetBucket("InitialLoginTask")) {
-		$client->IncrementAA(1000);
 		foreach my $aa (@{$aa_list{'0'}}, @{$aa_list{$client->GetClass()}}) {
 			quest::debug($aa);
-			$client->IncrementAA($aa);
+			$client->IncrementAA(int($aa));
 		}
-		$client->Message(15, $aa_list{'0'});
-		$client->Message(15, $aa_list{$client->GetClass()});
 		$client->SetBucket("InitialLoginTask", 1);
 	}
 
