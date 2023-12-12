@@ -55,16 +55,16 @@ sub EVENT_CONNECT {
 	);
 
 	my %aa_list = (
-		'0' => [1000, 12636, 12637, 8445, 8446, 8447, 16419, 16420, 16421, 1021, 1022, 1023, 1024, 1025],
-		'1' => [6283, 6607, 4739, 1597], # Warrior AA abilities
-		'2' => [12652, 507, 746], # Cleric AA abilities
-		'3' => [188, 6395], # Paladin AA abilities
-		'4' => [205, 1196, 645, 1345], # Ranger AA abilities
-		'5' => [5085, 13165], # Shadow Knight AA abilities
-		'6' => [548, 14264, 767, 6375], # Druid AA abilities
-		'7' => [810, 1352], # Monk AA abilities
-		'8' => [630, 556, 557, 558, 559, 560, 1110, 225], # Bard AA abilities
-		'9' => [287, 605, 4739], # Rogue AA abilities
+		'0'  => [1000, 12636, 12637, 8445, 8446, 8447, 16419, 16420, 16421, 1021, 1022, 1023, 1024, 1025],
+		'1'  => [6283, 6607, 4739, 1597], # Warrior AA abilities
+		'2'  => [12652, 507, 746], # Cleric AA abilities
+		'3'  => [188, 6395], # Paladin AA abilities
+		'4'  => [205, 1196, 645, 1345], # Ranger AA abilities
+		'5'  => [5085, 13165], # Shadow Knight AA abilities
+		'6'  => [548, 14264, 767, 6375], # Druid AA abilities
+		'7'  => [810, 1352], # Monk AA abilities
+		'8'  => [630, 556, 557, 558, 559, 560, 1110, 225], # Bard AA abilities
+		'9'  => [287, 605, 4739], # Rogue AA abilities
 		'10' => [10957, 1327], # Shaman AA abilities
 		'11' => [767, 6375, 734, 12770], # Necromancer AA abilities
 		'12' => [155, 516, 5295], # Wizard AA abilities
@@ -86,11 +86,13 @@ sub EVENT_CONNECT {
 		$client->SetBucket("InitialLoginFlag", 1);
 	}
 
-	if ($zonesn == 'guildhall') {
-		
+	if (!$zonesn == 'guildhall') {
+		if (!(plugin::is_eligible_for_race($client) || plugin::is_eligible_for_class($client))) {
+			$client->SendToGuildHall();
+		}
 	} else {
-		if (!(plugin::is_eligible_for_race($client))) {
-			quest::debug("YOU ARE NOT ELIGIBLE FOR THIS RACE");
+		if (plugin::is_eligible_for_race($client) && plugin::is_eligible_for_class($client)) {
+			$client->GoToBind();
 		}
 	}
 }
