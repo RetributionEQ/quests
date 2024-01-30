@@ -206,14 +206,46 @@ end
 
 function Kreshin_Trade(e)
 	local item_lib = require("items");
-	if event_success  == 1 then
-		if item_lib.check_turn_in(e.trade, {item1 = 67415}) then -- Item: Stone of Entry
-			e.self:Say("You have done well to get this far. Please, take this to Taminoa and tell him it is vital that he decipher it. I must stay here to investigate more. Let him know I am safe and thank you again.");
-      		e.other:SummonItem(67415); -- Item: Stone of Entry
-      		e.other:SummonItem(67401); -- Item: Writ of the Magi
+	local data_bucket = ("BIC-"..e.other:CharacterID());
+	if eq.get_data(data_bucket) ~= "" then -- Has Started
+		local temp = eq.get_data(data_bucket);
+		s = eq.split(temp, ',');
+
+		local bic_status 		= tonumber(s[1]); -- Current Overall Status
+		local fezbin_progress 	= tonumber(s[2]); -- Progress Level for Fezbin			
+		local qinimi_progress 	= tonumber(s[3]); -- Progress Level for Qinimi
+		local barindu_progress	= tonumber(s[4]); -- Progress Level for Barindu
+		local riwwi_progress	= tonumber(s[5]); -- Progress Level for Riwwi
+		local ferubi_progress 	= tonumber(s[6]); -- Progress Level for Ferubi
+		local sewers_progress 	= tonumber(s[7]); -- Progress Level for Sewers
+		local vxed_progress 	= tonumber(s[8]); -- Progress Level for Vxed
+		local tipt_progress		= tonumber(s[9]); -- Progress Level for Tipt
+		local yxtta_progress 	= tonumber(s[10]); -- Progress Level for Yxtta
+		local kodtaz_progress 	= tonumber(s[11]); -- Progress Level for Kod'Taz
+
+		-- Field #3 - Qinimi Status (INT)
+		---- SubField - 1 = Started Qinimi with Taminoa
+		---- SubField - 2 = Return Kreshin's Journal to Taminoa
+		---- SubField - 3 = Gave Journal to Sislono Nislan
+		---- SubField - 4 = Turn in items for Stone of Entry
+		---- SubField - 5 = Completed Stop the Exectution and Turned in Stone of Entry
+		---- SubField - 6 = Gave Taminoa Writ of the Magi (Gives back a different ID'd Writ)
+		---- SubField - 7 = Gave Sislono the 2nd Writ
+		---- SubField - 8 = Turn in Xictic's Robes to Taminoa
+		---- Subfield - 9 = Combined the Dull Gem Shard (Completed and Cannot Reset)
+
+		if (event_success  == 1) then
+			if qinimi_progress == 4 then
+				if (item_lib.check_turn_in( e.trade, {item1 = 67415})) then --Stone of Entry
+					e.self:Say("You have done well to get this far. Please, take this to Taminoa and tell him it is vital that he decipher it. I must stay here to investigate more. Let him know I am safe and thank you again.");
+					e.other:SummonItem(67415);--Stone of Entry
+					e.other:SummonItem(67401);--Writ of the Magi
+					update_databucket(e,bic_status,fezbin_progress,5,barindu_progress,riwwi_progress,ferubi_progress,sewers_progress,vxed_progress,tipt_progress,yxtta_progress,kodtaz_progress);
+				end
+			end
+		else
+			e.self:Emote("looks at you with pleading eyes. 'You've come just in time. Help me!"); --cannot turn in item until event won
 		end
-	else
-		e.self:Emote("looks at you with pleading eyes. 'You've come just in time. Help me!"); --cannot turn in item until event won
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
@@ -225,6 +257,10 @@ end
 
 function Pixtt_Death(e)
 	eq.signal(281119,3); -- signal executioner to remove immunities
+end
+
+function update_databucket(e,status,fezbin_step,qinimi_step,barindu_step,riwwi_step,ferubi_step,sewers_step,vxed_step,tipt_step,yxtta_step,kodtaz_step)
+	eq.set_data("BIC-"..e.other:CharacterID(), status..","..fezbin_step..","..qinimi_step..","..barindu_step..","..riwwi_step..","..ferubi_step..","..sewers_step..","..vxed_step..","..tipt_step..","..yxtta_step..","..kodtaz_step);
 end
 
 function event_encounter_load(e)

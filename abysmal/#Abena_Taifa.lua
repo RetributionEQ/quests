@@ -1,11 +1,5 @@
 -- Breakdown In Communication #2 Barindu
 
-function event_say(e)
-	if(e.message:findi("hail")) then
-		e.self:Emote("ignores your attempts to talk to her.");
-	end
-end
-
 function event_trade(e)
 	local item_lib = require("items");
 	local has_faction = (e.other:GetFaction(e.self) < 3) -- Warmly +
@@ -42,23 +36,44 @@ function event_trade(e)
 			---- SubField - 11 = Gave Tray and 3rd Fruit to Abena Taifa and gives back Abena's Collar of Liberation [Can be skipped for a harder raid]
 			---- SubField - 12 = Deliver Talwin's Final Report to Taminoa
 			---- SubField - 13 = Combined Shiny Gem Shard (Completed and Cannot Reset)
-			if barindu_progress == 7 then
+
+			if barindu_progress == 6 then
 				if (item_lib.check_turn_in(e.trade, {item1 = 64007})) then -- Item: Poisoned Fruit (2nd Version)
-					e.other:Message(MT.NPCQuestSay, "Chiaka Lerato says 'I know of your plot and I have no interest in being a part of it. It's too dangerous and more likely to get us all killed than set us free. I don't want anyone else getting hurt, so I won't tell the guards, but I will have no part in your plans.'");
-					e.other:SummonItem(64010); -- Item: Poisoned Fruit (3rd Version)
-					update_databucket(e,bic_status,fezbin_progress,qinimi_progress,8,riwwi_progress,ferubi_progress,sewers_progress,vxed_progress,tipt_progress,yxtta_progress,kodtaz_progress);
+					e.other:Message(MT.NPCQuestSay, "Abena Taifa says 'Proteri sent word that you would be coming. I have bad news. It seems Ixvet has gotten wind of a plot on his life and has grown paranoid. He has started changing his personal servants on a regular basis and I was replaced by Chiaka Lerato yesterday. I'm afraid that I'm not going to be able to help you anymore. Please, keep the fruit for now.");
+					e.other:SummonItem(64007); -- Item: Poisoned Fruit (2nd Version)
+					update_databucket(e,bic_status,fezbin_progress,qinimi_progress,7,riwwi_progress,ferubi_progress,sewers_progress,vxed_progress,tipt_progress,yxtta_progress,kodtaz_progress);
 				end
-			elseif barindu_progress == 9 then
-				if (item_lib.check_turn_in(e.trade, {item1 = 64008})) then -- Item: Tattered Shawl
-					e.other:Message(MT.NPCQuestSay, "Chiaka Lerato says 'How did you. . . Never mind. I'd know this shawl anywhere and it can only mean one thing. Mother needs me. I haven't heard from my brother or mother since they escaped and I thought they might be dead. I should have left with them when I had the chance. Fortunately, Hamisi told me of his plans. I should be able to use the same route he did to escape. Here, take this. I won't need it any more.");
-					e.other:QuestReward(e.self,0,0,0,0,64009,eq.ExpHelper(52)); -- Item: Serving Tray
-					update_databucket(e,bic_status,fezbin_progress,qinimi_progress,10,riwwi_progress,ferubi_progress,sewers_progress,vxed_progress,tipt_progress,yxtta_progress,kodtaz_progress);
-					eq.start(56);
+			elseif barindu_progress == 10 then
+				if (item_lib.check_turn_in(e.trade, {item1 = 64009,item2 = 64010})) then -- Item: Serving Tray, Poisoned Fruit (3rd Version)
+					e.other:Message(MT.NPCQuestSay, "Abena Taifa says 'Just in time! Ixvet is due for his next meal in a few minutes. With Chiaka out of the way, I'll be able to serve him. I hope this poison isn't noticeable. Here, I've managed to secret this away from the guards up until now and I hate to think about those beasts getting their hands on it. Please hold onto it for me. If this goes well, I won't need it anymore.");
+					e.other:QuestReward(e.self,0,0,0,0,64018,50000); --Item: Abena's Collar of Liberation
+					e.other:Faction(231,50); -- Nihil +50
+					update_databucket(e,bic_status,fezbin_progress,qinimi_progress,11,riwwi_progress,ferubi_progress,sewers_progress,vxed_progress,tipt_progress,yxtta_progress,kodtaz_progress);
+					eq.start(57);
 				end
 			end
 		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
+end
+
+function event_waypoint_arrive(e)
+	if (e.wp == 9) then
+		e.self:Say("Ikaav Ixvet Pox, I humbly present you with your meal.");
+		eq.signal(283050,1,6000); --signal iip
+	end
+end
+
+function event_signal(e)
+	if(e.signal == 1) then
+	e.self:SetAppearance(3);
+	end
+end
+
+function event_say(e)
+	if(e.message:findi("hail")) then
+		e.self:Emote("pointedly ignores you and continues what she was doing.");
+	end
 end
 
 function update_databucket(e,status,fezbin_step,qinimi_step,barindu_step,riwwi_step,ferubi_step,sewers_step,vxed_step,tipt_step,yxtta_step,kodtaz_step)

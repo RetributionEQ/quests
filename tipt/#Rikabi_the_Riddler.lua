@@ -126,84 +126,101 @@ local function get_riddle_items_turned_in(trade)
 end
 
 local function does_any_client_have_key()
-  local invWherePersonal = 2
-  local client_list = eq.get_entity_list():GetClientList()
-  for client in client_list.entries do
-    if client.valid then
-      local inv = client:GetInventory()
-      if inv:HasItem(54083, 1, invWherePersonal) ~= -1 then -- Harshly Spiked Key
-        eq.debug(string.format("Client [%s] has key", client:GetName()))
-        return true
-      end
-    end
-  end
-  return false
+	local invWherePersonal = 2
+	local client_list = eq.get_entity_list():GetClientList()
+	for client in client_list.entries do
+		if client.valid then
+			local inv = client:GetInventory()
+			if inv:HasItem(54083, 1, invWherePersonal) ~= -1 then -- Harshly Spiked Key
+				-- eq.debug(string.format("Client [%s] has key", client:GetName()))
+				return true
+			end
+		end
+	end
+	return false
 end
 
 local function check_bic(client)
-  local qglobals = eq.get_qglobals(client)
-  if qglobals.bic and qglobals.bic == "11" then
-    client:SummonItem(67551) -- Vaifan's Temporary Power Cell D
-    client:Message(MT.NPCQuestSay, "Rikabi the Riddler says 'I sense you have come here seeking something besides passage. Please take this it was left here by one of your people's constructs.'")
-  end
+	local data_bucket = ("BIC-"..client:CharacterID());
+	if eq.get_data(data_bucket) ~= "" then -- Has Started
+		local temp = eq.get_data(data_bucket);
+		s = eq.split(temp, ',');
+
+		local bic_status 		= tonumber(s[1]); -- Current Overall Status
+		local fezbin_progress 	= tonumber(s[2]); -- Progress Level for Fezbin			
+		local qinimi_progress 	= tonumber(s[3]); -- Progress Level for Qinimi
+		local barindu_progress	= tonumber(s[4]); -- Progress Level for Barindu
+		local riwwi_progress	= tonumber(s[5]); -- Progress Level for Riwwi
+		local ferubi_progress 	= tonumber(s[6]); -- Progress Level for Ferubi
+		local sewers_progress 	= tonumber(s[7]); -- Progress Level for Sewers
+		local vxed_progress 	= tonumber(s[8]); -- Progress Level for Vxed
+		local tipt_progress		= tonumber(s[9]); -- Progress Level for Tipt
+		local yxtta_progress 	= tonumber(s[10]); -- Progress Level for Yxtta
+		local kodtaz_progress 	= tonumber(s[11]); -- Progress Level for Kod'Taz
+
+		if tipt_progress == 1 then
+			client:SummonItem(67551) -- Vaifan's Temporary Power Cell D
+			client:Message(MT.NPCQuestSay, "Rikabi the Riddler says 'I sense you have come here seeking something besides passage. Please take this it was left here by one of your people's constructs.'")
+		end
+	end
 end
 
 function event_say(e)
-  -- the events can be skipped on live. all that's required is a player in zone
-  -- has the Harshly Spiked Key to get conversations and open the last gate
+	-- the events can be skipped on live. all that's required is a player in zone
+	-- has the Harshly Spiked Key to get conversations and open the last gate
 
-  if e.message:findi("hail") or e.message:findi("mountain") or e.message:findi("test") or e.message:findi("ready") then
-    if not does_any_client_have_key() then
-      eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Rikabi the Riddler says, 'It appears that you have somehow found your way to me, but I sense that you are not yet ready to continue. Please, return when you have found that which is yet unfound.'")
-      return
-    end
-  end
+	if e.message:findi("hail") or e.message:findi("mountain") or e.message:findi("test") or e.message:findi("ready") then
+		if not does_any_client_have_key() then
+			eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Rikabi the Riddler says, 'It appears that you have somehow found your way to me, but I sense that you are not yet ready to continue. Please, return when you have found that which is yet unfound.'")
+			return
+		end
+	end
 
-  if e.message:findi("hail") then
-    eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Rikabi the Riddler says, 'So, another band of treasure-seekers desire to plunder the abomination that our fair temple has become.   There was a time when those that wandered sought to do good in the fields they trampled, repair the trails they followed, and to help those in need they met along their way.  Alas, these times are distant, dusty memories, and so now here I sit and judge.  This [" .. eq.say_link("mountain") .. "] pass was once fertile and virtuous, can the same be said of you?  Bah, true nobility is hidden in the heart. Today, your cunning and valor of mind shall be tested!  Step forth, and hear my riddles. Plan to go no further than the grave if your mind and heart are weak!'")
-  elseif e.message:findi("mountain") then
-    eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Rikabi the Riddler says, 'This mountain pass was once a holy place. It was a passage to a higher place as well as frame of mind. Everything here inspired the utmost respect of our people. Unfortunately, those days are gone and all that remains is broken or corrupted.  I [" .. eq.say_link("test") .. "] all of those who wish to pass now.'")
-  elseif e.message:findi("test") then
-    eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Rikabi the Riddler says, 'The test is... riddles! I have many of those. Take time to gather your wits about you and let me know when you are ready. Bear in mind that a wrong answer could lead to dire consequences. Tell me when you are [" .. eq.say_link("ready") .. "], and you shall have your riddle. The answer to any of my riddles can be found in the road behind you. Bring me an example of what you believe the answer to be, and you may pass freely.'")
-    spawn_riddle_items()
-  elseif e.message:findi("ready") then
-    if is_riddle_given then
-      eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Rikabi the Riddler says, 'Your riddle has already been given. My responsibility lies not in giving second chances to those short of memory.'")
-    else
-      is_riddle_given = true
-      eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Rikabi the Riddler says, '" .. riddles[active_riddle_index].text .. "'")
-      eq.debug(string.format("Summon riddle answer: [%s]", eq.say_link("#si " ..riddles[active_riddle_index].item)))
-    end
-  end
+	if e.message:findi("hail") then
+		eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Rikabi the Riddler says, 'So, another band of treasure-seekers desire to plunder the abomination that our fair temple has become.   There was a time when those that wandered sought to do good in the fields they trampled, repair the trails they followed, and to help those in need they met along their way.  Alas, these times are distant, dusty memories, and so now here I sit and judge.  This [" .. eq.say_link("mountain") .. "] pass was once fertile and virtuous, can the same be said of you?  Bah, true nobility is hidden in the heart. Today, your cunning and valor of mind shall be tested!  Step forth, and hear my riddles. Plan to go no further than the grave if your mind and heart are weak!'")
+	elseif e.message:findi("mountain") then
+		eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Rikabi the Riddler says, 'This mountain pass was once a holy place. It was a passage to a higher place as well as frame of mind. Everything here inspired the utmost respect of our people. Unfortunately, those days are gone and all that remains is broken or corrupted.  I [" .. eq.say_link("test") .. "] all of those who wish to pass now.'")
+	elseif e.message:findi("test") then
+		eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Rikabi the Riddler says, 'The test is... riddles! I have many of those. Take time to gather your wits about you and let me know when you are ready. Bear in mind that a wrong answer could lead to dire consequences. Tell me when you are [" .. eq.say_link("ready") .. "], and you shall have your riddle. The answer to any of my riddles can be found in the road behind you. Bring me an example of what you believe the answer to be, and you may pass freely.'")
+		spawn_riddle_items()
+	elseif e.message:findi("ready") then
+		if is_riddle_given then
+			eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Rikabi the Riddler says, 'Your riddle has already been given. My responsibility lies not in giving second chances to those short of memory.'")
+		else
+			is_riddle_given = true
+			eq.get_entity_list():MessageClose(e.self, true, 100, MT.SayEcho, "Rikabi the Riddler says, '" .. riddles[active_riddle_index].text .. "'")
+			-- eq.debug(string.format("Summon riddle answer: [%s]", eq.say_link("#si " ..riddles[active_riddle_index].item)))
+		end
+	end
 end
 
 function event_trade(e)
-  local item_lib = require("items")
+	local item_lib = require("items")
 
-  -- turning in more than one riddle item fails. non-riddle items are ignored
-  local riddle_item_count = get_riddle_items_turned_in(e.trade)
+	-- turning in more than one riddle item fails. non-riddle items are ignored
+	local riddle_item_count = get_riddle_items_turned_in(e.trade)
 
-  -- door is unlocked for any riddle item turn in (right or wrong). the key is
-  -- NOT required here. items from another expedition can be turned in to open
-  -- door but it's still needed for gate to last area and wrong item spawns pookas
-  if riddle_item_count > 0 then
-    eq.zone_emote(MT.Yellow, "You hear the grinding of stone as the door unlocks before you.")
-    eq.get_entity_list():FindDoor(4):SetLockPick(0)
+	-- door is unlocked for any riddle item turn in (right or wrong). the key is
+	-- NOT required here. items from another expedition can be turned in to open
+	-- door but it's still needed for gate to last area and wrong item spawns pookas
+	if riddle_item_count > 0 then
+		eq.zone_emote(MT.Yellow, "You hear the grinding of stone as the door unlocks before you.")
+		eq.get_entity_list():FindDoor(4):SetLockPick(0)
 
-    if not is_riddle_answered then
-      -- hypothetically riddle doesn't need given for success. never guessed right
-      -- to confirm so for now having key IS required for success (can still open door)
-      local riddle = riddles[active_riddle_index]
-      if is_riddle_given and riddle_item_count == 1 and item_lib.check_turn_in(e.trade, {item1 = riddle.item}) then
-        check_bic(e.other)
-        e.other:SummonItem(riddle.item) -- correct riddle item is returned
-        e.self:Say(string.format("I have no need for this, %s. You can have it back.", e.other:GetCleanName())) -- msg id: 1105
-      else
-        spawn_devastating_pookas()
-      end
-      is_riddle_answered = true
-    end
-  end
+		if not is_riddle_answered then
+		-- hypothetically riddle doesn't need given for success. never guessed right
+		-- to confirm so for now having key IS required for success (can still open door)
+		local riddle = riddles[active_riddle_index]
+		if is_riddle_given and riddle_item_count == 1 and item_lib.check_turn_in(e.trade, {item1 = riddle.item}) then
+			check_bic(e.other)
+			e.other:SummonItem(riddle.item) -- correct riddle item is returned
+			e.self:Say(string.format("I have no need for this, %s. You can have it back.", e.other:GetCleanName())) -- msg id: 1105
+		else
+			spawn_devastating_pookas()
+		end
+			is_riddle_answered = true
+		end
+	end
 
-  item_lib.return_items(e.self, e.other, e.trade)
+	item_lib.return_items(e.self, e.other, e.trade)
 end

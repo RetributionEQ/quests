@@ -11,18 +11,80 @@ end
 
 function event_trade(e)
 	local item_lib = require("items");
-	if (item_lib.check_turn_in(e.trade, {item1 = 67519})) then	-- Tuned Farstone
-		e.self:Say("While I applaud your effort, I must decline. You see, since I was captured I have been altered by the beings known as ikaav. As a result, my aura has changed, making this farstone useless. I do not know what it is I am becoming, but I will not place the lives of the brotherhood in danger. I have decided to give in to the inevitable and serve these beings. Please tell Taminoa I am sorry, but this is for the best. And please give him this. As I slip deeper and deeper into insanity, I have lost my ability to articulate my thoughts on paper. This is one of my last written reports and I think Taminoa will find it quite interesting.");
-		e.other:SummonItem(67520); --Item: Sealed Report
-	elseif (item_lib.check_turn_in(e.trade, {item1 = 67521,item2 = 67522,item3 = 67523,item4 = 67524})) then 
-		e.self:Emote("takes each weapon piece from you one by one and places them on the ground. He looks to the ceiling and says, 'Vtiink, there are some weapons here that need to be replaced and some intruders who need to be destroyed.' Suddenly the dank air in the room becomes ominous as a twisted monstrosity appears before you. Smith turns to you all and says, 'There is no more time. Your gods cannot save you now.' Vtiink sends out a wave of energy that forces Smith to crumple.");
-		eq.unique_spawn(284092,0,0,1413.38,-491.76,106.13,384); -- NPC: Weapon_Master_Vtiink_Vzaan
-  		eq.unique_spawn(284093,0,0,1328.82,-608.43,106.23,5.2); -- NPC: Master`s_Apprentice
-  		eq.unique_spawn(284094,0,0,1327.06,-375.38,106.13,256); -- NPC: Master`s_Apprentice
-  		eq.unique_spawn(284095,0,0,1440.70,-421.54,106.13,386.4); -- NPC: Master`s_Apprentice
-  		eq.unique_spawn(284096,0,0,1439.92,-562.61,106.13,386.4); -- NPC: Master`s_Apprentice
-		e.self:SetAppearance(3); --lie down
-		eq.stop(); --stop grid
+	local data_bucket = ("BIC-"..e.other:CharacterID());
+
+	if eq.get_data(data_bucket) ~= "" then -- Has Started
+		local temp = eq.get_data(data_bucket);
+		s = eq.split(temp, ',');
+
+		local bic_status 		= tonumber(s[1]); -- Current Overall Status
+		local fezbin_progress 	= tonumber(s[2]); -- Progress Level for Fezbin			
+		local qinimi_progress 	= tonumber(s[3]); -- Progress Level for Qinimi
+		local barindu_progress	= tonumber(s[4]); -- Progress Level for Barindu
+		local riwwi_progress	= tonumber(s[5]); -- Progress Level for Riwwi
+		local ferubi_progress 	= tonumber(s[6]); -- Progress Level for Ferubi
+		local sewers_progress 	= tonumber(s[7]); -- Progress Level for Sewers
+		local vxed_progress 	= tonumber(s[8]); -- Progress Level for Vxed
+		local tipt_progress		= tonumber(s[9]); -- Progress Level for Tipt
+		local yxtta_progress 	= tonumber(s[10]); -- Progress Level for Yxtta
+		local kodtaz_progress 	= tonumber(s[11]); -- Progress Level for Kod'Taz
+
+		-- Field #6 - Ferubi Status (INT)
+		---- SubField - 1 - Started Ferubi with Taminoa and Gives you Tuned Farstone
+		---- SubField - 2 - Give Tuned Farstone to Rondo and gives you Sealed Report
+		---- SubField - 3 - Give Report to Taminoa
+		---- SubField - 4 - Complete Weapon Master Raid, Hail Smith's Spectral Memory and gives you Rondo's Report
+		---- SubField - 5 - Deliver Report to Taminoa
+		---- SubField - 6 - Combine Green Colored Gem Shard (Completed and Cannot Reset)
+
+		if ferubi_progress == 1 then
+			if (item_lib.check_turn_in(e.trade, {item1 = 67519})) then	-- Item: Tuned Farstone
+				e.self:Say("While I applaud your effort, I must decline. You see, since I was captured I have been altered by the beings known as ikaav. As a result, my aura has changed, making this farstone useless. I do not know what it is I am becoming, but I will not place the lives of the brotherhood in danger. I have decided to give in to the inevitable and serve these beings. Please tell Taminoa I am sorry, but this is for the best. And please give him this. As I slip deeper and deeper into insanity, I have lost my ability to articulate my thoughts on paper. This is one of my last written reports and I think Taminoa will find it quite interesting.");
+				update_databucket(e,bic_status,fezbin_progress,qinimi_progress,barindu_progress,riwwi_progress,2,sewers_progress,vxed_progress,tipt_progress,yxtta_progress,kodtaz_progress);
+				e.other:SummonItem(67520); -- Item: Sealed Report
+
+			end
+		elseif ferubi_progress >= 3 then
+			if (item_lib.check_turn_in(e.trade, {item1 = 67521,item2 = 67522,item3 = 67523,item4 = 67524})) then 
+				local entity_list = eq.get_entity_list(); --get current entity list of zone
+				local client_e = e;
+				local player_list_count = nil;
+				local raid = e.other:GetRaid();
+				local group = e.other:GetGroup();
+
+				if(raid.valid) then			-- Is in a raid
+					player_list_count = raid:RaidCount();
+					for i = 0, player_list_count - 1, 1 do	-- Uses a 0-n group members
+						local client_v = raid:GetMember(i):CastToClient();
+						if (client_v.valid) then	-- valid client
+							local char_id = client_v:CharacterID();
+							eq.set_data(string.format("Gates-Rondo-%s", char_id),"1", tostring( 2 * 60 * 60));	-- Present for hand-in / 2 Hours
+						end
+					end
+				elseif(group.valid) then	-- Is not in a raid, but in a group
+					player_list_count = group:RaidCount();
+					for i = 0, player_list_count - 1, 1 do	-- Uses a 0-n group members
+						local client_v = group:GetMember(i):CastToClient();
+						if (client_v.valid) then	-- valid client
+							local char_id = client_v:CharacterID();
+							eq.set_data(string.format("Gates-Rondo-%s", char_id),"1", tostring( 2 * 60 * 60));	-- Present for hand-in / 2 Hours
+						end
+					end
+				else						-- Is not in a raid or group.
+					local char_id = e.other:CharacterID();
+					eq.set_data(string.format("Gates-Rondo-%s", char_id),"1", tostring( 2 * 60 * 60));	-- Present for hand-in / 2 Hours
+				end
+				
+				e.self:Emote("takes each weapon piece from you one by one and places them on the ground. He looks to the ceiling and says, 'Vtiink, there are some weapons here that need to be replaced and some intruders who need to be destroyed.' Suddenly the dank air in the room becomes ominous as a twisted monstrosity appears before you. Smith turns to you all and says, 'There is no more time. Your gods cannot save you now.' Vtiink sends out a wave of energy that forces Smith to crumple.");
+				eq.unique_spawn(284092,0,0,1413.38,-491.76,106.13,384); -- NPC: Weapon_Master_Vtiink_Vzaan
+				eq.unique_spawn(284093,0,0,1328.82,-608.43,106.23,5.2); -- NPC: Master`s_Apprentice
+				eq.unique_spawn(284094,0,0,1327.06,-375.38,106.13,256); -- NPC: Master`s_Apprentice
+				eq.unique_spawn(284095,0,0,1440.70,-421.54,106.13,386.4); -- NPC: Master`s_Apprentice
+				eq.unique_spawn(284096,0,0,1439.92,-562.61,106.13,386.4); -- NPC: Master`s_Apprentice
+				e.self:SetAppearance(3); --lie down
+				eq.stop(); --stop grid
+			end
+		end
 	end
 	item_lib.return_items(e.self, e.other, e.trade)
 end
@@ -33,8 +95,6 @@ function event_signal(e)
 	eq.set_next_hp_event(65);
 	e.self:SetAppearance(0); --stand up
 	e.self:SetSpecialAbility(35, 0); --turn off immunity
-	e.self:SetSpecialAbility(19, 0);
-	e.self:SetSpecialAbility(20, 0);
 	e.self:SetSpecialAbility(24, 0); --turn off anti aggro
 end
 
@@ -44,8 +104,6 @@ function event_timer(e)
 		e.self:GotoBind();
 		e.self:WipeHateList();
 		e.self:SetSpecialAbility(35, 1); --turn on immunity
-		e.self:SetSpecialAbility(19, 1);
-		e.self:SetSpecialAbility(20, 1);
 		e.self:SetSpecialAbility(24, 1); --turn on anti aggro
 		eq.start(33); -- re start grid
 	end
@@ -53,6 +111,7 @@ end
 
 function event_death_complete(e)
 	eq.spawn2(284084,0,0,1447,-586,106,0); -- NPC: #Smith`s_Spectral_Memory
+	e.self:DeathNotification(e);
 end
 
 function event_hp(e)
@@ -67,4 +126,8 @@ function event_combat(e)
 	if not e.joined then
 		e.self:SaveGuardSpot(e.self:GetX(),e.self:GetY(), e.self:GetZ(), e.self:GetHeading());
 	end
+end
+
+function update_databucket(e,status,fezbin_step,qinimi_step,barindu_step,riwwi_step,ferubi_step,sewers_step,vxed_step,tipt_step,yxtta_step,kodtaz_step)
+	eq.set_data("BIC-"..e.other:CharacterID(), status..","..fezbin_step..","..qinimi_step..","..barindu_step..","..riwwi_step..","..ferubi_step..","..sewers_step..","..vxed_step..","..tipt_step..","..yxtta_step..","..kodtaz_step);
 end
