@@ -2,7 +2,7 @@ sub EVENT_SAY {
 	if ($text=~/hail/i) {
 		quest::say("Greetings, $name.  Have you come here to test your abilities as a magician?");
 	}
-	if ($class eq "Magician") {
+	if (plugin::HasClass("Magician")) {
 		if ($text=~/magician/i) {
 			quest::say("Choose your tester. Frederic or Roanis.");
 		}

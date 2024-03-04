@@ -1,11 +1,11 @@
 sub EVENT_ENTERZONE {
-  if(($class eq "Enchanter") && plugin::check_hasitem($client, 52963)) { #Sullied Gold Filigree
+  if((plugin::HasClass("Enchanter")) && plugin::check_hasitem($client, 52963)) { #Sullied Gold Filigree
     if(!$entity_list->GetNPCByNPCTypeID(211047) && !defined($qglobals{anthone})) {
       quest::spawn2(211047,0,0,-1853,2479,-110,40); ##Anthone_Chapin
     }
   }
 
-  if(($class eq "Magician") && !defined($qglobals{mage_epic_hoh}) && defined($qglobals{mage_epic}) && $client->GetGlobal("mage_epic") ==10) {
+  if((plugin::HasClass("Magician")) && !defined($qglobals{mage_epic_hoh}) && defined($qglobals{mage_epic}) && $client->GetGlobal("mage_epic") ==10) {
 	$client->Message(15, "Your staff begins to glow");
   }
 }
@@ -22,7 +22,7 @@ sub EVENT_CLICKDOOR {
 }
 
 sub EVENT_LOOT {
-  if (($class eq "Magician") && $looted_id == 19547) {  
+  if ((plugin::HasClass("Magician")) && $looted_id == 19547) {  
 	if (defined($qglobals{mage_epic}) && $qglobals{mage_epic} == 10) {
 	  if (!defined($qglobals{mage_chest_hoh})) {
 			quest::setglobal("mage_chest_hoh", "1", 5, "F"); 

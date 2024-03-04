@@ -3,7 +3,7 @@
 # items: 15809, 20612
 
 sub EVENT_SAY {
-  if(($text=~/hail/i) && $class eq "Necromancer" && !defined($qglobals{NecroPre}) && !defined($qglobals{SoulWhisper})) {
+  if(($text=~/hail/i) && plugin::HasClass("Necromancer") && !defined($qglobals{NecroPre}) && !defined($qglobals{SoulWhisper})) {
     quest::say("'Yes. . . $name is it? I have heard of you. I am Geboron, assistant to Kazen. It is most fortunate for you that you happened upon me. I have a task that is of the utmost importance and I believe I can trust you with it. There has been talk recently among my brethren of a most powerful staff that was recently discovered in the realm of discord and is now in the hands of a group of paladins. However my undead servants have informed me that the paladins were transporting the staff through the Karanas and suddenly disappeared without a trace. I want you to find my contact, Yuanda in West Karana and give her this note. It says you are working for me now. Find out what happened to those paladins and the staff! If you find out anything, talk to my assistant, Egonis in Lake Rathe.");
     quest::summonitem(15809); #Note to Yuanda
   }

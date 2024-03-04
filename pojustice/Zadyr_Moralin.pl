@@ -23,7 +23,7 @@ sub EVENT_SAY {
       quest::say("They took me in my sleep, and for my 'crimes', I was banished here. Banished here like a criminal, rather than a savior of our species! Without my rituals, without my incantations, our people are doomed - they flee to the underworld and hide, like vermin. Even now, I sit here, accused, and were that not torment enough I am constantly reminded of my deeds by the souls of the three that I damned with me.", 17);
     }
     if ($text=~/i remember/i) {
-      if (($class eq "Rogue") || ($class eq "Bard")) {
+      if ((plugin::HasClass("Rogue")) || (plugin::HasClass("Bard"))) {
         quest::summonitem(11043); #Tears of the Forgotten
       }
     }

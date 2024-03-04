@@ -1,5 +1,5 @@
 sub EVENT_SPAWN {
- if($class eq "Shaman") {
+ if(plugin::HasClass("Shaman")) {
   quest::attack($name);
  }
 }

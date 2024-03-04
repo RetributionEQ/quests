@@ -13,16 +13,16 @@ sub EVENT_DEATH_COMPLETE {
   if ($status >= 80 ) {
 	quest::ze(0,"The adherent's debris litters the ground. It has been beaten.");
     }
-  elsif((($class eq "Bard") || ($class eq "Beastlord") || ($class eq "Paladin") || ($class eq "Ranger") || ($class eq "Shadowknight")) && ($qglobals{$instanceid.adhere4} == 2)) {
+  elsif(((plugin::HasClass("Bard")) || (plugin::HasClass("Beastlord")) || (plugin::HasClass("Paladin")) || (plugin::HasClass("Ranger")) || (plugin::HasClass("Shadowknight"))) && ($qglobals{$instanceid.adhere4} == 2)) {
 	quest::ze(0,"The adherent's debris litters the ground. It has been beaten.");
   }
-  elsif((($class eq "Berserker") || ($class eq "Monk") || ($class eq "Rogue") || ($class eq "Warrior")) && ($qglobals{$instanceid.adhere4} == 3)) {
+  elsif(((plugin::HasClass("Berserker")) || (plugin::HasClass("Monk")) || (plugin::HasClass("Rogue")) || (plugin::HasClass("Warrior"))) && ($qglobals{$instanceid.adhere4} == 3)) {
 	quest::ze(0,"The adherent's debris litters the ground. It has been beaten.");
   }
-  elsif((($class eq "Cleric") || ($class eq "Druid") || ($class eq "Shaman")) && ($qglobals{$instanceid.adhere4} == 4)) {
+  elsif(((plugin::HasClass("Cleric")) || (plugin::HasClass("Druid")) || (plugin::HasClass("Shaman"))) && ($qglobals{$instanceid.adhere4} == 4)) {
 	quest::ze(0,"The adherent's debris litters the ground. It has been beaten.");
   }
-  elsif((($class eq "Enchanter") || ($class eq "Magician") || ($class eq "Necromancer") || ($class eq "Wizard")) && ($qglobals{$instanceid.adhere4} == 1)) {
+  elsif(((plugin::HasClass("Enchanter")) || (plugin::HasClass("Magician")) || (plugin::HasClass("Necromancer")) || (plugin::HasClass("Wizard"))) && ($qglobals{$instanceid.adhere4} == 1)) {
 	quest::ze(0,"The adherent's debris litters the ground. It has been beaten.");
   }
   else {

@@ -12,7 +12,7 @@ sub EVENT_CLICKDOOR {
 }
 
 sub EVENT_LOOT {
-    if ( $class eq "Paladin" && $looted_id == 69951 ) {
+    if ( plugin::HasClass("Paladin") && $looted_id == 69951 ) {
         if ( defined( $qglobals{paladin_epic} )
             && $qglobals{paladin_epic} >= 5 )
         {
@@ -30,7 +30,7 @@ sub EVENT_LOOT {
         }
     }
 
-    if ( $class eq "Wizard" && $looted_id == 11474 ) {
+    if ( plugin::HasClass("Wizard") && $looted_id == 11474 ) {
         if ( defined( $qglobals{wiz_epic} ) && $qglobals{wiz_epic} == 1 ) {
             if ( !defined( $qglobals{wiz_pon_chest} ) ) {
                 quest::setglobal( "wiz_pon_chest", "1", 5, "F" );

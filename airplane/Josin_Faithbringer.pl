@@ -2,7 +2,7 @@ sub EVENT_SAY {
 	if ($text=~/hail/i) {
 		quest::say("Greetings, $name.  Are you ready to begin your test of faith?");
 	}
-	if ($class eq "Cleric") {
+	if (plugin::HasClass("Cleric")) {
 		if ($text=~/test of faith/i) {
 			quest::say("I have faith that you will do well. Choose Alan or Deric");
 		}

@@ -5,7 +5,7 @@ sub EVENT_SAY {
 	if ($text=~/great wizard/i) {
 		quest::say("I will not take your word for it! You must prove your greatness to my apprentices. Do you wish to be tested by Neasin or by Abec?");
 	}
-	if ($class eq "Wizard") {
+	if (plugin::HasClass("Wizard")) {
 		if ($text=~/neasin/i) {
 			quest::say("I will summon him for you then");
 			#:: Spawn a The Plane of Sky >> Neasin_Leornic (71092), without grid or guild war, at the specified location

@@ -2,7 +2,7 @@ sub EVENT_SAY {
 	if ($text=~/hail/i) {
 		quest::say("Greetings, $name. Are you a true servant of the Pine?");
 	}
-	if ($class eq "Ranger") {
+	if (plugin::HasClass("Ranger")) {
 		if ($text=~/servant of the pine/i) {
 			quest::say("Very well my friend. In order to reach your true potential you must pass many tests. Relinin Skyrunner and Gordon Treecaller are here to perform these tests. Please choose one.");
 		}

@@ -15,67 +15,67 @@ sub EVENT_DEATH_COMPLETE {
     quest::spawn2(294628,0,0,$x,$y,$z,$h); # NPC: a_pile_of_bones
 	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Bard") && ($qglobals{$instanceid.asentkill} == 2)) {
+  elsif((plugin::HasClass("Bard")) && ($qglobals{$instanceid.asentkill} == 2)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h); # NPC: a_pile_of_bones
 	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Beastlord") && ($qglobals{$instanceid.asentkill} == 2)) {
+  elsif((plugin::HasClass("Beastlord")) && ($qglobals{$instanceid.asentkill} == 2)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h); # NPC: a_pile_of_bones
 	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Berserker") && ($qglobals{$instanceid.asentkill} == 3)) {
+  elsif((plugin::HasClass("Berserker")) && ($qglobals{$instanceid.asentkill} == 3)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h); # NPC: a_pile_of_bones
 	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Cleric") && ($qglobals{$instanceid.asentkill} == 4)) {
+  elsif((plugin::HasClass("Cleric")) && ($qglobals{$instanceid.asentkill} == 4)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h); # NPC: a_pile_of_bones
 	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Druid") && ($qglobals{$instanceid.asentkill} == 4)) {
+  elsif((plugin::HasClass("Druid")) && ($qglobals{$instanceid.asentkill} == 4)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h); # NPC: a_pile_of_bones
 	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Enchanter") && ($qglobals{$instanceid.asentkill} == 1)) {
+  elsif((plugin::HasClass("Enchanter")) && ($qglobals{$instanceid.asentkill} == 1)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h); # NPC: a_pile_of_bones
 	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Magician") && ($qglobals{$instanceid.asentkill} == 1)) {
+  elsif((plugin::HasClass("Magician")) && ($qglobals{$instanceid.asentkill} == 1)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h); # NPC: a_pile_of_bones
 	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Monk") && ($qglobals{$instanceid.asentkill} == 3)) {
+  elsif((plugin::HasClass("Monk")) && ($qglobals{$instanceid.asentkill} == 3)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h); # NPC: a_pile_of_bones
 	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Necromancer") && ($qglobals{$instanceid.asentkill} == 1)) {
+  elsif((plugin::HasClass("Necromancer")) && ($qglobals{$instanceid.asentkill} == 1)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h); # NPC: a_pile_of_bones
 	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Paladin") && ($qglobals{$instanceid.asentkill} == 2)) {
+  elsif((plugin::HasClass("Paladin")) && ($qglobals{$instanceid.asentkill} == 2)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h); # NPC: a_pile_of_bones
 	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Ranger") && ($qglobals{$instanceid.asentkill} == 2)) {
+  elsif((plugin::HasClass("Ranger")) && ($qglobals{$instanceid.asentkill} == 2)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h); # NPC: a_pile_of_bones
 	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Rogue") && ($qglobals{$instanceid.asentkill} == 3)) {
+  elsif((plugin::HasClass("Rogue")) && ($qglobals{$instanceid.asentkill} == 3)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h); # NPC: a_pile_of_bones
 	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Shadowknight") && ($qglobals{$instanceid.asentkilll} == 2)) {
+  elsif((plugin::HasClass("Shadowknight")) && ($qglobals{$instanceid.asentkilll} == 2)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h); # NPC: a_pile_of_bones
 	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Shaman") && ($qglobals{$instanceid.asentkill} == 4)) {
+  elsif((plugin::HasClass("Shaman")) && ($qglobals{$instanceid.asentkill} == 4)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h); # NPC: a_pile_of_bones
 	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Warrior") && ($qglobals{$instanceid.asentkill} == 3)) {
+  elsif((plugin::HasClass("Warrior")) && ($qglobals{$instanceid.asentkill} == 3)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h); # NPC: a_pile_of_bones
 	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }
-  elsif(($class eq "Wizard") && ($qglobals{$instanceid.asentkill} == 1)) {
+  elsif((plugin::HasClass("Wizard")) && ($qglobals{$instanceid.asentkill} == 1)) {
     quest::spawn2(294627,0,0,$x,$y,$z,$h); # NPC: a_pile_of_bones
 	quest::ze(0,"The stone worker crumbles to the ground, its energy drained.");
   }

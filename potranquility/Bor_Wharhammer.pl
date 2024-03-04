@@ -44,67 +44,67 @@ sub EVENT_ITEM {
     if ($cash >= 500000) { #Money for class emblem
     #This is very ugly.  Should be a case/switch instead, but dunno
     #if that's available.
-      if ($class eq "Warrior") {
+      if (plugin::HasClass("Warrior")) {
         quest::summonitem(16267);#Warrior Emblem
         quest::summonitem(17184);#Mystical Furnace of Ro
       }
-      elsif ($class eq "Cleric") {
+      elsif (plugin::HasClass("Cleric")) {
         quest::summonitem(16271);#Cleric Emblem
         quest::summonitem(17184);#Mystical Furnace of Ro
       }
-      elsif ($class eq "Paladin") {
+      elsif (plugin::HasClass("Paladin")) {
         quest::summonitem(16269);#Paladin Emblem
         quest::summonitem(17184);#Mystical Furnace of Ro
       }
-      elsif ($class eq "Ranger") {
+      elsif (plugin::HasClass("Ranger")) {
         quest::summonitem(16272);#Ranger Emblem
         quest::summonitem(17184);#Mystical Furnace of Ro
       }
-      elsif ($class eq "Shadowknight") {
+      elsif (plugin::HasClass("Shadowknight")) {
         quest::summonitem(16270);#Shadowknight Emblem
         quest::summonitem(17184);#Mystical Furnace of Ro
       }
-      elsif ($class eq "Druid") {
+      elsif (plugin::HasClass("Druid")) {
         quest::summonitem(16276);#Druid Emblem
         quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
       }
-      elsif ($class eq "Monk") {
+      elsif (plugin::HasClass("Monk")) {
         quest::summonitem(16275);#Monk Emblem
         quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
       }
-      elsif ($class eq "Bard") {
+      elsif (plugin::HasClass("Bard")) {
         quest::summonitem(16268);#Bard Emblem
         quest::summonitem(17184);#Mystical Furnace of Ro
       }
-      elsif ($class eq "Rogue") {
+      elsif (plugin::HasClass("Rogue")) {
         quest::summonitem(16273);#Rogue Emblem
         quest::summonitem(17184);#Mystical Furnace of Ro
       }
-      elsif ($class eq "Shaman") {
+      elsif (plugin::HasClass("Shaman")) {
         quest::summonitem(16274);#Shaman Emblem
         quest::summonitem(17184);#Mystical Furnace of Ro
       }
-      elsif ($class eq "Necromancer") {
+      elsif (plugin::HasClass("Necromancer")) {
         quest::summonitem(16278);#Necromancer Emblem
         quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
       }
-      elsif ($class eq "Wizard") {
+      elsif (plugin::HasClass("Wizard")) {
         quest::summonitem(16279);#Wizard Emblem
         quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
       }
-      elsif ($class eq "Magician") {
+      elsif (plugin::HasClass("Magician")) {
         quest::summonitem(16280);#Magician Emblem
         quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
       }
-      elsif ($class eq "Enchanter") {
+      elsif (plugin::HasClass("Enchanter")) {
         quest::summonitem(16281);#Enchanter Emblem
         quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
       }
-      elsif ($class eq "Beastlord") {
+      elsif (plugin::HasClass("Beastlord")) {
         quest::summonitem(16277);#Beastlord Emblem
         quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
       }
-      elsif ($class eq "Berserker") {
+      elsif (plugin::HasClass("Berserker")) {
         quest::summonitem(32000);#Berserker Emblem
         quest::summonitem(17184);#Mystical Furnace of Ro
       }

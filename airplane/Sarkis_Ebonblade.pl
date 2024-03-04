@@ -5,7 +5,7 @@ sub EVENT_SAY {
 	if ($text=~/dark powers of skill/i) {
 		quest::say("You will be tested by either Gragrot or Tynicon.  Choose one!");
 	}
-	if ($class eq "Shadowknight") {
+	if (plugin::HasClass("Shadowknight")) {
 		if ($text=~/gragrot/i) {
 			quest::say("I will summon him for you then");
 			#:: Spawn a The Plane of Sky >> Gragrot (71063), without grid or guild war, at the specified location

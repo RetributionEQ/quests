@@ -2,7 +2,7 @@ sub EVENT_SAY {
 	if ($text=~/hail/i) {
 		quest::say("Peace to you, $name.  I see that you have come far along the path of tranquility and enlightenment.  Do you wish to test yourself further, and perhaps complete the path you started on so long ago?");
 	}
-	if ($class eq "Monk") {
+	if (plugin::HasClass("Monk")) {
 		if ($text=~/tranquility and enlightenment/i) {
 			quest::say("Choose you path. Wu or Ton Po");
 		}

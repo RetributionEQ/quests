@@ -18,7 +18,7 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_SAY {
-  if (($text=~/I wish to recover what is lost/i) && ($class eq "Enchanter")){
+  if (($text=~/I wish to recover what is lost/i) && (plugin::HasClass("Enchanter"))){
   quest::emote("seems to stir briefly and a spectral pommel appears in your hands."); # Slight improvisation
   quest::summonitem(67015);  # A tarnished pommel
   }

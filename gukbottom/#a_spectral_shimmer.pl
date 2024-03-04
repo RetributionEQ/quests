@@ -13,7 +13,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_SAY {
-  if($text=~/Hail/i && ($class eq "Enchanter")) {
+  if($text=~/Hail/i && (plugin::HasClass("Enchanter"))) {
   quest::say("Thank you for releasing me, take this and find the rest if you truly wish to help me.");
   quest::summonitem(67013); # Fused sword blade
   quest::emote("fades away.");

@@ -5,7 +5,7 @@ sub EVENT_SAY {
 	if ($text=~/great rogue/i) {
 		quest::say("I will not take your word for it!  You must prove your greatness to one of my apprentices.  Do you wish to be tested by Rayne or by Kendrick?");
 	}
-	if ($class eq "Rogue") {
+	if (plugin::HasClass("Rogue")) {
 		if ($text=~/rayne/i) {
 			quest::say("I will summon him for you then");
 			#:: Spawn a The Plane of Sky >> Rayne (71061), without grid or guild war, at the specified location

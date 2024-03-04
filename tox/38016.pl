@@ -4,7 +4,7 @@ my $questclient;
 my $success;
 
 sub EVENT_SAY {
- if ($class eq "Druid") {
+ if (plugin::HasClass("Druid")) {
 	
   if ($text=~/animated heads/i) {
     quest::say("Heh, so you've heard of that, have you. Too funny if you ask me. Who would [" . quest::saylink("i want to animate a skull",false,"want") . "] to animate a skull? Darn things can't do any useful work. They can't even talk!");

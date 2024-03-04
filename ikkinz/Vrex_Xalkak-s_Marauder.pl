@@ -41,22 +41,22 @@ sub EVENT_TIMER {
 }
 
 sub EVENT_DEATH_COMPLETE {
-  if((($class eq "Enchanter") || ($class eq "Magician") || ($class eq "Necromancer") || ($class eq "Wizard")) && ($qglobals{$instanceid.marakill} == 1)) {
+  if(((plugin::HasClass("Enchanter")) || (plugin::HasClass("Magician")) || (plugin::HasClass("Necromancer")) || (plugin::HasClass("Wizard"))) && ($qglobals{$instanceid.marakill} == 1)) {
     quest::spawn2(294595,0,0,480,-592,-50,128); # NPC: #Vrex_Xalkak_Nixki
 	quest::delglobal($instanceid.marakill);
 	quest::ze(15,"The marauder's remains crash to the ground. It is no more.");
   }  
-  elsif((($class eq "Bard") || ($class eq "Beastlord") || ($class eq "Paladin") || ($class eq "Ranger") || ($class eq "Shadowknight")) && ($qglobals{$instanceid.marakill} == 2)) {
+  elsif(((plugin::HasClass("Bard")) || (plugin::HasClass("Beastlord")) || (plugin::HasClass("Paladin")) || (plugin::HasClass("Ranger")) || (plugin::HasClass("Shadowknight"))) && ($qglobals{$instanceid.marakill} == 2)) {
     quest::spawn2(294595,0,0,480,-592,-50,128); # NPC: #Vrex_Xalkak_Nixki
 	quest::delglobal($instanceid.marakill);
 	quest::ze(15,"The marauder's remains crash to the ground. It is no more.");
   }
-  elsif((($class eq "Berserker") || ($class eq "Monk") || ($class eq "Rogue") || ($class eq "Warrior")) && ($qglobals{$instanceid.marakill} == 3)) {
+  elsif(((plugin::HasClass("Berserker")) || (plugin::HasClass("Monk")) || (plugin::HasClass("Rogue")) || (plugin::HasClass("Warrior"))) && ($qglobals{$instanceid.marakill} == 3)) {
     quest::spawn2(294595,0,0,480,-592,-50,128); # NPC: #Vrex_Xalkak_Nixki
 	quest::delglobal($instanceid.marakill);
 	quest::ze(15,"The marauder's remains crash to the ground. It is no more.");
   }
-  elsif((($class eq "Cleric") || ($class eq "Druid") || ($class eq "Shaman")) && ($qglobals{$instanceid.marakill} == 4)) {
+  elsif(((plugin::HasClass("Cleric")) || (plugin::HasClass("Druid")) || (plugin::HasClass("Shaman"))) && ($qglobals{$instanceid.marakill} == 4)) {
     quest::spawn2(294595,0,0,480,-592,-50,128); # NPC: #Vrex_Xalkak_Nixki
 	quest::delglobal($instanceid.marakill);
 	quest::ze(15,"The marauder's remains crash to the ground. It is no more.");

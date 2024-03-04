@@ -7,7 +7,7 @@ sub EVENT_SAY {
 	"  Only they will understand the calling and only they can do what is necessary to proceed.  If there be anyone who matches my ambitions, step forward to [" . quest::saylink("answer the challenge") . "].");
   }
   if ($text=~/challenge/i) {
-	if (($class eq "Cleric") || ($class eq "Druid") || ($class eq "Shaman") || $status >= 80) {
+	if ((plugin::HasClass("Cleric")) || (plugin::HasClass("Druid")) || (plugin::HasClass("Shaman")) || $status >= 80) {
 		$client->Message(0,"You are a priest. It is your ability -- in fact, your very calling -- that requires you to be able to manipulate it. You must sew these together and return to me the product so that I can verify the truth in your words and in your soul.");
 		quest::summonitem(60241); # Item: Dried Segment of Flesh
 		quest::summonitem(60241); # Item: Dried Segment of Flesh

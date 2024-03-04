@@ -34,10 +34,10 @@ sub EVENT_ITEM {
     quest::setglobal("luggald",1,0,"F");
     quest::emote("takes the organs from you and lays them down on the ground before him. He begins to slice and separate the organs from one another with a wicked looking dagger. Dark blue blood stains his robe as he probes the strange flesh. Finally after several minutes he smiles and pulls a parchment from a bag at his side and begins to draw several runes using the dark blue blood.");
     quest::say("Take this, I have discovered the secret of their magic, or so I believe. Of course it might not work and you'll end up actually dead, but we'll never know till you try, will we?");
-    if($class eq "Necromancer") {
+    if(plugin::HasClass("Necromancer")) {
       quest::summonitem(59019); # Item: Spell: Auspice
     }
-    elsif ($class eq "Shadowknight") {
+    elsif (plugin::HasClass("Shadowknight")) {
       quest::summonitem(59006); # Item: Spell: Blood of Pain
     }
     else {
