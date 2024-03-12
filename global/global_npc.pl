@@ -29,6 +29,13 @@ sub EVENT_SPAWN {
     CheckWorldWideBuffs();
 }
 
+sub EVENT_ITEM {
+    if (!$npc->GetEntityVariable("RETURN_ITEMS")) {
+        quest::debug("This is the global catch!");
+        plugin::return_items(\%itemcount);
+    }
+}
+
 sub CheckWorldWideBuffs {
     if ($npc->IsPet() && $npc->HasOwner() && $npc->GetOwner()->IsClient()) {
         for my $value (43002 .. 43008) {
