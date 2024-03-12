@@ -910,6 +910,7 @@ sub CalcDestFromHeading {
 	return @DestArray;
 }
 
+
 #Usage: my @DestArray = plugin::CalcDestFromHeadingXY(Heading, Distance, X, Y, [MaxZDiff, Mob]);
 # This plugin calculates the destination X and Y loc based on heading and distance
 # Heading is the heading you want to calculate destination X Y Z from

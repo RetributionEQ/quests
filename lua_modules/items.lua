@@ -123,7 +123,7 @@ function items.check_turn_in(trade, trade_check)
 	return true;
 end
 
-function items.check_turn_in_exact(trade, trade_check)
+function items.fixed_check_turn_in(trade, trade_check)
 	--create trade_return table == trade
 	--shallow copy
 	local trade_return = {};
