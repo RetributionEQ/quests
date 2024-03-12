@@ -19,7 +19,7 @@ sub EVENT_KILLED_MERIT {
             $npc->GetLevel() <= $item_drops{$item_id}{'max_level'}) {                    
             if (rand() < $item_drops{$item_id}{'drop_chance'}) {
                 $npc->AddItem($item_id); # Add the item to the NPC's inventory
-                quest::ding(); # Play the 'ding' sound, indicating an item drop or another significant event
+                quest::ding();
             }
         }
     }
@@ -27,14 +27,6 @@ sub EVENT_KILLED_MERIT {
 
 sub EVENT_SPAWN {
     CheckWorldWideBuffs();
-}
-
-sub EVENT_ITEM {
-    quest::debug($npc->GetEntityVariable("Stop_Return"));
-    if (!$npc->GetEntityVariable("Stop_Return")) {
-        quest::debug("This is the global catch!");
-        plugin::return_items(\%itemcount);
-    }
 }
 
 sub CheckWorldWideBuffs {
