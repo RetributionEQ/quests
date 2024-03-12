@@ -30,7 +30,9 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ITEM {
+    quest::debug("This is the global catch!");
 	plugin::return_items(\%itemcount);
+    return 0;
 }
 
 sub CheckWorldWideBuffs {
