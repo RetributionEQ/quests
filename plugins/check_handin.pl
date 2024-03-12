@@ -172,7 +172,7 @@ sub fixed_check_handin {
 
 sub return_items {
 	quest::debug("Entering return_items");
-	my $hashref = plugin::var('$itemcount');
+	my $hashref = shift || plugin::var('$itemcount');
 	my $client = plugin::val('$client');
 	my $name = plugin::val('$name');
 	my $items_returned = 0;
