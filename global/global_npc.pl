@@ -30,6 +30,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ITEM {
+    quest::debug($npc->GetEntityVariable("RETURN_ITEMS"));
     if (!$npc->GetEntityVariable("RETURN_ITEMS")) {
         quest::debug("This is the global catch!");
         plugin::return_items(\%itemcount);
