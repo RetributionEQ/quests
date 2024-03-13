@@ -26,7 +26,16 @@ sub CheckCashPayment {
     my $client = plugin::val('$client');
     my $npc    = plugin::val('$npc');
     my ($target_value, $initial_copper, $initial_silver, $initial_gold, $initial_platinum) = @_;
-    my $total_value = $initial_platinum * 1000 + $initial_gold * 100 + $initial_silver * 10 + $initial_copper;
+
+    # Use a hash to store initial currency amounts
+    my %initial = (
+        copper   => $initial_copper,
+        silver   => $initial_silver,
+        gold     => $initial_gold,
+        platinum => $initial_platinum,
+    );
+
+    my $total_value = $initial{platinum} * 1000 + $initial{gold} * 100 + $initial{silver} * 10 + $initial{copper};
     my $remaining_value = $total_value - $target_value;
 
     if ($remaining_value >= 0) {
@@ -57,11 +66,11 @@ sub CheckCashPayment {
         return 1;
     } else {
         # Return all the money since the target value was not met
-        $client->AddMoneyToPP($initial_copper, $initial_silver, $initial_gold, $initial_platinum, 1);
+        $client->AddMoneyToPP($initial{copper}, $initial{silver}, $initial{gold}, $initial{platinum}, 1);
         my $message = "Transaction failed. You have been refunded ";
         my @refund_messages;
         foreach my $currency (qw(platinum gold silver copper)) {
-            push @refund_messages, "$initial_$currency $currency" if (${"initial_$currency"} > 0);
+            push @refund_messages, "$initial{$currency} $currency" if ($initial{$currency} > 0);
         }
         $message .= join(' ', @refund_messages) . ".";
         $client->Message(276, $message);
