@@ -29,7 +29,9 @@ sub EVENT_ITEM {
 		next if ($k eq "copper" || $k eq "silver" || $k eq "gold" || $k eq "platinum" || $k == 0);
 		my $rcount = $hashref->{$k};
 		my $r;
+    quest::debug($k);
     $k = $k % 1000000;
+    quest::debug($k);
 		for ($r = 0; $r < 4; $r++) {
 			if ($rcount > 0 && $item_data{$r}[0] && $item_data{$r}[0] == $k) {
 				if ($client) {
