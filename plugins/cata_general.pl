@@ -43,40 +43,37 @@ sub CheckCashPayment {
     my $remaining_value = $total_value - $target_value;
 
     if ($remaining_value >= 0) {
-        # Determine the change to give back
-        my $change_to_give_back = $remaining_value;
+        # Calculate the change to give back as well as the actual amounts spent
+        my $change_platinum = int($remaining_value / 1000);
+        $remaining_value %= 1000;
 
-        # Calculate the denominations for the change
-        my $change_platinum = int($change_to_give_back / 1000);
-        $change_to_give_back %= 1000;
+        my $change_gold = int($remaining_value / 100);
+        $remaining_value %= 100;
 
-        my $change_gold = int($change_to_give_back / 100);
-        $change_to_give_back %= 100;
+        my $change_silver = int($remaining_value / 10);
+        my $change_copper = $remaining_value % 10;
 
-        my $change_silver = int($change_to_give_back / 10);
-        my $change_copper = $change_to_give_back % 10;
-
-        # Determine the actual spent amounts
-        my $actual_spent_platinum = $initial{platinum} - ($remaining_value >= 1000 ? $change_platinum : 0);
-        my $actual_spent_gold = $initial{gold} - ($remaining_value >= 100 ? $change_gold : 0);
-        my $actual_spent_silver = $initial{silver} - ($remaining_value >= 10 ? $change_silver : 0);
-        my $actual_spent_copper = $initial{copper} - ($remaining_value >= 1 ? $change_copper : 0);
+        my %actual_spent = (
+            platinum => $initial{platinum} - $change_platinum,
+            gold     => $initial{gold} - $change_gold,
+            silver   => $initial{silver} - $change_silver,
+            copper   => $initial{copper} - $change_copper,
+        );
 
         my $message = "You give ";
         my @messages;
         foreach my $currency (qw(platinum gold silver copper)) {
-            my $spent = "actual_spent_$currency";
-            push @messages, "$$spent $currency" if ($$spent > 0);
+            push @messages, "$actual_spent{$currency} $currency" if $actual_spent{$currency} > 0;
         }
         $message .= join(' ', @messages) . " to " . $npc->GetCleanName() . ".";
         $client->Message(276, $message);
 
         # Inform the client of the change they receive, if any
-        if ($remaining_value > 0) {
+        if ($change_platinum > 0 || $change_gold > 0 || $change_silver > 0 || $change_copper > 0) {
             my $change_message = "You receive ";
             my @change_parts;
             foreach my $currency (['platinum', $change_platinum], ['gold', $change_gold], ['silver', $change_silver], ['copper', $change_copper]) {
-                push @change_parts, "$currency->[1] $currency" if ($currency->[1] > 0);
+                push @change_parts, "$currency->[1] $currency->[0]" if ($currency->[1] > 0);
             }
             $change_message .= join(' ', @change_parts) . " in change from " . $npc->GetCleanName() . ".";
             $client->Message(276, $change_message);
