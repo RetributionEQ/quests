@@ -20,7 +20,8 @@ sub EVENT_ITEM {
   foreach my $item (keys %itemcount) {  
     if ($item ne 'copper' && $item ne 'silver' && $item ne 'gold' && $item ne 'platinum') {
       if (looks_like_number($item)) {
-        my $new_key = $item % 1000000;          
+        my $new_key = $item % 1000000;
+        quest::debug("$new_key");
         $new_itemcount{$new_key} += $itemcount{$item};
       } else {       
         $new_itemcount{$item} = $itemcount{$item};
