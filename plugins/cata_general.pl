@@ -42,29 +42,26 @@ sub CheckCashPayment {
     my $total_value = $initial{platinum} * 1000 + $initial{gold} * 100 + $initial{silver} * 10 + $initial{copper};
     my $remaining_value = $total_value - $target_value;
 
+    quest::debug("total_value: $total_value");
+
     if ($remaining_value >= 0) {
-        # Initially, consider all remaining value as potential change
-        my $change_total = $remaining_value;
+        # Calculate the change to give back as well as the actual amounts spent        
+        my $change_platinum = int($remaining_value / 1000);
+        $remaining_value %= 1000;
 
-        # Break down the total change back into denominations, starting with the smallest
-        my $change_copper = $change_total % 10;
-        $change_total = int($change_total / 10);  # Remove the copper part from change total
+        my $change_gold = int($remaining_value / 100);
+        $remaining_value %= 100;
 
-        my $change_silver = $change_total % 10;
-        $change_total = int($change_total / 10);  # Remove the silver part from change total
+        my $change_silver = int($remaining_value / 10);
+        my $change_copper = $remaining_value % 10;
 
-        my $change_gold = $change_total % 10;
-        $change_platinum = int($change_total / 10);  # What's left is platinum
-
-        # Now, calculate the actual spent amounts
         my %actual_spent = (
-            copper   => $initial{copper} - ($initial{copper} >= $change_copper ? $change_copper : $initial{copper}),
-            silver   => $initial{silver} - ($initial{silver} >= $change_silver ? $change_silver : $initial{silver}),
-            gold     => $initial{gold} - ($initial{gold} >= $change_gold ? $change_gold : $initial{gold}),
-            platinum => $initial{platinum} - ($initial{platinum} >= $change_platinum ? $change_platinum : $initial{platinum}),
+            platinum => $initial{platinum} - $change_platinum,
+            gold     => $initial{gold} - $change_gold,
+            silver   => $initial{silver} - $change_silver,
+            copper   => $initial{copper} - $change_copper,
         );
 
-        # Construct and send the 'You give' message
         my $message = "You give ";
         my @messages;
         foreach my $currency (qw(platinum gold silver copper)) {
@@ -74,20 +71,22 @@ sub CheckCashPayment {
         $client->Message(276, $message);
 
         # Inform the client of the change they receive, if any
-        if ($change_copper > 0 || $change_silver > 0 || $change_gold > 0 || $change_platinum > 0) {
+        if ($change_platinum > 0 || $change_gold > 0 || $change_silver > 0 || $change_copper > 0) {
             my $change_message = "You receive ";
             my @change_parts;
-            foreach my $currency (qw(copper silver gold platinum)) {
-                my $change_amount = "change_$currency";
-                push @change_parts, "$$change_amount $currency" if $$change_amount > 0;
+            foreach my $currency (['platinum', $change_platinum], ['gold', $change_gold], ['silver', $change_silver], ['copper', $change_copper]) {
+                push @change_parts, "$currency->[1] $currency->[0]" if ($currency->[1] > 0);
             }
             $change_message .= join(' ', @change_parts) . " in change from " . $npc->GetCleanName() . ".";
             $client->Message(276, $change_message);
         }
 
-        # Return the change back to the player's account if necessary
+        # Provide the change back to the player's account
         $client->AddMoneyToPP($change_copper, $change_silver, $change_gold, $change_platinum, 1);
         
+        my $change_value = $change_platinum * 1000 + $change_gold * 100 + $change_silver * 10 + change_copper
+        quest::debug("change_value: $change_value");
+
         return 1;
     } else {
         # Refund all the money since the target value was not met
