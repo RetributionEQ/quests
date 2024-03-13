@@ -23,6 +23,7 @@ sub ClassType {
 }
 
 sub CheckCashPayment {
+    my $client = plugin::val('$client');
     my ($target_value, $copper, $silver, $gold, $platinum) = @_;
     my $remaining_value = ($platinum * 1000) + ($gold * 100) + ($silver * 10) + $copper - $target_value;
 
