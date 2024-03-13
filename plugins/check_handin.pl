@@ -296,7 +296,8 @@ sub return_base_items {
                 if ($client) {
                     my $inst = $item_data{$r}[3];
                     my $return_count = $inst ? $inst->RemoveTaskDeliveredItems() : 0;
-                    if ($return_count > 0) {                        
+                    if ($return_count > 0) {       
+						quest::debug("trying to return $k");                 
                         $client->SummonFixedItem($k, $inst->GetCharges(), $item_data{$r}[2]);
                         $return_data{$r} = [$k, $item_data{$r}[1], $item_data{$r}[2]];
                         $items_returned = 1;
