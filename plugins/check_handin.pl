@@ -55,8 +55,6 @@ sub check_handin {
 	# Make a copy of the original hashref
     my $original_hashref = { %$hashref };
 
-	quest::debug("ch check 1");
-
     # Iterate over the hashref and replace each key with its get_base_id(key) version
     foreach my $item (keys %$hashref) {
         my $base_id = get_base_id($item);  # Assuming get_base_id() returns original id if base id does not exist
@@ -66,8 +64,6 @@ sub check_handin {
             delete $hashref->{$item};  # Remove the original entry
         }
     }
-
-	quest::debug("ch check 2");
 
 	# -----------------------------
 	# handin formatting examples
@@ -166,7 +162,6 @@ sub check_handin_fixed {
 	my %required = @_;
 	my $retval = 1;
 	foreach my $req (keys %required) {
-		quest::debug("Req: $req");
 		if (!defined $hashref->{$req} || $hashref->{$req} != $required{$req}) {
 			$retval = 0;
 		}
@@ -190,9 +185,9 @@ sub return_items {
 	my $items_returned = 0;
 
 	# Ugly hack to put money into hashref like this method is otherwise expecting
-	$hashref->{'copper'}		= plugin::val('copper');
-    $hashref->{'silver'}     = plugin::val('silver');
-    $hashref->{'gold'}       = plugin::val('gold');
+	$hashref->{'copper'}	= plugin::val('copper');
+    $hashref->{'silver'}    = plugin::val('silver');
+    $hashref->{'gold'}      = plugin::val('gold');
     $hashref->{'platinum'}	= plugin::val('platinum');
 
 	my %item_data = (
@@ -213,20 +208,17 @@ sub return_items {
 				if ($client) {
 					my $inst = $item_data{$r}[3];
 					my $return_count = $inst->RemoveTaskDeliveredItems();
-					if ($return_count > 0) {
-						quest::debug("(1) Returning $k, " . $inst->GetCharges() . " : " . $item_data{$r}[2]);
+					if ($return_count > 0) {						
 						$client->SummonFixedItem($k, $inst->GetCharges(), $item_data{$r}[2]);
 						$return_data{$r} = [$k, $item_data{$r}[1], $item_data{$r}[2]];
 						$items_returned = 1;
 						next;
 					}
-					$return_data{$r} = [$k, $item_data{$r}[1], $item_data{$r}[2]];
-					quest::debug("(2) Returning $k");
+					$return_data{$r} = [$k, $item_data{$r}[1], $item_data{$r}[2]];					
 					$client->SummonFixedItem($k, $item_data{$r}[1], $item_data{$r}[2]);
 					$items_returned = 1;
 				} else {
-					$return_data{$r} = [$k, $item_data{$r}[1], $item_data{$r}[2]];
-					quest::debug("(3) Returning $k");
+					$return_data{$r} = [$k, $item_data{$r}[1], $item_data{$r}[2]];					
 					quest::summonfixeditem($k, 0);
 					$items_returned = 1;
 				}
