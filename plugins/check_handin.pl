@@ -107,10 +107,10 @@ sub check_handin {
 sub check_handin_fixed {
 	use Scalar::Util qw(looks_like_number);
     my $client     = plugin::val('client');
-    my $copper     = plugin::val('copper') // 0;
-    my $silver     = plugin::val('silver') // 0;
-    my $gold       = plugin::val('gold') // 0;
-    my $platinum   = plugin::val('platinum') // 0;
+    my $copper     = plugin::val('copper');
+    my $silver     = plugin::val('silver');
+    my $gold       = plugin::val('gold');
+    my $platinum   = plugin::val('platinum');
 	my $hashref = shift;
 
 	my $return_copper   = 0;
