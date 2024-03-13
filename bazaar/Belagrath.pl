@@ -16,7 +16,6 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   use Scalar::Util qw(looks_like_number);
-  my %new_itemcount;
 
 	my %item_data = (
 		0 => [ plugin::val('$item1'), plugin::val('$item1_charges'), plugin::val('$item1_attuned'), plugin::val('$item1_inst') ],
@@ -25,9 +24,9 @@ sub EVENT_ITEM {
 		3 => [ plugin::val('$item4'), plugin::val('$item4_charges'), plugin::val('$item4_attuned'), plugin::val('$item4_inst') ],
 	);
 
-	foreach my $k (keys(%{$hashref})) {
+	foreach my $k (keys(%{$itemcount})) {
 		next if ($k eq "copper" || $k eq "silver" || $k eq "gold" || $k eq "platinum" || $k == 0);
-		my $rcount = $hashref->{$k};
+		my $rcount = $itemcount->{$k};
 		my $r;
     quest::debug($k);
     $k = $k % 1000000;
@@ -55,7 +54,7 @@ sub EVENT_ITEM {
 			}
 		}
 
-		delete $hashref->{$k};
+		delete $itemcount->{$k};
 	}
 
   quest::say("I have disenchanted these items for you...");
