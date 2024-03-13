@@ -189,6 +189,12 @@ sub return_items {
 	my $name = plugin::val('$name');
 	my $items_returned = 0;
 
+	# Ugly hack to put money into hashref like this method is otherwise expecting
+	my $hashref->{'copper'}		= plugin::val('copper');
+    my $hashref->{'silver'}     = plugin::val('silver');
+    my $hashref->{'gold'}       = plugin::val('gold');
+    my $hashref->{'platinum'}	= plugin::val('platinum');
+
 	my %item_data = (
 		0 => [ plugin::val('$item1'), plugin::val('$item1_charges'), plugin::val('$item1_attuned'), plugin::val('$item1_inst') ],
 		1 => [ plugin::val('$item2'), plugin::val('$item2_charges'), plugin::val('$item2_attuned'), plugin::val('$item2_inst') ],
