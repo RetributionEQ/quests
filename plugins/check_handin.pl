@@ -256,6 +256,94 @@ sub return_items {
 	return ($items_returned || $returned_money);
 }
 
+sub return_base_items {
+    my $hashref = shift;
+    my $client = plugin::val('$client');
+    my $name = plugin::val('$name');
+    my $items_returned = 0;
+
+    # Ugly hack to put money into hashref like this method is otherwise expecting
+    $hashref->{'copper'}    = plugin::val('copper');
+    $hashref->{'silver'}    = plugin::val('silver');
+    $hashref->{'gold'}      = plugin::val('gold');
+    $hashref->{'platinum'}  = plugin::val('platinum');
+
+    my %new_hashref; # New hash for storing modified keys
+    foreach my $key (keys %{$hashref}) {
+        # Apply modulus 1 million to non-currency keys
+        if ($key ne 'copper' && $key ne 'silver' && $key ne 'gold' && $key ne 'platinum') {
+            my $new_key = $key % 1000000;
+            $new_hashref{$new_key} += $hashref->{$key}; # Aggregate counts for identical new keys
+        } else {
+            $new_hashref{$key} = $hashref->{$key}; # Copy currency keys unchanged
+        }
+    }
+
+    my %item_data = (
+        0 => [ plugin::val('$item1'), plugin::val('$item1_charges'), plugin::val('$item1_attuned'), plugin::val('$item1_inst') ],
+        1 => [ plugin::val('$item2'), plugin::val('$item2_charges'), plugin::val('$item2_attuned'), plugin::val('$item2_inst') ],
+        2 => [ plugin::val('$item3'), plugin::val('$item3_charges'), plugin::val('$item3_attuned'), plugin::val('$item3_inst') ],
+        3 => [ plugin::val('$item4'), plugin::val('$item4_charges'), plugin::val('$item4_attuned'), plugin::val('$item4_inst') ],
+    );
+
+    my %return_data = ();    
+
+    foreach my $k (keys %new_hashref) {
+        next if ($k eq "copper" || $k eq "silver" || $k eq "gold" || $k eq "platinum" || $k == 0);
+        my $rcount = $new_hashref{$k};
+        for (my $r = 0; $r < 4; $r++) {
+            if ($rcount > 0 && $item_data{$r}[0] && $item_data{$r}[0] == $k) {
+                if ($client) {
+                    my $inst = $item_data{$r}[3];
+                    my $return_count = $inst ? $inst->RemoveTaskDeliveredItems() : 0;
+                    if ($return_count > 0) {                        
+                        $client->SummonFixedItem($k, $inst->GetCharges(), $item_data{$r}[2]);
+                        $return_data{$r} = [$k, $item_data{$r}[1], $item_data{$r}[2]];
+                        $items_returned = 1;
+                        next;
+                    }
+                    $return_data{$r} = [$k, $item_data{$r}[1], $item_data{$r}[2]];                    
+                    $client->SummonFixedItem($k, $item_data{$r}[1], $item_data{$r}[2]);
+                    $items_returned = 1;
+                } else {
+                    $return_data{$r} = [$k, $item_data{$r}[1], $item_data{$r}[2]];                    
+                    quest::summonfixeditem($k, 0);
+                    $items_returned = 1;
+                }
+                $rcount--;
+            }
+        }
+
+        delete $new_hashref{$k};
+    }
+
+    # Check if we have any money to return
+    my @money = ("platinum", "gold", "silver", "copper");
+    my $returned_money = 0;
+    foreach my $m (@money) {
+        if ($new_hashref->{$m} && $new_hashref->{$m} > 0) {
+            $returned_money = 1;
+        }
+    }
+
+    if ($returned_money) {
+        my ($cp, $sp, $gp, $pp) = map { $new_hashref->{$_} // 0 } @money;
+        $client->AddMoneyToPP($cp, $sp, $gp, $pp, 1);
+        $client->SetEntityVariable("RETURN_MONEY", "$cp|$sp|$gp|$pp");
+    }
+
+    $client->SetEntityVariable("RETURN_ITEMS", plugin::GetHandinItemsSerialized("Return", %return_data));
+
+    if ($items_returned || $returned_money) {
+        quest::say("I have no need for this $name, you can have it back.");
+    }
+
+    quest::send_player_handin_event();
+
+    # Return true if items were returned
+    return ($items_returned || $returned_money);
+}
+
 sub return_bot_items {
 	my $bot = plugin::val('bot');
 	if (!$bot->GetOwner() || !$bot->GetOwner()->IsClient()) {

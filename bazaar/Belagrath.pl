@@ -15,6 +15,6 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-  quest::say("I am not currently able to disenchant items");
-  plugin::return_items(\%itemcount);
+    quest::say("I am not currently able to disenchant items");
+    plugin::return_base_items(\%itemcount);
 }
