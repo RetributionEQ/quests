@@ -16,14 +16,15 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   use Scalar::Util qw(looks_like_number);
-  foreach my $item in (keys %itemcount) {
+  foreach my $item (keys %itemcount) {
     quest::debug("$item");
-    if ($item != 'copper' && $item != 'silver' && $item != 'gold' && $item != 'platinum') {
-      
+    if ($item ne 'copper' && $item ne 'silver' && $item ne 'gold' && $item ne 'platinum') {
+      # TODO
     }
   }
-	plugin::return_items(\%itemcount);
+  plugin::return_items(\%itemcount);
 }
+
 
 
 
