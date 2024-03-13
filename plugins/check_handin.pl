@@ -9,41 +9,9 @@ sub get_base_id {
 sub check_handin {
     use Scalar::Util qw(looks_like_number);
     my $client     = plugin::val('client');
-    my $copper     = plugin::val('copper') // 0;
-    my $silver     = plugin::val('silver') // 0;
-    my $gold       = plugin::val('gold') // 0;
-    my $platinum   = plugin::val('platinum') // 0;
     my $hashref    = shift;
 
-    my $return_copper   = 0;
-    my $return_silver   = 0;
-    my $return_gold     = 0;
-    my $return_platinum = 0;
-
-    if ($copper > 0) {
-        $hashref->{"copper"} = $copper;
-    }
-    if ($silver > 0) {
-        $hashref->{"silver"} = $silver;
-    }
-    if ($gold > 0) {
-        $hashref->{"gold"} = $gold;
-    }
-    if ($platinum > 0) {
-        $hashref->{"platinum"} = $platinum;
-    }
-
-	$client->SetEntityVariable("HANDIN_MONEY", "$copper|$silver|$gold|$platinum");
-
-	# set money zero values if they don't exist
-	my @money = ("platinum", "gold", "silver", "copper");
-	foreach my $m (@money) {
-		if (!$hashref->{$m}) {
-			$hashref->{$m} = 0;
-		}
-	}
-
-	# for some reason the source is sending this, we'll clean it up
+	# These are the empty IDs
 	if ($hashref->{0}) {
 		delete $hashref->{0};
 	}
@@ -57,10 +25,10 @@ sub check_handin {
 
     # Iterate over the hashref and replace each key with its get_base_id(key) version
     foreach my $item (keys %$hashref) {
-        my $base_id = get_base_id($item);  # Assuming get_base_id() returns original id if base id does not exist
-        if ($base_id && $base_id ne $item) {  # Check if base ID is different from original
-            $hashref->{$base_id} += $hashref->{$item} if exists $hashref->{$base_id};  # Add to existing base ID count
-            $hashref->{$base_id} = $hashref->{$item} unless exists $hashref->{$base_id};  # Or create a new entry
+        my $base_id = get_base_id($item);
+        if ($base_id && $base_id ne $item) {
+            $hashref->{$base_id} += $hashref->{$item} if exists $hashref->{$base_id};
+            $hashref->{$base_id} = $hashref->{$item} unless exists $hashref->{$base_id};
             delete $hashref->{$item};  # Remove the original entry
         }
     }
@@ -69,10 +37,6 @@ sub check_handin {
 	# handin formatting examples
 	# -----------------------------
 	# item_id    => required_count eg (1001 => 1)
-	# "copper"   => copper_amount  eg ("copper" => 1234)
-	# "silver"   => silver_amount
-	# "gold"     => gold_amount
-	# "platinum" => platinum_amount
 	# -----------------------------
 	my %required = @_;
 	my $retval = 1;
@@ -90,90 +54,10 @@ sub check_handin {
 		}
 	}
 	    
-    if (!$retval) {  # Replace conditions_not_met with your actual condition
-        %$hashref = %$original_hashref;  # Restore original hashref
-        return 0;  # Return 0 as required
+    if (!$retval) {
+        %$hashref = %$original_hashref;
+        return 0;
     }
-
-	return $retval;
-}
-
-# plugin::check_handin($item1 => #required_amount,...);
-# autoreturns extra unused items on success
-sub check_handin_fixed {
-	use Scalar::Util qw(looks_like_number);
-    my $client     = plugin::val('client');
-    my $copper     = plugin::val('copper');
-    my $silver     = plugin::val('silver');
-    my $gold       = plugin::val('gold');
-    my $platinum   = plugin::val('platinum');
-	my $hashref = shift;
-
-	my $return_copper   = 0;
-	my $return_silver   = 0;
-	my $return_gold     = 0;
-	my $return_platinum = 0;
-
-	if ($copper > 0) {
-		$hashref->{"copper"} = $copper;
-	}
-	if ($silver > 0) {
-		$hashref->{"silver"} = $silver;
-	}
-	if ($gold > 0) {
-		$hashref->{"gold"} = $gold;
-	}
-	if ($platinum > 0) {
-		$hashref->{"platinum"} = $platinum;
-	}
-
-	$client->SetEntityVariable("HANDIN_MONEY", "$copper|$silver|$gold|$platinum");
-
-	# set money zero values if they don't exist
-	my @money = ("platinum", "gold", "silver", "copper");
-	foreach my $m (@money) {
-		if (!$hashref->{$m}) {
-			$hashref->{$m} = 0;
-		}
-	}
-
-	# for some reason the source is sending this, we'll clean it up
-	if ($hashref->{0}) {
-		delete $hashref->{0};
-	}
-
-	if (!$retval) {
-		return 0;
-	}
-
-	if (!$client->EntityVariableExists("HANDIN_ITEMS")) {
-		$client->SetEntityVariable("HANDIN_ITEMS", plugin::GetHandinItemsSerialized("Handin", %$hashref));
-	}
-
-	# -----------------------------
-	# handin formatting examples
-	# -----------------------------
-	# item_id    => required_count eg (1001 => 1)
-	# "copper"   => copper_amount  eg ("copper" => 1234)
-	# "silver"   => silver_amount
-	# "gold"     => gold_amount
-	# "platinum" => platinum_amount
-	# -----------------------------
-	my %required = @_;
-	my $retval = 1;
-	foreach my $req (keys %required) {
-		if (!defined $hashref->{$req} || $hashref->{$req} != $required{$req}) {
-			$retval = 0;
-		}
-	}
-
-	foreach my $req (keys %required) {
-		if ($required{$req} < $hashref->{$req}) {
-			$hashref->{$req} -= $required{$req};
-		} else {
-			delete $hashref->{$req};
-		}
-	}
 
 	return $retval;
 }
