@@ -38,10 +38,10 @@ sub CheckCashPayment {
         );
 
         my %spent = (
-            platinum => $initial_platinum   - $return_platinum,
-            gold     => $initial_gold       - $return_gold,
-            silver   => $initial_silver     - $return_silver,
-            copper   => $initial_copper     - $return_copper,
+            platinum => $initial_platinum - $return_platinum,
+            gold     => $initial_gold - $return_gold,
+            silver   => $initial_silver - $return_silver,
+            copper   => $initial_copper - $return_copper,
         );
 
         my $message = "You give ";
@@ -56,7 +56,15 @@ sub CheckCashPayment {
         $client->Message(276, $message);
         return 1;
     } else {
-        $client->Message(276, "You do not have enough money. Please try again.");
+        # Return all the money since the target value was not met
+        $client->AddMoneyToPP($initial_copper, $initial_silver, $initial_gold, $initial_platinum, 1);
+        my $message = "Transaction failed. You have been refunded ";
+        my @refund_messages;
+        foreach my $currency (qw(platinum gold silver copper)) {
+            push @refund_messages, "$initial_$currency $currency" if (${"initial_$currency"} > 0);
+        }
+        $message .= join(' ', @refund_messages) . ".";
+        $client->Message(276, $message);
         return 0;
     }
 }
