@@ -290,6 +290,7 @@ sub return_base_items {
     my %return_data = ();    
 
     foreach my $k (keys %new_hashref) {
+		quest::debug("k is $k");
         next if ($k eq "copper" || $k eq "silver" || $k eq "gold" || $k eq "platinum" || $k == 0);
         my $rcount = $new_hashref{$k};
         for (my $r = 0; $r < 4; $r++) {
