@@ -15,5 +15,8 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-    plugin::return_base_items(\%itemcount);
+  if (!$client->GetGM()) {
+    quest::say("I cannot disenchant items right now.");
+    plugin::return_items(\%itemcount);
+  }    
 }
