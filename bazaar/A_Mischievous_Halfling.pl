@@ -15,22 +15,16 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
     foreach my $key (keys %itemcount) {
-    my $value = $itemcount{$key};
-    quest::debug("Key: $key, Value: $value");
-}
-  my $cash = 0;
-  $cash = ($platinum * 1000) + ($gold * 100) + ($silver * 10) + $copper;
+        my $value = $itemcount{$key};
+        quest::debug("Key: $key, Value: $value");
+    }
 
-    plugin::CheckCashPayment(500, $copper, $silver, $gold, $platinum);
-
-  if ($cash == 5000000) { #5000 Platinum
-    GetRandomResult();    
-  }
-  else {
-    quest::say("Only one transaction at a time please of 5,000 platinum pieces! The casino is very busy!");
-    $client->AddMoneyToPP($copper, $silver, $gold, $platinum, 1);
-  }
-  plugin::return_items(\%itemcount);
+    if (plugin::CheckCashPayment($client, 5000000, $copper, $silver, $gold, $platinum)) { # 5000 Platinum
+        GetRandomResult();    
+    } else {
+        quest::say("You'll need to give me enough money for the casino ticket!");
+    }
+    plugin::return_items(\%itemcount);
 }
 
 sub GetRandomResult() {
