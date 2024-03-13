@@ -18,18 +18,24 @@ sub EVENT_ITEM {
     my $platinum_cost = 0;
     my $eligible_item = 0;
     foreach my $item (keys %itemcount) {
-        quest::debug("$item has count: " . $itemcount->{$item});
-        # Check if the item count is a number before comparing it to 4
-        if ($itemcount->{$item} =~ /^\d+$/) {  # This regex checks if $itemcount->{$item} is a whole number
-            if ($itemcount->{$item} == 4) {
-                quest::debug("test $item");
-                $eligible_item = $item;
-                last;  
+        # Check if the item count exists and is defined
+        if (defined $itemcount->{$item}) {
+            quest::debug("$item has count: " . $itemcount->{$item});
+            # Check if the item count is a number before comparing it to 4
+            if ($itemcount->{$item} =~ /^\d+$/) {  # This regex checks if $itemcount->{$item} is a whole number
+                if ($itemcount->{$item} == 4) {
+                    quest::debug("test $item");
+                    $eligible_item = $item;
+                    last;  
+                }
+            } else {
+                quest::debug("$item count is not numeric");
             }
         } else {
-            quest::debug("$item count is not numeric");
+            quest::debug("$item has an undefined count");
         }
     }
+
 
     if ($eligible_item) {
         if ($eligible_item < 1000000) {
