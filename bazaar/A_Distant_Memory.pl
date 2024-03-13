@@ -39,10 +39,10 @@ sub EVENT_ITEM {
             $client->SummonFixedItem($eligible_item);
             return;
         } else {
-            quest::Say("Cannot afford, Aporia needs to write better text here");
+            quest::say("Cannot afford, Aporia needs to write better text here");
         }
     }
 
-    quest::Say("invalid items, Aporia needs to write better text here");
+    quest::say("invalid items, Aporia needs to write better text here");
     plugin::return_items(\%itemcount);
 }
