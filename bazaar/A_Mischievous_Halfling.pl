@@ -32,7 +32,7 @@ sub EVENT_ITEM {
         quest::debug("Key: $key, Value: $value");
     }
 
-    if (plugin::CheckCashPayment($client, 5000000, $copper, $silver, $gold, $platinum)) { # 5000 Platinum
+    if (plugin::CheckCashPayment(5000000, $copper, $silver, $gold, $platinum)) { # 5000 Platinum
         GetRandomResult();    
     } else {
         quest::say("You'll need to give me enough money for the casino ticket!");
