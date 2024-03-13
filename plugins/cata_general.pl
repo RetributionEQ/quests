@@ -91,7 +91,7 @@ sub CheckCashPayment {
     } else {
         # Refund all the money since the target value was not met
         $client->AddMoneyToPP($initial{copper}, $initial{silver}, $initial{gold}, $initial{platinum}, 1);
-        my $refund_message = "Transaction failed. You have been refunded ";
+        my $refund_message = "You have been refunded ";
         my @refund_parts;
         foreach my $currency (qw(platinum gold silver copper)) {
             push @refund_parts, "$initial{$currency} $currency" if ($initial{$currency} > 0);
