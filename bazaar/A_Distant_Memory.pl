@@ -18,7 +18,8 @@ sub EVENT_ITEM {
     my $platinum_cost = 0;
     my $eligible_item = 0;
     foreach my $item (keys %itemcount) {
-        if ($itemcount->{$item} == 4) {  
+        if ($itemcount->{$item} == 4) { 
+            quest::debug("test $item");
             $eligible_item = $item;
             last;  
         }
