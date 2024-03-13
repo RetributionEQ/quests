@@ -273,6 +273,7 @@ sub return_base_items {
         # Apply modulus 1 million to non-currency keys
         if ($key ne 'copper' && $key ne 'silver' && $key ne 'gold' && $key ne 'platinum') {
             my $new_key = $key % 1000000;
+			quest::debug("$new_key");
             $new_hashref{$new_key} += $hashref->{$key}; # Aggregate counts for identical new keys
         } else {
             $new_hashref{$key} = $hashref->{$key}; # Copy currency keys unchanged
