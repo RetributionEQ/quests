@@ -43,38 +43,28 @@ sub CheckCashPayment {
     my $remaining_value = $total_value - $target_value;
 
     if ($remaining_value >= 0) {
-        # Calculate how much of each currency is needed to meet the target value
-        # Start by converting everything to copper for comparison
-        my $total_copper = $initial{copper} + ($initial{silver} * 10) + ($initial{gold} * 100) + ($initial{platinum} * 1000);
-        
-        # Determine how much of each currency is spent to meet the target
-        my $spent_copper = $target_value % 10;
-        my $spent_silver = int(($target_value % 100) / 10);
-        my $spent_gold = int(($target_value % 1000) / 100);
-        my $spent_platinum = int($target_value / 1000);
+        # Initially, consider all remaining value as potential change
+        my $change_total = $remaining_value;
 
-        # Update the total target value to include full coins only
-        my $adjusted_target = ($spent_platinum * 1000) + ($spent_gold * 100) + ($spent_silver * 10) + $spent_copper;
+        # Break down the total change back into denominations, starting with the smallest
+        my $change_copper = $change_total % 10;
+        $change_total = int($change_total / 10);  # Remove the copper part from change total
 
-        # Calculate remaining values after spending towards the target
-        my $remaining_copper_after_target = $total_copper - $adjusted_target;
+        my $change_silver = $change_total % 10;
+        $change_total = int($change_total / 10);  # Remove the silver part from change total
 
-        # Calculate actual remaining currency by converting remaining copper back to denominations
-        my $actual_remaining_platinum = int($remaining_copper_after_target / 1000);
-        $remaining_copper_after_target %= 1000;
-        my $actual_remaining_gold = int($remaining_copper_after_target / 100);
-        $remaining_copper_after_target %= 100;
-        my $actual_remaining_silver = int($remaining_copper_after_target / 10);
-        my $actual_remaining_copper = $remaining_copper_after_target % 10;
+        my $change_gold = $change_total % 10;
+        $change_platinum = int($change_total / 10);  # What's left is platinum
 
-        # Determine actual spent amounts in each currency
+        # Now, calculate the actual spent amounts
         my %actual_spent = (
-            platinum => $initial{platinum} - $actual_remaining_platinum,
-            gold     => $initial{gold} - $actual_remaining_gold,
-            silver   => $initial{silver} - $actual_remaining_silver,
-            copper   => $initial{copper} - $actual_remaining_copper,
+            copper   => $initial{copper} - ($initial{copper} >= $change_copper ? $change_copper : $initial{copper}),
+            silver   => $initial{silver} - ($initial{silver} >= $change_silver ? $change_silver : $initial{silver}),
+            gold     => $initial{gold} - ($initial{gold} >= $change_gold ? $change_gold : $initial{gold}),
+            platinum => $initial{platinum} - ($initial{platinum} >= $change_platinum ? $change_platinum : $initial{platinum}),
         );
 
+        # Construct and send the 'You give' message
         my $message = "You give ";
         my @messages;
         foreach my $currency (qw(platinum gold silver copper)) {
@@ -83,20 +73,21 @@ sub CheckCashPayment {
         $message .= join(' ', @messages) . " to " . $npc->GetCleanName() . ".";
         $client->Message(276, $message);
 
-        # Construct and send the change message if there is remaining value
-        if ($remaining_copper_after_target > 0) {
+        # Inform the client of the change they receive, if any
+        if ($change_copper > 0 || $change_silver > 0 || $change_gold > 0 || $change_platinum > 0) {
             my $change_message = "You receive ";
             my @change_parts;
-            foreach my $currency (['platinum', $actual_remaining_platinum], ['gold', $actual_remaining_gold], ['silver', $actual_remaining_silver], ['copper', $actual_remaining_copper]) {
-                push @change_parts, "$currency->[1] $currency->[0]" if ($currency->[1] > 0);
+            foreach my $currency (qw(copper silver gold platinum)) {
+                my $change_amount = "change_$currency";
+                push @change_parts, "$$change_amount $currency" if $$change_amount > 0;
             }
             $change_message .= join(' ', @change_parts) . " in change from " . $npc->GetCleanName() . ".";
             $client->Message(276, $change_message);
         }
 
-        # Provide the change back to the player's account
-        $client->AddMoneyToPP($actual_remaining_copper, $actual_remaining_silver, $actual_remaining_gold, $actual_remaining_platinum, 1);
-
+        # Return the change back to the player's account if necessary
+        $client->AddMoneyToPP($change_copper, $change_silver, $change_gold, $change_platinum, 1);
+        
         return 1;
     } else {
         # Refund all the money since the target value was not met
