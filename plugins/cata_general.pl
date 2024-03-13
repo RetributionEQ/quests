@@ -84,7 +84,7 @@ sub CheckCashPayment {
         # Provide the change back to the player's account
         $client->AddMoneyToPP($change_copper, $change_silver, $change_gold, $change_platinum, 1);
         
-        my $change_value = $change_platinum * 1000 + $change_gold * 100 + $change_silver * 10 + change_copper
+        my $change_value = $change_platinum * 1000 + $change_gold * 100 + $change_silver * 10 + $change_copper;
         quest::debug("change_value: $change_value");
 
         return 1;
