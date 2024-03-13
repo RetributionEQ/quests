@@ -20,8 +20,11 @@ sub EVENT_ITEM {
 }
   my $cash = 0;
   $cash = ($platinum * 1000) + ($gold * 100) + ($silver * 10) + $copper;
+
+    plugin::CheckCashPayment(500, $copper, $silver, $gold, $platinum);
+
   if ($cash == 5000000) { #5000 Platinum
-    GetRandomResult();
+    GetRandomResult();    
   }
   else {
     quest::say("Only one transaction at a time please of 5,000 platinum pieces! The casino is very busy!");
