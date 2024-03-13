@@ -7,7 +7,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
     foreach my $item (keys %itemcount) {
         if ($item > 0) {
-            quest::debug($itemcount->{$item});
+            quest::debug($item . " : " . $itemcount->{$item});
         }
     }
 }
