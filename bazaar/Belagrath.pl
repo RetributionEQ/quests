@@ -30,7 +30,12 @@ sub EVENT_ITEM {
       $new_itemcount{$item} = $itemcount{$item};
     }
   }
-  
+
+  foreach my $item (keys %itemcount) {
+    my $new_key = exists $new_itemcount{$item} ? $item : "ERROR";
+    quest::debug("old: $item, new: $new_key");
+  }
+
   quest::say("I have disenchanted these items for you...");
   plugin::return_items(\%new_itemcount);
 }
