@@ -24,7 +24,7 @@ sub EVENT_ITEM {
   }
   else {
     quest::say("Only one transaction at a time please of 5,000 platinum pieces! The casino is very busy!");
-    quest::givecash($copper, $silver, $gold, $platinum);
+    #quest::givecash($copper, $silver, $gold, $platinum);
   }
   plugin::return_items(\%itemcount);
 }
