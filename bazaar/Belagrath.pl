@@ -24,7 +24,7 @@ sub EVENT_ITEM {
 		3 => [ plugin::val('$item4'), plugin::val('$item4_charges'), plugin::val('$item4_attuned'), plugin::val('$item4_inst') ],
 	);
 
-	foreach my $k (keys(%{$itemcount})) {
+	foreach my $k (keys %itemcount) {
 		next if ($k eq "copper" || $k eq "silver" || $k eq "gold" || $k eq "platinum" || $k == 0);
 		my $rcount = $itemcount->{$k};
 		my $r;
