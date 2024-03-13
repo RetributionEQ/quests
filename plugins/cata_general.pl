@@ -51,10 +51,10 @@ sub CheckCashPayment {
         );
 
         my %spent = (
-            platinum => $initial{platinum} - $return_platinum,
-            gold     => $initial{gold} - $return_gold,
-            silver   => $initial{silver} - $return_silver,
-            copper   => $initial{copper} - $return_copper,
+            platinum => $initial{platinum}  - $return_platinum,
+            gold     => $initial{gold}      - $return_gold,
+            silver   => $initial{silver}    - $return_silver,
+            copper   => $initial{copper}    - $return_copper,
         );
 
         my $message = "You give ";
@@ -70,9 +70,9 @@ sub CheckCashPayment {
         if ($remaining_value > 0) {
             my $change_message = "You receive ";
             my @change_parts;
-            foreach my $currency (qw(platinum gold silver copper)) {
-                if (${"return_$currency"} > 0) {
-                    push @change_parts, "${return_$currency} $currency";
+            foreach my $currency (['platinum', $return_platinum], ['gold', $return_gold], ['silver', $return_silver], ['copper', $return_copper]) {
+                if ($currency->[1] > 0) {  # Check if the amount of currency is greater than 0
+                    push @change_parts, "$currency->[1] $currency->[0]";  # Add the string to change parts
                 }
             }
             $change_message .= join(' ', @change_parts) . " in change from " . $npc->GetCleanName() . ".";
