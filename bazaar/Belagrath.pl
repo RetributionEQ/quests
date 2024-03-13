@@ -16,6 +16,13 @@ sub EVENT_SAY {
 
 sub EVENT_ITEM {
   use Scalar::Util qw(looks_like_number);
+
+  quest::debug("QuestItem " . $QuestItem);
+	quest::debug("copper " . $copper);
+	quest::debug("silver " . $silver);
+	quest::debug("gold " . $gold);
+	quest::debug("platinum " . $platinum);
+
   foreach my $item (keys %itemcount) {
     quest::debug("$item");
     if ($item ne 'copper' && $item ne 'silver' && $item ne 'gold' && $item ne 'platinum') {
