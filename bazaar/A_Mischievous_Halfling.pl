@@ -1,15 +1,16 @@
-
 sub EVENT_SAY {
-  if($text=~/hail/i) {
-    quest::say("Well looky there! Feeling lucky? Come win a prize! Mounts, Petamorph Wands, Illusions, Clockwork friends... delicious foods and potions to boot! If you want to try your luck at a game of chance, simply hand me 5,000 platinum pieces, or consider donating to wager five [Echo of Memory], I'll accept those, too!");
-  }
-  if($text=~/Echo of Memory/i) {
-    if (plugin::SpendEOM($client, 5)) {
-        GetRandomResult();
-    } else {
-        quest::say("You don't have enough Echoes, my friend. Come back when you do!");
+    if ($text =~ /hail/i) {
+        quest::say("Well looky there! Feeling lucky? Come win a prize! Mounts, Petamorph Wands, Illusions, Clockwork friends... 
+                    delicious foods and potions to boot! If you want to try your luck at a game of chance, simply hand me 5,000 
+                    platinum pieces, or consider donating to wager five [Echo of Memory], I'll accept those, too!");
     }
-  }
+    if ($text =~ /Echo of Memory/i) {
+        if (plugin::SpendEOM($client, 5)) {
+            GetRandomResult();
+        } else {
+            quest::say("You don't have enough Echoes of Memory, dear friend. Come back when you do!");
+        }
+    }
 }
 
 sub EVENT_ITEM {
@@ -24,7 +25,7 @@ sub EVENT_ITEM {
   }
   else {
     quest::say("Only one transaction at a time please of 5,000 platinum pieces! The casino is very busy!");
-    #quest::givecash($copper, $silver, $gold, $platinum);
+    $client->AddMoneyToPP($copper, $silver, $gold, $platinum, 1);
   }
   plugin::return_items(\%itemcount);
 }
