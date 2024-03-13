@@ -972,41 +972,6 @@ sub CalcDestFromHeadingXY {
 	return @DestArray;
 }
 
-
-#Usage: plugin::GetReverseHeading($mob);
-# Returns the heading of the opposite direction the mob is facing
-
-sub GetReverseHeading {
-	my $Mob = $_[0];
-	
-	my $CurHeading = $Mob->GetHeading();
-	my $ReverseHeading = 128 + $CurHeading;
-	if ($ReverseHeading >= 256) {
-		$ReverseHeading = $ReverseHeading - 256;
-	}
-	return $ReverseHeading;
-}
-
-
-#Usage: my $Degrees = plugin::ConvertHeadingToDegrees(Heading);
-# Converts 0-256 headings into 0 to 360 degrees
-
-sub ConvertHeadingToDegrees {
-
-	my $Heading = $_[0];
-	
-	my $ReverseHeading = 256 - $Heading;
-	my $ConvertAngle = $ReverseHeading * 1.40625;
-	if ($ConvertAngle <= 270) {
-		$ConvertAngle = $ConvertAngle + 90;
-	}
-	else {
-		$ConvertAngle = $ConvertAngle - 270;
-	}
-
-	return $ConvertAngle;
-}
-
 #Usage: plugin::Debug("Message", Color, Mob);
 # "Message" is a required field and is the message you want to show up in the debug
 # Color is an optional field and if not set will default to a pink/purple color
