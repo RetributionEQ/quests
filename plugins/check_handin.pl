@@ -179,7 +179,7 @@ sub check_handin_fixed {
 }
 
 sub return_items {
-	my $hashref = shift || plugin::var('$itemcount');
+	my $hashref = shift;
 	my $client = plugin::val('$client');
 	my $name = plugin::val('$name');
 	my $items_returned = 0;

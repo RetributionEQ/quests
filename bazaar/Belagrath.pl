@@ -31,10 +31,6 @@ sub EVENT_ITEM {
     }
   }
 
-foreach my $item (keys %new_itemcount) {
-  quest::debug("new item: $item, count: $new_itemcount{$item}");
-}
-
   quest::say("I have disenchanted these items for you...");
   plugin::return_items(\%new_itemcount);
 }
