@@ -295,7 +295,7 @@ sub return_base_items {
         my $rcount = $new_hashref{$k};
 		quest::debug("rcount is $rcount");
         for (my $r = 0; $r < 4; $r++) {
-            if ($rcount > 0 && $item_data{$r}[0] && $item_data{$r}[0] == $k) {
+            if ($rcount > 0 && $item_data{$r % 1000000}[0] && $item_data{$r % 1000000}[0] == $k) {
                 if ($client) {
                     my $inst = $item_data{$r}[3];
                     my $return_count = $inst ? $inst->RemoveTaskDeliveredItems() : 0;
