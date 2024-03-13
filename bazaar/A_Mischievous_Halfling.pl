@@ -13,6 +13,10 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
+    foreach my $key (keys %itemcount) {
+    my $value = $itemcount{$key};
+    quest::debug("Key: $key, Value: $value");
+}
   my $cash = 0;
   $cash = ($platinum * 1000) + ($gold * 100) + ($silver * 10) + $copper;
   if ($cash == 5000000) { #5000 Platinum
