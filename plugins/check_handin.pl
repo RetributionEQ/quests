@@ -293,6 +293,7 @@ sub return_base_items {
 		quest::debug("k is $k");
         next if ($k eq "copper" || $k eq "silver" || $k eq "gold" || $k eq "platinum" || $k == 0);
         my $rcount = $new_hashref{$k};
+		quest::debug("rcount is $rcount");
         for (my $r = 0; $r < 4; $r++) {
             if ($rcount > 0 && $item_data{$r}[0] && $item_data{$r}[0] == $k) {
                 if ($client) {
