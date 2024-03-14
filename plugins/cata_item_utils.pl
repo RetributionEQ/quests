@@ -28,14 +28,14 @@ sub GetUpgrades {
     return \@items; # Return a reference to the array of items
 }
 
-sub IsItemTier0{
+sub IsItemTier0 {
     my $item_id = shift;
 
     if ($item_id < 1000000) {
         return 1;
-    } else {
-        return 0;
-    }
+    } 
+    
+    return 0;
 }
 
 sub IsItemTier1 {
@@ -43,9 +43,9 @@ sub IsItemTier1 {
 
     if ($item_id > 1000000 && $item_id < 2000000) {
         return 1;
-    } else {
-        return 0;
-    }
+    } 
+
+    return 0;
 }
 
 sub IsItemTier2 {
@@ -53,9 +53,9 @@ sub IsItemTier2 {
 
     if ($item_id > 2000000 && $item_id < 3000000) {
         return 1;
-    } else {
-        return 0;
     }
+
+    return 0;
 }
 
 sub GetBaseID {
