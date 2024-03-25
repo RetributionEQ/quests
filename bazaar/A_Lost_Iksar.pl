@@ -55,7 +55,7 @@ sub EVENT_ITEM {
     $voxkey = $client->AccountID() . "vox";
 
     if ($expansion < 20){
-        if (plugin::check_handin_fixed(\%itemcount, 2028043 => 1, 2010366 => 1, 2010142 => 1, 20826997 => 1)) {
+        if (plugin::check_handin_fixed(\%itemcount, 2028043 => 1, 2010366 => 1, 2010142 => 1, 2026997 => 1)) {
 		    plugin::Whisper("Here are three tokens. Hand them back to me for your flag!");
             quest::ding();
             quest::exp(100000);
