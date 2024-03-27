@@ -8,7 +8,7 @@ sub EVENT_SAY {
 	elsif ($text=~/muffins/i) {
 		quest::say("Take dis crate and fill it with hand crafted muffins.  They are much better than store bought."); 
 		#:: Give a 17881 - Muffin Crate
-		quest::summonitem(117881);
+		quest::summonitem(17881);
 	}
 	elsif ($text=~/shipment of bread/i) {
 		quest::say("Far away in the Southern Plains of Karana a centaur named Meadowgreen makes the best bread. If you were to get some for us, it sure would help.");

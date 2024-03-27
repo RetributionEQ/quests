@@ -8,7 +8,7 @@ sub EVENT_SAY {
 	elsif ($text=~/get the minnow/i) {
 		quest::say("Please try. Here you are. Take this jar. Offer the jar to the minnows. Maybe they will swim into it.");
 		#:: Give item 13861 - Jar of Liquid
-		quest::summonitem(113861);
+		quest::summonitem(13861);
 	}
 }
 

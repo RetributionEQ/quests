@@ -10,7 +10,7 @@ sub EVENT_SAY {
 		if ($faction < 5) {	
 		quest::say("Stand tall then, knight! We have need of your services. We have sent a man to infiltrate the militia. We fear he may soon be found out. Take him this note of warning. Say the words, 'Truth is good,' and you shall find him. Be careful, young knight. The militia does not take prisoners.");
 		#:: Summon 18817 - A Sealed Letter (To Alayle)
-		quest::summonitem(118817);
+		quest::summonitem(18817);
 		}
 		else {
 			quest::say("Work on the ways of valor before we discuss such things. You are on the righteous path of the Truthbringer, but there is more work to do.");
@@ -34,7 +34,7 @@ sub EVENT_ITEM {
 		#:: Ding!
 		quest::ding();
 		#:: Give item 18818 - a tattered flier
-		quest::summonitem(118818);
+		quest::summonitem(18818);
 		#:: Set faction
 		quest::faction(281,1); 	#:: + Knights of Truth
 		quest::faction(271,-1); #:: - Dismal Rage

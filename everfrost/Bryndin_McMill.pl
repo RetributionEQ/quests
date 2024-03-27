@@ -5,7 +5,7 @@ sub EVENT_ITEM {
 	if (plugin::check_handin(\%itemcount, 13242 => 1)) {
 		quest::say("Ahhh!! I feel warm all over. Thanks. You should go give Arnis McLish a drink of this elixir. Last time I saw him he was headed toward Blackburrow.");
 		#:: Give a 13243 - One Half of Elixir
-		quest::summonitem(113243);
+		quest::summonitem(13243);
 		quest::ding();
 		#:: Set factions
 		quest::faction(328,1);	#:: Merchants of Halas

@@ -61,7 +61,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(12621 => 1, 12619 => 1)) {
 		quest::say("Here is th' bounty poster. Take it to a bank guard in Qeynos, immediately!");
 		#:: Give a 12620 - Wanted Poster
-		quest::summonitem(112620);
+		quest::summonitem(12620);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

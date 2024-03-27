@@ -5,7 +5,7 @@ sub EVENT_SAY {
 	elsif ($text=~/deputy tagil/i) {
 		quest::say("Deputy Tagil is a fine young halfling who serves the vale well. But the other day, chasing that dirty Nillipuss, he trampled some fresh Jumjum.  He promised to make amends but it must have slipped his mind.  Please take this note to him as a friendly reminder.");
 		#:: Give a 18013 - Note
-		quest::summonitem(118013); 
+		quest::summonitem(18013); 
 	}
 }
 

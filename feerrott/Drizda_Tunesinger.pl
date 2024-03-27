@@ -11,6 +11,6 @@ sub EVENT_SAY {
 	if ($text=~/deliver mail to freeport/i) {
 		quest::say("Take this letter to Felisity Starbright. You can find her at the bard guild hall. I'm sure she will compensate you for your trouble.");
 		#:: Give a 18157 - Bardic Letter (Freeport)
-		quest::summonitem(118157);
+		quest::summonitem(18157);
 	}
 }

@@ -18,7 +18,7 @@ sub EVENT_ITEM {
 		if ($faction <= 4) {
 			quest::say("Why, that little trollop! What is she up to? Cain will never believe this! She must be in league with some faction of the dark elves, but why? Neither the Academy of Arcane Science nor Cain will believe this note. I will see what I can do. As for you, I command you to kill this Shintl and her dark elf courier Hollish!! Put their heads into this box and combine them. We shall cut the link. Bring me thier heads.");
 			#:: Give a 17971 - Toala's Box for heads
-			quest::summonitem(117971);
+			quest::summonitem(17971);
 			#:: Ding!
 			quest::ding();
 			#:: Grant a moderate amount of experience
@@ -28,12 +28,12 @@ sub EVENT_ITEM {
 		elsif ($faction == 5) {
 			quest::say("The Steel Warriors have no cause to dislike you, but you have yet to prove your worth to this guild.");
 			#:: Return a 18814 - Sealed Letter
-			quest::summonitem(118814);
+			quest::summonitem(18814);
 		}
 		else {	
 			quest::say("Your head shall look grand mounted on the wall of the Steel Warriors Arena!!");
 			#:: Return a 18814 - Sealed Letter
-			quest::summonitem(118814);
+			quest::summonitem(18814);
 		}
 	}
 	#:: Match a 12246 - Box with Two heads
@@ -60,12 +60,12 @@ sub EVENT_ITEM {
 		elsif ($faction == 5) {
 			quest::say("The Steel Warriors have no cause to dislike you, but you have yet to prove your worth to this guild.");
 			#:: Return a 12246 - Box with Two heads
-			quest::summonitem(112246);
+			quest::summonitem(12246);
 		}
 		else {	
 			quest::say("Your head shall look grand mounted on the wall of the Steel Warriors Arena!!");
 			#:: Return a 12246 - Box with Two heads
-			quest::summonitem(112246);
+			quest::summonitem(12246);
 		}
 	}
 	#:: Return unused items

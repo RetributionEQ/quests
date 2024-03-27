@@ -11,6 +11,6 @@ sub EVENT_SAY {
 	if ($text=~/deliver to Kelethin/i) {
 		quest::say("Take this letter to Jakum Webdancer in Kelethin.  You can find him at the bard guild hall.  I am sure he will compensate you for your troubles.");
 		#:: Give a 18161 - A Bardic Letter (Kelethin)
-		quest::summonitem(118161);
+		quest::summonitem(16390);
 	}
 }

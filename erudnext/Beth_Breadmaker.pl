@@ -8,7 +8,7 @@ sub EVENT_SAY {
 	elsif ($text=~/can bake/i) {
 		quest::say("You can bake, that's wonderful. Take this crate and fill it with muffins, then seal it up and bring it back to me. Don't go trying to pass off that store bought stuff, I need fresh baked muffins. The ones in the stores are already too old and will get moldy too fast, so I don't want those.");
 		#:: Give a 17881 - Muffin Crate
-		quest::summonitem(117881);
+		quest::summonitem(17881);
 	}
 	elsif ($text=~/can travel/i) {
 		quest::say("There is a wonderful baker that lives in the southern plains. I guess the plague hasn't hit that area too bad. Anyway, he's one heck of a baker and makes some quality bread. Go look him up and tell him you want a bag of bread loaves. He's one of those fellas that goes by the name of Meadowgreen.");

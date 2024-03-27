@@ -5,7 +5,7 @@ sub EVENT_SAY {
 	elsif ($text=~/beasts|message/i) {
 		quest::say("Here... No time left... Take this please... My brother [Hyrill] is staying in [Freeport]. Please... Ugh... Must keep moving...");
 		#:: Give a 18010 - Torn Parchment
-		quest::summonitem(118010);
+		quest::summonitem(18010);
 		#:: Spawn one and only one The Western Plains of Karana >> a_Splitpaw_assassin (12182)
 		quest::unique_spawn(12182, 0, 0, -15188.57, 1270.43, 68.72, 109.0);
 	}
@@ -27,7 +27,7 @@ sub EVENT_SAY {
 	elsif ($text=~/message/i) {
 		quest::say("Hurry now and take this to my brother, Hyrill Pon in Freeport, and before you go take that skull back from the assassin.");
 		#:: Give a 18010 - Torn Parchment
-		quest::summonitem(118010);
+		quest::summonitem(18010);
 		#:: Spawn one and only one The Western Plains of Karana >> a_Splitpaw_assassin (12182)
 		quest::unique_spawn(12182, 0, 0, -15188.57, 1270.43, 68.72, 109.0);
 	}

@@ -30,7 +30,7 @@ sub EVENT_ITEM {
 		#:: Send a signal '2' to Everfrost Peaks >> Tundra_Jack (30061) with no delay
 		quest::signalwith(30061, 2, 0);
 		#:: Give a 12226 - Sweaty Shirt
-		quest::summonitem(112226);
+		quest::summonitem(12226);
 		#:: Ding!
 		quest::ding();
 		#:: Set Factions

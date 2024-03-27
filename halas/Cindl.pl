@@ -11,7 +11,7 @@ sub EVENT_SAY {
 	elsif ($text=~/mammoth hide parchment/i) {
 		quest::say("Jinkus must've sent ye fer some more mammoth hide parchment for his posters.  Here, take it, free o' charge, as a donation to the church and to the will o' the Tribunal as well.");
 		#:: Give a 12621 - Mammoth Hide Parchment
-		quest::summonitem(112621);
+		quest::summonitem(12621);
 	}
 	elsif ($text=~/shaman of justice/i) {
 		quest::say("The Shamans of Justice serve the will of the Tribunal. They search out those who defy the laws set by the Tribunal.");

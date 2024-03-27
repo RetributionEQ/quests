@@ -9,7 +9,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(12128 => 1 )) {
 		quest::say("Ahhh!! That has given me back lost energy. Thank you. Please take this to the next sentry.");
 		#:: Give item 12129 - Part of Potion of Marr
-		quest::summonitem(112129);
+		quest::summonitem(12129);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

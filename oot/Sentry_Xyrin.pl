@@ -64,7 +64,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(12134 => 1)) {
 		quest::say("Ahhhh! I am energized! Come! Let us show these undead the greatness of Erollisi Marr!");
 		#:: give a 12135 - Empty Potion of Marr
-		quest::summonitem(112135);
+		quest::summonitem(12135);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

@@ -21,7 +21,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18818 => 1)) {
 		quest::say("This used to be hanging in Zimel's Blades. It is the price list. It is badly faded though. There was a fire in Zimel's Blades and I was on the scene just afterward. I did not see this hanging. I wonder who took it . . . Hmmmm.. oh, yes.. the markings on the list! It is a code! Here. I will fill it in. Read it. You probably do not even know who [Ariska] is.");
 		#:: Give item 18819 - Tattered Flier
-		quest::summonitem(118819);
+		quest::summonitem(18819);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

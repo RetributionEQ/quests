@@ -9,7 +9,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18739 => 1)) {
 		quest::say("Welcome to the Academy of Arcane Sciences. Here's one of our guild robes for you to wear. Now, let's get to work.");
 		#:: Give a 13558 - Patched Violet Robe
-		quest::summonitem(113558);
+		quest::summonitem(13558);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

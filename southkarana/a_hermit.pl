@@ -33,7 +33,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(13854 => 1)) {
 		quest::say("Good work, my friend! I thank you and the Unkempt Druids thank you. Unfortunately I have sold the other song sheet to a traveling bard of the plains. I believe her name was Cordelia. Now be on your way. Unless you plan to [join the Unkempt Druids]..?");
 		#:: Give a 13116 - Winds of Karana sheet 1
-		quest::summonitem(113116);
+		quest::summonitem(13116);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions
@@ -48,7 +48,7 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItems(13913 => 1)) {
 		quest::say("What fine work you do! In the name of all Norrath's beasts and of the Unkempt Druids, I thank you. No longer will there be senseless slaughter. Here is the flute.");
 		#:: Give a 13310 - Cracked Flute
-		quest::summonitem(113310);
+		quest::summonitem(13310);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

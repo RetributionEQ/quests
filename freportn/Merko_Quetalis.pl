@@ -11,7 +11,7 @@ sub EVENT_SAY {
 	elsif ($text=~/small task/i) {
 		quest::say("Venture to the Commonlands and seek out our noble friend Altunic Jartin. He lives and works out of his home. Hand him this note.");
 		#:: Summon 18896 - A Note (Note to Altunic)
-		quest::summonitem(118896);		
+		quest::summonitem(18896);		
 	}
 	elsif ($text=~/token of generosity/i) {
 		quest::say("Go to the deserts of North Ro. Seek out the desert tarantulas. Stand and face this dreaded creature. If you are lucky, you will find a venom sac. This is what I require. When you return, hand it to me.");
@@ -29,7 +29,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(14018 => 1 )) {
 		quest::say("You have earned the token of bravery. Now you must ask yourself if you are ready to face true fear. You will have but one chance. If you feel you are powerful enough to easily slay that desert tarantula, then hand me both tokens earned and you shall face the Test of Truth.");
 		#:: Give item 12144 - Token of Bravery
-		quest::summonitem(112144);
+		quest::summonitem(12144);
 		#:: Give a small amount of xp
 		quest::exp(100);
 		#:: Ding!
@@ -61,7 +61,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(13866 => 1)) {
 		quest::say("You have performed well. You have shown your allegiance to truth and cast aside the Freeport Militia. The militia will surely despise you from now on. This is how they treat the Knights of Truth. Beware. The followers of Marr stand alone in this city.");
 		#:: Give item 18828 - Testimony
-		quest::summonitem(118828);
+		quest::summonitem(18828);
 		#:: Give a small amount of xp
 		quest::exp(100);
 		#:: Ding!

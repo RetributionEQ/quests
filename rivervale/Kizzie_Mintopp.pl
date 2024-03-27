@@ -24,7 +24,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItemsCoin(0, 0, 30, 0, 13953 => 3)) {
 		quest::say("You are one lucky bixie buster. I just made a batch of honey jum. Here. No waiting for you.  One jar for your good work. Bye, now!");
 		#:: Give item 13952 - Honey Jum
-		quest::summonitem(113952);
+		quest::summonitem(13952);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

@@ -3,7 +3,7 @@ sub EVENT_ITEM {
 	if (plugin::check_handin(\%itemcount, 13241 => 1)) {
 		quest::say("Mmmm.. I feel much warmer. Thank you. You should now find Bryndin McMill. He could use a swig also. I saw him hanging around two other guards.");
 		#:: Give 13242 - One Quarter of Elixir
-		quest::summonitem(113242);
+		quest::summonitem(13242);
 		quest::ding();
 		#:: Set Factions
 		quest::faction(328,1);	#:: Merchants of Halas

@@ -5,7 +5,7 @@ sub EVENT_SAY {
 	elsif ($text=~/messages for neriak/i) {
 		quest::say("Yes! Yes, of course. I have been waiting for you. The last four couriers made the mistake of asking the High Keep Guards for directions. Now they are breathing dirt, six feet under. Take this to Neriak at once.");
 		#:: Give a 18889 - Sealed Letter
-		quest::summonitem(118889 => 1);
+		quest::summonitem(18889 => 1);
 	}
 }
 

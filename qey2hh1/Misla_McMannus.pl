@@ -5,7 +5,7 @@ sub EVENT_SAY {
 	elsif ($text=~/deliver lion meat to halas/i) {
 		quest::say("Very well then, here you go. Be sure to deliver this to Teria O' Danos. She will be on of the first people you meet in Halas.");
 		#:: Give a 13961 - Lion Meat Shipment
-		quest::summonitem(113961);
+		quest::summonitem(13961);
 	}
 }
 

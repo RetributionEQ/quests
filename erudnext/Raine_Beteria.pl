@@ -49,7 +49,7 @@ sub EVENT_ITEM {
   	elsif (plugin::takeItems(10792 => 1)) {
 		quest::say("Thank you very much. I have always wanted one of these! Hehehe? just kidding. I see that you have enchanted this coin. I have placed the final enchantment on it - take it back to Romar.");
 		#:: Give a 10793 - Radiant Coin of Tash
-		quest::summonitem(110793);
+		quest::summonitem(10793);
 		#:: Ding!
 		quest::ding();
     		#:: Grant a small amount of experience

@@ -30,13 +30,13 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItems(10307 => 2)) {
 	 	quest::say("Well dat be some of da eyeballses I askeded for. But I you needs ta give me three for da shiny.");
 		#:: Return two 10307 - Fire Beetle Eye
-		quest::summonitem(110307,2);
+		quest::summonitem(10307,2);
 	}
 	#:: Match one 10307 - Fire Beetle Eye
 	elsif (plugin::takeItems(10307 => 1)) {
 	 	quest::say("Well dat be some of da eyeballses I askeded for. But I you needs ta give me three for da shiny.");
 		#:: Return one 10307 - Fire Beetle Eye
-		quest::summonitem(110307,1);
+		quest::summonitem(10307,1);
 	}
 	#:: Return unused items
 	plugin::returnUnusedItems();

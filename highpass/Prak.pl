@@ -47,7 +47,7 @@ sub EVENT_ITEM {
 		else {
 			#:: Confirmed no text on live.
 			#:: Return a 18795 - Letter for Prak
-			quest::summonitem(118795);
+			quest::summonitem(18795);
 		}
 	}
 	#:: Match a 13793 - Stald's Badge
@@ -56,7 +56,7 @@ sub EVENT_ITEM {
 		if ($faction <= 4) {
 			quest::say("Ah, boy! Looks like I owe Kaden two plat... I thought you'd fumble it up for sure. Well, you've impressed me friend. Here, take this back to Zan... I'll make sure to note your fine work to Carson, too, next time we speak.");
 			#:: Give a 18028 - Message to Zannsin
-			quest::summonitem(118028);
+			quest::summonitem(18028);
 			#:: Ding!
 			quest::ding();
 			#:: Set factions
@@ -71,7 +71,7 @@ sub EVENT_ITEM {
 		else {
 			#:: Confirmed no text on live.
 			#:: Return a 13793 - Stald's Badge
-			quest::summonitem(113793);
+			quest::summonitem(13793);
 		}	
 	}
 	#:: Return unused items

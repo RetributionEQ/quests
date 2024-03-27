@@ -36,12 +36,12 @@ sub EVENT_ITEM {
 			#:: Response paraphrased from actual turn-in
 			quest::say("You must collect the other two pieces of the list and take them to a scribe by the name of Rathmana Allin. He can be found in the deserts of South Ro.");
 			#:: Return a 18810 - Bayle List III
-			quest::summonitem(118810);
+			quest::summonitem(18810);
 		}
 		else {
 			quest::say("You have done well. This is the Bayle List. I have heard of it. It is useless without the remaining two parts. Take the list. You must collect the other two pieces of the list and take them to a scribe by the name of Rathmana Allin. He can be found in the deserts of South Ro. First, you must go ask Venox Tarkog what the Bayle List is. He is here in the shrine and will fill you in on your mission.");
 			#:: Give item 18810 - Bayle List III
-			quest::summonitem(118810);
+			quest::summonitem(18810);
 			#:: Ding!
 			quest::ding();
 			#:: Grant a large amount of experience

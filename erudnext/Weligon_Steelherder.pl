@@ -58,7 +58,7 @@ sub EVENT_SAY {
 		if ($faction <= 4 ) {
 			quest::say("Ah, yes!  Take this bag with you.  When you have collected the remains of the diseased shark and no fewer than three of her young in it, combine them in it and return it to me.  Then, you shall get your reward.");
 			#:: Give item 17938 - Empty Shark Bag
-			quest::summonitem(117938);
+			quest::summonitem(17938);
 		}
 		#:: Match if faction is Indifferent
 		elsif ($faction == 5 ) {
@@ -73,7 +73,7 @@ sub EVENT_SAY {
 		if ($faction <= 4 ) {
 			quest::say("Then venture to the harbor of Erudin. There, you shall dive into the shark-infested water and search for the Pearls of Odus. They lie upon the grounds of our waters.  Fill the bag I have given you, combine it, and return it to me.  Good luck.");
 			#:: Give item 17939 - Empty  Bag
-			quest::summonitem(117939);
+			quest::summonitem(17939);
 		}
 		#:: Match if faction is Indifferent
 		elsif ($faction == 5 ) {
@@ -116,7 +116,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18725 => 1)) {
 		quest::say("Greetings and welcome to the Deepwater Knights. Here is your guild tunic. Wear it with pride, and Prexus will keep a watchful eye on you. Go find sister Laoni, she will help you get started with your studies.");
 		#:: Give a 13544 - Old Blue Tunic*
-		quest::summonitem(113544);
+		quest::summonitem(13544);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions
@@ -132,7 +132,7 @@ sub EVENT_ITEM {
 		if ($faction <= 4 ) {
 			quest::say("Very good, my dear young follower of Prexus. You will learn that swimming is a strong skill among the Deepwater Knights. Keep this up and you may wield a Deepwater harpoon soon enough. For now, you shall wear this barnacle breastplate. It is strong enough to aid a young knight in his quest for perfection.");
 			#:: Give a 12194 - Barnacle Breastplate
-			quest::summonitem(112194);
+			quest::summonitem(12194);
 			#:: Ding!
 			quest::ding();
 			#:: Set factions
@@ -146,12 +146,12 @@ sub EVENT_ITEM {
 		elsif ($faction == 5 ) {
 			quest::say("There is no reason to dislike you, but we of the Deepwater Knights must see more done for our cause before we truly accept you.");
 			#:: Return a 13876 - Bag of Shark remains
-			quest::summonitem(113876);
+			quest::summonitem(13876);
 		}
 		else {
 			quest::say("We, the Deepwater Knights, know of your vile ways. You had best leave while you can.");	
 			#:: Return a 13876 - Bag of Shark remains
-			quest::summonitem(113876);
+			quest::summonitem(13876);
 		}
 	}
 	#:: Match a 13879 - Full bag of pearls
@@ -174,12 +174,12 @@ sub EVENT_ITEM {
 		elsif ($faction == 5 ) {
 			quest::say("There is no reason to dislike you, but we of the Deepwater Knights must see more done for our cause before we truly accept you.");
 			#:: Return a 13879 - Full bag of pearls
-			quest::summonitem(113879);
+			quest::summonitem(13879);
 		}
 		else {
 			quest::say("We, the Deepwater Knights, know of your vile ways. You had best leave while you can.");	
 			#:: Return a 13879 - Full bag of pearls
-			quest::summonitem(113879);
+			quest::summonitem(13879);
 		}
 	}
 	#:: Match a 18835 - Sealed List, a 13838 - Human Decapitated Head, a 13839 - Dwarf Decapitated Head, and a 13840 - Gnome Decapitated Head
@@ -202,18 +202,18 @@ sub EVENT_ITEM {
 		elsif ($faction == 5 ) {
 			quest::say("There is no reason to dislike you, but we of the Deepwater Knights must see more done for our cause before we truly accept you.");
 			#:: Return a 18835 - Sealed List, a 13838 - Human Decapitated Head, a 13839 - Dwarf Decapitated Head, and a 13840 - Gnome Decapitated Head
-			quest::summonitem(118835);
-			quest::summonitem(113838);
-			quest::summonitem(113839);
-			quest::summonitem(113840);
+			quest::summonitem(18835);
+			quest::summonitem(13838);
+			quest::summonitem(13839);
+			quest::summonitem(13840);
 		}
 		else {
 			quest::say("We, the Deepwater Knights, know of your vile ways. You had best leave while you can.");	
 			#:: Return a 18835 - Sealed List, a 13838 - Human Decapitated Head, a 13839 - Dwarf Decapitated Head, and a 13840 - Gnome Decapitated Head
-			quest::summonitem(118835);
-			quest::summonitem(113838);
-			quest::summonitem(113839);
-			quest::summonitem(113840);
+			quest::summonitem(18835);
+			quest::summonitem(13838);
+			quest::summonitem(13839);
+			quest::summonitem(13840);
 		}
 	}
 	#:: Return unused items

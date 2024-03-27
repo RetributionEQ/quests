@@ -9,7 +9,7 @@ sub EVENT_ITEM {
 	if (plugin::check_handin(\%itemcount, 18015 => 1)) {
 		quest::emote("scribbles out a note and says, 'Please make sure that Harkin gets this right away. If you lose it, it could mean both of our heads.'");
 		#:: Give item 18016 - Note to Harkan
-		quest::summonitem(118016);
+		quest::summonitem(18016);
 		#:: Give a small amount of xp
 		quest::exp(500);
 		#:: Ding!

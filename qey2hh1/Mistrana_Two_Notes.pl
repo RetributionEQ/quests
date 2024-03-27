@@ -8,7 +8,7 @@ sub EVENT_SAY {
 	elsif ($text=~/qeynos/i) {
 		quest::say("Take this letter to Tralyn Marsinger in Qeynos.  You can find him at the bard guild hall.  I am sure he will compensate you for your troubles.");
 		#:: Give a 18150 - Bardic Letter (Qeynos)
-		quest::summonitem(118150);
+		quest::summonitem(18150);
 	}
 }
 

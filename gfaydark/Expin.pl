@@ -42,7 +42,7 @@ sub EVENT_ITEM {
 	} 
 	if(plugin::check_handin(\%itemcount, 16390 => 1)) {#Crumpled Piece of Paper
 		quest::say("Ahhh! You found it! Here let me make you a copy and put this in a secure spot so I don't lose it again.");
-		quest::summonitem(24098);#Remiss Sketch
+		quest::summonitem(16390);#Remiss Sketch
 		quest::exp(5061818);#This is 2% of level 53 xp.
 	}
   	#do all other handins first with plugin, then let it do disciplines

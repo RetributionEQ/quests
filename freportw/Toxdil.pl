@@ -16,7 +16,7 @@ sub EVENT_ITEM {
 		if (plugin::takeItems(12353 => 1)) {
 			quest::say("The gem!! I would notice it's sparkle anywhere!! I cannot believe you are handing it back to me!! What a fool. Here you are fool. You can have this worthless key now.");
 			#:: Give a 12351 - A Tiny Key
-			quest::summonitem(112351);
+			quest::summonitem(12351);
 			#:: Ding!
 			quest::ding();
 			#:: Grant a large amount of experience
@@ -26,7 +26,7 @@ sub EVENT_ITEM {
 		elsif (plugin::takeItemsCoin(0, 0, 20, 0, 14017 => 2)) {
 			quest::say("Here is your snake venom. May you... shall we say... apply it to good use.");
 			#:: Give item 14016 - Snake venom
-			quest::summonitem(114016);
+			quest::summonitem(14016);
 			#:: Ding!
 			quest::ding();
 			#:: Grant a small amount of experience
@@ -36,14 +36,14 @@ sub EVENT_ITEM {
 		elsif (plugin::takeItemsCoin(0, 0, 20, 0, 14017 => 2)) {
 			quest::say("I require two snake venom sacs and my fee of 20 gold coins before I shall create the snake venom");
 			#:: Return a 14017 - Snake Venom Sac
-			quest::summonitem(114017);
+			quest::summonitem(14017);
 		}
 		#:: Match two 14017 - Snake Venom Sac
 		elsif (plugin::takeItems(14017 => 2)) {
 			quest::say("I require two snake venom sacs and my fee of 20 gold coins before I shall create the snake venom");
 			#:: Return two 14017 - Snake Venom Sac
-			quest::summonitem(114017);
-			quest::summonitem(114017);
+			quest::summonitem(14017);
+			quest::summonitem(14017);
 		}
 		#:: Return unused items
 		plugin::returnUnusedItems();

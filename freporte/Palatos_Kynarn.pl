@@ -18,7 +18,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(13817 => 4)) {
 		quest::say("Ahh... I... <Hic!> Need help... <Hic!> You... take this... Go build... boat beacon. <Hic!> Ask gnomes about... <Hic!> boat beacon. They know how... Then bring back... <Hic!> Unnnhh! Prexus help me! I will never drink again.");
 		#:: Give item 12145 - Beacon Mount
-		quest::summonitem(112145);
+		quest::summonitem(12145);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

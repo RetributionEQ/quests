@@ -124,7 +124,7 @@ sub EVENT_ITEM {
 			
 			if($loop_count > 100){
 				$client->Message(0, "I tried to give you an item you already have. Hand this back to me for another roll at the grand prize.");
-				quest::summonitem(124688); # (124688) Peace Be With You 
+				quest::summonitem(24688); # (124688) Peace Be With You 
 				$found_prize = 1;
 			}
 			

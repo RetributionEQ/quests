@@ -8,7 +8,7 @@ sub EVENT_SAY {
 	elsif ($text=~/donate/i) {
 		quest::say("Of course I shall donate to that esteemed order. Here you are, my good friend. Now run along before you are injured by some nasty creature. By the way, you should speak with my fellow guard, Leopold. He also would donate.");
 		#:: Give a 13295 - Donation
-		quest::summonitem(113295);
+		quest::summonitem(13295);
 	}
 	elsif ($text=~/^illusion$/i) {
 		quest::say("Yes!! I seem to have dropped some of my [Illusion cards].");
@@ -68,7 +68,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(13904 => 1, 13905 => 1, 13906 => 1, 13907 => 1)) {
 		quest::say("Oh great! I have all my cards back. Here is a little something for assisting a Qeynos guard. And any time you are in trouble, just call on Cheslin, master swordsman. Take it to my father, Master Chesgard of the Knights of Thunder in Qeynos. No doubt he sent you to follow me on my watch.");
 		#:: Give a 18839 - Sealed Letter
-		quest::summonitem(118839);
+		quest::summonitem(18839);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions
@@ -92,7 +92,7 @@ sub EVENT_ITEM {
 		if (plugin::check_mq_handin(13904 => 1, 13905 => 1, 13906 => 1, 13907 => 1)) {
 			quest::say("Oh great! I have all my cards back. Here is a little something for assisting a Qeynos guard. And any time you are in trouble, just call on Cheslin, master swordsman. Take it to my father, Master Chesgard of the Knights of Thunder in Qeynos. No doubt he sent you to follow me on my watch.");
 			#:: Give a 18839 - Sealed Letter
-			quest::summonitem(118839);
+			quest::summonitem(18839);
 			#:: Ding!
 			quest::ding();
 			#:: Set factions
@@ -120,7 +120,7 @@ sub EVENT_ITEM {
 		if (plugin::check_mq_handin(13904 => 1, 13905 => 1, 13906 => 1, 13907 => 1)) {
 			quest::say("Oh great! I have all my cards back. Here is a little something for assisting a Qeynos guard. And any time you are in trouble, just call on Cheslin, master swordsman. Take it to my father, Master Chesgard of the Knights of Thunder in Qeynos. No doubt he sent you to follow me on my watch.");
 			#:: Give a 18839 - Sealed Letter
-			quest::summonitem(118839);
+			quest::summonitem(18839);
 			#:: Ding!
 			quest::ding();
 			#:: Set factions
@@ -148,7 +148,7 @@ sub EVENT_ITEM {
 		if (plugin::check_mq_handin(13904 => 1, 13905 => 1, 13906 => 1, 13907 => 1)) {
 			quest::say("Oh great! I have all my cards back. Here is a little something for assisting a Qeynos guard. And any time you are in trouble, just call on Cheslin, master swordsman. Take it to my father, Master Chesgard of the Knights of Thunder in Qeynos. No doubt he sent you to follow me on my watch.");
 			#:: Give a 18839 - Sealed Letter
-			quest::summonitem(118839);
+			quest::summonitem(18839);
 			#:: Ding!
 			quest::ding();
 			#:: Set factions
@@ -176,7 +176,7 @@ sub EVENT_ITEM {
 		if (plugin::check_mq_handin(13904 => 1, 13905 => 1, 13906 => 1, 13907 => 1)) {
 			quest::say("Oh great! I have all my cards back. Here is a little something for assisting a Qeynos guard. And any time you are in trouble, just call on Cheslin, master swordsman. Take it to my father, Master Chesgard of the Knights of Thunder in Qeynos. No doubt he sent you to follow me on my watch.");
 			#:: Give a 18839 - Sealed Letter
-			quest::summonitem(118839);
+			quest::summonitem(18839);
 			#:: Ding!
 			quest::ding();
 			#:: Set factions

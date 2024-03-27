@@ -10,7 +10,7 @@ sub EVENT_SAY {
 		if ($faction <= 4) {
 			quest::say("Good. Take this Potion of Marr to the Sentries of Passion. They are the protectors of this temple. Start in alphabetical order and the first shall take but a sip then you shall take it to the next in order of the alphabet. There are but eight sentries. Sentry Andlin to Sentry Xyrin. Go.");
 			#:: Summon 12127 - Full Potion of Marr
-			quest::summonitem(112127);
+			quest::summonitem(12127);
 		}
 		else {
 			quest::say("The path you walk is correct, but you have further to travel before you need worry about this.");
@@ -23,7 +23,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItemsCoin(0,0,10,0, 12126 => 3)) {
 		quest::say("I thank you for your ten gold coins. Now we can pay the weekly oxygen tax imposed by the militia. Here is the shark powder.");
 		#:: Give item 12125 - shark Powder
-		quest::summonitem(112125);
+		quest::summonitem(12125);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions
@@ -49,7 +49,7 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItems(12135 => 1 )) {
 		quest::say("The Sentries of Passion informed me of your journey to the Ocean of Tears and the demise of Sentry Xyrin. You performed beyond the call of duty. This is what makes an exceptional person. Take this for your great deed. The twin deities would wish it so.");
 		#:: Give item 15207 - Spell: Divine Aura
-		quest::summonitem(115207);
+		quest::summonitem(15207);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

@@ -9,7 +9,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18842 => 1)) {
 		quest::say("Another young warrior. I pray you shall not meet the fate of the last twelve. Here then. Take this report to Mistress Seloxia at once. And stay clear of the Froglok lair called Gukk.");
 		#:: Give a 18843 - Sealed Letter
-		quest::summonitem(118843);
+		quest::summonitem(18843);
 		#:: Ding!
 		quest::ding();
 		#:: Grant a small amount of experience

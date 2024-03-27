@@ -12,7 +12,7 @@ sub EVENT_ITEM {
 	if (plugin::check_handin(\%itemcount, 10528 => 1)) {
 		quest::say("You must be another one from Vilissia. I will tell you what I tell all the others--you must help me [avenge my brother] before I will help you attain Tishan's Kilt.");
 		#:: Give a 18797 - Tattered Note
-		quest::summonitem(118797);
+		quest::summonitem(18797);
 		quest::ding();
 		quest::exp(500);
 	}
@@ -20,7 +20,7 @@ sub EVENT_ITEM {
 	if (plugin::check_handin(\%itemcount, 10556 => 1)) {
 		quest::say("Oh Wulfthan, look what has become of you. I told you that you should not have trusted Martar.  $name, as a final service, I want you to kill Martar IceBear for me. He is known to roam these parts. Bring me the Warthread Kilt that he wears and my two reminder notes, and I will give to you Tishan's Kilt.");
 		#:: Give a 18798 - Tattered Note
-		quest::summonitem(118798);
+		quest::summonitem(18798);
 		quest::ding();
 		quest::exp(500);
 	}
@@ -28,7 +28,7 @@ sub EVENT_ITEM {
 	if (plugin::check_handin(\%itemcount, 18797 => 1, 18798 => 1, 1347 => 1)) {
 		quest::say("Ah, Wulfthan, you are at last avenged. Thank you, $name please take this kilt as a reward for services well done.");
 		#:: Give a 18798 - Tattered Note
-		quest::summonitem(118798);
+		quest::summonitem(18798);
 		quest::ding();
 		quest::exp(1500);
 	}

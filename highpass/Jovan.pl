@@ -12,7 +12,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(12114 => 1)) {
 		quest::say("<SLURP!!>  Ahh thhhhat'thh betterr. Take thithhh. <BURP!>");
 		#:: Give a 19006 - Icon of the Fervent
-		quest::summonitem(119006);
+		quest::summonitem(19006);
 		#:: Ding!
 		quest::ding();
 		#:: Depop with spawn timer active

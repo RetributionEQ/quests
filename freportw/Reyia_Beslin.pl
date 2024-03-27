@@ -36,7 +36,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(10400 => 1, 1903 => 1, 2299 => 1, 10131 => 1)) {
 		quest::say("You have proven yourself a mighty warrior. I am honored to present you, $name, with the orange Sash of Order.");
 		#:: Give item 10132 - Sash of Order
-		quest::summonitem(110132);
+		quest::summonitem(10132);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions
@@ -50,7 +50,7 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItems(13237 => 1, 13238 => 1, 10132 => 1)) {
 		quest::say("$name, Congratulations. With the destruction of these evil items, the wand of the Burning Dead will never bring harm to anyone on Norrath again. It is my honor to present to you, on behalf of Master Closk and the Ashen Order, the red sash. May Quellious be with you always.You have proven yourself a mighty warrior. I am honored to present you, $name, with the Red Sash of Order.");
 		#:: Give item 10133 - Red Sash of Order
-		quest::summonitem(110133);
+		quest::summonitem(10133);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

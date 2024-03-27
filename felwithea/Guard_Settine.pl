@@ -7,7 +7,7 @@ sub EVENT_ITEM {
 		#:: Give a large amound of experience
 		quest::exp(30000);
 		#:: Give item 14640 - Silver Amber Ring
-		quest::summonitem(114640);
+		quest::summonitem(14640);
 	}
 	#:: Return unused items
 	plugin::returnUnusedItems();

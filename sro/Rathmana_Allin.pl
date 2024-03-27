@@ -34,7 +34,7 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItemsCoin(0,0,20,0, 18808 => 1, 18809 => 1, 18810 => 1)) {
 		quest::say("A simple code. Why do you even bother Rathmana with such child's play? Here is your translation. That was the easiest twenty gold coins I ever earned.");
 		#:: Give a 18961 - Translated Parchment
-		quest::summonitem(118961);
+		quest::summonitem(18961);
 		#:: Ding!
 		quest::ding();
 		quest::faction(415, 5);		#:: + Temple of Solusek Ro

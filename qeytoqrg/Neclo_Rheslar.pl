@@ -11,7 +11,7 @@ sub EVENT_ITEM {
 		if ($faction <= 5) {
 			quest::say("Ah.. Hello friend.. So, I see Daenor sent you.. Uh huh, ok.. Here's something that will be very useful for you. Practice this well, friend.. It will help protect you in this harsh world.");
 			#:: Give a 15109 - Spell: Elemental Armor
-			quest::summonitem(115109);
+			quest::summonitem(15109);
 			#:: Ding!
 			quest::ding();
 			#:: Set factions
@@ -25,7 +25,7 @@ sub EVENT_ITEM {
 		else {
 			quest::say("The Order of Three has been monitoring your recent activities, and we are appalled by you and your actions! Now, begone!");
 			#:: Return a a 18823 - Note to Neclo
-			quest::summonitem(118823);
+			quest::summonitem(18823);
 		}
 	}
 	#:: Return unused items

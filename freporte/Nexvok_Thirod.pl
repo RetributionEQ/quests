@@ -9,7 +9,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18854 => 1)) {
 		quest::say("Ah ha.. Fresh meat. here, put this on.. you're one of us now. Do your best to do your worst.");
 		#:: Give item 13564 - Dirty Torn Robe*
-		quest::summonitem(113564);
+		quest::summonitem(13564);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

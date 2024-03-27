@@ -26,7 +26,7 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItems(13397 => 1)) {
 		quest::say("So you have returned. Victory is yours, young Steel Warrior. Take this letter of recommendation to Brin Stolunger at the arena in Qeynos. You have passed.");
 		#:: Give a 18895 - Letter of Recommendation
-		quest::summonitem(118895);
+		quest::summonitem(18895);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

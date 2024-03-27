@@ -15,7 +15,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(13989 => 1)) {
 		quest::say("Ah!! A Peacekeeper. I have some Vasty Deep water sitting out already. Here you are. Do not let it fall into the wrong hands.");
 		#:: Give a 13939 - Clear Water
-		quest::summonitem(113939);
+		quest::summonitem(13939);
 		quest::ding();
 		#:: Grant a small amount of experience
 		quest::exp(100);

@@ -18,7 +18,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItemsCoin(0,0,10,0, 13409 => 3)) {
 		quest::say("Bouts time you gets everting!! Here is you Grobb Oven Mittens. Dey good to keep you from hot stuff.");
 		#:: Give a 12211 - Grobb Oven Mittens
-		quest::summonitem(112211);
+		quest::summonitem(12211);
 		#:: Ding!
 		quest::ding();
 		#:: Grant a small amount of experience
@@ -31,7 +31,7 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItems(12191 => 4)) {
 		quest::say("Gud werk!! Me already, err, founds, dung part of meal. Here we go. One Fungus Dung Pie!! Enjoys.");
 		#:: Give a 12210 - Fungus Dung Pie
-		quest::summonitem(112210);
+		quest::summonitem(12210);
 		#:: Ding!
 		quest::ding();
 		#:: Grant a small amount of experience

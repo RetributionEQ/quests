@@ -27,7 +27,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(13118 => 1)) {
 		quest::say("Good work! Now, hold the bottle by the label! When you hand Flynn the bottle, the label will slide off. Bring me the label as proof of the deed.");
 		#:: Give a 13122 - Erud's Tonic
-		quest::summonitem(113122);
+		quest::summonitem(13122);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

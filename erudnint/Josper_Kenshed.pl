@@ -10,7 +10,7 @@ sub EVENT_SAY {
 		if ($faction <= 4) {
 			quest::say("Of course you may assist me!! We have much need of a certain item which can only be found in the frigid peaks of Everfrost. There you shall find creatures called ice goblins. Take this bag and fill it with ice goblin beads and be sure to combine them before you return them. Well, then... Off with you!! And be quick about it and I shall give you a fine wizard's weapon. None of this rust-covered garbage offered by our associates!");
 			#:: Give item 17944 - Empty Bag (*Bag for Ice Necklaces)
-			quest::summonitem(117944);
+			quest::summonitem(17944);
 		}
 		#:: Match if faction is Indifferent
 		elsif ($faction == 5) {
@@ -42,7 +42,7 @@ sub EVENT_ITEM {
 		if ($faction <= 4) {
 			quest::say("Well done, my young apprentice. I call you apprentice for you are nothing but a spark to my fire. This is the final component for my greatest creation. AHA!! I call it - iced tea!! Never again shall I boil under the hot sun. As for you, take this. It should serve you well. Now go away. There is no iced tea for you");
 			#:: Give item 12208 - Servant's Staff
-			quest::summonitem(112208);
+			quest::summonitem(12208);
 			#:: Ding!
 			quest::ding();
 			#:: Set factions
@@ -61,12 +61,12 @@ sub EVENT_ITEM {
 		elsif ($faction == 5) {
 			quest::say("The Crimson hands have no quarrel with you, but we cannot truly trust you as yet.");
 			#:: Return a 13898 - Bag of Ice Necklaces
-			quest::summonitem(113898);
+			quest::summonitem(13898);
 		}
 		else {
 			quest::say("The Crimson Hands will have nothing to do with you.  Perhaps only your death shall improve our relations.");
 			#:: Return a 13898 - Bag of Ice Necklaces
-			quest::summonitem(113898);
+			quest::summonitem(13898);
 		}
 	}
 	#:: Match a 12207 - Half of a Spell
@@ -75,7 +75,7 @@ sub EVENT_ITEM {
 		if ($faction <= 4) {
 			quest::say("Go now and use his research to aid yourself. Seems that I lack the will to use Ilanic's knowledge for my better good.");
 			#:: Give item 15380 - Spell: Column of Frost
-			quest::summonitem(115380);
+			quest::summonitem(15380);
 			#:: Ding!
 			quest::ding();
 			#:: Set factions
@@ -90,12 +90,12 @@ sub EVENT_ITEM {
 		elsif ($faction == 5) {
 			quest::say("The Crimson hands have no quarrel with you, but we cannot truly trust you as yet.");
 			#:: Return a 12207 - Half of a Spell
-			quest::summonitem(112207);
+			quest::summonitem(12207);
 		}
 		else {
 			quest::say("The Crimson Hands will have nothing to do with you.  Perhaps only your death shall improve our relations.");
 			#:: Return a 12207 - Half of a Spell
-			quest::summonitem(112207);
+			quest::summonitem(12207);
 		}
 	}
 	#:: Return unused items

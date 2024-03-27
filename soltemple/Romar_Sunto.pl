@@ -6,7 +6,7 @@ sub EVENT_SAY {
 	 	if ($text=~/pouch/i) {
 			quest::say("I will lend you this coin pouch - put all 10 antique silver coins into it and combine them into the Coin of Tash.");
 			#:: Give a 17511 - Coin Pouch
-			quest::summonitem(117511);
+			quest::summonitem(17511);
 		}
 		else {
 			quest::say("Tash had a collection of ten antique silver coins that were left in different cities around the world. If you were to collect all 10 coins, I would give you a [coin pouch] that would let you combine them into the master Coin of Tash. If you are interested I will sell you a copy of the Tome of Tash, detailing where the coins were reportedly left, for a mere 50 gold.");
@@ -28,7 +28,7 @@ sub EVENT_ITEM {
 	if (plugin::takeCoin(0, 0, 50, 0)) {
 		quest::say("Once you combine the coins within the pouch, you must take the Coin of Tash to Tarn Vislin in the HighKeep library to get it enchanted.  Give him the coin and he will enchant it for you.");
 		#:: Give a 18032 - Tome of Tesh
-		quest::summonitem(118032);
+		quest::summonitem(18032);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions
@@ -54,7 +54,7 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItems(10793 => 1)) {
 		quest::say("The Coin of Tash - fully enchanted! I am in your debt. Here is the scroll of Tashania that was promised to you.");
 		#:: Give a 15678 - Spell: Tashania
-		quest::summonitem(115678);
+		quest::summonitem(15678);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions
@@ -67,7 +67,7 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItems(10790 => 1)) {
 		quest::say("The Coin of Tash. It is of no use to me like this. You must take the coin to Tarn Visilin in High Keep to get it enchanted.");
 		#:: Return a 10790 - Coin of Tash
-		quest::summonitem(110790);
+		quest::summonitem(10790);
 	}
 	#:: Return unused items
 	plugin::returnUnusedItems();
