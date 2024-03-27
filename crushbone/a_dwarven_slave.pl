@@ -46,7 +46,7 @@ sub EVENT_ITEM {
 		elsif ($npcrace == 8 && $npcgender == 1) {
 			quest::say("I have no need for this item $name, you can have it back.");
 			#:: Give a 20016 - Shackle Key 16
-			quest::summonitem(120016);
+			quest::summonitem(20016);
 		}
 	}
 	#:: Match a 10351 - Brass Earring
@@ -54,7 +54,7 @@ sub EVENT_ITEM {
 		if ($npcrace == 8 && $npcgender == 0) {
 			quest::say("You killed the taskmaster?!  Absolutely amazing! The orcs will be fighting among themselves for power now and I can disappear in the commotion. Thanks, friend! Take this for your deeds!");
 			#:: Give a 18905 - Worn Rune (Csb 1.O.U. Dwf 1)
-			quest::summonitem(118905);
+			quest::summonitem(18905);
 			#:: Ding!
 			quest::ding();
 			#:: Grant a moderate amount of experience
@@ -65,7 +65,7 @@ sub EVENT_ITEM {
 		elsif ($npcrace == 8 && $npcgender == 1) {
 			quest::say("You killed the taskmaster?!  Absolutely amazing! The orcs will be fighting among themselves for power now and I can disappear in the commotion. Thanks, friend! Take this for your deeds!");
 			#:: Give a 18906 - Small Wood Carving (Csb 1.O.U. Dwf 2)
-			quest::summonitem(118906);
+			quest::summonitem(18906);
 			#:: Ding!
 			quest::ding();
 			#:: Grant a moderate amount of experience
@@ -97,7 +97,7 @@ sub EVENT_ITEM {
 		elsif ($npcrace == 8 && $npcgender == 0) {
 			quest::say("I have no need for this item $name, you can have it back.");
 			#:: Give a 20017 - Shackle Key 17
-			quest::summonitem(120017);
+			quest::summonitem(20017);
 		}
 	}
 	#:: Return unused items

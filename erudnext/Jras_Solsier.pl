@@ -50,7 +50,7 @@ sub EVENT_ITEM {
 		if ($faction <= 4) {
 			quest::say("You have served us well. The harmony of the forest shall be preserved. I have word that theses infidels were all working for one man. Find me evidence pertaining to this man. Surely one of these poachers has something which could aid in finding this man. We must stop him to stop the poachers. Go in peace.");
 			#:: Give item 10004 - Copper Band
-			quest::summonitem(110004);
+			quest::summonitem(10004);
 			#:: Ding!
 			quest::ding();
 			#:: Set factions
@@ -68,12 +68,12 @@ sub EVENT_ITEM {
 		elsif ($faction == 5) {
 			quest::say("You have not done much to upset the Peacekeepers of this temple, but we must ask you to prove yourself to us before we may discuss things such as this.");
 			#:: Return a 13825 - Poacher's Head
-			quest::summonitem(113825);
+			quest::summonitem(13825);
 		}
 		else {
 			quest::say("Leave my sight at once! You are no friend to the Peacekeepers of the Temple of Divine Light.");
 			#:: Return a 13825 - Poacher's Head
-			quest::summonitem(113825);
+			quest::summonitem(13825);
 		}
 	}
 	#:: Match a 13913 - Barbarian Head
@@ -82,7 +82,7 @@ sub EVENT_ITEM {
 		if ($faction <= 4) {
 			quest::say("It is done! Quellious will look favorably upon our church and we will look favorably upon you. Go in peace");
 			#:: Give item 15202 - Spell: Courage
-			quest::summonitem(115202);
+			quest::summonitem(15202);
 			#:: Ding!
 			quest::ding();
 			#:: Set factions
@@ -100,12 +100,12 @@ sub EVENT_ITEM {
 		elsif ($faction == 5) {
 			quest::say("You have not done much to upset the Peacekeepers of this temple, but we must ask you to prove yourself to us before we may discuss things such as this.");
 			#:: Return a 13913 - Barbarian Head
-			quest::summonitem(113913);
+			quest::summonitem(13913);
 		}
 		else {
 			quest::say("Leave my sight at once! You are no friend to the Peacekeepers of the Temple of Divine Light.");
 			#:: Return a 13913 - Barbarian Head
-			quest::summonitem(113913);
+			quest::summonitem(13913);
 		}
 	}
 	#:: Return unused items

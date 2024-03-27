@@ -12,7 +12,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18735 => 1)) {
 		quest::say("The Truthbringer welcomes you into his life. Here is the tunic of Marr. Wear it with pride and be sure to conduct yourself with valor. Once you are ready to begin your training please make sure that you see Salinsa Delfdosan, she can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks.");
 		#:: Give a 13554 - Faded Purple Tunic*
-		quest::summonitem(113554);
+		quest::summonitem(13554);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

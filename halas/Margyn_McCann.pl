@@ -27,7 +27,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(13729 => 1)) {
 		quest::say("We can now rest assured that justice has been served. Ye'll be a valuable asset to our court. Take and remember this spell, Spirit o' the Bear. I hope ye've attained the necessary skills to scribe it. If not, I'm sure ye soon will. Go now, and serve justice.");
 		#:: Give a 15279 - Spell: Spirit of Bear
-		quest::summonitem(115279);
+		quest::summonitem(15279);
 		#:: Ding!
 		quest::ding();
 		#:: Set Factions
@@ -47,7 +47,7 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItems(18761 => 1)) {
 		quest::say("Welcome t' the Church o' the Tribunal. Here, we practice the will o' the Six Hammers. This is our guild tunic - wear it with pride and represent us well.");
 		#:: Give a 13512 - Faded Blue Tunic*
-		quest::summonitem(113512);
+		quest::summonitem(13512);
 		#:: Ding!
 		quest::ding();
 		#:: Set Factions

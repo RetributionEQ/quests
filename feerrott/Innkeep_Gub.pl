@@ -8,7 +8,7 @@ sub EVENT_SAY {
 	elsif ($text=~/muffin/i) {
 		quest::say("You take dis crate and fill it with muffinz, den seal it up and bring da full crate bak to me. Don't you tink you can go buy dat store stuff either, I wants fresh baked muffinz.  Da store ones too old and will gets moldy too fast, den I have to toss out.  Da make me very unhappy wid you!");
 		#:: Give a 17881 - Muffin Crate
-		quest::summonitem(117881);
+		quest::summonitem(17881);
 	}
 	elsif ($text=~/shipment of bread/i) {
 		quest::say("You go to da south plains and find da Meadowgreen guy.  He is very gud baker and we wantz his bag of bread loaves.  You go tell him dat, get movin!");

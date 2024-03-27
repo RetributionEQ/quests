@@ -8,7 +8,7 @@ sub EVENT_SAY {
 	elsif ($text=~/read/i) {
 		quest::say("Very well. Here you go. Simply return it to me to be released from the chains of Order.");
 		#:: Summon a 18700 - Tome of Order and Discord
-		quest::summonitem(118700);
+		quest::summonitem(18700);
 	}
 }
 

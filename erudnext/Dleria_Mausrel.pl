@@ -33,7 +33,7 @@ sub EVENT_SAY {
 		if ($faction <= 4) {
 			quest::say("We have heard of zombies inhabiting the depths of Erud's Crossing. Go and seek them out. Destroy them. This evil should not exist within the realm of the Ocean Lord. Take this bag. Fill it with their rotting flesh. combine it and return it to me. May Prexus guide you.");
 			#:: Give a 17939 - Empty Bag (*Zombie Flesh Bag)
-			quest::summonitem(117939);
+			quest::summonitem(17939);
 		}
 		#:: Match if faction is Indifferent
 		elsif ($faction == 5) {
@@ -70,12 +70,12 @@ sub EVENT_ITEM {
 		elsif ($faction == 5) {
 			quest::say("There is no reason to dislike you, but we of the Deepwater Knights must see more done for our cause before we truly accept you.");
 			#:: Return a 13922 - Snapped Pole
-			quest::summonitem(113922);
+			quest::summonitem(13922);
 		}
 		else {
 			quest::say("We, the Deepwater Knights, know of your vile ways. You had best leave while you can.");
 			#:: Return a 13922 - Snapped Pole
-			quest::summonitem(113922);
+			quest::summonitem(13922);
 		}
 		
 	}
@@ -101,12 +101,12 @@ sub EVENT_ITEM {
 		elsif ($faction == 5) {
 			quest::say("There is no reason to dislike you, but we of the Deepwater Knights must see more done for our cause before we truly accept you.");
 			#:: Return a 13880 - Bag of Zombie Flesh
-			quest::summonitem(113880);
+			quest::summonitem(13880);
 		}
 		else {
 			quest::say("We, the Deepwater Knights, know of your vile ways. You had best leave while you can.");
 			#:: Return a 13880 - Bag of Zombie Flesh
-			quest::summonitem(113880);
+			quest::summonitem(13880);
 		}
 	}
 	#:: Return unused items

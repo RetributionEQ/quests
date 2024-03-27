@@ -8,7 +8,7 @@ sub EVENT_SAY {
 	elsif ($text=~/jumjum juice/i) {
 		quest::say("Oh, thank you so much!  His name is Xanuusus and he lives in the Plains of Karana, in the foothills along their northern edge, actually.  We are most grateful for your help.  Xanuusus normally rewards messengers well.");
 		#:: Give a 13411 - Case of Jumjum Juice
-		quest::summonitem(113411);
+		quest::summonitem(13411);
 	}
 }
 

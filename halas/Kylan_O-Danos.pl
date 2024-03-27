@@ -14,12 +14,12 @@ sub EVENT_SAY {
 	if ($text=~/trades/i) {
 		quest::say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
 		#:: Give a 51121 - Tradeskill Basics : Volume I
-		quest::summonitem(151121);
+		quest::summonitem(51121);
 	}
 	elsif ($text=~/second book/i) {
 		quest::say("Here is the second volume of the book you requested, may it serve you well!");
 		#:: Give a 51122 - Tradeskill Basics : Volume II
-		quest::summonitem(151122);
+		quest::summonitem(51122);
 	}
 }
 
@@ -28,7 +28,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18760 => 1)) {
 		quest::say("Greetin's! We are the mighty Wolves o' the North, protectors o' Halas, and we must work hard t' keep it safe fer our citizens. Here is our tunic, it identifies ye as a proud warrior o' this great city. Once you are ready to begin your training please make sure that you see Lysbith, she can assist you in developing your hunting and gathering skills. Return to me when you have become more experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		#:: Give a 13511 - Patched Fur Tunic*
-		quest::summonitem(113511);
+		quest::summonitem(13511);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

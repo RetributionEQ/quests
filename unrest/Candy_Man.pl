@@ -24,7 +24,7 @@ sub EVENT_SAY {
 		quest::summonitem(87312,10); # Item: Ginormous Jawbreaker
 		quest::summonitem(85062); # Item: Bristlebane's Ticket of Admission
 		quest::summonitem(85067,15); # Item: Haunted Candy Apples
-		if($prize == 20){quest::summonitem(124688);}
+		if($prize == 20){quest::summonitem(24688);}
 	}
         if ($text=~/Hail/i && defined $qglobals{halloween_candyman}) {
                 quest::say("Changing your costume isn't going to work! I already gave you your candy!");

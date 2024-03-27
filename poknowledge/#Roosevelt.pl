@@ -2,7 +2,7 @@
 sub EVENT_SAY {
 	if($text=~/interested/i) { 
 		quest::say("Great! Take this tool. It'll help you track down your targets. Be warned, however! Your tool is not protected from sabatoge, and does not work well if your target roams about, instead of staying in a single spot. My boys know this, and will take advantage! If you have trouble finding a particular target, Icarus may be able to help. Let me know when you are [" . quest::saylink("ready") . "].");
-		quest::summonitem(111901); # Item: Wand of Metacrystalline Teleportation
+		quest::summonitem(11901); # Item: Wand of Metacrystalline Teleportation
 	}
 	if(!quest::istaskactive(222)){
 		if($text=~/Hail/i) {
@@ -158,7 +158,7 @@ sub EVENT_SAY {
 					)
 				);
 				$client->Message(3, "You have been awarded a special item!"); 
-				quest::summonitem(124688); # Item: Peace Be With You
+				quest::summonitem(24688); # Item: Peace Be With You
 				quest::enabletitle(6);
 				plugin::Whisper("You have been awarded a new title!");
 				quest::setglobal("halloween_ratter_complete",14,5,"D30");

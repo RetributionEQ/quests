@@ -8,7 +8,7 @@ sub EVENT_ITEM {
 	#:: Match a 12140 - Regurgitonic
 	if (plugin::takeItems(12140 => 1)) {
 		#:: Give a 13383 - Koalindl Fish
-		quest::summonitem(113383);
+		quest::summonitem(13383);
 		#:: Ding!
 		quest::ding();
 	}

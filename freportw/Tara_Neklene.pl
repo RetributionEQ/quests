@@ -68,12 +68,12 @@ sub EVENT_ITEM {
 		elsif ($faction == 5) {
 			quest::say("The word of mouth in the Academy of Arcane Science is that you are no foe, but you have yet to prove your worth to us. Perform more tasks for the great Tara Neklene.");
 			#:: Return a 13225 - Illegible Scroll
-			quest::summonitem(113225);
+			quest::summonitem(13225);
 		}
 		else {
 			quest::say("You had best leave my sight. I am a faithful member of the Academy of Arcane Science and you are no ally of ours.");
 			#:: Return a 13225 - Illegible Scroll
-			quest::summonitem(113225);
+			quest::summonitem(13225);
 		}
 	}
 	#:: Return unused items

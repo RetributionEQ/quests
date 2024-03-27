@@ -92,7 +92,7 @@ sub EVENT_ITEM {
 		else {
 			quest::say("Run while ye still can!! The Wolves o' the North will not tolerate yer presence!");
 			#:: Return a 13246 - Box of Remains
-			quest::summonitem(113246);
+			quest::summonitem(13246);
 		}
 	}
 	#:: Match a 12227 - Barbarian head Identifies as Basil's Head
@@ -119,7 +119,7 @@ sub EVENT_ITEM {
 		else {
 			quest::say("Run while ye still can!! The Wolves o' the North will not tolerate yer presence!");
 			#:: Return a 12227 - Barbarian head
-			quest::summonitem(112227);
+			quest::summonitem(12227);
 		}
 	}
 	#:: Match a 12225 - Barbarian head (Identifies as Paglan's Head)
@@ -146,7 +146,7 @@ sub EVENT_ITEM {
 		else {
 			quest::say("Run while ye still can!! The Wolves o' the North will not tolerate yer presence!");
 			#:: Return a 12227 - Barbarian head
-			quest::summonitem(112225);
+			quest::summonitem(12225);
 		}
 	}
 	#:: Return unused items

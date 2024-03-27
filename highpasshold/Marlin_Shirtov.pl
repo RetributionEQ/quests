@@ -15,7 +15,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(13352 => 1)) {
 		quest::say("Ahh!! The silk evening tunic. Mistress Anna will look stunning in this. Here is the key to Princess Lenya's cell. Good luck, hero!");
 		#:: Give item 20008 - Brass Key
-		quest::summonitem(120008);
+		quest::summonitem(20008);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

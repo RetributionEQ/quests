@@ -20,7 +20,7 @@ sub EVENT_ITEM {
 		if ($faction <= 4) {
 			quest::say("Good work. I knew you could do it. Take this as reward.");
 			#:: Give a 13053 - Brass Ring
-			quest::summonitem(113053);
+			quest::summonitem(13053);
 			#:: Ding!
 			quest::ding();
 			#:: Set factions
@@ -33,7 +33,7 @@ sub EVENT_ITEM {
 		else {
 			quest::say("You have not done much to upset the Peacekeepers of this temple, but we must ask you to prove yourself to us before we may discuss things such as this.");
 			#:: Return a 13884 - Fishy Cat Tail
-			quest::summonitem(113884);
+			quest::summonitem(13884);
 		}
 	}
 	#:: Return unused items

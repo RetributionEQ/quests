@@ -8,7 +8,7 @@ sub EVENT_ITEM {
 	#:: Turn in for 18923 - Message to Rebby
 	if (plugin::check_handin(\%itemcount, 18923 => 1)) {
 		#:: Give item 13158 - Rebbys Rat Whiskers
-		quest::summonitem(113158);
+		quest::summonitem(13158);
 		#:: Give a small amount of xp
 		quest::exp(50);
 		#:: Ding!

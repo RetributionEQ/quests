@@ -33,7 +33,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItemsCoin(0,0,66,0, 13990 => 1)) {
 		quest::say("'Whatsssss thisssss? You sssseek my blessssssssing? Heh heh heh... Very well... CAZIC-THULE! Take this fruit of Karana into horror'sss dark embrace. Fear and death made manifesssssst. A harvesssst of terror! Here, take your gift of blood and sssstraw. Use its dark powersssss in the name of the Fear Lord!' ");
 		#:: Give a 14320 - Sack of Cursed Hay
-		quest::summonitem(114320);
+		quest::summonitem(14320);
 		#:: Ding!
 		quest::ding();
 		#:: Give a small amount of experience

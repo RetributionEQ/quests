@@ -42,7 +42,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(13910 => 1)) {
 		quest::say("Thank you. Now I may cleanse the bodies of the new converts and help them enter into a new life. I also have this. It was given to me by a dying gnoll of all things. They belong to Brother Hayle. The gnoll's last words were 'Free him.' Make sure High Priestess Jahnda gets this. Be swift!");
 		#:: Give a 13911 - PrayerBeads
-		quest::summonitem(113911);
+		quest::summonitem(13911);
 		#:: Ding
 		quest::ding();
 		#:: Set factions

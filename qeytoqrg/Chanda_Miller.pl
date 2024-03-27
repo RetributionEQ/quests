@@ -88,7 +88,7 @@ sub EVENT_ITEM {
 		else {
 			quest::say("Hmm.. I really would not feel comfortable helping you in that way. You need to prove yourself to me by aiding my friends and family in the Plains of Karana before I will help you.");
 			#:: Return a 13752 - High Quality Bear Skin and 21 gold pieces
-			quest::summonitem(113752);
+			quest::summonitem(13752);
 			quest::givecash($copper, $silver, $gold, $platinum);
 		}
 	}
@@ -112,7 +112,7 @@ sub EVENT_ITEM {
 		else {
 			quest::say("Hmm.. I really would not feel comfortable helping you in that way. You need to prove yourself to me by aiding my friends and family in the Plains of Karana before I will help you.");
 			#:: Return a 13751 - Medium Quality Bear Skin and 15 gold pieces
-			quest::summonitem(113751);
+			quest::summonitem(13751);
 			quest::givecash($copper, $silver, $gold, $platinum);
 		}
 	}
@@ -136,7 +136,7 @@ sub EVENT_ITEM {
 		else {
 			quest::say("Hmm.. I really would not feel comfortable helping you in that way. You need to prove yourself to me by aiding my friends and family in the Plains of Karana before I will help you.");
 			#:: Return a 13750 - Low Quality Bear Skin and 5 gold pieces
-			quest::summonitem(113750);
+			quest::summonitem(13750);
 			quest::givecash($copper, $silver, $gold, $platinum);
 		}
 	}

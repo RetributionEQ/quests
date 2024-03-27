@@ -14,7 +14,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18745 => 1)) {
 		quest::say("Welcome to the Coalition of Tradesfolk underground. We like to keep a low profile around here and not draw any unneeded attention to our operations. you following me? I hope so, for your sake, Anyways, Nestral T'Gaza is in charge with helping out our newest members. Go see her as soon as you get a chance.");
 		#:: Give item 13568 - Brown Faded Tunic
-		quest::summonitem(113568);
+		quest::summonitem(13568);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

@@ -33,7 +33,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(13118 => 1, 13383 => 1, 13952 => 1, 13340 => 1)) {
 		quest::say("Now I have every ingredient mentioned in the Barkeep Compendium. Here. You take it. <..click!.> Whoops!! I just closed it. It's magically sealed, I never closed it before. It's useless to you. I have no need for it any longer. Maybe you can return it to [Clurg] for some type of reward.");
 		#:: Give item 13379 - Barkeep Compendium
-		quest::summonitem(113379);
+		quest::summonitem(13379);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

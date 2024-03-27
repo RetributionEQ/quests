@@ -9,7 +9,7 @@ sub EVENT_SAY {
 	if ($text=~/gandan has failed in his task/i) {
 		quest::emote("'s thoughts begin to pervade your own, they creep into your mind with great force. You feel pressure as if your head will explode. You see his thoughts becoming your own. You see in these visions a tome bound in flesh dropped to the ground. You then open your eyes to see that same book, and take it knowing that it was meant for you.");
 		#:: Give a 18898 - Flayed Skin Tome
-		quest::summonitem(118898);
+		quest::summonitem(18898);
 	}
 }
 

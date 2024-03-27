@@ -33,7 +33,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18792 => 1)) {
 		quest::say("Haaah!! Bow to Hukulk!! Hukulk make you feared.. make you powered! Dark power flow through you! Hate and Fear in your blood!");
 		#:: Give a 13530 - Black and Green Tunic*
-		quest::summonitem(113530);
+		quest::summonitem(13530);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

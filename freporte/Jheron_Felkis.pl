@@ -12,7 +12,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18508 => 1)) {
 		quest::say("So you are from Umvera! What is this? Oh my! Intersting! I'll bind them right away! A little snip here..a little snip there.. All done! That didn't take long, did it? I won't be doing this forever, you know. After the milita burned down my father's home, he could not afford to send me through proper schooling. Ah well, such is life!");
 		#:: Give item 18510 - Pawbook
-		quest::summonitem(118510);
+		quest::summonitem(18510);
 		#:: Ding!
 		quest::ding();
 		#:: Grant a large amount of experience

@@ -21,7 +21,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18136 => 1, 18137 => 1, 18138 => 1)) {
 		quest::say("Thank you, thank you. Let me read them. Oh! How could I want these brewing recipes after they made my brother insane? Where are they? I think this is all of them. Take them away from me! Delius can smile upon me now.");
 		#:: Give a 18139 - Garsen's Brewing List
-		quest::summonitem(118139);
+		quest::summonitem(18139);
 		#:: Ding!
 		quest::ding();
 		#:: Grant a small amount of experience

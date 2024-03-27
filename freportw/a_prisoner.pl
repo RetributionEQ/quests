@@ -34,7 +34,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(12196 => 1, 16581 => 1, 13498 => 1)) {
 		quest::say("Hide, hide, safe, cee.. lerk has the clue.. Must travel.. Travel.. Travel.. Tunaria's corridor.");
 		#:: Give a 12143 - H.K. 102
-		quest::summonitem(112143);
+		quest::summonitem(12143);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

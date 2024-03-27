@@ -9,7 +9,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18742 => 1)) {
 		quest::say("Welcome to the Guild, here's your guild robe. Now, let's get to work.");
 		#:: Give item 13562 - Dark Stained Robe
-		quest::summonitem(113562);
+		quest::summonitem(13562);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

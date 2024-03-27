@@ -56,7 +56,7 @@ sub EVENT_ITEM {
 		elsif ($npcrace == 5 && $npcgender == 1) {
 			quest::say("I have no need for this item $name, you can have it back.");
 			#:: Give a 20020 - Shackle Key 20
-			quest::summonitem(120020);
+			quest::summonitem(20020);
 		}
 	}
 	#:: Match a 10351 - Brass Earring
@@ -65,7 +65,7 @@ sub EVENT_ITEM {
 		if ($npcrace == 5 && $npcgender == 0) {
 			quest::say("You killed the taskmaster?!  Absolutely amazing! The orcs will be fighting among themselves for power now and I can disappear in the commotion. Thanks, friend! Take this for your deeds!");
 			#:: Give a 18901 - Ragged Cloth Note (Csb 1.O.U. Hie 1)
-			quest::summonitem(118901);
+			quest::summonitem(18901);
 			#:: Ding!
 			quest::ding();
 			#:: Grant a moderate amount of experience
@@ -77,7 +77,7 @@ sub EVENT_ITEM {
 		elsif ($npcrace == 5 && $npcgender == 1) {
 			quest::say("You killed the taskmaster?!  Absolutely amazing! The orcs will be fighting among themselves for power now and I can disappear in the commotion. Thanks, friend! Take this for your deeds!");
 			#:: Give a 18902 - Torn Drawing (Csb I.O.U. Hie 2)
-			quest::summonitem(118902);
+			quest::summonitem(18902);
 			#:: Ding!
 			quest::ding();
 			#:: Grant a moderate amount of experience
@@ -89,7 +89,7 @@ sub EVENT_ITEM {
 		elsif ($npcrace == 4 && $npcgender == 0) {
 			quest::say("You killed the taskmaster?!  Absolutely amazing! The orcs will be fighting among themselves for power now and I can disappear in the commotion. Thanks, friend! Take this for your deeds!");
 			#:: Give a 18903 - Tattered Cloth Note (Csb 1.O.U. Elf 1)
-			quest::summonitem(118903);
+			quest::summonitem(18903);
 			#:: Ding!
 			quest::ding();
 			#:: Grant a moderate amount of experience
@@ -101,7 +101,7 @@ sub EVENT_ITEM {
 		elsif ($npcrace == 4 && $npcgender == 1) {
 			quest::say("You killed the taskmaster?!  Absolutely amazing! The orcs will be fighting among themselves for power now and I can disappear in the commotion. Thanks, friend! Take this for your deeds!");
 			#:: Give a 18904 - Faded Wedding Cloth (Csb 1.O.U. Elf 2)
-			quest::summonitem(118904);
+			quest::summonitem(18904);
 			#:: Ding!
 			quest::ding();
 			#:: Grant a moderate amount of experience
@@ -133,7 +133,7 @@ sub EVENT_ITEM {
 		elsif ($npcrace == 5 && $npcgender == 0) {
 			quest::say("I have no need for this item $name, you can have it back.");
 			#:: Give a 20021 - Shackle Key 21
-			quest::summonitem(120021);
+			quest::summonitem(20021);
 		}
 	}
 	#:: Match a 20018 - Shackle Key 18
@@ -160,7 +160,7 @@ sub EVENT_ITEM {
 		elsif ($npcrace == 4 && $npcgender == 1) {
 			quest::say("I have no need for this item $name, you can have it back.");
 			#:: Give a 20018 - Shackle Key 18
-			quest::summonitem(120018);
+			quest::summonitem(20018);
 		}
 	}
 	#:: Match a 20019 - Shackle Key 19
@@ -187,7 +187,7 @@ sub EVENT_ITEM {
 		elsif ($npcrace == 4 && $npcgender == 0) {
 			quest::say("I have no need for this item $name, you can have it back.");
 			#:: Give a 20019 - Shackle Key 19
-			quest::summonitem(120019);
+			quest::summonitem(20019);
 		}
 	}
 	#:: Return unused items

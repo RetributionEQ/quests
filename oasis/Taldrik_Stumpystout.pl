@@ -11,7 +11,7 @@ sub EVENT_SAY {
 	elsif ($text=~/cask/i) {
 		quest::say("Why a holy cask is what ye will need of course! Find the ingredients that I asked you for before and combine them within this holy cask along with barley from the forests of Kithicor and water summoned from none other than yourself. After doing this if the gods have smiled upon you a thick and hearty keg of Brells Blessed Stout will be created. Give this to me along with a Rat sandwich to enjoy while I sip the finest of ales as well as your Initiate symbol that you carry now and I will be sure to reward you.");
 		#:: Give a 17070 - Holy Cask
-		quest::summonitem(117070);
+		quest::summonitem(17070);
 	}
 }
 

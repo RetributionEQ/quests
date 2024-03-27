@@ -33,7 +33,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(20933 => 1, 20807 => 1, 20806 => 1)) { 			#:: Cleric Test of Courage
 		quest::say("Wonderful! Take this as your reward!");
 		#:: Give a 14563 - Truewind Earring
-		quest::summonitem(114563);
+		quest::summonitem(14563);
 		#:: Ding!
 		quest::ding();
 		#:: Grant a huge amount of experience

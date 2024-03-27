@@ -86,7 +86,7 @@ sub EVENT_ITEM {
 		else {
 			quest::say("Hmm.. I really would not feel comfortable helping you in that way. You need to prove yourself to me by aiding my friends and family in the Plains of Karana before I will help you.");
 			#:: Return a 13755 - High Quality Wolf Skin and 21 gold pieces
-			quest::summonitem(113755);
+			quest::summonitem(13755);
 			quest::givecash($copper, $silver, $gold, $platinum);
 		}
 	}
@@ -110,7 +110,7 @@ sub EVENT_ITEM {
 		else {
 			quest::say("Hmm.. I really would not feel comfortable helping you in that way. You need to prove yourself to me by aiding my friends and family in the Plains of Karana before I will help you.");
 			#:: Return a 13754 - Medium Quality Wolf Skin and 15 gold pieces
-			quest::summonitem(113754);
+			quest::summonitem(13754);
 			quest::givecash($copper, $silver, $gold, $platinum);
 		}
 	}
@@ -134,7 +134,7 @@ sub EVENT_ITEM {
 		else {
 			quest::say("Hmm.. I really would not feel comfortable helping you in that way. You need to prove yourself to me by aiding my friends and family in the Plains of Karana before I will help you.");
 			#:: Return a 13753 - Low Quality Wolf Skin and 5 gold pieces
-			quest::summonitem(113753);
+			quest::summonitem(13753);
 			quest::givecash($copper, $silver, $gold, $platinum);
 		}
 	}

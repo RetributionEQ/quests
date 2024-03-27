@@ -121,12 +121,12 @@ sub EVENT_ITEM {
 		elsif ($faction == 5) {
 			quest::say("Me talk to you 'bout dat when you do more to help Nightkeep!  Kill all Greenbloods!  Kill all froggies!");
 			#:: Return a 12190 - Huge Mushroom Head
-			quest::summonitem(112190);
+			quest::summonitem(12190);
 		}
 		else {
 			quest::say("<..Sniff, sniff, sniff..>  Me smell the blood of enemy in you.  You fool to talk to Nightkeep shadowknight!  Me bleed you if you no run!");
 			#:: Return a 12190 - Huge Mushroom Head
-			quest::summonitem(112190);
+			quest::summonitem(12190);
 		}
 	}
 	#:: Match three 13782 - Ruined Wolf Pelt and a 10307 - Fire Beetle Eye
@@ -145,16 +145,16 @@ sub EVENT_ITEM {
 		elsif ($faction == 5) {
 			quest::say("Me talk to you 'bout dat when you do more to help Nightkeep!  Kill all Greenbloods!  Kill all froggies!");
 			#:: Return a 13782 - Ruined Wolf Pelt 
-			quest::summonitem(113782);
+			quest::summonitem(13782);
 			#:: Return a 10307 - Fire Beetle Eye
-			quest::summonitem(110307);
+			quest::summonitem(10307);
 		}
 		else {
 			quest::say("<..Sniff, sniff, sniff..>  Me smell the blood of enemy in you.  You fool to talk to Nightkeep shadowknight!  Me bleed you if you no run!");
 			#:: Return a 13782 - Ruined Wolf Pelt 
-			quest::summonitem(113782);
+			quest::summonitem(13782);
 			#:: Return a 10307 - Fire Beetle Eye
-			quest::summonitem(110307);
+			quest::summonitem(10307);
 		}
 	}
 	#:: Match two 13088 - Snake Egg
@@ -177,16 +177,16 @@ sub EVENT_ITEM {
 		elsif ($faction == 5) {
 			quest::say("Me talk to you 'bout dat when you do more to help Nightkeep!  Kill all Greenbloods!  Kill all froggies!");
 			#:: Return a 13088 - Snake Egg
-			quest::summonitem(113088);
+			quest::summonitem(13088);
 			#:: Return a 13088 - Snake Egg
-			quest::summonitem(113088);
+			quest::summonitem(13088);
 		}
 		else {
 			quest::say("<..Sniff, sniff, sniff..>  Me smell the blood of enemy in you.  You fool to talk to Nightkeep shadowknight!  Me bleed you if you no run!");
 			#:: Return a 13088 - Snake Egg
-			quest::summonitem(113088);
+			quest::summonitem(13088);
 			#:: Return a 13088 - Snake Egg
-			quest::summonitem(113088);
+			quest::summonitem(13088);
 		}
 	}
 	#:: Match three 13916 - Deathfist Slashed Belt
@@ -209,20 +209,20 @@ sub EVENT_ITEM {
 		elsif ($faction == 5) {
 			quest::say("Me talk to you 'bout dat when you do more to help Nightkeep!  Kill all Greenbloods!  Kill all froggies!");
 			#:: Return a 13916 - Deathfist Slashed Belt
-			quest::summonitem(113916);
+			quest::summonitem(13916);
 			#:: Return a 13916 - Deathfist Slashed Belt
-			quest::summonitem(113916);
+			quest::summonitem(13916);
 			#:: Return a 13916 - Deathfist Slashed Belt
-			quest::summonitem(113916);
+			quest::summonitem(13916);
 		}
 		else {
 			quest::say("<..Sniff, sniff, sniff..>  Me smell the blood of enemy in you.  You fool to talk to Nightkeep shadowknight!  Me bleed you if you no run!");
 			#:: Return a 13916 - Deathfist Slashed Belt
-			quest::summonitem(113916);
+			quest::summonitem(13916);
 			#:: Return a 13916 - Deathfist Slashed Belt
-			quest::summonitem(113916);
+			quest::summonitem(13916);
 			#:: Return a 13916 - Deathfist Slashed Belt
-			quest::summonitem(113916);
+			quest::summonitem(13916);
 		}
 	}
 	#:: Match two 13403 - Wolf Meat and two 13070 - Snake Scales
@@ -245,24 +245,24 @@ sub EVENT_ITEM {
 		elsif ($faction == 5) {
 			quest::say("Me talk to you 'bout dat when you do more to help Nightkeep!  Kill all Greenbloods!  Kill all froggies!");
 			#:: Return a 13403 - Wolf Meat
-			quest::summonitem(113403);
+			quest::summonitem(13403);
 			#:: Return a 13403 - Wolf Meat
-			quest::summonitem(113403);
+			quest::summonitem(13403);
 			#:: Return a 13070 - Snake Scales
-			quest::summonitem(113070);
+			quest::summonitem(13070);
 			#:: Return a 13070 - Snake Scales
-			quest::summonitem(113070);
+			quest::summonitem(13070);
 		}
 		else {
 			quest::say("<..Sniff, sniff, sniff..>  Me smell the blood of enemy in you.  You fool to talk to Nightkeep shadowknight!  Me bleed you if you no run!");
 			#:: Return a 13403 - Wolf Meat
-			quest::summonitem(113403);
+			quest::summonitem(13403);
 			#:: Return a 13403 - Wolf Meat
-			quest::summonitem(113403);
+			quest::summonitem(13403);
 			#:: Return a 13070 - Snake Scales
-			quest::summonitem(113070);
+			quest::summonitem(13070);
 			#:: Return a 13070 - Snake Scales
-			quest::summonitem(113070);
+			quest::summonitem(13070);
 		}
 	}
 	#:: Match three 12199 - Black Shadow Tunic and two gold
@@ -290,18 +290,18 @@ sub EVENT_ITEM {
 		elsif ($faction == 5) {
 			quest::say("Me talk to you 'bout dat when you do more to help Nightkeep!  Kill all Greenbloods!  Kill all froggies!");
 			#:: Return a 12199 - Black Shadow Tunic
-			quest::summonitem(112199);
+			quest::summonitem(12199);
 			#:: Return a 12199 - Black Shadow Tunic
-			quest::summonitem(112199);
+			quest::summonitem(12199);
 			#:: Return Coins
 			quest::givecash($copper, $silver, $gold, $platinum);
 		}
 		else {
 			quest::say("<..Sniff, sniff, sniff..>  Me smell the blood of enemy in you.  You fool to talk to Nightkeep shadowknight!  Me bleed you if you no run!");
 			#:: Return a 12199 - Black Shadow Tunic
-			quest::summonitem(112199);
+			quest::summonitem(12199);
 			#:: Return a 12199 - Black Shadow Tunic
-			quest::summonitem(112199);
+			quest::summonitem(12199);
 			#:: Return Coins
 			quest::givecash($copper, $silver, $gold, $platinum);
 		}
@@ -310,7 +310,7 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItems(12199 => 1)) {
 		quest::say("Me change mind! Me want total of THREE ogre black shadow tunics. Ha Ha! And you also pay two gold for Nightkeep tax! Ha! Ha!");
 		#:: Return a 12199 - Black Shadow Tunic
-		quest::summonitem(112199);
+		quest::summonitem(12199);
 	}
 	#:: Return unused items
 	plugin::returnUnusedItems();

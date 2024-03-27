@@ -13,7 +13,7 @@ sub EVENT_SAY {
 	elsif ($text=~/find da poshuns/i) {
 		quest::say("Take dis as it be all me know.");
 		#:: Give a 18651 - Note to the Troll
-		quest::summonitem(118651);
+		quest::summonitem(18651);
 		#:: Ding!
 		quest::ding();
 	}
@@ -24,7 +24,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(13984 => 1)) {
 		quest::say("Now Kaglari won't be mad at Bregna.");
 		#:: Give a 12212 - Kaglari Mana Doll
-		quest::summonitem(112212);
+		quest::summonitem(12212);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions
@@ -40,7 +40,7 @@ sub EVENT_ITEM {
 		if ($ExpansionSetting > 7) {
 			quest::say("Dis am gud. I see you've been talkin' to Garuuk. Methanks you fer da help. Take dis note back ta Garuuk so he knows you helped me. Tanks again!");
 			#:: Give a 28740 - Troll Receipt
-			quest::summonitem(128740);
+			quest::summonitem(28740);
 			#:: Ding!
 			quest::ding();
 			#:: Set factions
@@ -53,10 +53,10 @@ sub EVENT_ITEM {
 		elsif ($ExpansionSetting < 8) {
 			quest::say("I have no need for these items, $name.  You can have them back.");
 			#:: Return Items
-			quest::summonitem(126632);
-			quest::summonitem(126640);
-			quest::summonitem(126621);
-			quest::summonitem(126662);
+			quest::summonitem(26632);
+			quest::summonitem(26640);
+			quest::summonitem(26621);
+			quest::summonitem(26662);
 		}
 	}
 	#:: Return unused items

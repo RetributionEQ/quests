@@ -24,7 +24,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18790 => 1)) {
 		quest::say("Arhh.. Ranjor mighty warrior.. Ranjor teach you warrior.. you fight for Ranjor now.");
 		#:: Give a 13528 - Mud Covered Tunic*
-		quest::summonitem(113528);
+		quest::summonitem(13528);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

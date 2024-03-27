@@ -27,12 +27,12 @@ sub EVENT_SAY {
 	if ($text=~/trades/i) {
 		quest::say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
 		#:: Give a 51121 - Tradeskill Basics : Volume I
-		quest::summonitem(151121);
+		quest::summonitem(51121);
 	}
 	if ($text=~/second book/i) {
 		quest::say("Here is the second volume of the book you requested, may it serve you well!");
 		#:: Give a 51122 - Tradeskill Basics : Volume II
-		quest::summonitem(151122);
+		quest::summonitem(51122);
 	}
 }
 
@@ -41,7 +41,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18731 => 1)) {
 		quest::say("Aye. Welcome, my fur-footed friend. My name is Beek Guinders, and I am guildmaster here at the Chapel of Mischief. Here is our guild tunic. Wear it with pride, as it will set you apart from the crowd. Once you are ready to begin your training please make sure that you see Thekela Meepup, she can assist you in experienced in our art, I will be able to further instruct you on how to progress through your early ranks, as well as in some of the various [trades] you will have available to you.");
 		#:: Give a 13538 - Faded Gold Felt Tunic*
-		quest::summonitem(113538);
+		quest::summonitem(13538);
 		#:: Ding!
 		quest::ding();
 		#:: Grant a small amount of experience

@@ -5,7 +5,7 @@ sub EVENT_SAY {
 	if ($text=~/components/i) {
 		quest::say("I require a diamond, a star ruby, a pearl, a [special fire emerald], a sapphire, a fire opal, and two enchanted platinum bars. Take this bag and combine the items once you have them all and bring it back to me.");
 		#:: Give item 17512 - Empty Gem Bag
-		quest::summonitem(117512);
+		quest::summonitem(17512);
 	}
 	if ($text=~/special fire emerald/i) {
 		quest::say("Now the fire emerald I want is not the normal one you receive from most jewelers. There is one jeweler I know who has the special one I want. Last time I heard, she had traveled to the elven outpost. Just ask her about special fire emeralds.");
@@ -29,13 +29,13 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(6710 => 1 )) {
 		quest::emote("smiles broadly as he rifles through the bag, then looks up at you and says, 'Bout time! Here is the coffin as promised.'");
 		#:: Give item 17080 - Gem Encrusted Casket
-		quest::summonitem(117080);
+		quest::summonitem(17080);
 	}
 	#:: Turn in for Clumps of Hair ID- 12335 - Lock of Hair ID- 12338 - Tattered Toupee ID- 12337
 	if (plugin::takeItems(12335 => 2, 12338 =>1, 12337 =>1)) {
 		quest::say("You are a good helper. Here you go. One genuine, charismatic, lady magnet, zero to hero making Mane Attraction!! Guaranteed to lower prices world wide. Guaranteed to last forever.. Err.. Well,.. It has a 1000 year warranty at least.");
 		#:: Give item 12254 - Mane Attraction
-		quest::summonitem(112254);
+		quest::summonitem(12254);
 		#:: Give a small amount of xp
 		quest::exp(500);
 		#:: Ding!

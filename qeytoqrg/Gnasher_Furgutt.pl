@@ -9,7 +9,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18800 => 1)) {
 		quest::say("Ah. Good for you! Here you are. Take this to McNeal, but next time there will be no stout if there are no weapons.");
 		#:: Give a 13131 - Case of Blackburrow Stout
-		quest::summonitem(113131);
+		quest::summonitem(13131);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

@@ -15,7 +15,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18727 => 1)) {
 		quest::say("Greetings. I am Ghanlin Skyphire, Master Wizard of the Crimson Hands. All of us here have devoted our lives to the studies of the arcane and mystical. Let's get you started. Here's your training robe.  Now, go find Raskena. She'll help train you and give you your first lesson.");
 		#:: Give item 13550 - Old Used Robe*
-		quest::summonitem(113550);
+		quest::summonitem(13550);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

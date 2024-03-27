@@ -41,7 +41,7 @@ sub EVENT_ITEM {
 		if ($faction < 5) {
 			quest::say("What was I thinking?!! Piranha are coming downstream and eating our supply of fish! We have never had a problem like this!!  Where are these little beasts coming from?  For now we must collect more. Take this bag. Collect enough teeth to fill the bag. Don't worry, if it takes a while I shall reward you with the [Rantho Rapier].  We will need to examine the teeth.");
 			#:: Give a 17968 - Piranha Bag
-			quest::summonitem(117968);
+			quest::summonitem(17968);
 			#:: Ding!
 			quest::ding();
 			#:: Grant a small amount of experience
@@ -60,7 +60,7 @@ sub EVENT_ITEM {
 		else {
 			quest::say("You are not yet in good standing with the Guardians of the Vale. Continue with your good work and then we may speak.");
 			#:: Give back a 13870 - Piranha Tooth
-			quest::summonitem(113870);
+			quest::summonitem(13870);
 		}
 	}		
 	#:: Match a 12155 - Bag of Piranha Teeth
@@ -88,7 +88,7 @@ sub EVENT_ITEM {
 		else {
 			quest::say("You are not yet in good standing with the Guardians of the Vale. Continue with your good work and then we may speak.");
 			#:: Give 12155 - Bag of Piranha Teeth
-			quest::summonitem(112155);
+			quest::summonitem(12155);
 		}
 	}		
 	#:: Return unused items

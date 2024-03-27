@@ -20,7 +20,7 @@ sub EVENT_SAY {
 		if ($faction <= 4) {
 			quest::say("Ach, 'tis good o' ye! Take this bottle of elixir to Everfrost Peaks. Find Talin O'Donal. He'll take the first sip, and then instruct ye on who else ye need to find. Do that, and I'll give ye a fine reward when ye return the empty elixir bottle. Good luck, then. Don't die.");
 			#:: Give a 13241 - Full Bottle of Elixir
-			quest::summonitem(113241);
+			quest::summonitem(13241);
 		}
 		#:: Match if faction is Indifferent
 		elsif ($faction == 5) {
@@ -58,12 +58,12 @@ sub EVENT_ITEM {
 		elsif ($faction == 5) {
 			quest::say("The Wolves o' the North show ye no ill will, but there's much ye must do t' earn our trust.  Perhaps ye should speak with Lysbith and inquire o' the gnoll bounty.");
 			#:: Return a 13245 - Empty Bottle of Elixir
-			quest::summonitem(113245);
+			quest::summonitem(13245);
 		}
 		else {
 			quest::say("Run while ye still can!! The Wolves o' the North will not tolerate yer presence!");
 			#:: Return a 13245 - Empty Bottle of Elixir
-			quest::summonitem(113245);
+			quest::summonitem(13245);
 		}
 	}
 	#:: Return unused items

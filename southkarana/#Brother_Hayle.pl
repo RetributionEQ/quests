@@ -15,7 +15,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18927 => 1)) {
 		quest::say("I am needed!! What am I doing here? I must return to the Temple of Life to commune with the Prime Healer. Rodcet Nife will give me more strength to finish this job. Thank you, young one! Take this key as a reward. Turn it into Tyokan in the temple shop. Safe journey to you!");
 		#:: Give a 13306 - T.O.L. 2020
-		quest::summonitem(113306);
+		quest::summonitem(13306);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions
@@ -31,7 +31,7 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItems(18936 => 1)) {
 		quest::say("Finally!! I see that Ariska has found a noble knight to retrieve Soulfire. Per Ariska's orders I am not to give Soulfire to you until you can show me [proof of nobility]. You must honor both the Temple of Life as well as the Hall of Truth and to a high degree. Only then shall you hold Soulfire.");
 		#:: Give a 18937 - Note
-		quest::summonitem(118937);
+		quest::summonitem(18937);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

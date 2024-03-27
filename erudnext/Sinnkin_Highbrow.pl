@@ -15,7 +15,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(13121 => 1)) {
 		quest::say("It's about time you figured it out, genius! Maybe you should spend more time in the library. Here, take this tonic and get out of here before they see me giving it to you and turn us both inside out.");
 		#:: Give a 13118 - Erud's Tonic
-		quest::summonitem(113118);
+		quest::summonitem(13118);
 		#:: Ding!
 		quest::ding();
 		#:: Set faction

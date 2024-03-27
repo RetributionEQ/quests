@@ -18,7 +18,7 @@ sub EVENT_PROXIMITY_SAY {
 	elsif ($text=~/stew/i) {
 		quest::say("Here. Take it to Lowmot. The stew is already paid for but the good Deputy usually tips Jillin quite well. Hurry! It's getting cold!");
 		#:: Give a 13959 - Carrot Stew
-		quest::summonitem(113959);
+		quest::summonitem(13959);
 	}
 }
 
@@ -69,7 +69,7 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItems(13971 => 1)) {
 		quest::say("What are these?!  I am trying to make stew for the mayor and you bring me ROTTEN CARROTS?!  Have you no sense??  Take these back to Reebo.");
 		#:: Give a 13972 - Crate of Rotten Carrots
-		quest::summonitem(113972);
+		quest::summonitem(13972);
 		#:: Set factions
 		quest::faction(241, -5);	#:: + Deeppockets
 		quest::faction(223, -1);	#:: + Circle of Unseen Hands

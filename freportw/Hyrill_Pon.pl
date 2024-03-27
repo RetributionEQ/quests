@@ -36,7 +36,7 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItems(13987 => 1)) {
 		quest::say("You found it!? My sap of a brother was right after all! I sure don't want that thing. It sends shivers down my spine just holding it. Here. Take it!");
 		#:: Give a 13988 - Jeweled Skull
-		quest::summonitem(113988);
+		quest::summonitem(13988);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

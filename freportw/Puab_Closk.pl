@@ -25,7 +25,7 @@ sub EVENT_SAY {
 		if ($faction <= 4) {
 			quest::say("Then you shall aid our family. My former pupil [skilled monk of the Clawfist] has been banished by his people. You will go to him and hand him this token as proof of your origin. He shall be expecting you.");
 			#:: Give a 12369 - Puab's Token
-			quest::summonitem(112369);
+			quest::summonitem(12369);
 		}
 	}
 } 
@@ -35,7 +35,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18746 => 1 )) {
 		quest::say("Oh my! Opal? She is providing these agents of Neriak with information regarding the Acedemy's secrets. I can not tell Cain about this. He will be furious. Show this to Toala. She will know what to do.");
 		#:: Give a 13507 - Torn Cloth Tunic
-		quest::summonitem(113507);
+		quest::summonitem(13507);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions
@@ -49,7 +49,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(28055 => 1 )) {
 		quest::say("You have performed a great service to one who is your brother. Your loyalty shines brightly, as does your skill. Take the treant fists. They are yours now.");
 		#:: Give a 12344 - Treant Fists
-		quest::summonitem(112344);
+		quest::summonitem(12344);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

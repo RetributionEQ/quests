@@ -22,7 +22,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18921 => 1)) {
 		quest::say("Oh I see.. Phin's always after me about something. I mean, it's not my fault the order hasn't come in yet. Hey, since I'm so busy right now, why don't you be a friend and take this back to Phin for me, huh?");
 		#:: Give a 18922 - Grathin's Invoice
-		quest::summonitem(118922);
+		quest::summonitem(18922);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

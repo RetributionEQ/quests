@@ -10,7 +10,7 @@ sub EVENT_SAY {
 		if ($faction <= 4) {
 			quest::say("Then take this note to the woodworker in Toxxulia Forest. His name is Emil Parsini. He shall have the staff to be returned to the temple.");
 			#:: Give item 18833 - A Sealed Letter for Emil Parsini
-			quest::summonitem(118833);
+			quest::summonitem(18833);
 		}
 		#:: Match if faction is Indifferent
 		elsif ($faction == 5) {
@@ -25,7 +25,7 @@ sub EVENT_SAY {
 		if ($faction <= 4) {
 			quest::say("Then you shall venture to Toxxulia Forest. There has been an increase in skeleton sightings lately. I do not know their origin, but I believe that your efforts will reduce their numbers! Take this box. Return it to me when you have filled it with the bones of these undead creatures and combined it. May Quellious' light guide you.");
 			#:: Give item 17941 - Box for Bones
-			quest::summonitem(117941);
+			quest::summonitem(17941);
 		}
 		#:: Match if faction is Indifferent
 		elsif ($faction == 5) {
@@ -91,12 +91,12 @@ sub EVENT_ITEM {
 		elsif ($faction == 5) {
 			quest::say("You have not done much to upset the Peacekeepers of this temple, but we must ask you to prove yourself to us before we may discuss things such as this.");
 			#:: Return a 13882 - Box of Bones
-			quest::summonitem(113882);
+			quest::summonitem(13882);
 		}
 		else {
 			quest::say("Leave my sight at once!  You are no friend to the Peacekeepers of the Temple of Divine Light.");
 			#:: Return a 13882 - Box of Bones
-			quest::summonitem(113882);
+			quest::summonitem(13882);
 		}
 	}
 	#:: Match a 13816 - Peacekeeper staff
@@ -123,12 +123,12 @@ sub EVENT_ITEM {
 		elsif ($faction == 5) {
 			quest::say("You have not done much to upset the Peacekeepers of this temple, but we must ask you to prove yourself to us before we may discuss things such as this.");
 			#:: Return a 13816 - Peacekeeper staff 
-			quest::summonitem(113816);
+			quest::summonitem(13816);
 		}
 		else {
 			quest::say("Leave my sight at once!  You are no friend to the Peacekeepers of the Temple of Divine Light.");
 			#:: Return a 13816 - Peacekeeper staff
-			quest::summonitem(113816);
+			quest::summonitem(13816);
 		}
 	}
 	#:: Return unused items

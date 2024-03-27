@@ -27,7 +27,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(13749 => 1, 13761 => 1, 13075 => 1, 13756 => 1)) {
 		quest::say("Good work, $name. You passed the first test. If you think you are one of us, return this cap to me along with a dagger from a Dark Elf for your true reward.");
 		#:: Give a 13941 - Leatherfoot Skullcap
-		quest::summonitem(113941);
+		quest::summonitem(13941);
 		#:: Ding!
 		quest::ding();
 		#:: Grant a moderate amount of experience
@@ -41,7 +41,7 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItems(13942 => 1, 13941 => 1)) {
 		quest::say("Wonderful, $name. You have proven yourself to the Leatherfoot Squad. Take this and wear it with honor.");
 		#:: Give item 12259 - Leatherfoot Raider Skullcap
-		quest::summonitem(112259);
+		quest::summonitem(12259);
 		#:: Ding!
 		quest::ding();
 		#:: Grant a large amount of experience

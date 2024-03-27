@@ -25,7 +25,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18729 => 1)) {
 		quest::say("Welcome to the Craft Keepers! You have much to learn. and I'm sure you are anxious to get started. Here's your training robe. Go see Nolusia. she'll give you your first lesson.");
 		#:: Give a 13549 - Old Patched Robe*
-		quest::summonitem(113549);
+		quest::summonitem(13549);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions
