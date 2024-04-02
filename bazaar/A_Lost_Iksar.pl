@@ -1,78 +1,156 @@
+my $item1 = 2028043;
+my $item2 = 2010366;
+my $item3 = 2010142;
+my $item4 = 2026997;
+
+my $token_item = 2019100;
+
+my $stage_desc  = "Ruins of Kunark";
+my $hero_desc   = "Slay the champions of the Old World; Nagafen and Vox.";
+my $stage_key   = "RoK";
+my @target_list = ('Lord Nagafen', 
+                   'Lady Vox');
+
 sub EVENT_SAY {
-    $key = $client->AccountID() . "-kunark-flag";
-    $expansion = quest::get_data($key);
-
-    $nagkey = $client->AccountID() . "nag";
-    $voxkey = $client->AccountID() . "vox";
-
     if ($text=~/hail/i){
-        
-        if ($expansion >= 2)
-        {
-            plugin::Whisper("You have already unlocked the Ruins of Kunark!");
-            return;
-        }
-
-        if($expansion < 2){
-            plugin::Whisper("Ah... I see you have yet to unlock Kunark! You have two options. One is the route of the [hero]. The other, is the route of the [collector].");
-        }
-
-    }
-
-    if ($text =~/hero/i){
-        plugin::Whisper("You enjoy spilling blood, don't you? Fair enough! Find the Lost Iksars of Fire and Ice.");
-        
-        if ($expansion < 2) {
-            $progressionCount = 2;
-            $progressCount = 0;
-            $progressText = "";
-            if (quest::get_data($client->AccountID() . "nag") > 0) {
-                $progressCount++;
-                $progressText .= "Lord Nagafen in Nagafen's Lair, ";
-            }
-
-            if (quest::get_data($client->AccountID() . "vox") > 0) {
-                $progressCount++;
-                $progressText .= "Lady Vox in Permafrost, ";
-            }
-
-            if ($progressionCount > 0) {
-                $progressText = substr($progressText, 0, -2);
-                plugin::Whisper("You have defeated $progressCount of $progressionCount targets: $progressText.");
-            }
+        if (plugin::is_stage_complete($client, $stage_key)) {
+            plugin::YellowText("You have access to the $stage_desc.");
+        } else {
+            plugin::NPCTell("To gain access to the $stage_desc, two paths lie before you; [hero] and [explorer].");
         }
     }
-    if (($text =~/collector/i) && ($expansion <2)){
-        plugin::Whisper("You are one of patience, I see. All you need to do is bring me an Apocryphal Elemental Binder, an Apocryphal Djarn's Amethyst Ring, an Apocryphal Crown of the Froglok Kings, and an Apocryphal Scalp of the Ghoul Lord. This will grant you three Apocryphal tokens. When one is turned in to me, that hero will be granted access to The Ruins of Kunark.");
+    elsif (!plugin::is_stage_complete($client, $stage_key)) {
+        if ($text =~/hero/i) {
+            plugin::NPCTell($hero_desc);
+            plugin::list_stage_prereq($client, $stage_key);            
+        }
+        if (($text =~/explorer/i)){
+            my $item1_flag = quest::get_data($client->AccountID() . "-$item1-flag") || 0;
+            my $item2_flag = quest::get_data($client->AccountID() . "-$item2-flag") || 0;
+            my $item3_flag = quest::get_data($client->AccountID() . "-$item3-flag") || 0;
+            my $item4_flag = quest::get_data($client->AccountID() . "-$item4-flag") || 0;
+
+            my $item1_link = quest::varlink($item1);
+            my $item2_link = quest::varlink($item2);
+            my $item3_link = quest::varlink($item3);
+            my $item4_link = quest::varlink($item4);
+
+            my $response_string = "In that case, you will need to do is bring me the one each of following: [$item1_link], [$item2_link], [$item3_link], and [$item4_link].";
+            if (quest::get_rule("Custom:MulticlassingEnabled") ne "true") {
+                $response_string = $response_string . " Not only will I grant you access to the $stage_desc, but I will give you two tokens so that your companions can present them to me in order to also gain access.";
+            }
+
+            plugin::NPCTell($response_string);
+
+            if ($item1_flag) {
+                plugin::YellowText("You have collected a [$item1_link].");
+            } else {
+                plugin::YellowText("You yet to collect a [$item1_link].");
+            }
+
+            if ($item2_flag) {
+                plugin::YellowText("You have collected a [$item2_link].");
+            } else {
+                plugin::YellowText("You yet to collect a [$item2_link].");
+            }
+
+            if ($item3_flag) {
+                plugin::YellowText("You have collected a [$item3_link].");
+            } else {
+                plugin::YellowText("You yet to collect a [$item3_link].");
+            }
+
+            if ($item4_flag) {
+                plugin::YellowText("You have collected a [$item4_link].");
+            } else {
+                plugin::YellowText("You yet to collect a [$item4_link].");
+            }
+        }
     }
 }
 
 sub EVENT_ITEM {
-    $key = $client->AccountID() . "-kunark-flag";
-    $expansion = quest::get_data($key);
+    if (!plugin::is_stage_complete($client, $stage_key)) {
+        my $item1_flag = quest::get_data($client->AccountID() . "-$item1-flag") || 0;
+        my $item2_flag = quest::get_data($client->AccountID() . "-$item2-flag") || 0;
+        my $item3_flag = quest::get_data($client->AccountID() . "-$item3-flag") || 0;
+        my $item4_flag = quest::get_data($client->AccountID() . "-$item4-flag") || 0;
 
-    $nagkey = $client->AccountID() . "nag";
-    $voxkey = $client->AccountID() . "vox";
+        my $item1_link = quest::varlink($item1);
+        my $item2_link = quest::varlink($item2);
+        my $item3_link = quest::varlink($item3);
+        my $item4_link = quest::varlink($item4);
 
-    if ($expansion < 20){
-        if (plugin::check_handin_fixed(\%itemcount, 2028043 => 1, 2010366 => 1, 2010142 => 1, 2026997 => 1)) {
-		    plugin::Whisper("Here are three tokens. Hand them back to me for your flag!");
-            quest::ding();
-            quest::exp(100000);
-            quest::summonfixeditem(2019100);
-            quest::summonfixeditem(2019100);
-            quest::summonfixeditem(2019100);
+        if (!$item1_flag && plugin::check_handin_fixed(\%itemcount, $item1 => 1)) {
+            plugin::NPCTell("Perfect, this [$item1_link] is exactly what I needed.");
+            quest::set_data($client->AccountID() . "-$item1-flag", 1);
+            $item1_flag = 1;
         }
-        if (plugin::check_handin_fixed(\%itemcount, 2019100 => 1)) {
-		    plugin::Whisper("Beware of the evils that lurk Kunark $name!");
+
+        if (!$item2_flag && plugin::check_handin_fixed(\%itemcount, $item2 => 1)) {
+            plugin::NPCTell("Perfect, this [$item2_link] is exactly what I needed.");
+            quest::set_data($client->AccountID() . "-$item2-flag", 1);
+            $item2_flag = 1;
+        }
+
+        if (!$item3_flag && plugin::check_handin_fixed(\%itemcount, $item3 => 1)) {
+            plugin::NPCTell("Perfect, this [$item3_link] is exactly what I needed.");
+            quest::set_data($client->AccountID() . "-$item3-flag", 1);
+            $item3_flag = 1;
+        }
+
+        if (!$item4_flag && plugin::check_handin_fixed(\%itemcount, $item4 => 1)) {
+            plugin::NPCTell("Perfect, this [$item4_link] is exactly what I needed.");
+            quest::set_data($client->AccountID() . "-$item4-flag", 1);
+            $item4_flag = 1;
+        }
+
+        if ($item1_flag && $item2_flag && $item3_flag && $item4_flag) {            
+            foreach my $target (@target_list) {
+                plugin::set_subflag($client, $stage_key, $target, 1);
+            }
+
+            plugin::NPCTell("Excellent, you have collected all of the items which I require. Going forward, you will be able to access the $stage_desc.");
+            quest::ding();      
+            if (quest::get_rule("Custom:MulticlassingEnabled") ne "true") {
+                plugin::NPCTell("Here are two additional tokens for your companions to also gain access to the $stage_desc");
+                quest::summonfixeditem($token_item);
+                quest::summonfixeditem($token_item);
+            }
+
+        } elsif (plugin::check_handin_fixed(\%itemcount, $token_item => 1)) {
+            foreach my $target (@target_list) {
+                plugin::set_subflag($client, $stage_key, $target, 1);
+            }
+
+            plugin::NPCTell("You want to call in a favor? Fine. Going forward, you will be able to access the $stage_desc.");
             quest::ding();
-            quest::set_data($key, 2);
-            quest::set_data($nagkey, 1);
-            quest::set_data($voxkey, 1);
-	    }
-	    #:: Return unused items
+        } else {
+            if ($item1_flag) {
+                plugin::YellowText("You have collected a [$item1_link].");
+            } else {
+                plugin::YellowText("You yet to collect a [$item1_link].");
+            }
+
+            if ($item2_flag) {
+                plugin::YellowText("You have collected a [$item2_link].");
+            } else {
+                plugin::YellowText("You yet to collect a [$item2_link].");
+            }
+
+            if ($item3_flag) {
+                plugin::YellowText("You have collected a [$item3_link].");
+            } else {
+                plugin::YellowText("You yet to collect a [$item3_link].");
+            }
+
+            if ($item4_flag) {
+                plugin::YellowText("You have collected a [$item4_link].");
+            } else {
+                plugin::YellowText("You yet to collect a [$item4_link].");
+            }
+        }   
     }
-    
-	    plugin::return_items(\%itemcount);
-        plugin::CheckCashPayment(0, $copper, $silver, $gold, $platinum);
+
+    plugin::return_items(\%itemcount);
 }

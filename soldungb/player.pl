@@ -32,8 +32,7 @@ sub EVENT_ENTERZONE {
 		#$client->Message(7, "Kicking out as exp version is less than 1");
 		return;
 	}
-	$key = $client->AccountID() . "-kunark-flag";
-	$expansion = quest::get_data($key);
+
 	$bind = $client->GetBindZoneID;
 	$bindh = $client->GetBindHeading;
 	$bindx = $client->GetBindX;

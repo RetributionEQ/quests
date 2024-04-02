@@ -6,19 +6,19 @@ function event_say(e)
 			e.self:Say("Greetings ".. e.other:GetName() .. ", I am looking for those calm and worldly people known as [monks]. You wouldn't happen to be one would you?");
 		elseif e.message:findi("monks") then
 			e.self:Say("Very nice, it does always please me to see a fellow monk. For one such as yourself, I may be able to assist. If you are in need of new equipment such as [cap], [leggings], [tunic], [bracer], [sleeves], [gloves], or [sandals] - let me know.");
-		elseif e.message:findi("cap") then
-			e.self:Say("Indeed, I can craft you a bracer. Bring me back Muramite Bracer Armor piece and I will get to work on it. You will also need a section of infused Muramite leather to finish the bracer in a loom. Talk to Nalasrine if you still some help infusing the leather.");
-		elseif e.message:findi("leggings") then
-			e.self:Say("I should be able to reform Muramite Helm Armor into something quite useful to you. Explore these lands until you find some Muramite leather padding. Talk to Nalasrine about infusing it, then bring piece it together with your new helm from me in a loom.");
-		elseif e.message:findi("tunic") then
-			e.self:Say("I can make some fine gloves for you. Take the time to dig up some Muramite leather and have Nalasrine assist you with infusing it. Bring me Muramite Glove Armor and I can reshape it into something that you can use. Strengthen the gloves by reinforcing them with the infused leather in a loom, and a fine pair shall be yours.");
 		elseif e.message:findi("bracer") then
-			e.self:Say("I believe I can reform some Muramite greaves into a pair of leggings that would fit you. Bring me a pair of Muramite Greaves and I will get to work on that. To finish your leggings you will also have to obtain two pieces of Muramite leather padding. Speak to Nalasrine about infusing it, then place the leather pieces and leggings in a loom to work them together.");
-		elseif e.message:findi("sleeves") then
-			e.self:Say("I can form you a nice light tunic that will not hinder you in battle. Travel into the hostile areas and bring back two sections of Muramite leather and Muramite Chest Armor. Make sure to speak to Nalasrine about infusing the sections of leather. Bring me the chest piece for reworking, then simply weld together the new chest and leather in a loom.");
+			e.self:Say("Indeed, I can craft you a bracer. Bring me back Muramite Bracer Armor piece and I will get to work on it. You will also need a section of infused Muramite leather to finish the bracer in a loom. Talk to Nalasrine if you still some help infusing the leather.");
+		elseif e.message:findi("cap") then
+			e.self:Say("I should be able to reform Muramite Helm Armor into something quite useful to you. Explore these lands until you find some Muramite leather padding. Talk to Nalasrine about infusing it, then bring piece it together with your new helm from me in a loom.");
 		elseif e.message:findi("gloves") then
-			e.self:Say("Bring me back Muramite Boot Armor and I believe I can rework them into something quite fine for you. Once I've reworked them, you will need to take a section of infused Muramite leather along with the new boots and reinforce them in a loom. If you need help in the infusing process, just talk to Nalasrine.");
+			e.self:Say("I can make some fine gloves for you. Take the time to dig up some Muramite leather and have Nalasrine assist you with infusing it. Bring me Muramite Glove Armor and I can reshape it into something that you can use. Strengthen the gloves by reinforcing them with the infused leather in a loom, and a fine pair shall be yours.");
+		elseif e.message:findi("leggings") then
+			e.self:Say("I believe I can reform some Muramite greaves into a pair of leggings that would fit you. Bring me a pair of Muramite Greaves and I will get to work on that. To finish your leggings you will also have to obtain two pieces of Muramite leather padding. Speak to Nalasrine about infusing it, then place the leather pieces and leggings in a loom to work them together.");
+		elseif e.message:findi("tunic") then
+			e.self:Say("I can form you a nice light tunic that will not hinder you in battle. Travel into the hostile areas and bring back two sections of Muramite leather and Muramite Chest Armor. Make sure to speak to Nalasrine about infusing the sections of leather. Bring me the chest piece for reworking, then simply weld together the new chest and leather in a loom.");
 		elseif e.message:findi("sandals") then
+			e.self:Say("Bring me back Muramite Boot Armor and I believe I can rework them into something quite fine for you. Once I've reworked them, you will need to take a section of infused Muramite leather along with the new boots and reinforce them in a loom. If you need help in the infusing process, just talk to Nalasrine.");
+		elseif e.message:findi("sleeves") then
 			e.self:Say("Sleeves are quite simple. Venture into these strange lands and find some Muramite Sleeve Armor. Bring the armor piece to me and I will work on refitting it for you. Once you have a piece of Muramite leather padding, talk to Nalasrine about infusing the it. The new sleeve from me can be easily stitched up in a loom with the infused Muramite leather.");
 		end
 	else

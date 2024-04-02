@@ -37,7 +37,7 @@ if($text=~/Hail/i)
        $client->Message(0,"Thelin Poxbourne tells you, 'Please destroy her for subjecting me to her hideous visions.'  Thelin closes his eyes and is swept away from his nightmare.  The land of pure thought begins to vanish from around you.");
        $client->Message(15,"You receive a character flag!");
        quest::setglobal("pop_pon_construct", 1, 5, "F");
-       $npc->CastSpell(1195, $userid); #cast Waking Moment on PC
+       #$npc->CastSpell(1195, $userid); #cast Waking Moment on PC
        }
 
 if($text=~/return/i)

@@ -139,10 +139,7 @@ function event_signal(e)
 			e.self:SetHP(e.self:GetHP() - hp_one_percent) 
 		end
 
-		mob_count = eq.get_entity_list()
-
-
-		if mob_count == 0 then 
+		if mob_count == 0 or not (eq.get_entity_list():IsMobSpawnedByNpcTypeID(292072) and eq.get_entity_list():IsMobSpawnedByNpcTypeID(292083)) then
 			e.self:ModifyNPCStat("special_abilities",abilities_active);
 			eq.set_timer("add_phase_1", 1 * 60 * 1000) -- 1 Minute Timer
 			eq.signal(292067, 3); -- #Guardian_of_Destruction (292067) wake up

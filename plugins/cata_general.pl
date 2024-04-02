@@ -189,7 +189,7 @@ sub WorldAnnounceItem {
     my $itemname = quest::getitemname($item_id);
 
     my $eqgitem_link = quest::varlink($item_id);
-    my $discord_link = "[[$itemname](https://www.pyrelight.net/allaclone/?a=item&id=$item_id)]";
+    my $discord_link = "[[$itemname](https://retributioneq.com/allaclone/?a=item&id=$item_id)]";
 
     # Replace a placeholder in the message with the EQ game link
     $message =~ s/\{item\}/$eqgitem_link/g;

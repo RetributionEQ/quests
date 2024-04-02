@@ -8,7 +8,7 @@ sub EVENT_SAY {
   elsif ($text=~/natimbi/i && plugin::is_eligible_for_zone($client, 'natimbi', 1)) {
     $client->MovePC(280, -1557, -853, 241, 180); # Zone: natimbi
   } 
-  elsif ($text=~/nedaria/i) {
+  elsif ($text=~/nedaria/i && plugin::is_eligible_for_zone($client, 'nedaria', 1)) {
     $client->CastSpell(4580, $client->GetID(), 0, 1); # Spell: Teleport: Nedaria
   }
 }

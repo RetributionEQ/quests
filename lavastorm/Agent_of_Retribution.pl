@@ -14,8 +14,6 @@ my $fabled_dz_version      = 1;
 my $fabled_dz_duration     = 79200; # 22 hours
 
 sub EVENT_SAY {
-  $key = $client->AccountID() . "-kunark-flag";
-  $expansion = quest::get_data($key);
   
   if ($text =~ /hail/i) {
     my $dz = $client->GetExpedition();
@@ -32,7 +30,7 @@ sub EVENT_SAY {
  	  }
     }
   }
-  elsif ($text =~ /fabled request/i && $expansion >=20) {
+  elsif ($text =~ /fabled request/i && plugin::is_stage_complete($client, 'FNagafen')) {
     my $dz = $client->CreateExpedition($fabled_dz_zone, $fabled_dz_version, $fabled_dz_duration, $fabled_expedition_name, $fabled_min_players, $fabled_max_players);
     if ($dz) {
       $dz->SetCompass("lavastorm", 238.0, 987.0, -24.90); # pointing to guard pineshade

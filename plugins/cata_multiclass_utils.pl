@@ -1,32 +1,12 @@
 sub CommonCharacterUpdate {    
     my $client = shift || plugin::val('$client');
     GrantClassesAA();
-}
 
+    plugin::CheckWorldWideBuffs($client);
+    plugin::UpdateCharMaxLevel($client);
+	plugin::ConvertFlags($client);
 
-sub WelcomePopUp {
-    my $color_end = "</c>";
-    my $break = "<br>";
-    my $yellow = plugin::PWColor("Yellow");
-    my $red    = plugin::PWColor("Red");
-    my $green  = plugin::PWColor("Green");
-
-    my $website = plugin::PWHyperLink("https://heroesjourneyeq.com","website");
-    my $discord = plugin::PWHyperLink("https://discord.gg/h4eRaGjc5T","discord");
-
-    my $popup_title = "Welcome to The Heroes' Journey";
-    my $popup_message = 
-        "The Heroes' Journey is a single-box, small-group focused server with a variety of ${yellow}UNIQUE${color_end} mechanics and features. " .
-        "We have worked hard on this project to deliver an experience never seen before, and hope that you enjoy the result! Please visit our $website and $discord for more information!${break}${break}" .
-        "${green}Multiclassing${color_end}: Characters on The Heroes' Journey each have three classes. You chose one during character creation, " .
-        "and you will choose two more now. You will gain the abilities and attributes of each of the chosen classes; " .
-        "Spells, Skills, Equipment, Alternate Advancement abilities, and even more 'hidden' features like AC caps and melee damage bonuses. ${break}${break}" .
-        "${green}Patcher and Client software${color_end}: You ${red}MUST${color_end} use our client on this server. " .
-        "This isn't a simple matter of spell and string files; much of the multiclassing system will not work at all without the custom client modifications we have made. ${break}${break}" .
-        "${green}Permanent Buffs${color_end}: Buff timers do not count down if they were cast by yourself or a group member. This also applies to pets! ${break}${break}" .
-        "${green}Large Bags${color_end}: Bags of greater than 10 slots are available! ${break}${break}";
-
-    quest::popup($popup_title, $popup_message);
+    plugin::set_default_attunement($client->AccountID(), $client->GetRace());
 }
 
 sub GetClassMap {
@@ -70,7 +50,6 @@ sub IsMeleeClass {
     }
     return 0;
 }
-
 
 sub HasMeleeClass {
     my $client   = shift || plugin::val('$client');
@@ -150,8 +129,6 @@ sub CheckUniqueClass {
         return 1;
     }
 }
-
-
 
 sub GetPrettyClassString {
     my $client = shift || plugin::val('$client');  # Ensure $client is available
@@ -248,61 +225,118 @@ sub IsValidToAddClass {
 sub GrantGeneralAA {
     my $client = shift || plugin::val('$client');
 
-    my @general_aa = (
-        1000,  # Bazaar Gate
-        12636, # Eyes Wide Open 1
-        12637, # Eyes Wide Open 2
-        8445,  # Eyes Wide Open 3
-        8446,  # Eyes Wide Open 4
-        8447,  # Eyes Wide Open 5
-        16419, # Eyes Wide Open 6
-        16420, # Eyes Wide Open 7
-        16421, # Eyes Wide Open 8
-        1021,  # Mystical Attuning 1
-        1022,  # Mystical Attuning 2
-        1023,  # Mystical Attuning 3
-        1024,  # Mystical Attuning 4
-        1025   # Mystical Attuning 5
+    my %general_aa = (
+        1000 => 1,  # Bazaar Gate
+        12636 => 8, # Eyes Wide Open
+        1021 => 5,  # Mystical Attuning 
     );
     
-    # Iterate over the AA IDs and increment each one for the client
-    foreach my $aa_id (@general_aa) {
-        $client->IncrementAA($aa_id);
-    }
+    foreach my $aa_id (keys %{$general_aa}) {
+        if ($client->GetAA($aa_id) < $general_aa{$aa_id}) {
+            $client->IncrementAA($aa_id);
+        }
+    } 
 }
 
 sub GrantClassAA {
     my ($client, $PCClass) = @_;
 
-    # Define a hash where each class ID maps to an array of its AAs
+    # Define a hash where each class ID maps to a hash of its AAs and rank counts
     my %class_aa = (
-        1 => [6283, 6607, 4739, 1597], # Warrior
-        2 => [12652, 507, 746], # Cleric
-        3 => [188, 6395], # Paladin
-        4 => [205, 1196, 645, 1345], # Ranger
-        5 => [5085, 13165], # Shadow Knight
-        6 => [548, 14264, 767, 6375], # Druid
-        7 => [1352, 611], # Monk
-        8 => [630, 556, 557, 558, 559, 560, 1110, 225], # Bard
-        9 => [287, 605, 4739], # Rogue
-        10 => [10957, 1327, 8227, 288], # Shaman
-        11 => [767, 6375, 734, 12770, 8227, 288, 1129, 1130], # Necromancer
-        12 => [155, 516, 5295], # Wizard
-        13 => [8201, 734, 8342, 8227, 288, 1129, 1130], # Mage
-        14 => [158, 643, 10551, 580, 581, 582, 734, 8227, 288, 1129, 1130], # Enchanter
-        15 => [6984, 734, 8227, 724, 288], # Beastlord
-        16 => [4739, 258, 6607], # Berserker 
-    );    
-
-    foreach my $aa_id (@{$class_aa{$PCClass}}) {
-        if (!$client->GetAA($aa_id)) {
-            $client->IncrementAA($aa_id);
-        } else {
-            my $name = $client->GetCleanName();
-            quest::debug("$name already has aa_id $aa_id");
+        1 => { # Warrior
+            '6283' => 1, # Infused by Rage
+            '6607' => 1, # Vehement Rage
+            '4739' => 1, # Killing Spree
+            '1597' => 1, # Call of Challenge
+        },
+        2 => { # Cleric
+            '12652' => 1, # Twincast
+            '507' => 1,   # Divine Arbitration
+            '746' => 1,   # Divine Avatar
+        },
+        3 => { # Paladin
+            '188' => 1,  # Divine Stun
+            '6395' => 1, # Blessing of Life
+        },
+        4 => { # Ranger
+            '205' => 1,   # Endless Quiver
+            '1196' => 1,  # Bow Mastery
+            '645' => 1,   # Entrap
+            '1345' => 1,  # Auspice of the Hunter
+        },
+        5 => { # Shadow Knight
+            '5085' => 1,  # Mortal Coil
+            '13165' => 1, # Explosion of Spite
+        },
+        6 => { # Druid
+            '548' => 1,   # Spirit of the Wood
+            '14264' => 1, # Paralytic Spores
+            '767' => 3,   # Critical Affliction (assuming ranks based on script context)
+            '6375' => 1,  # Destructive Cascade
+        },
+        7 => { # Monk
+            '810' => 1,  # Stonewall
+            '1352' => 1, # Crippling Strike
+        },
+        8 => { # Bard
+            '630' => 1,  # Fading Memories
+            '556' => 5,  # Harmonious Attack (all ranks)
+            '1110' => 1, # Dance of Blades
+            '225' => 1,  # Jam Fest
+        },
+        9 => { # Rogue
+            '287' => 1,  # Chaotic Stab
+            '605' => 1,  # Shroud of Stealth
+            '4739' => 1, # Killing Spree
+        },
+        10 => { # Shaman
+            '10957' => 1, # Group Shrink
+            '1327' => 1,  # Ancestral Aid
+            '8227' => 1,  # Summon Companion
+        },
+        11 => { # Necromancer
+            '767' => 1,    # Critical Affliction
+            '6375' => 1,   # Destructive Cascade
+            '734' => 1,    # Pet Affinity
+            '12770' => 1,  # Pestilent Paralysis
+            '8227' => 1,   # Summon Companion
+        },
+        12 => { # Wizard
+            '155' => 1,  # Improved Familiar
+            '516' => 1,  # Harvest of Druzzil
+            '5295' => 1, # Arcane Overkill
+        },
+        13 => { # Mage
+            '8201' => 1, # Companion's Fury
+            '734' => 1,  # Pet Affinity
+            '8342' => 1, # Host in the Shell
+            '8227' => 1, # Summon Companion
+        },
+        14 => { # Enchanter
+            '158' => 1,  # Permanent Illusion
+            '643' => 1,  # Project Illusion
+            '10551' => 1,# Phantasmic Reflex
+            '580' => 3,  # Animation Empathy (all ranks)
+            '734' => 1,  # Pet Affinity
+            '8227' => 1, # Summon Companion
+        },
+        15 => { # Beastlord
+            '11080' => 1, # Chameleon Strike
+            '6984' => 1,  # Bite of the Asp
+            '734' => 1,   # Pet Affinity
+            '8227' => 1,  # Summon Companion
+        },
+        16 => { # Berserker
+            '4739' => 1, # Killing Spree
+            '258' => 1,  # Rampage
         }
-    }
-    
+    );   
+
+    foreach my $aa_id (keys %{$class_aa{$PCClass}}) {
+        if ($client->GetAA($aa_id) < $class_aa{$PCClass}{$aa_id}) {
+            $client->IncrementAA($aa_id);
+        }
+    }   
 }
 
 sub GrantClassesAA {

@@ -45,13 +45,10 @@ sub EVENT_ITEM {
   plugin::return_items(\%itemcount); 
 }
 
-
-#Zone : skyshrine : NPC_ID : 114106 : Lord Yelinak
-
-
-
 sub EVENT_DEATH_COMPLETE {
+    plugin::handle_death($npc, $npc->GetSpawnPointX() || $x, $npc->GetSpawnPointY() || $y, $npc->GetSpawnPointZ() || $z, $entity_list);
+}
 
- quest::spawn(12000079,0,0,$x,$y,($z+10));
-
+sub EVENT_KILLED_MERIT {
+    plugin::handle_killed_merit($npc, $client, $entity_list);
 }

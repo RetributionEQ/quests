@@ -47,7 +47,7 @@ sub check_handin {
 	}
 
 	foreach my $req (keys %required) {
-		if ($required{$req} < $hashref->{$req}) {
+		if ($hashref->{$req} && $required{$req} < $hashref->{$req}) {
 			$hashref->{$req} -= $required{$req};
 		} else {
 			delete $hashref->{$req};
@@ -90,7 +90,7 @@ sub check_handin_fixed {
 	}
 
 	foreach my $req (keys %required) {
-		if ($required{$req} < $hashref->{$req}) {
+		if ($hashref->{$req} && $required{$req} < $hashref->{$req}) {
 			$hashref->{$req} -= $required{$req};
 		} else {
 			delete $hashref->{$req};
