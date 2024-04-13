@@ -35,7 +35,7 @@ sub EVENT_TRADE {
 }
 
 sub EVENT_DEATH_COMPLETE {
-    plugin::handle_death($npc, $npc->GetSpawnPointX() || $x, $npc->GetSpawnPointY() || $y, $npc->GetSpawnPointZ() || $z, $entity_list);
+    plugin::handle_death($npc, $x, $y, $z, $entity_list);
 }
 
 sub EVENT_KILLED_MERIT {

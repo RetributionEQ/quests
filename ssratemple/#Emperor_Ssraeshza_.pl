@@ -29,7 +29,7 @@ sub EVENT_DEATH_COMPLETE {
   quest::spawn2(162210,0,0,770, -289, 403,128); # NPC: A_shissar_wraith
   #quest::signalwith(162260,2,0); #EmpCycle
 
-  plugin::handle_death($npc, $npc->GetSpawnPointX() || $x, $npc->GetSpawnPointY() || $y, $npc->GetSpawnPointZ() || $z, $entity_list);
+  plugin::handle_death($npc, $x, $y, $z, $entity_list);
 }
 
 sub EVENT_KILLED_MERIT {
