@@ -32,7 +32,7 @@
 # items: 12341, 12342, 12343, 12367
 
 sub EVENT_SAY {
-    if(($faction < 4)&&($class eq "Monk")) {
+    if(($faction < 4)&&(plugin::HasClass("Monk"))) {
         if($text=~/Hail/i) {
             quest::say("It is good to finally meet one who respects the disciplines of the Ashen Order.  All I have met are rangers.  They have interfered with my [mission in the woods].");
         }

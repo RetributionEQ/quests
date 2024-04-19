@@ -36,7 +36,7 @@ sub EVENT_CLICKDOOR {
 }
 
 sub EVENT_LOOT {
-  if ($class eq "Magician" && $looted_id == 16807) {
+  if (plugin::HasClass("Magician") && $looted_id == 16807) {
 	if (defined($qglobals{mage_epic_fire1}) && $qglobals{mage_epic_fire1} == 1) {
 	  if (!defined($qglobals{mage_epic_potchest})) {
 			quest::setglobal("mage_epic_potchest", "1", 5, "F"); 

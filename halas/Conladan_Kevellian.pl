@@ -3,7 +3,7 @@
 # items: 12621, 55163, 55156, 55157, 55158, 55159, 55160, 55161, 55162, 20181, 27424, 27409, 27427, 55148
 
 sub EVENT_SAY {
-  if (($text=~/hail/i) && ($class eq "Rogue")) {
+  if (($text=~/hail/i) && (plugin::HasClass("Rogue"))) {
     quest::say("The Order of the White Rose welcomes you, young rogue. Have you come to begin your [training]?");
   }
   if ($text=~/training/i) {

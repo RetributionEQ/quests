@@ -3,7 +3,7 @@ sub EVENT_SAY {
 		quest::say("Greetings, citizen! You should not be in the Militia House. These are restricted grounds. Please leave at once unless you have business here.");
 	}
 	elsif ($text=~/truth is good/i) {
-		if ($class eq "Paladin") {
+		if (plugin::HasClass("Paladin")) {
 			quest::say("Ssshhh!! Pipe down. The others might hear you. You must have something for me. Kalatrina must have given you something if you serve the Hall of Truth. If you have nothing please leave. You will blow my cover.");
 		}
 	}	
@@ -12,7 +12,7 @@ sub EVENT_SAY {
 sub EVENT_ITEM {
 	#:: Turn in for 18817 - Sealed Letter
 	if (plugin::takeItems(18817 => 1)) {
-		if ($class eq "Paladin") {
+		if (plugin::HasClass("Paladin")) {
 			quest::say("This is not good news. I must leave immediately. Here. Take this to Kala.. I mean my father. I found it on the floor of Sir Lucan D'Lere's quarters. Thanks again, messenger. I got this just in time");
 			#:: Give a 18818 - A Tattered Flier
 			quest::summonitem(118818);

@@ -83,13 +83,13 @@ sub LOCK_DOORS {
 }
 
 sub EVENT_ENTERZONE {
-  if ($class eq "Ranger" && plugin::check_hasitem($client, 62637)) {
+  if (plugin::HasClass("Ranger") && plugin::check_hasitem($client, 62637)) {
     quest::unique_spawn(105290, 0, 0, 121, 546, 3, 130); # NPC: Ghost_of_Mera
   }
 }
 
 sub EVENT_LOOT {
-  if ($class eq "Ranger" && $looted_id == 62638) {
+  if (plugin::HasClass("Ranger") && $looted_id == 62638) {
     if (defined($qglobals{ranger_epic15_pre}) && $qglobals{ranger_epic15_pre} == 10) {
       return 0;
     } else {

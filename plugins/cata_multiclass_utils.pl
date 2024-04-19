@@ -88,6 +88,25 @@ sub HasClass {
     return 0;
 }
 
+sub HasClass {
+    my $class = shift;
+    my $client = shift || plugin::val('$client');
+    my %class_map = GetClassMap();  # Get the full class map
+    my $class_bits = $client->GetClassesBitmask();
+
+    # Iterate through each possible class ID
+    foreach my $class_id (keys %class_map) {
+        # Check if the class bit is set in the bitmask and that the class matches the check we're checking
+        if ($class_bits & (1 << ($class_id - 1)) && $class_map{$class_id} == $class) {
+            # Check if the class matches the provided class
+            return 1
+        }
+    }
+
+    # Return 0 if the class isn't in there
+    return 0;
+}
+
 sub AddClass {
     my $class_id = shift;
     my $client = shift || plugin::val('$client');

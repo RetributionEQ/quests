@@ -18,7 +18,7 @@ sub EVENT_SAY {
 	if($text=~/trueshot longbows/i) {
 		quest::say("The Trueshot Longbow was created by my famed father. Eldin Trueshot. It is quite accurate and takes a ranger's skill to wield. We use our new recruits to [gather materials] needed by my father.  We shall soon begin to release the formula to good elves so all may fletch such a bow.");
 	}
-	if(($text=~/gather materials/i) && ($class eq "Ranger")) {
+	if(($text=~/gather materials/i) && (plugin::HasClass("Ranger"))) {
 		if($faction < 4) { #Needs better than indifferent
 			quest::say("Take this pack. Go to Kaladim, find Trantor Everhot and ask for dwarven wire. Then go to Freeport to meet Jyle Windshot. Search the inns for him and ask him for treant wood. Then, collect some spiderling silk from spiderlings and finally, in Steamfont, we have the permission of the gnomes to use any micro servos we find while destroying rogue spiders. Combine them all and return the pack to me.");
 			quest::summonitem(17951); #Material Pack

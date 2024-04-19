@@ -15,15 +15,15 @@ sub EVENT_ITEM {
 	if ($faction == 1) {
 		if (plugin::check_handin(\%itemcount, 69344 => 1)) {
 			quest::say("If I understand this writing correctly, you have delivered. I am pleased, but I still do not trust you. However, in fairness, I shall reward you for your effort. If this reward is unsatisfactory, return it and I will find something more applicable. Now leave my lair before my hate overwhelms me!");
-			if ($class eq "Warrior") { quest::summonitem(69387);
-			} elsif ($class eq "Berserker") { quest::summonitem(69387);
-			} elsif ($class eq "Ranger") { quest::summonitem(69387);
-			} elsif ($class eq "Bard") { quest::summonitem(69387);
-			} elsif ($class eq "Rogue") { quest::summonitem(69387);
-			} elsif ($class eq "Paladin") { quest::summonitem(69387);
-			} elsif ($class eq "Shadowknight") { quest::summonitem(69387);
-			} elsif ($class eq "Monk") { quest::summonitem(69387);
-			} elsif ($class eq "Beastlord") { quest::summonitem(69387);
+			if (plugin::HasClass("Warrior")) { quest::summonitem(69387);
+			} elsif (plugin::HasClass("Berserker")) { quest::summonitem(69387);
+			} elsif (plugin::HasClass("Ranger")) { quest::summonitem(69387);
+			} elsif (plugin::HasClass("Bard")) { quest::summonitem(69387);
+			} elsif (plugin::HasClass("Rogue")) { quest::summonitem(69387);
+			} elsif (plugin::HasClass("Paladin")) { quest::summonitem(69387);
+			} elsif (plugin::HasClass("Shadowknight")) { quest::summonitem(69387);
+			} elsif (plugin::HasClass("Monk")) { quest::summonitem(69387);
+			} elsif (plugin::HasClass("Beastlord")) { quest::summonitem(69387);
 			} else { quest::summonitem(69388);
 			}
 			quest::exp(10000);

@@ -2,7 +2,7 @@ sub EVENT_SAY {
 	if ($text=~/hail/i){
 		quest::say("Good day to you, $name. Are you a shaman of [much experience]?");
 	}
-	if ($class eq "Shaman") {
+	if (plugin::HasClass("Shaman")) {
 		if ($text=~/much experience/i) {
 			quest::say("Then welcome to the tests of the medicine man. I have two tomes, each tells of a shaman of great accomplishment. They are Gina MacStargan and Ooga. Simply tell me the name of the shaman you want to be tested by.");
 		}

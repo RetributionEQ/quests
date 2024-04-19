@@ -2,7 +2,7 @@ sub EVENT_SAY {
 	if ($text=~/hail/i) {
 		quest::say("Greetings, $race. Are you ready to begin?");
 	}
-	if ($class eq "Necromancer") {
+	if (plugin::HasClass("Necromancer")) {
 		if ($text=~/ready to begin/i) {
 			quest::say("Who would you like to be tested by? Jzil or Dugaas?");
 		}

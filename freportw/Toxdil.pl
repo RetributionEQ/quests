@@ -11,7 +11,7 @@ sub EVENT_SAY {
 }
 
 sub EVENT_ITEM {
-	if ($class eq "Rogue") {
+	if (plugin::HasClass("Rogue")) {
 		#:: Match a 12353 - A Sparkling Sapphire
 		if (plugin::takeItems(12353 => 1)) {
 			quest::say("The gem!! I would notice it's sparkle anywhere!! I cannot believe you are handing it back to me!! What a fool. Here you are fool. You can have this worthless key now.");

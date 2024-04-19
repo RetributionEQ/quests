@@ -9,7 +9,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_SAY {
-  if(($text=~/hail/i) && ($class eq "Berserker") && ($ulevel > 45)) {
+  if(($text=~/hail/i) && (plugin::HasClass("Berserker")) && ($ulevel > 45)) {
     if(defined($qglobals{raving}) && ($qglobals{raving} == 1)) {
       quest::say("So soon you ask too much of me!");
     }

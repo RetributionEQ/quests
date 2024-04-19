@@ -5,7 +5,7 @@ sub EVENT_SAY {
 	elsif ($text=~/enchantment/i) {
 		quest::say("I am most honored to be able to help you. Please choose from one of my instructors. Lelulean or Enderbite.");
 	}
-	if ($class eq "Enchanter") {
+	if (plugin::HasClass("Enchanter")) {
 		if ($text=~/lelulean/i) {
 			quest::say("I will summon him for you then");
 			#:: Spawn a The Plane of Sky >> Lelulean (71104), with no grid or guild war, at the specified location

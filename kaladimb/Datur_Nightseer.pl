@@ -6,7 +6,7 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {
-  if (($ulevel == 1) && ($class eq "Paladin")) { 
+  if (($ulevel == 1) && (plugin::HasClass("Paladin"))) { 
 		$client->Message(15,"Datur Nightseer glances your way. 'Ah a new recruit! Welcome, young one! Read the note in your inventory and then hand it to me when you wish to begin your training!'");
   }
 }

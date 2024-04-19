@@ -118,16 +118,16 @@ sub EVENT_ITEM {
     }
   }
   elsif (plugin::check_handin(\%itemcount, 67653 => 1)) {
-	if (($class eq "Bard") || ($class eq "Beastlord") || ($class eq "Paladin") || ($class eq "Ranger") ||  ($class eq "Shadowknight")) {
+	if ((plugin::HasClass("Bard")) || (plugin::HasClass("Beastlord")) || (plugin::HasClass("Paladin")) || (plugin::HasClass("Ranger")) ||  (plugin::HasClass("Shadowknight"))) {
       quest::summonitem(67654); # Item: Green Hued Gemstone
     }
-    elsif (($class eq "Warrior") || ($class eq "Monk") || ($class eq "Berserker")  || ($class eq "Rogue"))  {
+    elsif ((plugin::HasClass("Warrior")) || (plugin::HasClass("Monk")) || (plugin::HasClass("Berserker"))  || (plugin::HasClass("Rogue")))  {
       quest::summonitem(67653); # Item: Green Hued Gemstone
     }
-    elsif (($class eq "Cleric") || ($class eq "Shaman") || ($class eq "Druid")) {
+    elsif ((plugin::HasClass("Cleric")) || (plugin::HasClass("Shaman")) || (plugin::HasClass("Druid"))) {
       quest::summonitem(67655); # Item: Green Hued Gemstone
     }
-    elsif (($class eq "Necromancer") || ($class eq "Wizard") || ($class eq "Enchanter")  || ($class eq "Magician")) {
+    elsif ((plugin::HasClass("Necromancer")) || (plugin::HasClass("Wizard")) || (plugin::HasClass("Enchanter"))  || (plugin::HasClass("Magician"))) {
       quest::summonitem(67656); # Item: Green Hued Gemstone
     }
     else {

@@ -5,7 +5,7 @@ sub EVENT_SAY {
 	if ($text=~/child of the trees/i) {
 		quest::say("Then you are welcome in my presence. I shall call forth some loyal children if you but speak the name. Will or Fenalla will serve you well.");
 	}
-	if ($class eq "Druid") {
+	if (plugin::HasClass("Druid")) {
 		if ($text=~/will/i) {
 			quest::say("I will summon him for you then");
 			#:: Spawn a The Plane of Sky >> Will_Treewalker (71099), without grid or guild war, at the specified location
