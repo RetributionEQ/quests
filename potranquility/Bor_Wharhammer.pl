@@ -29,6 +29,73 @@ sub EVENT_SAY {
   if ($text=~/swatch/i) {
     quest::say("T'make a swatch, ye need t'combine two strands o'ether along with a curing agent in a Tanaan loom. Ye will need t'seek a skilled brew master t'make the curing agent fer ye. Just 'ave them create it by using two celestial essences, soda an' paeala sap");
   }
+
+  # This adds a way of requesting the emblem for a given class for situations where you're not actually the class
+  # that you want to make the armor for.
+  if ($text=~/Warrior/i) {
+    quest::summonitem(16267);#Warrior Emblem
+    quest::summonitem(17184);#Mystical Furnace of Ro
+  }
+  elsif ($text=~/Cleric/i) {
+    quest::summonitem(16271);#Cleric Emblem
+    quest::summonitem(17184);#Mystical Furnace of Ro
+  }
+  elsif ($text=~/Paladin/i) {
+    quest::summonitem(16269);#Paladin Emblem
+    quest::summonitem(17184);#Mystical Furnace of Ro
+  }
+  elsif ($text=~/Ranger/i) {
+    quest::summonitem(16272);#Ranger Emblem
+    quest::summonitem(17184);#Mystical Furnace of Ro
+  }
+  elsif ($text=~/Shadowknight/i) {
+    quest::summonitem(16270);#Shadowknight Emblem
+    quest::summonitem(17184);#Mystical Furnace of Ro
+  }
+  elsif ($text=~/Druid/i) {
+    quest::summonitem(16276);#Druid Emblem
+    quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
+  }
+  elsif ($text=~/Monk/i) {
+    quest::summonitem(16275);#Monk Emblem
+    quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
+  }
+  elsif ($text=~/Bard/i) {
+    quest::summonitem(16268);#Bard Emblem
+    quest::summonitem(17184);#Mystical Furnace of Ro
+  }
+  elsif ($text=~/Rogue/i) {
+    quest::summonitem(16273);#Rogue Emblem
+    quest::summonitem(17184);#Mystical Furnace of Ro
+  }
+  elsif ($text=~/Shaman/i) {
+    quest::summonitem(16274);#Shaman Emblem
+    quest::summonitem(17184);#Mystical Furnace of Ro
+  }
+  elsif ($text=~/Necromancer/i) {
+    quest::summonitem(16278);#Necromancer Emblem
+    quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
+  }
+  elsif ($text=~/Wizard/i) {
+    quest::summonitem(16279);#Wizard Emblem
+    quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
+  }
+  elsif ($text=~/Magician/i) {
+    quest::summonitem(16280);#Magician Emblem
+    quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
+  }
+  elsif ($text=~/Enchanter/i) {
+    quest::summonitem(16281);#Enchanter Emblem
+    quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
+  }
+  elsif ($text=~/Beastlord/i) {
+    quest::summonitem(16277);#Beastlord Emblem
+    quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
+  }
+  elsif ($text=~/Berserker/i) {
+    quest::summonitem(32000);#Berserker Emblem
+    quest::summonitem(17184);#Mystical Furnace of Ro
+  }
 }
 
 sub EVENT_ITEM {
