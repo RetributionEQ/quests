@@ -79,7 +79,7 @@ sub AddDefaultAttunement {
 }
 
 sub GetContinents {
-    return \@categories;
+    return @categories;
 }
 
 sub CheckSpawnWaypoints {

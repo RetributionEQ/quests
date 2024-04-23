@@ -44,11 +44,11 @@ sub EVENT_SAY {
       quest::say("Very good! Tell me about this place that you remember. This transportation will cost " . get_cost_for_level() . " platinum pieces.");
       $client->Message(257, " ------- Select a Continent ------- ");
 
-      my $continents = plugin::GetContinents();
-      my $mode_indicator = $text =~ /group/i ? ":group" : "";
-      $client->Message(257, "-[ " . quest::saylink($continent . $mode_indicator, 1, $continent));
-          
-      
+      my @categories = plugin::GetContinents();
+      while (my ($index, $continent) = each @categories) {
+        my $mode_indicator = $text =~ /group/i ? ":group" : "";
+        $client->Message(257, "-[ " . quest::saylink($continent . $mode_indicator, 1, $continent));
+      }
   }  
 }
 
