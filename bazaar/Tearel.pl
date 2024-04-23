@@ -65,7 +65,7 @@ sub EVENT_SAY {
 
     if (keys %waypoints) {
       foreach my $wp_id (keys %waypoints) {
-        my @waypoint = @waypoints{$wp_id};
+        my @waypoint = @{$waypoints{$wp_id}};
         $client->Message(257, $waypoint[0] . " " . $waypoint[1] . " " . $waypoint[2] . " " . $waypoint[3] . " " .  $waypoint[4] . " " . $waypoint[5]);
       }
     }
