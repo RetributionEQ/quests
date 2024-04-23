@@ -1,20 +1,3 @@
-my %suffix_to_pretty_name = (
-    'A' => 'Antonica',
-    'G' => 'Gunthak',
-    'O' => 'Odus',
-    'F' => 'Faydwer',
-    'K' => 'Kunark',
-    'V' => 'Velious',
-    'L' => 'Luclin',
-    'P' => 'Planes',
-    'T' => 'Taelosia',
-    'D' => 'Discord',
-);
-
-sub get_suffixes {
-    return ('A', 'G', 'O', 'F', 'K', 'V', 'L', 'P', 'T', 'D'); 
-}
-
 sub get_portal_destinations {
     return {
         10092   => ['The Plane of Hate', 666, 186, -393, 656, 3],
@@ -38,6 +21,30 @@ sub get_portal_destinations {
         976010  => ['Everfrost', 11130, 30, 590, -791, -54],
     };
 }
+
+my @categories = [
+    'Antonica',  # 0 
+    'Faydwer',   # 1 
+    'Odus',      # 2 
+    'Kunark',    # 3 
+    'Velious',   # 4 
+    'Luclin',    # 5 
+    'The Planes',# 6 
+    'Taelosia',  # 7 
+    'Discord'    # 8 
+];
+
+
+my %waypoints = {
+    #  "Pretty Name" => [continent_id, zone_id, x, y, z, h, unique_id]
+    "North Qeynos"              => [0, 2,   392,     165,     4, 310, 0],
+    "Surefall Glade"            => [0, 3,   -66,      45,     4, 200, 1],
+    "West Freeport"             => [0, 9,  -396,    -283,   -23, 500, 2],
+    "Western Plains of Karana"  => [0, 12, -14816, -3570,    36, 400, 3],
+    "Northern Plains of Karana" => [0, 13,   1258, -3726, -7.75, 450, 4],
+    
+};
+
 
 sub set_default_attunement {
     my ($accountID, $raceID) = @_;     
