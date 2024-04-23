@@ -58,15 +58,14 @@ sub EVENT_SAY {
 
   elsif ($text =~ /select-continent-(\d+)-(group|single)/) {
     my $continent_id = $1;  # This captures the numerical ID.
-    my $mode = ($2 eq 'group' && $group_flg) ? 1 : 0;
+    my $mode = $2;
     my %waypoints = plugin::GetWaypoints($continent_id, $client);
 
     $client->Message(257, " ------- Select a Location ------- ");
 
     if (keys %waypoints) {
       foreach my $wp_id (keys %waypoints) {
-        my @waypoint = @{$waypoints{$wp_id}};
-        $client->Message(257, $waypoint[0] . " " . $waypoint[1] . " " . $waypoint[2] . " " . $waypoint[3] . " " .  $waypoint[4] . " " . $waypoint[5]);
+        $client->Message(257, "-[ " . quest::saylink("teleport-$wp_id-$2"));
       }
     }
   }
