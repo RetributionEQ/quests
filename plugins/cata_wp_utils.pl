@@ -60,6 +60,8 @@ my %waypoints = (
     'umbral'       => ["The Umbral Plains", 5, 1840, -640, 24, 0],
     'hateplaneb'   => ["The Plane of Hate", 6, -400, 680, 4, 330], 
     'airplane'     => ["The Plane of Sky", 6, 700, 1560, -680, 300],
+    'fearplane'    => ["The Plane of Fear", 6, 1065, -1305, 3, 500],
+    'poknowledge'  => ["The Plane of Knowledge", 6, -215, 50, -160, 128],
 
 );
 
