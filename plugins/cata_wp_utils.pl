@@ -28,8 +28,7 @@ my %waypoints = (
     'hole'       => ["The Ruins of Old Paineel", 2, -543, 287, -140, 125],
     'neriakb'    => ["Neriak Commons", 0, -493, 3, -10, 128],
     'feerrott'   => ["The Feerrott", 0, -1830, 430, 18, 33],
-    'cazicthule' => ["Accursed Temple of Cazic-Thule", 0, -466, 255, 20, 400],
-    'timorous'   => ["Timorous Deep (The Firepots)", 3, 4366, -12270, -279, 0],
+    'cazicthule' => ["Accursed Temple of Cazic-Thule", 0, -466, 255, 20, 400],    
     'oggok'      => ["Oggok", 0, 513, 465, 3.75, 205],
     'grobb'      => ["Grobb", 0, -200, 223, 3.75, 414],
     'gfaydark'   => ["Greater Faydark (Druid Ring)", 1, -385, 458, 0, 0],
@@ -58,23 +57,19 @@ my %waypoints = (
     'sharvahl'   => ["The City of Shar Vahl", 5, 250, 55, -188, 400]
 );
 
+my %waypoints2 = {
+    'timorous'   => ["Timorous Deep (The Firepots)", 3, 4366, -12270, -279, 0],
+}
+
 sub CheckSpawnWaypoints {
     my $entity_list = plugin::val('$entity_list');
     my $zonesn      = plugin::val('$zonesn');
-    quest::debug("CheckSpawnWaypoints for $zonesn");
 
-    # Check if there's a waypoint for the given zone short name
     if (exists $waypoints{$zonesn}) {
         my @waypoint = @{$waypoints{$zonesn}};
-        quest::debug("Checking waypoint in zone $zonesn at $waypoint[0]");
-
-        # Spawn the NPC only if it's not already spawned at this location
         if (!$entity_list->IsMobSpawnedByNpcTypeID(26999)) {
             my $npc = quest::spawn2(26999, 0, 0, $waypoint[2], $waypoint[3], $waypoint[4], $waypoint[5]);
-            quest::debug("Spawning NPC 26999 at $waypoint[0]");
         }
-    } else {
-        quest::debug("No waypoints defined for zone $zonesn");
     }
 }
 
