@@ -100,6 +100,7 @@ sub AddWaypoint {
         quest::debug("Attempted to add a waypoint to a nonspecified client.");
     }
 
+    quest::debug("WTF?, part deux $return_feedback");
     return $return_feedback;
 }
 
