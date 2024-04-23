@@ -64,8 +64,9 @@ sub EVENT_SAY {
     $client->Message(257, " ------- Select a Location ------- ");
 
     if (keys %waypoints) {
-    foreach my $wp_id (keys %waypoints) {
-      $client->Message(257, $waypoints{$wp_id}[0]);
+      foreach my $wp_id (keys %waypoints) {
+        $client->Message(257, $waypoints{$wp_id}[0]);
+      }
     }
   }
 }
