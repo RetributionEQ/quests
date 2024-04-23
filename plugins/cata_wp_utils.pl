@@ -66,7 +66,7 @@ my %waypoints = (
     'gunthak'       => ["The Gulf of Gunthak", 0, -410, 1402, 3, 0],
     'natimbi'       => ["Natimbi, the Broken Shores", 7, -310, 125, 520, 70],
     'barindu'       => ["Barindu, Hanging Gardens", 7, 210, -515, -117, 510],
-    'kodtaz'        => ["Kod`Taz, Broken Trial Grounds", 7, 1536, -2422, -348, 5],
+    'kodtaz'        => ["Kod`Taz, Broken Trial Grounds", 7, 1536, -2422, -348, 4],
 
 
 );
