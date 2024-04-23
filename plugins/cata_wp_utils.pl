@@ -61,12 +61,22 @@ my %waypoints = (
 
 sub CheckSpawnWaypoints {
     my $entity_list = plugin::val('$entity_list');
-    quest::debug("CheckSpawnWaypoints");
+    my $zonesn      = plugin::val('$zonesn');
+    quest::debug("CheckSpawnWaypoints for $zonesn");
+
     foreach my $location_name (keys %waypoints) {
-        quest::debug("Checking $location_name");
-        my @waypoint = @{$waypoints{$location_name}};                
-        if (!$entity_list->IsMobSpawnedByNpcTypeID(26999)) {
-            my $npc = quest::spawn2(26999, 0, 0, $waypoint[2], $waypoint[3], $waypoint[4], $waypoint[5]);
+        my @waypoint = @{$waypoints{$location_name}};
+        quest::debug("Checking $location_name in zone $waypoint[1]");
+
+        # Check if the current zone short name matches the one in waypoints
+        if ($waypoint[1] eq $zonesn) {
+            # Spawn the NPC only if it's not already spawned in this location
+            if (!$entity_list->IsMobSpawnedByNpcTypeID(26999)) {
+                my $npc = quest::spawn2(26999, 0, 0, $waypoint[2], $waypoint[3], $waypoint[4], $waypoint[5]);
+                quest::debug("Spawning NPC 26999 at $location_name");
+            } else {
+                quest::debug("NPC 26999 is already spawned at $location_name");
+            }
         }
     }
 }
