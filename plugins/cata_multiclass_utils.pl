@@ -6,6 +6,7 @@ sub CommonCharacterUpdate {
     plugin::CheckWorldWideBuffs($client);
     plugin::UpdateCharMaxLevel($client);
 	plugin::ConvertFlags($client);
+    plugin::AddDefaultAttunement($client);
 }
 
 sub GetClassMap {

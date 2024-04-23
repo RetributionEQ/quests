@@ -11,51 +11,72 @@ my @categories = [
 ];
 
 my %waypoints = (
-    'qeynos2'    => ["North Qeynos", 0, 392, 165, 4, 310],
-    'qrg'        => ["Surefall Glade", 0, -66, 45, 4, 200],
-    'freportw'   => ["West Freeport", 0, -396, -283, -23, 500],
-    'rivervale'  => ["Rivervale", 0, -140, -10, 4, 220],
-    'qey2hh1'    => ["Western Plains of Karana (Combine Spires)", 0, -14816, -3570, 36, 400],
-    'northkarana'=> ["Northern Plains of Karana (Gypsy Camp)", 0, -175, -688, -7.5, 10],
-    'southkarana'=> ["Southern Plains of Karana (Aviak Village)", 0, 1027, -6689, 0, 260],
-    'eastkarana' => ["Eastern Plains of Karana (Druid Ring)", 0, 423, 1333, 1, 210],
-    'blackburrow' => ["Blackburrow", 0, -7, 38, 3, 300],
-    'commons'    => ["West Commonlands (Roadside Inn)", 0, 503, -127, -51, 128],
-    'erudnext'   => ["Erudin", 2, -240, -1216, 52, 510],
-    'lavastorm'  => ["Lavastorm Mountains (Druid Ring)", 0, 1318, 918, 119, 270],
-    'halas'      => ["Halas", 0, 0, 26, 3.75, 256],
-    'oasis'      => ["Oasis of Marr", 0, 110, 532, 6, 225],
-    'hole'       => ["The Ruins of Old Paineel", 2, -543, 287, -140, 125],
-    'neriakb'    => ["Neriak Commons", 0, -493, 3, -10, 128],
-    'feerrott'   => ["The Feerrott", 0, -1830, 430, 18, 33],
-    'cazicthule' => ["Accursed Temple of Cazic-Thule", 0, -466, 255, 20, 400],    
-    'oggok'      => ["Oggok", 0, 513, 465, 3.75, 205],
-    'grobb'      => ["Grobb", 0, -200, 223, 3.75, 414],
-    'gfaydark'   => ["Greater Faydark (Druid Ring)", 1, -385, 458, 0, 0],
-    'akanon'     => ["Ak'anon", 1, -761, 1279, -24.25, 182.25],
-    'mistmoore'  => ["Castle of Mistmoore", 1, 122, -294, -179, 135],
-    'kaladima'   => ["Southern Kaladim", 1, 197, 90, 3.75, 492],
-    'felwithea'  => ["Northern Felwithe", 1, -626, 240, -10.25, 330],
-    'oot'        => ["The Ocean of Tears", 0, -9172, 394, 6, 188],
-    'cauldron'   => ["Dagnor's Cauldron (Near Unrest)", 1, -700, -1790, 100, 11],
-    'paineel'    => ["Paineel", 2, 553, 746, -118, 0],
-    'fieldofbone'=> ["The Field of Bone", 3, 1617, -1684, -55, 0],
-    'firiona'    => ["Firiona Vie", 3, 1825, -2397, -98, 423],
+    'qeynos2'      => ["North Qeynos", 0, 392, 165, 4, 310],
+    'qrg'          => ["Surefall Glade", 0, -66, 45, 4, 200],
+    'freportw'     => ["West Freeport", 0, -396, -283, -23, 500],
+    'rivervale'    => ["Rivervale", 0, -140, -10, 4, 220],
+    'qey2hh1'      => ["Western Plains of Karana (Combine Spires)", 0, -14816, -3570, 36, 400],
+    'northkarana'  => ["Northern Plains of Karana (Gypsy Camp)", 0, -175, -688, -7.5, 10],
+    'southkarana'  => ["Southern Plains of Karana (Aviak Village)", 0, 1027, -6689, 0, 260],
+    'eastkarana'   => ["Eastern Plains of Karana (Druid Ring)", 0, 423, 1333, 1, 210],
+    'blackburrow'  => ["Blackburrow", 0, -7, 38, 3, 300],
+    'commons'      => ["West Commonlands (Roadside Inn)", 0, 503, -127, -51, 128],
+    'erudnext'     => ["Erudin", 2, -240, -1216, 52, 510],
+    'lavastorm'    => ["Lavastorm Mountains (Druid Ring)", 0, 1318, 918, 119, 270],
+    'halas'        => ["Halas", 0, 0, 26, 3.75, 256],
+    'oasis'        => ["Oasis of Marr", 0, 110, 532, 6, 225],
+    'hole'         => ["The Ruins of Old Paineel", 2, -543, 287, -140, 125],
+    'neriakb'      => ["Neriak Commons", 0, -493, 3, -10, 128],
+    'feerrott'     => ["The Feerrott", 0, -1830, 430, 18, 33],
+    'cazicthule'   => ["Accursed Temple of Cazic-Thule", 0, -466, 255, 20, 400],    
+    'oggok'        => ["Oggok", 0, 513, 465, 3.75, 205],
+    'grobb'        => ["Grobb", 0, -200, 223, 3.75, 414],
+    'gfaydark'     => ["Greater Faydark (Druid Ring)", 1, -385, 458, 0, 0],
+    'akanon'       => ["Ak'anon", 1, -761, 1279, -24.25, 182.25],
+    'mistmoore'    => ["Castle of Mistmoore", 1, 122, -294, -179, 135],
+    'kaladima'     => ["Southern Kaladim", 1, 197, 90, 3.75, 492],
+    'felwithea'    => ["Northern Felwithe", 1, -626, 240, -10.25, 330],
+    'oot'          => ["The Ocean of Tears", 0, -9172, 394, 6, 188],
+    'cauldron'     => ["Dagnor's Cauldron (Near Unrest)", 1, -700, -1790, 100, 11],
+    'paineel'      => ["Paineel", 2, 553, 746, -118, 0],
+    'fieldofbone'  => ["The Field of Bone", 3, 1617, -1684, -55, 0],
+    'firiona'      => ["Firiona Vie", 3, 1825, -2397, -98, 423],
     'lakeofillomen'=> ["Lake of Ill Omen", 3, -1070, 985, 78, 145],
-    'dreadlands' => ["The Dreadlands", 3, 9633, 3005, 1049, 0],
-    'karnor'     => ["Karnor's Castle", 3, 160, 251, 3.75, 310],
-    'cityofmist' => ["The City of Mist", 3, -784, 0, 3, 115],
-    'skyfire'    => ["The Skyfire Mountains", 3, 780, -3100, -158, 0],
-    'overthere'  => ["The Overthere", 3, 1480, -2757, 11, 500],
-    'trakanon'   => ["Trakanon's Teeth", 3, -4720, -1620, -473, 320],
-    'cabeast'    => ["Eastern Cabilis", 3, -136, 969, 4.68, 271],
-    'iceclad'    => ["The Iceclad Ocean (Tower of Frozen Shadow)", 4, 3127, 1300, 111, 500],
-    'eastwastes' => ["Eastern Wastes (Crystal Caverns)", 4, 464, -4037, 144, 178],
-    'cobaltscar' => ["Cobalt Scar", 4, -1633, -1064, 296, 115],
-    'wakening'   => ["The Wakening Land", 4, 4552, 1455, -60, 130],
-    'westwastes' => ["The Western Wastes (Temple of Veeshan)", 4, 808, 1323, -196, 373],
-    'sharvahl'   => ["The City of Shar Vahl", 5, 250, 55, -188, 400]
+    'dreadlands'   => ["The Dreadlands", 3, 9633, 3005, 1049, 0],
+    'karnor'       => ["Karnor's Castle", 3, 160, 251, 3.75, 310],
+    'cityofmist'   => ["The City of Mist", 3, -784, 0, 3, 115],
+    'skyfire'      => ["The Skyfire Mountains", 3, 780, -3100, -158, 0],
+    'overthere'    => ["The Overthere", 3, 1480, -2757, 11, 500],
+    'trakanon'     => ["Trakanon's Teeth", 3, -4720, -1620, -473, 320],
+    'cabeast'      => ["Eastern Cabilis", 3, -136, 969, 4.68, 271],
+    'iceclad'      => ["The Iceclad Ocean (Tower of Frozen Shadow)", 4, 3127, 1300, 111, 500],
+    'eastwastes'   => ["Eastern Wastes (Crystal Caverns)", 4, 464, -4037, 144, 178],
+    'cobaltscar'   => ["Cobalt Scar", 4, -1633, -1064, 296, 115],
+    'wakening'     => ["The Wakening Land", 4, 4552, 1455, -60, 130],
+    'westwastes'   => ["The Western Wastes (Temple of Veeshan)", 4, 808, 1323, -196, 373],
+    'sharvahl'     => ["The City of Shar Vahl", 5, 250, 55, -188, 400]
 );
+
+sub AddDefaultAttunement {
+    my $client = shift || plugin::val('$client');
+    if ($client && !($client->IsSeasonal() || $client->IsHardcore())) {
+        AddWaypoint('qeynos2');
+        AddWaypoint('freportw');
+        AddWaypoint('rivervale');
+        AddWaypoint('erudnext');
+        AddWaypoint('halas');
+        AddWaypoint('neriakb');
+        AddWaypoint('oggok');
+        AddWaypoint('grobb');
+        AddWaypoint('gfaydark');
+        AddWaypoint('felwithea');
+        AddWaypoint('akanon');
+        AddWaypoint('kaladima');
+        AddWaypoint('cabeast');
+        AddWaypoint('sharvahl');
+        AddWaypoint('paineel');
+    }
+}
 
 sub CheckSpawnWaypoints {
     my $entity_list = plugin::val('$entity_list');
@@ -125,20 +146,6 @@ sub GetWaypoints {
         return undef;
     }
     return \%return;
-}
-
-sub AddDefaultAttunement {
-    my $client = shift || plugin::val('$client');
-    if ($client) {
-        my $bind_zone = quest::GetZoneShortName($client->GetBindZoneID());
-
-        if (!$bind_zone || $bind_zone eq 'poknowledge' || $bind_zone eq 'tutorialb' || !plugin::is_eligible_for_zone($client, $bind_zone)) {
-            AddWaypoint($client, 'freportw');
-            AddWaypoint($client, 'gfaydark');
-        }
-
-        AddWaypoint($client, $bind_zone);
-    }
 }
 
 sub get_portal_destinations {
