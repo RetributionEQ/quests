@@ -67,9 +67,10 @@ sub spawn_waypoints {
         my @waypoint = @{$spawntest{$location_name}};
 
         # Check if a specific NPC is spawned; using NPC type ID 37999 as an example
-        if ($entity_list->IsMobSpawnedByNpcTypeID(37999)) {
+        if ($entity_list->IsMobSpawnedByNpcTypeID(32040)) {
             # Spawn the NPC at the coordinates provided by the waypoint
-            my $npc = quest::spawn2(37999, 0, 0, $waypoint[2], $waypoint[3], $waypoint[4], $waypoint[5]);
+            quest::debug("TRYING TO SPAWN THE MOB! $waypoint[2], $waypoint[3], $waypoint[4], $waypoint[5]");
+            my $npc = quest::spawn2(32040, 0, 0, $waypoint[2], $waypoint[3], $waypoint[4], $waypoint[5]);
         }
     }
 }
