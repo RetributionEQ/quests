@@ -5,7 +5,7 @@ sub EVENT_SIGNAL {
 
 sub EVENT_ENTERZONE { 
 	plugin::CommonCharacterUpdate($client);
-    plugin::spawn_waypoints($entity_list);
+    plugin::CheckSpawnWaypoints($entity_list);
 	if (!plugin::is_eligible_for_zone($client, $zonesn)) {
 		$client->Message(4, "Your vision blurs. You lose conciousness and wake up in a familiar place.");
 		$client->MovePC(151, 185, -835, 4, 390); # Bazaar Safe Location.
@@ -14,7 +14,7 @@ sub EVENT_ENTERZONE {
 
 sub EVENT_CONNECT {
     plugin::CommonCharacterUpdate($client);
-    plugin::spawn_waypoints($entity_list);
+    plugin::CheckSpawnWaypoints($entity_list);
     if (!$client->GetBucket("First-Login")) {
         $client->SetBucket("First-Login", 1);
 		$client->SummonItem(18471); #A Faded Writ
