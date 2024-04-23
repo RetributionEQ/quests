@@ -1,4 +1,4 @@
-my @categories = [
+my @categories = (
     'Antonica',  # 0 
     'Faydwer',   # 1 
     'Odus',      # 2 
@@ -8,7 +8,7 @@ my @categories = [
     'The Planes',# 6 
     'Taelosia',  # 7 
     'Discord'    # 8 
-];
+);
 
 my %waypoints = (
     'qeynos2'      => ["North Qeynos", 0, 392, 165, 4, 310],
@@ -79,7 +79,7 @@ sub AddDefaultAttunement {
 }
 
 sub GetContinents {
-    return \@categories;
+    return @categories;
 }
 
 sub CheckSpawnWaypoints {
