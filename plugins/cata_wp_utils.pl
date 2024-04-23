@@ -129,6 +129,7 @@ sub AddWaypoint {
 
 
 sub GetWaypoints {
+    my $continent = shift || -1;  # Defaults to -1 if no argument is given
     my $client = shift || plugin::val('$client');
     my %data;
     my %return;
@@ -141,7 +142,7 @@ sub GetWaypoints {
         }
 
         foreach my $key (keys %waypoints) {
-            if (exists $data{$key}) {
+            if (exists $data{$key} && ($continent == -1 || $waypoints{$key}{continent_id} == $continent)) {
                 $return{$key} = $waypoints{$key};
             }
         }          

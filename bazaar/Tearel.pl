@@ -42,14 +42,26 @@ sub EVENT_SAY {
 
   elsif ($text =~ /transport you/i || ($text =~ /your group/i && $group_flg)) {
       quest::say("Very good! Tell me about this place that you remember. This transportation will cost " . get_cost_for_level() . " platinum pieces.");
-      $client->Message(257, " ------- Select a Continent ------- ");
+      $client->Message(257, " ------- Select a Continent ------- ");   
 
+      # Get the list of all continents
       my @categories = plugin::GetContinents();
+
+      # Display only those continents which have waypoints
       while (my ($index, $continent) = each @categories) {
-        my $mode_indicator = $text =~ /group/i ? "group" : "single";
-        $client->Message(257, "-[ " . quest::saylink("select-continent-$index-$mode_indicator", 0, $continent));        
+          if (plugin::GetWaypoints($index, $client)) {  
+              my $mode_indicator = $text =~ /group/i ? "group" : "single";
+              $client->Message(257, "-[ " . quest::saylink("select-continent-$index-$mode_indicator", 1, $continent));
+          }
       }
-  }  
+  }
+
+  elsif ($text =~ /"select-continent-(\d+)-(group|solo)"/) {
+    my $continent_id = $1;  # This captures the numerical ID.
+    my $mode = ($2 eq 'group' && $group_flg) ? 1 : 0;
+
+
+  }
 }
 
 sub EVENT_ITEM {
