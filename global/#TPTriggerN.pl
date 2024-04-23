@@ -12,6 +12,7 @@ sub EVENT_ENTER {
     my $client = plugin::val('$client');
 
     if (plugin::AddWaypoint($zonesn, $client)) {
+        quest::debug("WTF, part 2!");
         $client->Message(16, "This place seems familiar. You are sure to remember it later.");
     } else {
         
