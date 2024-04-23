@@ -61,6 +61,7 @@ my %waypoints = (
 
 sub CheckSpawnWaypoints {
     my $entity_list = plugin::val('$entity_list');
+    quest::debug("CheckSpawnWaypoints");
     foreach my $location_name (keys %waypoints) {
         my @waypoint = @{$waypoints{$location_name}};
         quest::debug("Checking $location_name");        
