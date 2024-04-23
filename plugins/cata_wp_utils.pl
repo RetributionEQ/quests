@@ -142,7 +142,7 @@ sub GetWaypoints {
         }
 
         foreach my $key (keys %waypoints) {
-            if (exists $data{$key} && ($continent == -1 || $waypoints{$key}{continent_id} == $continent)) {
+            if (exists $data{$key} && ($continent == -1 || $waypoints{$key}[1] == $continent)) {
                 $return{$key} = $waypoints{$key};
             }
         }          
