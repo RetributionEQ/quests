@@ -81,11 +81,28 @@ sub EVENT_SAY {
       my $destination = $waypoints{$wp_id};
 
       if ($2 eq 'group') {
-        
-      } else {
-        quest::debug(quest::GetZoneID($wp_id));
-        $client->MovePC(quest::GetZoneID($wp_id), $destination->[2], $destination->[3], $destination->[4], $destination->[5]);
-      }
+        my $raid = $client->GetRaid();
+        my $group = $client->GetGroup();
+
+        if ($raid) {
+          for($count = 0; $count < 72; $count++) {
+            my $cur = $raid->GetMember($count);
+            if($cur && $cur->IsClient()) {
+              $cur->MovePC(quest::GetZoneID($wp_id), $destination->[2], $destination->[3], $destination->[4], $destination->[5]);
+            }            
+          }
+        }
+
+        if ($group) {
+          for ($i = 0; $i < $client->GetGroup(); $i++) {
+            $member = $client_group->GetMember($i);
+            if ($member && $member->IsClient()) {
+              $member->MovePC(quest::GetZoneID($wp_id), $destination->[2], $destination->[3], $destination->[4], $destination->[5]);
+            }
+          }
+        }
+      } 
+      $client->MovePC(quest::GetZoneID($wp_id), $destination->[2], $destination->[3], $destination->[4], $destination->[5]);
     }
   }
 }
