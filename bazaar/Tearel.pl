@@ -47,7 +47,7 @@ sub EVENT_SAY {
       my @categories = plugin::GetContinents();
       while (my ($index, $continent) = each @categories) {
         my $mode_indicator = $text =~ /group/i ? "group" : "single";
-        $client->Message(257, "-[ " . quest::saylink("select_continent_$index_$mode_indicator", 0, $continent));        
+        $client->Message(257, "-[ " . quest::saylink("select-continent-$index-$mode_indicator", 0, $continent));        
       }
   }  
 }
