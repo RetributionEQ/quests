@@ -104,7 +104,7 @@ sub EVENT_SAY {
       } 
       $client->MovePC(quest::GetZoneID($wp_id), $destination->[2], $destination->[3], $destination->[4], $destination->[5]);
     } else {
-      
+      quest::say("I'm sorry, but you don't have enough platinum to pay for this transport.");
     }
   }
 }
