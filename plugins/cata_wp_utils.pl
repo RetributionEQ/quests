@@ -55,16 +55,16 @@ my %waypoints = (
     "Eastern Wastes (Crystal Caverns)" => [4, 'eastwastes', 464, -4037, 144, 178], 
     "Cobalt Scar" => [4, 'cobaltscar', -1633, -1064, 296, 115],
     "The Wakening Land" => [4, 'wakening', 4552, 1455, -60, 130],
-"The Western Wastes (Temple of Veeshan)" => [4, 'westwastes', 808, 1323, -196, 373],
-"The City of Shar Vahl" => [5, 'sharvahl', 250, 55, -188, 400]
+    "The Western Wastes (Temple of Veeshan)" => [4, 'westwastes', 808, 1323, -196, 373],
+    "The City of Shar Vahl" => [5, 'sharvahl', 250, 55, -188, 400],
 );
 
 sub CheckSpawnWaypoints {
     my $entity_list = plugin::val('$entity_list');
     quest::debug("CheckSpawnWaypoints");
     foreach my $location_name (keys %waypoints) {
-        my @waypoint = @{$waypoints{$location_name}};
-        quest::debug("Checking $location_name");        
+        quest::debug("Checking $location_name");
+        my @waypoint = @{$waypoints{$location_name}};                
         if (!$entity_list->IsMobSpawnedByNpcTypeID(26999)) {
             my $npc = quest::spawn2(26999, 0, 0, $waypoint[2], $waypoint[3], $waypoint[4], $waypoint[5]);
         }
