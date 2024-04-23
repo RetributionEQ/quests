@@ -54,7 +54,13 @@ my %waypoints = (
     'cobaltscar'   => ["Cobalt Scar", 4, -1633, -1064, 296, 115],
     'wakening'     => ["The Wakening Land", 4, 4552, 1455, -60, 130],
     'westwastes'   => ["The Western Wastes (Temple of Veeshan)", 4, 808, 1323, -196, 373],
-    'sharvahl'     => ["The City of Shar Vahl", 5, 250, 55, -188, 400]
+    'sharvahl'     => ["The City of Shar Vahl", 5, 250, 55, -188, 400],
+    'ssratemple'   => ["Ssraeshza Temple", 5, -6.5, 0, 4, 0],
+    'dawnshroud'   => ["The Dawnshroud Peaks", 5, -1260, -280, 97, 500],
+    'umbral'       => ["The Umbral Plains", 5, 1840, -640, 24, 0],
+    'hateplaneb'   => ["The Plane of Hate", 6, -400, 680, 4, 330], 
+    'airplane'     => ["The Plane of Sky", 6, 700, 1560, -680, 300],
+
 );
 
 sub AddDefaultAttunement {
