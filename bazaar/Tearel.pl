@@ -45,86 +45,11 @@ sub EVENT_SAY {
       $client->Message(257, " ------- Select a Continent ------- ");
 
       my $continents = plugin::GetContinents();
-      my %continent_has_waypoints;
-
-      # Determine which continents have waypoints
-      foreach my $zone (keys %waypoints) {
-          my $continent_id = $waypoints{$zone}[1]; # Get the continent ID from waypoints
-          if (defined $continent_id && $continent_id < @$continents) {
-              $continent_has_waypoints{$continents->[$continent_id]} = 1;
-          }
-      }
-
-      # Display only those continents that have waypoints
-      foreach my $continent (@$continents) {
-          if ($continent_has_waypoints{$continent}) {
-              my $mode_indicator = $text =~ /group/i ? ":group" : "";
-              $client->Message(257, "-[ " . quest::saylink($continent . $mode_indicator, 1, $continent));
-          }
-      }
-  }
-
-  elsif ($text =~ /^(.+?)(:group)?$/) { # Capture the location and optional group indicator
-    my $location = $1; # This captures the actual location name
-    my $is_group_transport = defined $2; # True if it's a group transport
-
-    if (!$is_group_transport || $group_flg) {
-      if ($text =~ /^($continent_regex)(:group)?$/i) {
-        my $continent = ucfirst(lc($1));
-        my $suffix = plugin::get_suffix_by_continent($continent);
-        my $continent_data = $zone_data->{$suffix};
+      my $mode_indicator = $text =~ /group/i ? ":group" : "";
+      $client->Message(257, "-[ " . quest::saylink($continent . $mode_indicator, 1, $continent));
+          
       
-        # Check if we're in the stage of selecting a location
-        if ($continent_data && ref($continent_data) eq 'HASH') {
-            $client->Message(257, " ------- Select a Location ------- ");
-            foreach my $key (keys %{$continent_data}) {
-                my $mode_indicator = $is_group_transport ? ":group" : "";
-                $client->Message(257, "-[ " . quest::saylink($key . $mode_indicator, 1, $key));
-            }
-        }
-      }
-      
-      # Execute transport when a specific location is selected
-      if (exists($flat_data->{$location})) {
-        my $zone_id = quest::GetZoneID($flat_data->{$location}[0]);
-        my $x = $flat_data->{$location}[1];
-        my $y = $flat_data->{$location}[2];
-        my $z = $flat_data->{$location}[3];
-        my $heading = $flat_data->{$location}[4];  
-
-        if ($client->TakeMoneyFromPP($cost, 1)) { 
-
-          if ($is_group_transport) {
-            my $raid = $client->GetRaid();
-            if($raid) {
-              for($count = 0; $count < $raid->RaidCount(); $count++) {
-                my $player = $raid->GetMember($count);
-                if($player) {
-                  if($player->IsClient() && $client->CharacterID() != $player->CharacterID()) {
-                    $player->CastToClient()->MovePC($zone_id, $x, $y, $z, $heading);
-                  }
-                }
-              }
-            }
-
-            my $group = $client->GetGroup();
-            if ($group) {
-              for (my $count = 0; $count < $group->GroupCount(); $count++) {
-                  my $player = $group->GetMember($count);
-                  if ($player && $client->CharacterID() != $player->CharacterID()) {
-                      $player->CastToClient()->MovePC($zone_id, $x, $y, $z, $heading);
-                  }
-              }
-            }
-          }
-
-          $client->MovePC($zone_id, $x, $y, $z, $heading);
-        } else {
-          quest::say("I'm sorry, but you don't have enough platinum to pay for this transport.");
-        }
-      }
-    }
-  }
+  }  
 }
 
 sub EVENT_ITEM {
