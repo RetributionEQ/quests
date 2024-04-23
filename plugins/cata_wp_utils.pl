@@ -130,7 +130,6 @@ sub GetWaypoints {
 }
 
 sub AddDefaultAttunement {
-    use feature 'switch'
     my $client = shift || plugin::val('$client');
     if ($client) {
         my $bind_zone = quest::GetZoneShortName($client->GetBindZoneID());
