@@ -7,14 +7,10 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_ENTER {    
-    quest::debug("Attempting to update attunement point...");    
-
-    my $client = plugin::val('$client');
-
+    quest::debug("Attempting to update attunement point..."); 
     if (plugin::AddWaypoint($zonesn, $client)) {
-        quest::debug("WTF, part 2!");
         $client->Message(16, "This place seems familiar. You are sure to remember it later.");
     } else {
-        
+        $client->Message(16, "You know this place well.");
     }
 }

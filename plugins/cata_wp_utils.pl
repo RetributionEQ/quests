@@ -72,18 +72,17 @@ sub CheckSpawnWaypoints {
 sub AddWaypoint {
     my $waypoint = shift || plugin::val('$zonesn');
     my $client   = shift || plugin::val('$client');
+    my $return_feedback = 0;
 
     if ($client) {
         my %account_data = map { $_ => 1 } split(',', quest::get_data("Waypoints-" . $client->AccountID()));
-        my %character_data = map { $_ => 1 } split(',', $client->GetBucket("Waypoints"));
-        my $return_feedback = 0;
+        my %character_data = map { $_ => 1 } split(',', $client->GetBucket("Waypoints"));        
 
         if (exists $waypoints{$waypoint}) {
             if (!exists $account_data{$waypoint}) {
                 $account_data{$waypoint} = 1;
                 quest::set_data("Waypoints-" . $client->AccountID(), join(',', keys %account_data));
                 $return_feedback = 1;
-                quest::debug("WTF? $return_feedback");
             }
 
             if (!exists $character_data{$waypoint}) {
@@ -100,7 +99,6 @@ sub AddWaypoint {
         quest::debug("Attempted to add a waypoint to a nonspecified client.");
     }
 
-    quest::debug("WTF?, part deux $return_feedback");
     return $return_feedback;
 }
 
