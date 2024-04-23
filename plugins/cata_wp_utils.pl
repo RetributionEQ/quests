@@ -135,7 +135,7 @@ sub GetWaypoints {
     my %return;
     
     if ($client) {        
-        if ($client->IsSeasonal() || $client->IsHardcore()) {
+        if (!($client->IsSeasonal() || $client->IsHardcore())) {
             %data = map { $_ => 1 } split(',', quest::get_data("Waypoints-" . $client->AccountID()));
         } else {
             %data = map { $_ => 1 } split(',', $client->GetBucket("Waypoints"));
