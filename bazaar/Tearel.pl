@@ -77,7 +77,7 @@ sub EVENT_SAY {
 
     quest::debug("Searching for $wp_id");
 
-    if (exists $waypoints{$wp_id}) {
+    if (exists $waypoints{$wp_id} && $client->TakeMoneyFromPP($cost, 1)) {
       my $destination = $waypoints{$wp_id};
 
       if ($2 eq 'group') {
@@ -103,6 +103,8 @@ sub EVENT_SAY {
         }
       } 
       $client->MovePC(quest::GetZoneID($wp_id), $destination->[2], $destination->[3], $destination->[4], $destination->[5]);
+    } else {
+      
     }
   }
 }
