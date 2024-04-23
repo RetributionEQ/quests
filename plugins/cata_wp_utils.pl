@@ -57,10 +57,6 @@ my %waypoints = (
     'sharvahl'   => ["The City of Shar Vahl", 5, 250, 55, -188, 400]
 );
 
-my %waypoints2 = {
-    'timorous'   => ["Timorous Deep (The Firepots)", 3, 4366, -12270, -279, 0],
-}
-
 sub CheckSpawnWaypoints {
     my $entity_list = plugin::val('$entity_list');
     my $zonesn      = plugin::val('$zonesn');
