@@ -44,7 +44,7 @@ sub EVENT_SAY {
       quest::say("Very good! Tell me about this place that you remember. This transportation will cost " . get_cost_for_level() . " platinum pieces.");
       $client->Message(257, " ------- Select a Continent ------- ");
 
-      my $continents = GetContinents();
+      my $continents = plugin::GetContinents();
       my %continent_has_waypoints;
 
       # Determine which continents have waypoints
