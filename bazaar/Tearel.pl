@@ -70,11 +70,12 @@ sub EVENT_SAY {
     }
   }
 
-  elsif ($text =~ /teleport--([a-zA-Z0-9_]+)-(group|single)/) {
+  elsif ($text =~ /teleport-([a-zA-Z0-9_]+)-(group|single)/) {
     my $wp_id = $1;
     my $mode = $2;
-
     my %waypoints = plugin::GetWaypoints(-1, $client);
+
+    quest::debug("Searching for $wp_id");
 
     if (exists $waypoints{$wp_id}) {
       my $destination = $waypoints{$wp_id};
