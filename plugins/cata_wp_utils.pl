@@ -82,7 +82,7 @@ sub CheckSpawnWaypoints {
 }
 
 sub AddWaypoint {
-    my $waypoint = shift;
+    my $waypoint = shift || plugin::val('$zonesn');
     my $client   = shift || plugin::val('$client');
 
     if ($client) {
