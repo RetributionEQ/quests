@@ -83,6 +83,7 @@ sub AddWaypoint {
                 $account_data{$waypoint} = 1;
                 quest::set_data("Waypoints-" . $client->AccountID(), join(',', keys %account_data));
                 $return_feedback = 1;
+                quest:debug("WTF? $return_feedback");
             }
 
             if (!exists $character_data{$waypoint}) {
