@@ -51,7 +51,7 @@ sub EVENT_SAY {
       while (my ($index, $continent) = each @categories) {
           if (plugin::GetWaypoints($index, $client)) {  
               my $mode_indicator = $text =~ /group/i ? "group" : "single";
-              $client->Message(257, "-[ " . quest::saylink("select-continent-$index-$mode_indicator", 1, $continent));
+              $client->Message(257, "-[ " . quest::saylink("select-continent-$index-$mode_indicator", 0, $continent));
           }
       }
   }
