@@ -56,7 +56,7 @@ sub EVENT_SAY {
       }
   }
 
-  elsif ($text =~ /"select-continent-(\d+)-(group|solo)"/) {
+  elsif ($text =~ /"select-continent-(\d+)-(group|single)"/) {
     my $continent_id = $1;  # This captures the numerical ID.
     my $mode = ($2 eq 'group' && $group_flg) ? 1 : 0;
     my %waypoints = plugin::GetWaypoints($continent_id, $client);
