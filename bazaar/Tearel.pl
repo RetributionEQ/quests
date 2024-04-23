@@ -51,13 +51,13 @@ sub EVENT_SAY {
       while (my ($index, $continent) = each @categories) {
           if (plugin::GetWaypoints($index, $client)) {  
               my $mode_indicator = $text =~ /group/i ? "group" : "single";
-              $client->Message(257, "-[ " . quest::saylink("select-continent-$index-$mode_indicator", 0, $continent));
+              $client->Message(257, "-[ " . quest::saylink("select-continent-$index-$mode_indicator", 1, $continent));
           }
       }
   }
-  
+
   elsif ($text =~ /select-continent-(\d+)-(group|single)/) {
-    my $continent_id = $1;  # This captures the numerical ID.
+    my $continent_id = $1;
     my $mode = $2;
     my %waypoints = plugin::GetWaypoints($continent_id, $client);
 
@@ -68,7 +68,24 @@ sub EVENT_SAY {
         $client->Message(257, "-[ " . quest::saylink("teleport-$wp_id-$2", 1, $waypoints{$wp_id}[0]));
       }
     }
-  }   
+  }
+
+  elsif ($text =~ /teleport--([a-zA-Z0-9_]+)-(group|single)/) {
+    my $wp_id = $1;
+    my $mode = $2;
+
+    my %waypoints = plugin::GetWaypoints(-1, $client);
+
+    if (exists $waypoints{$wp_id}) {
+      my $destination = $waypoints{$wp_id};
+
+      if ($2 eq 'group') {
+        
+      } else {
+        $client->MovePC(quest::GetZoneID($wp_id), $destination->[2], $destination->[3], $destination->[4], $destination->[5]);
+      }
+    }
+  }
 }
 
 sub EVENT_ITEM {
