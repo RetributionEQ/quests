@@ -55,8 +55,8 @@ my %waypoints = (
     "Eastern Wastes (Crystal Caverns)" => [4, 'eastwastes', 464, -4037, 144, 178], 
     "Cobalt Scar" => [4, 'cobaltscar', -1633, -1064, 296, 115],
     "The Wakening Land" => [4, 'wakening', 4552, 1455, -60, 130],
-    "The Western Wastes (Temple of Veeshan)" => [4, 'westwastes', 808, 1323, -196, 373],
-    "The City of Shar Vahl" => [5, 'sharvahl', 250, 55, -188, 400]
+"The Western Wastes (Temple of Veeshan)" => [4, 'westwastes', 808, 1323, -196, 373],
+"The City of Shar Vahl" => [5, 'sharvahl', 250, 55, -188, 400]
 );
 
 sub CheckSpawnWaypoints {
