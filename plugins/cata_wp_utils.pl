@@ -78,6 +78,10 @@ sub AddDefaultAttunement {
     }
 }
 
+sub GetContinents {
+    return \@categories;
+}
+
 sub CheckSpawnWaypoints {
     my $entity_list = plugin::val('$entity_list');
     my $zonesn      = plugin::val('$zonesn');
@@ -145,7 +149,7 @@ sub GetWaypoints {
         quest::debug("Attempted to get waypoints for an invalid or unspecified client.");
         return undef;
     }
-    return \%return;
+    return %return;
 }
 
 sub get_portal_destinations {

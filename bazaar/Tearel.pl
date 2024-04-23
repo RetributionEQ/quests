@@ -1,18 +1,9 @@
-sub EVENT_SPAWN {
-    $x = $npc->GetX();
-    $y = $npc->GetY();
-    $z = $npc->GetZ();
-}
-
 sub EVENT_SAY {
-  my $continent_regex = join('|', map { my $continent = plugin::get_continent_by_suffix($_); $continent =~ s/\s+//g; quotemeta($continent) } plugin::get_suffixes());
-  my $zone_data       = plugin::get_zone_data($client->AccountID());
-  my $flat_data       = plugin::get_flat_data($client->AccountID());
-  my $group_flg       = quest::get_data($client->AccountID() ."-group-ports-enabled");
-  
+  my $group_flg       = quest::get_data($client->AccountID() ."-group-ports-enabled");  
   my $eom_available   = $client->GetAlternateCurrencyValue(6);
-
   my $cost            = 1000 * get_cost_for_level();
+
+  my %waypoints       = plugin::GetWaypoints($client);
 
   if ($text=~/hail/i) { 
     quest::say("Greetings $name! I can help you get to almost anywhere! I sell
@@ -31,7 +22,7 @@ sub EVENT_SAY {
   elsif ($text=~/your group/i && !$group_flg) {
     quest::say("If you'd like for me to transport your group, I'll need a stronger connection to your memories. Bring me five
                 [Echo of Memory], and I can transport all of you any time you ask.");
-    return; # Exit early.
+    return;
   }
 
   elsif ($text=~/Echo of Memory/i && !$group_flg) {
@@ -49,17 +40,28 @@ sub EVENT_SAY {
     }
   }
 
-  elsif ($text=~/transport you/i || ($text=~/your group/i  && $group_flg)) {
-    quest::say("Very good! Tell me about this place that you remember. This transportation will cost " . get_cost_for_level() . " platinum pieces.");
-    $client->Message(257, " ------- Select a Continent ------- ");
-    # Check for each suffix and add entries if valid zone data exists
-    foreach my $suffix (plugin::get_suffixes()) {
-        if (exists($zone_data->{$suffix}) && %{ $zone_data->{$suffix} }) {
-            my $link_text = plugin::get_continent_by_suffix($suffix);
-            my $mode_indicator = $text =~ /group/i ? ":group" : "";
-            $client->Message(257, "-[ " . quest::saylink($link_text . $mode_indicator, 1, $link_text));
-        }
-    }
+  elsif ($text =~ /transport you/i || ($text =~ /your group/i && $group_flg)) {
+      quest::say("Very good! Tell me about this place that you remember. This transportation will cost " . get_cost_for_level() . " platinum pieces.");
+      $client->Message(257, " ------- Select a Continent ------- ");
+
+      my $continents = GetContinents();
+      my %continent_has_waypoints;
+
+      # Determine which continents have waypoints
+      foreach my $zone (keys %waypoints) {
+          my $continent_id = $waypoints{$zone}[1]; # Get the continent ID from waypoints
+          if (defined $continent_id && $continent_id < @$continents) {
+              $continent_has_waypoints{$continents->[$continent_id]} = 1;
+          }
+      }
+
+      # Display only those continents that have waypoints
+      foreach my $continent (@$continents) {
+          if ($continent_has_waypoints{$continent}) {
+              my $mode_indicator = $text =~ /group/i ? ":group" : "";
+              $client->Message(257, "-[ " . quest::saylink($continent . $mode_indicator, 1, $continent));
+          }
+      }
   }
 
   elsif ($text =~ /^(.+?)(:group)?$/) { # Capture the location and optional group indicator
