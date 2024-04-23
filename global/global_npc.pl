@@ -143,6 +143,8 @@ sub EVENT_SPAWN {
         UPDATE_PET_BAG($npc);
         CHECK_CHARM_STATUS();               
     }
+
+    plugin::CheckSpawnWaypoints();
 }
 
 sub EVENT_DAMAGE_GIVEN 
