@@ -48,6 +48,7 @@ sub EVENT_SAY {
       while (my ($index, $continent) = each @categories) {
         my $mode_indicator = $text =~ /group/i ? ":group" : "";
         $client->Message(257, "-[ " . quest::saylink($continent . $mode_indicator, 1, $continent));
+        $client->Message(257, "-[ $index - $continent ]");
       }
   }  
 }
