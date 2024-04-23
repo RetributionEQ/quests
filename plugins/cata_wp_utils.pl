@@ -35,16 +35,44 @@ my @categories = [
 ];
 
 
-my %waypoints = {
-    #  "Pretty Name" => [continent_id, zone_id, x, y, z, h, unique_id]
-    "North Qeynos"              => [0, 2,   392,     165,     4, 310, 0],
-    "Surefall Glade"            => [0, 3,   -66,      45,     4, 200, 1],
-    "West Freeport"             => [0, 9,  -396,    -283,   -23, 500, 2],
-    "Western Plains of Karana"  => [0, 12, -14816, -3570,    36, 400, 3],
-    "Northern Plains of Karana" => [0, 13,   1258, -3726, -7.75, 450, 4],
-    
-};
+my %waypoints = (
+    # "Pretty Name" => [continent_id, zone_id, x, y, z, h, unique_id]
+    "North Qeynos"                                => [0,  2,   392,    165,    4,  310,  0],
+    "Surefall Glade"                              => [0,  3,   -66,     45,    4,  200,  1],
+    "West Freeport"                               => [0,  9,  -396,   -283,  -23,  500,  2],
+    "Rivervale"                                   => [0, 19,  -140,    -10,    4,  220,  3],
+    "Western Plains of Karana (Combine Spires)"   => [0, 12, -14816, -3570,   36,  400,  4],
+    "Northern Plains of Karana (Gypsy Camp)"      => [0, 13,  -175,   -688,  -7.5,  10,  5],
+    "Southern Plains of Karana (Aviak Village)"   => [0, 14,  1027,  -6689,    0,  260,  6],
+    "Eastern Plains of Karana (Druid Ring)"       => [0, 15,   423,   1333,    1,  210,  7],
+    "Blackburrow"                                 => [0, 17,    -7,     38,    3,  300,  8],
+    "West Commonlands (Roadside Inn)"             => [0, 21,   503,   -127,  -51,  128,  9],
+    "Erudin"                                      => [2, 24,  -240,  -1216,   52,  510, 10],
+    "Lavastorm Mountains (Druid Ring)"            => [0, 27,  1318,    918,  119,  270, 11],
+    "Halas"                                       => [0, 29,     0,     26, 3.75,  256, 12],
+);
 
+my %spawntest = (
+    "Timorous Deep (The Firepots)"                => [0, 96, 4366, -12270, -279, 0, 10096],
+);
+
+sub spawn_waypoints {
+    my $entity_list = plugin::val('$entity_list');
+
+    # Assuming %spawntest contains waypoint data structured similarly to:
+    # %spawntest = ("location_name" => [continent_id, zone_id, x, y, z, h, unique_id], ...);
+
+    # Iterate over each waypoint in %spawntest
+    foreach my $location_name (keys %spawntest) {
+        my @waypoint = @{$spawntest{$location_name}};
+
+        # Check if a specific NPC is spawned; using NPC type ID 37999 as an example
+        if ($entity_list->IsMobSpawnedByNpcTypeID(37999)) {
+            # Spawn the NPC at the coordinates provided by the waypoint
+            my $npc = quest::spawn2(37999, 0, 0, $waypoint[2], $waypoint[3], $waypoint[4], $waypoint[5]);
+        }
+    }
+}
 
 sub set_default_attunement {
     my ($accountID, $raceID) = @_;     

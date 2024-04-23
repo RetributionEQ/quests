@@ -4,7 +4,8 @@ sub EVENT_SIGNAL {
 }
 
 sub EVENT_ENTERZONE { 
-	plugin::CommonCharacterUpdate($client);    
+	plugin::CommonCharacterUpdate($client);
+    plugin::spawn_waypoints($entity_list);
 	if (!plugin::is_eligible_for_zone($client, $zonesn)) {
 		$client->Message(4, "Your vision blurs. You lose conciousness and wake up in a familiar place.");
 		$client->MovePC(151, 185, -835, 4, 390); # Bazaar Safe Location.
