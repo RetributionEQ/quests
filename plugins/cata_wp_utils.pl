@@ -105,9 +105,8 @@ sub AwardBonusUnlocks {
                    quest::get_data($client->AccountID() . "-TL-Account-T") ||
                    quest::get_data($client->AccountID() . "-TL-Account-D");
 
-
-    if ($eligible) {
-        foreach my $zone (keys %waypoints) {
+    if (quest::get_data($client->AccountID() . "-TL-Account-A")) {
+        foreach my $zone (keys GetWaypoints(0)) {
             AddWaypoint($zone);
         }
     }
