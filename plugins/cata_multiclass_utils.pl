@@ -7,6 +7,7 @@ sub CommonCharacterUpdate {
     plugin::UpdateCharMaxLevel($client);
 	plugin::ConvertFlags($client);
     plugin::AddDefaultAttunement($client);
+    plugin::AwardBonusUnlocks($client);
 }
 
 sub GetClassMap {

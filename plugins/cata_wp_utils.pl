@@ -95,19 +95,21 @@ sub AddDefaultAttunement {
 sub AwardBonusUnlocks {
     my $client   = shift || plugin::val('$client');
     my $eligible = quest::get_data($client->AccountID() . "-TL-Account-A") ||
-                   quest::get_data($client->AccountID() . "-TL-Account-F") ||
+                   quest::get_data($client->AccountID() . "-TL-Account-G") ||
                    quest::get_data($client->AccountID() . "-TL-Account-O") ||
+                   quest::get_data($client->AccountID() . "-TL-Account-F") ||
                    quest::get_data($client->AccountID() . "-TL-Account-K") ||
                    quest::get_data($client->AccountID() . "-TL-Account-V") ||
                    quest::get_data($client->AccountID() . "-TL-Account-L") ||
                    quest::get_data($client->AccountID() . "-TL-Account-P") ||
-                   quest::get_data($client->AccountID() . "-TL-Account-G") ||
-                   quest::get_data($client->AccountID() . "-TL-Account-T") || 
+                   quest::get_data($client->AccountID() . "-TL-Account-T") ||
+                   quest::get_data($client->AccountID() . "-TL-Account-D");
 
 
-    if ($client->GetBucket)
-    foreach my $zone (keys %waypoints) {
-        AddWaypoint($zone);
+    if ($eligible) {
+        foreach my $zone (keys %waypoints) {
+            AddWaypoint($zone);
+        }
     }
 }
 
