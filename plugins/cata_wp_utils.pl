@@ -66,9 +66,9 @@ my %waypoints = (
     'gunthak'       => ["The Gulf of Gunthak", 0, -410, 1402, 3, 0],
     'natimbi'       => ["Natimbi, the Broken Shores", 7, -310, 125, 520, 70],
     'barindu'       => ["Barindu, Hanging Gardens", 7, 210, -515, -117, 510],
-    'kodtaz'        => ["Kod`Taz, Broken Trial Grounds", 7, 1536, -2422, -348, 4],
-
-
+    'kodtaz'        => ["Kod'Taz, Broken Trial Grounds", 7, 1536, -2422, -348, 4],
+    'qvic'          => ["Qvic, Prayer Grounds of Calling", 7, -1018, -1403, -490, 3],
+    'txevu'         => ["Txevu, Lair of the Elite", 7, -316, -20, -420, 430],
 );
 
 sub AddDefaultAttunement {
@@ -89,6 +89,14 @@ sub AddDefaultAttunement {
         AddWaypoint('cabeast');
         AddWaypoint('sharvahl');
         AddWaypoint('paineel');
+    }
+}
+
+sub AwardBonusUnlocks {
+    my $client   = shift || plugin::val('$client');
+    if ($client->GetBucket)
+    foreach my $zone (keys %waypoints) {
+        AddWaypoint($zone);
     }
 }
 
