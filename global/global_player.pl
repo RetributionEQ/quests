@@ -31,6 +31,14 @@ sub EVENT_CONNECT {
 	}
 }
 
+sub EVENT_AA_EXP_GAIN {
+    quest::debug("aa_exp_gained " . $aa_exp_gained);
+}
+
+sub EVENT_EXP_GAIN {
+    quest::debug("exp_gained " . $exp_gained);
+}
+
 sub EVENT_DISCONNECT {
 	plugin::CommonCharacterUpdate($client);
 }
