@@ -34,7 +34,7 @@ sub EVENT_SAY {
 		if ($faction <= 4) {
 			quest::say("As the wooly spiderlings get ready to molt, they'll carry wooly fungus. Oftentimes, one can find wooly fungus growing on their bellies. I use this in me healing practices. I'll reward ye if ye can fill this jar full o' the valuable fungus. Don't forget to combine them before ye return it to me. And have yerself some rations handy, or ye may find yerself snacking on this tasteless food source.");
 			#::  Give a 17946 - Empty Jar (identifies as "Jar for Wooly Fungus")
-			quest::summonitem(117946);
+			quest::summonitem(17946);
 		}
 		else {
 			quest::say("The scales o' the Shamans o' Justice dinnae tip in yer favor. Ye'd best flee ye still have the chance.");
@@ -72,8 +72,8 @@ sub EVENT_ITEM {
 		else {
 			quest::say("The scales o' the Shamans o' Justice dinnae tip in yer favor. Ye'd best flee ye still have the chance.");
 			#:: Return two 13967 - Wooly Fungus
-			quest::summonitem(113967);
-			quest::summonitem(113967);
+			quest::summonitem(13967);
+			quest::summonitem(13967);
 		}
 	}
 	#:: Match a 13445 - Mammoth Steaks
@@ -89,7 +89,7 @@ sub EVENT_ITEM {
 		else {
 			quest::say("The scales o' the Shamans o' Justice dinnae tip in yer favor. Ye'd best flee ye still have the chance.");
 			#:: Return one 13445 - Mammoth Steaks
-			quest::summonitem(113445);
+			quest::summonitem(13445);
 		}
 	}
 	#:: Match a 13966 - Jar of Fungus
@@ -117,7 +117,7 @@ sub EVENT_ITEM {
 		else {
 			quest::say("The scales o' the Shamans o' Justice dinnae tip in yer favor. Ye'd best flee ye still have the chance.");
 			#:: Return one 13966 - Jar of Fungus
-			quest::summonitem(113966);
+			quest::summonitem(13966);
 		}
 	}
 	#:: Return unused items

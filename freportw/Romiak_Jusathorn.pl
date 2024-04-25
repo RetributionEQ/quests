@@ -3,7 +3,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18741 => 1 )) {
 		quest::say("Greetings, I am Romiak Jusathorn, Master Enchanter of the Academy. Take this.. it's our guild robe; it will help protect you in this harsh environment. Now, let's get to work!");
 		#:: Give item 13560 - Old Violet Robe
-		quest::summonitem(113560);
+		quest::summonitem(13560);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

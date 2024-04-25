@@ -17,7 +17,7 @@ sub EVENT_PROXIMITY_SAY {
 	if ($text=~/message/i) {
 		quest::say("Ok, $name, I need you to take this message to Janam in West Freeport. He is usually hanging out in front of the Theater of the Tranquil with that good-for-nothing Rebby. Anyway, give this note to Janam and bring his reply back to me.");
 		#:: Give a 18015 - Note to Janam
-		quest::summonitem(118015);
+		quest::summonitem(18015);
 	}
 }
 

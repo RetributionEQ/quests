@@ -12,7 +12,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(12133 => 1 )) {
 		quest::say("Thank you. I believe you need to seek out Sentry Xyrin. She is not at the temple. I believe she left to speak with [Sisterhood of Erollisi]. She was to speak with Styria.");
 		#:: Give item 12134 - Last of Potion of Marr
-		quest::summonitem(112134);
+		quest::summonitem(12134);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

@@ -3,7 +3,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(19930 => 1)) {
 		quest::say("Arg");
 		#:: Give a 19918 - Rough Blue Gem
-		quest::summonitem(119918);
+		quest::summonitem(19918);
 		#:: Ding!
 		quest::ding();
 		#:: Set a timer 'depop' that loops every 5 seconds

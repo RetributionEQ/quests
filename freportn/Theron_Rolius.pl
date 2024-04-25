@@ -23,7 +23,7 @@ sub EVENT_SAY {
 	elsif ($text=~/hunt/i) {
 		quest::say("I thought I spied the shoulders of a swimmer upon you! Take this large sack. Travel to the Ocean of Tears. There are numerous reef sharks there. I shall require no fewer than two shark skins. When the full sack is combined and returned to me, I shall reward you.");
 		#:: Summon 17937 - Empty Shark Sack
-		quest::summonitem(117937);
+		quest::summonitem(17937);
 	}
 }
 
@@ -50,7 +50,7 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItems(13873 => 1)) {
 		quest::say("Fantastic work, my young knight. Here is a small token of my appreciation -- a fine Sharkskin Shield. It should serve you well in battle.");
 		#:: Give a 13868 - Sharkskin Shield
-		quest::summonitem(113868);
+		quest::summonitem(13868);
 		#:: Ding!
 		quest::ding();
 		#:: Confirmed no faction reward

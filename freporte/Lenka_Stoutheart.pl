@@ -89,7 +89,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(13818 => 1)) {
 		quest::say("Oh!! You must work for that Erudite named Palatos. I guess he won't have to spend anymore money drinking in Freeport. Here. Here is the portrait I kept until he could get me a new boat beacon.");
 		#:: Give item 12146 - Ak'anon's Portrait
-		quest::summonitem(112146);
+		quest::summonitem(12146);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

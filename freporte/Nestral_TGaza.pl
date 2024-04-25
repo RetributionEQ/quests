@@ -8,7 +8,7 @@ sub EVENT_SAY {
 	elsif ($text=~/janam and rebby/i) {
 		quest::say("Janam and Rebby are A couple of merchants working the area around the Theater of the Tranquil and the Ashen Order, in West Freeport. It's part of my job to keep tabs on those two rascals. I need someone to take this note to Rebby for me. Don't worry, your efforts won't go unnoticed $name");
 		#:: Give a 18923 - Message to Rebby
-		quest::summonitem(118923);
+		quest::summonitem(18923);
 	}
 }
 

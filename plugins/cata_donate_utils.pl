@@ -3,9 +3,18 @@ my $eom_item_id = 46779;
 my $eom_log = "total-eom-spend";
 
 sub CheckWorldWideBuffs {
+    my $client = plugin::val('$client');
+    DoCheckWorldWideBuffs($client);
+
+    if ($client->GetPet()) {
+        DoCheckWorldWideBuffs($client->GetPet());
+    }
+}
+
+sub DoCheckWorldWideBuffs {
     my $target = shift;
     if($target && $target->IsClient() || ($target->IsPet() && $target->HasOwner() && $target->GetOwner()->IsClient())) {
-        for my $spell_id (43002 .. 43008) {
+        for my $spell_id (43002..43008, 17779) {
             my $data = quest::get_data("eom_$spell_id");
 
             if ($data) {               
@@ -23,6 +32,10 @@ sub SpendEOM {
     my ($client, $amount) = @_;
     my $eom_available = $client->GetAlternateCurrencyValue($eom_id);
 
+    if ($amount == 0) {
+        return 1;
+    }
+
     if ($eom_available >= $amount) {
         $client->SetAlternateCurrencyValue($eom_id, $eom_available - $amount);
         $client->Message(15, "You have spent $amount [".quest::varlink($eom_item_id)."].");
@@ -31,6 +44,7 @@ sub SpendEOM {
         }
         return 1;
     }
+
     return 0;
 }
 
@@ -54,41 +68,43 @@ sub EOMLink {
     return quest::varlink($eom_item_id);
 }
 
-sub num2en {
-    my $number = shift;
+sub ApplyWorldWideBuff {
+    my $buff_id = shift;
+    my $cost = shift || 0;
 
-    return "zero" if $number == 0; # Handle 0 explicitly
-    return "one thousand" if $number == 1000; # Special case for 1000
+    my $client = plugin::val('$client');
 
-    my %map = (
-        1 => "one", 2 => "two", 3 => "three", 4 => "four", 5 => "five",
-        6 => "six", 7 => "seven", 8 => "eight", 9 => "nine", 10 => "ten",
-        11 => "eleven", 12 => "twelve", 13 => "thirteen", 14 => "fourteen",
-        15 => "fifteen", 16 => "sixteen", 17 => "seventeen", 18 => "eighteen", 19 => "nineteen",
-    );
-
-    my %tens_map = (
-        2 => "twenty", 3 => "thirty", 4 => "forty", 5 => "fifty",
-        6 => "sixty", 7 => "seventy", 8 => "eighty", 9 => "ninety",
-    );
-
-    my $word = '';
-
-    if ($number >= 100) {
-        my $hundreds = int($number / 100);
-        $word .= $map{$hundreds} . " hundred";
-        $number %= 100; # Reduce number to remainder for further processing
-        $word .= " and " if $number > 0; # Add 'and' if there's more to come
+    if (!defined($buff_id)) {
+        quest::debug("ERROR: NO VALID BUFF ID IN ApplyWorldWideBuff")
     }
 
-    if ($number >= 20) {
-        my $tens = int($number / 10);
-        $word .= $tens_map{$tens};
-        $number %= 10; # Reduce number to remainder for ones place
-        $word .= "-" if $number > 0; # Add hyphen for numbers like "twenty-one"
+    if (plugin::SpendEOM($client, $cost)) {        
+        my %buff_types = (
+            43002 => "Experience Gain",
+            43003 => "Hit Points and Armor Class",
+            43004 => "Basic Statistics",
+            43005 => "Movement Speed",
+            43006 => "Mana Regeneration",
+            43007 => "Attack Speed",
+            43008 => "Health Regeneration",
+            17779 => "Loot Upgrade Rate"
+        );
+        my $buff_type = $buff_types{$buff_id} // "Unknown Buff";  # Fallback for unknown buff IDs
+
+        if ($cost == 0) { $cost = 1 };
+
+        if (quest::get_data("eom_$buff_id")) {            
+            quest::set_data("eom_$buff_id", $cost, quest::get_data_remaining("eom_$buff_id") + (4 * 60 * 60));
+            my ($hours, $minutes, $seconds) = plugin::convert_seconds(quest::get_data_remaining("eom_$buff_id"));
+            plugin::WorldAnnounce($client->GetCleanName() . " has used their Echo of Memory to extend your enhanced $buff_type. This buff will endure for $hours Hours and $minutes Minutes.");
+        } else {
+            quest::set_data("eom_$buff_id", $cost, H4);
+            plugin::WorldAnnounce($client->GetCleanName() . " has used their Echo of Memory to enhance your $buff_type. This buff will endure for 4 Hours.");
+        }
+        
+        if (!$skip_payment) { quest::worldwidesignalclient($buff_id); }
+        return 1;
+    } else {
+        return 0;
     }
-
-    $word .= $map{$number} if $number > 0 && exists $map{$number};
-
-    return $word;
 }

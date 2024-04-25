@@ -19,7 +19,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(12147 => 1 )) {
 		quest::say("Here you go then.");
 		#:: Give a 18814 - Sealed Letter
-		quest::summonitem(118814); 
+		quest::summonitem(18814); 
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

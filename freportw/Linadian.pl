@@ -20,7 +20,7 @@ sub EVENT_ITEM {
 		#:: Ding!
 		quest::ding();
 		#:: Give a 12187 - Banded Orc Vest
-		quest::summonitem(112187);
+		quest::summonitem(12187);
 		#:: Set factions
 		quest::faction(276, 1);	 		#:: + Kelethin Merchants
 		quest::faction(246, 1); 		#:: + Faydark's Champions
@@ -35,7 +35,7 @@ sub EVENT_ITEM {
 		#:: Ding!
 		quest::ding();
 		#:: Give a 12187 - Banded Orc Vest
-		quest::summonitem(112187);
+		quest::summonitem(12187);
 		#:: Set factions
 		quest::faction(276, 1);	 		#:: + Kelethin Merchants
 		quest::faction(246, 1); 		#:: + Faydark's Champions

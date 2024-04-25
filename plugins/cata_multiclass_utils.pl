@@ -6,8 +6,8 @@ sub CommonCharacterUpdate {
     plugin::CheckWorldWideBuffs($client);
     plugin::UpdateCharMaxLevel($client);
 	plugin::ConvertFlags($client);
-
-    plugin::set_default_attunement($client->AccountID(), $client->GetRace());
+    plugin::AddDefaultAttunement($client);
+    plugin::AwardBonusUnlocks($client);
 }
 
 sub GetClassMap {
@@ -70,22 +70,17 @@ sub HasMeleeClass {
 }
 
 sub HasClass {
-    my $class = shift;
+    my $classID = shift;
     my $client = shift || plugin::val('$client');
-    my %class_map = GetClassMap();  # Get the full class map
     my $class_bits = $client->GetClassesBitmask();
 
-    # Iterate through each possible class ID
-    foreach my $class_id (keys %class_map) {
-        # Check if the class bit is set in the bitmask and that the class matches the check we're checking
-        if ($class_bits & (1 << ($class_id - 1)) && $class_map{$class_id} == $class) {
-            # Check if the class matches the provided class
-            return 1
-        }
+    # Check if the bit corresponding to the class ID is set in the bitmask
+    # Shift 1 left by (classID - 1) positions to create the bitmask for the specific class
+    if ($class_bits & (1 << ($classID - 1))) {
+        return 1;  # True, class ID is present
+    } else {
+        return 0;  # False, class ID is not present
     }
-
-    # Return 0 if the class isn't in there
-    return 0;
 }
 
 sub AddClass {
@@ -268,15 +263,17 @@ sub GrantClassAA {
         5 => { # Shadow Knight
             '5085' => 1,  # Mortal Coil
             '13165' => 1, # Explosion of Spite
+            '288' => 1,   # Pet Discipline
         },
         6 => { # Druid
             '548' => 1,   # Spirit of the Wood
             '14264' => 1, # Paralytic Spores
             '767' => 3,   # Critical Affliction (assuming ranks based on script context)
             '6375' => 1,  # Destructive Cascade
+            '288' => 1,   # Pet Discipline
         },
         7 => { # Monk
-            '810' => 1,  # Stonewall
+            '611' => 1,  # Technique of Master Wu
             '1352' => 1, # Crippling Strike
         },
         8 => { # Bard
@@ -294,6 +291,7 @@ sub GrantClassAA {
             '10957' => 1, # Group Shrink
             '1327' => 1,  # Ancestral Aid
             '8227' => 1,  # Summon Companion
+            '288' => 1,   # Pet Discipline
         },
         11 => { # Necromancer
             '767' => 1,    # Critical Affliction
@@ -301,6 +299,7 @@ sub GrantClassAA {
             '734' => 1,    # Pet Affinity
             '12770' => 1,  # Pestilent Paralysis
             '8227' => 1,   # Summon Companion
+            '288' => 1,    # Pet Discipline
         },
         12 => { # Wizard
             '155' => 1,  # Improved Familiar
@@ -312,6 +311,7 @@ sub GrantClassAA {
             '734' => 1,  # Pet Affinity
             '8342' => 1, # Host in the Shell
             '8227' => 1, # Summon Companion
+            '288' => 1,  # Pet Discipline
         },
         14 => { # Enchanter
             '158' => 1,  # Permanent Illusion
@@ -320,12 +320,14 @@ sub GrantClassAA {
             '580' => 3,  # Animation Empathy (all ranks)
             '734' => 1,  # Pet Affinity
             '8227' => 1, # Summon Companion
+            '288' => 1,  # Pet Discipline
         },
         15 => { # Beastlord
             '11080' => 1, # Chameleon Strike
             '6984' => 1,  # Bite of the Asp
             '734' => 1,   # Pet Affinity
             '8227' => 1,  # Summon Companion
+            '288' => 1,   # Pet Discipline
         },
         16 => { # Berserker
             '4739' => 1, # Killing Spree

@@ -36,7 +36,7 @@ sub EVENT_ITEM {
 		if ($faction <= 4) {
 			quest::say("Good work, $name, you've worked hard and proven yourself a valuable addition to the Ashen Order. Here's your white sash, wear it with pride.");
 			#:: Give a 10130 - White Training Sash
-			quest::summonitem(110130);
+			quest::summonitem(10130);
 			#:: Ding!
 			quest::ding();
 			#:: Set factions
@@ -49,10 +49,10 @@ sub EVENT_ITEM {
 		else {
 			quest::say("I have been watching you, and appreciate the help you've given to the brothers and sisters of the Ashen Order, but I feel that such a vital matter should be left to one of our more trusted members.");
 			#:: Return two 13794 - Deathfist Pawn Scalp, a 13067 - Snake Fang, and a 13073 - Bone Chips
-			quest::summonitem(113794);
-			quest::summonitem(113794);
-			quest::summonitem(113067);
-			quest::summonitem(113073);
+			quest::summonitem(13794);
+			quest::summonitem(13794);
+			quest::summonitem(13067);
+			quest::summonitem(13073);
 		}
 			
 	}
@@ -62,7 +62,7 @@ sub EVENT_ITEM {
 		if ($faction <= 4) {
 			quest::say("Ah, well done, $name. You have proven that you are a very skillful fighter and it is a honor to have you as a member of the Ashen Order. On behalf of Master Closk, and under the watchful eyes of Quellious, I present you, $name, with this, the yellow Sash of Order. Go out and make us proud.");
 			#:: Give a 10131 - Yellow Sash of Order
-			quest::summonitem(110131);
+			quest::summonitem(10131);
 			#:: Ding!
 			quest::ding();
 			#:: Set factions
@@ -75,10 +75,10 @@ sub EVENT_ITEM {
 		else {
 			quest::say("I have been watching you, and appreciate the help you've given to the brothers and sisters of the Ashen Order, but I feel that such a vital matter should be left to one of our more trusted members.");
 			#:: Return a 10130 - White Training Sash, a 13058 - Giant Snake Rattle, a 13916 - Deathfist Slashed Belt, and a 20901 - Desert Tarantula Chitin
-			quest::summonitem(110130);
-			quest::summonitem(113058);
-			quest::summonitem(113916);
-			quest::summonitem(120901);
+			quest::summonitem(10130);
+			quest::summonitem(13058);
+			quest::summonitem(13916);
+			quest::summonitem(20901);
 		}
 	}
 	#:: Return unused items

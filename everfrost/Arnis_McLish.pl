@@ -37,7 +37,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(13243 => 1)) {
 		quest::say("Mmmm.. Thank you stranger. I feel a lot warmer now. You should now go and find [Megan] O'Reilly.");
 		#:: Give a 13244 - One Quarter of Elixir
-		quest::summonitem(113244);
+		quest::summonitem(13244);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

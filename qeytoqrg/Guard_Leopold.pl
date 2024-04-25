@@ -5,7 +5,7 @@ sub EVENT_SAY {
 	elsif ($text=~/donate/i) {
 		quest::say("Why, yes! I would love to donate to the Temple of Thunder. My father was a brave and noble member of that order. Here you are. You should ask Guard Cheslin also. His father and mine are both members of Thunder. Now, move along!");
 		#:: Give a 13294 - Donation
-		quest::summonitem(113294);
+		quest::summonitem(13294);
 	}
 }
 

@@ -12,7 +12,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18818 => 1 )) {
 		quest::say("Where did you find this? This was the main price list of Zimel's Blades, but it should be all burnt up. I was at Zimel's right after the fire and I did not see it hanging where it should have been. The entire inside was gutted and . . . wait . . . the sequence of the dots!! Hmmm. I cannot talk with you here. Meet me at the Seafarer's by the docks at night. Give me the note when next we meet.");
 		#:: Give item 18818 - a tattered flier
-		quest::summonitem(118818);
+		quest::summonitem(18818);
 	}
 	#:: Turn in for 13919 Reward Raw Short Sword
 	if (plugin::takeItems(13919 => 1)) {

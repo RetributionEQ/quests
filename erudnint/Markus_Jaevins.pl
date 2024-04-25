@@ -39,7 +39,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18728 => 1)) {
 		quest::say("Welcome. young one! I see you show interest in the circle of magic. Nowhere upon Norrath will you find a greater school than this - the Gatecallers. You shall wear this tunic as a sign that you have begun the training of this circle. Remember, the power of the Gatecaller is the power of summoning. Go find Vasile, he will help teach you the basics of summoning. Good luck, friend!");
 		#:: Give item 13548 - Old Torn Robe*
-		quest::summonitem(113548);
+		quest::summonitem(13548);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

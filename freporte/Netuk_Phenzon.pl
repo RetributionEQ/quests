@@ -12,7 +12,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18818 => 1)) {
 		quest::say("It is about time you returned! Innoruuk would be proud of the red you have spread upon the land.");
 		#:: Give item 15343 - Spell: Siphon Strengh
-		quest::summonitem(115343);
+		quest::summonitem(15343);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

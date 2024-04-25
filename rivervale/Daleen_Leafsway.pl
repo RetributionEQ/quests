@@ -31,7 +31,7 @@ sub EVENT_PROXIMITY_SAY {
 	if ($text=~/turnips/i) {
 		quest::say("Oh, thank you so much! You can keep any payment he gives you. Be sure to tell him I'm sorry.");
 		#:: Summon 16165 - Sack of Turnips
-		quest::summonitem(116165);
+		quest::summonitem(16165);
 	}
 }
 

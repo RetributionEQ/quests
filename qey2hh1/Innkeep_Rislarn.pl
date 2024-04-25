@@ -11,7 +11,7 @@ sub EVENT_SAY {
 	elsif ($text=~/muffin supply/i) {
 		quest::say("Thanks, you're a pal. Take this crate and fill it with muffins, then seal it up and bring the Full Muffin Crate back to me. Don't go trying to pass off that store bought stuff on me either, I need fresh baked muffins. The ones in the stores are already too old and will get moldy too fast, so I don't want those.");
 		#:: Give a 17881 - Muffin Crate
-		quest::summonitem(117881);
+		quest::summonitem(17881);
 	}
 }
 

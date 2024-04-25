@@ -12,7 +12,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(13311 => 1)) {
 		quest::say("Groak.. So you are a friend to the froglok. ..Grooakk.. I am soon to die. My precious legs are a delicacy here. Before I go I must contact my brother Grikk. He is a froglok forager in Innothule. Give him this vial. He will know what it means");
 		#:: Give a 13375 - Empty Vial
-		quest::summonitem(113375);
+		quest::summonitem(13375);
 		#:: Ding!
 		quest::ding();
 		#:: Grant a small amount of experience based on level

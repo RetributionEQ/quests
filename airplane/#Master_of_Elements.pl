@@ -17,7 +17,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(28032 => 1, 28009 => 1, 28006 => 1, 28033 => 1)) {
 		quest::say("You... are.. balanced... and.. powerful.. for.. a.. mortal... $name ..... $name. More.. so.. than.... Magi'kot. But.... you.. are.. not.. yet.. ready.. to.. transcend.. transcend... this.. mortal.. coil. Take.. take.. seize.. this.. Orb... for.. you.. are.. worthy.. of.. reward.. and.. with... the.. aid.. of... the... balance.. balance.. contained.. within.. the.. Orb.. you.. may.. yet.. reach.. the... ultimate... Mastery.");
 		#:: Give a 19436 - Spell: Summon Orb
-		quest::summonitem(119436);
+		quest::summonitem(19436);
 		#:: Step the timer 'depop'
 		quest::stoptimer("depop");
 		#:: Depop without spawn timer

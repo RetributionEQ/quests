@@ -8,7 +8,7 @@ sub EVENT_SAY {
 	elsif ($text=~/collect the wax/i) {
 		quest::say("Grreatt!!  Take this wax jarr.  Head to any place ye can find the wee ones they call bixies. I'm afraid ye're going to hafta bash 'em and search to find out if they're carrying any honeycombs.  If they are, then ye can fill the jar with them and combine them, then return the full honeycomb jar to me. I'll be givin' ye a special candle if ye can do that fer me.");
 		#:: Give a 17958 - Empty Jar
-		quest::summonitem(117958);
+		quest::summonitem(17958);
 	}
 	elsif ($text=~/crime/i) { 
 		quest::say("Aye. I happened upon the crime scene, but too late, more's the pity.  I grabbed fer one of the rogues and got only a handful of his shirt.  Before I knew it, I was left holding his sweaty shirt and he was far from the scene.  I called fer the guards and they summoned the shaman.  Methinks one died and one got away in the chase.  I've heard rumors that the leader of [Clan McMannus] has spotted the culprit.  Ye should go to the leader of Clan McMannus and tell him ye're [searching for the fugitive].");
@@ -32,7 +32,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(12222 => 1)) {
 		quest::say("Great work!! Now I can make more candles! Here ye are, me friend. I call this the Everburn Candle. It has a wee bit o' magic in it. I hope ye like it.");
 		#:: Give a 12220 - Everburn Candle
-		quest::summonitem(112220);
+		quest::summonitem(12220);
 		#:: Ding!
 		quest::ding();
 		#:: Set Factions
@@ -50,7 +50,7 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItems(12275 => 1, 12276 => 1, 12282 => 1, 13953 => 1)) {
 		quest::say("Here is your Candle o' Bravery.");
 		#:: Give a 12277 - Candle of Bravery
-		quest::summonitem(112277);
+		quest::summonitem(12277);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

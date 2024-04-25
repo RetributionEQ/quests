@@ -48,7 +48,7 @@ sub EVENT_ITEM {
 		else {
 			quest::say("After all the things you've done... the things you believe in... leave my shop!");
 			#:: Return a 10300 - Lightstone
-			quest::summonitem(110300);
+			quest::summonitem(10300);
 		}
 	}
 	#:: Match a 10400 - Greater Lightstone
@@ -57,7 +57,7 @@ sub EVENT_ITEM {
 		if ($faction <= 5) {
 			quest::say("A greater lightstone? Thank you very much. Here is a 'Concordance of Research' for you.");
 			#:: Give a 17504 - Concordance of Research
-			quest::summonitem(117504);
+			quest::summonitem(17504);
 			#:: Ding!
 			quest::ding();
 			#:: Set factions
@@ -70,7 +70,7 @@ sub EVENT_ITEM {
 		else {
 			quest::say("After all the things you've done... the things you believe in... leave my shop!");
 			#:: Return a 10400 - Greater Lightstone
-			quest::summonitem(110400);
+			quest::summonitem(10400);
 		}
 	}
 	#:: Return unused items

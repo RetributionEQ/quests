@@ -15,7 +15,7 @@ sub EVENT_ITEM {
 	if (plugin::check_handin(\%itemcount, 13078 => 2, 7305 => 2)) {
 		quest::say("You have mastered these spells quickly. You shall now wear the gloves of the Gatecaller. Cumbersome they may feel, but they protect the hands of a young magician. In your young days of magic they will protect you from harm. They are not valued much by merchants, but they are prized by other circles. Nevertheless, we offer them only to our young Gatecallers. You may now be of assistance with a [slight problem].");
 		#:: Give item 12209 - Gloves of the Gatecaller
-		quest::summonitem(112209);
+		quest::summonitem(12209);
 		#:: Ding!
 		quest::ding();
 		#:: Give a small amount of xp
@@ -34,7 +34,7 @@ sub EVENT_ITEM {
 	if (plugin::check_handin(\%itemcount, 13895 => 1)) {
 		quest::say("So the rumor shows true. Good work. You are an excellent student and a noble $race. Here is your spell as I promised. Go forth and fill your brain with knowledge.");
 		#:: Give item 15313 - Spell: Fire Flux
-		quest::summonitem(115313);
+		quest::summonitem(15313);
 		#:: Ding!
 		quest::ding();
 		#:: Give a small amount of xp

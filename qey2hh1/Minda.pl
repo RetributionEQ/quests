@@ -18,7 +18,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(12103 => 1)) {
 		quest::say("May the Rainkeeper keep you safe. I thank you. Here is the empty chalice. By the way, inform your superior that the operations of the [Karana bandits] are getting closer to Qeynos.");
 		#:: Give a 12104 - Empty Chalice
-		quest::summonitem(112104);
+		quest::summonitem(12104);
 		#:: Ding
 		quest::ding();
 		#:: Set factions

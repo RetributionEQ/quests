@@ -15,7 +15,7 @@ sub EVENT_SAY {
 		if ($faction <= 4) {
 			quest::say("Ahhhhh $name.  Slansin used to have need of those potions, however he mysteriously disappeared long ago. The only person I know of who still wants them is a cleric of the Church of Marr in Freeport.");			
 			#:: Give a 13983 - Inert Potion
-			quest::summonitem(113983);
+			quest::summonitem(13983);
 		}
 		else {
 			quest::say("You are lucky to be standing. Leave here immediately or suffer grave consequences! You are not welcome amongst the Craftkeepers.");

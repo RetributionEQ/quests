@@ -17,7 +17,7 @@ sub EVENT_SAY {
 	elsif ($text=~/dive for the remains/i) {
 		quest::say("Thank the Tribunal!! I would have, but I cannot swim. Take this chest. Fill it with the four pieces which fell below the surface. I know not what else lies within. When you fill the box and combine the items, return it to Renth. Good luck, $name.");
 		#:: Give a 17945 - Empty Box
-		quest::summonitem(117945);
+		quest::summonitem(17945);
 	}
 }
 
@@ -26,7 +26,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(13244 => 1)) {
 		quest::say("Oh thank you. Sorry, but the bottle is empty now. I hope you did't need any. Take the empty bottle back to Dargon. He may refill it for you.");
 		#:: Give a 13245 - Empty Bottle of Elixir
-		quest::summonitem(113245);
+		quest::summonitem(13245);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

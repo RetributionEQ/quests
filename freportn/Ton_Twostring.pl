@@ -18,17 +18,17 @@ sub EVENT_SAY {
 	elsif ($text=~/kelethin/i) {
 		quest::say("Take this pouch to Idia in Kelethin.  You can find her at the bard guild hall.  I am sure she will compensate you for your troubles.");
 		#:: Summon 18167 - Pouch of Mail (Kelethin)
-		quest::summonitem(118167);
+		quest::summonitem(18167);
 	}
 	elsif ($text=~/qeynos/i) {
 		quest::say("Take this pouch to Eve Marsinger in Qeynos.  You can find her at the bard guild hall.  I am sure she will compensate you for your troubles.");
 		#:: Summon 18165 - Pouch of Mail (Highpass)
-		quest::summonitem(118165);
+		quest::summonitem(18165);
 	}
 	elsif ($text=~/highpass/i) {
 		quest::say("Take this pouch to Lislia Goldtune in Highpass.  You can find her at the entrance to HighKeep.  I am sure she will compensate you for your troubles.");
 		#:: Summon 18156 - Pouch of Mail (Qeynos)
-		quest::summonitem(118156);
+		quest::summonitem(18156);
 	}
 }
 

@@ -183,6 +183,17 @@ sub WorldAnnounce {
 	quest::we(335, $message);
 }
 
+sub convert_seconds {
+    my ($seconds) = @_;
+
+    my $hours = int($seconds / 3600);
+    $seconds %= 3600;
+    my $minutes = int($seconds / 60);
+    $seconds %= 60;
+
+    return ($hours, $minutes, $seconds);
+}
+
 # TODO - UPDATE THIS URL WHEN OUR ALLACLONE IS UP
 sub WorldAnnounceItem {
     my ($message, $item_id) = @_;
@@ -227,4 +238,43 @@ sub DeserializeHash {
     my $string = shift;
     my %hash = map { split('=', $_, 2) } split(';', $string);
     return %hash;
+}
+
+sub num2en {
+    my $number = shift;
+
+    return "zero" if $number == 0; # Handle 0 explicitly
+    return "one thousand" if $number == 1000; # Special case for 1000
+
+    my %map = (
+        1 => "one", 2 => "two", 3 => "three", 4 => "four", 5 => "five",
+        6 => "six", 7 => "seven", 8 => "eight", 9 => "nine", 10 => "ten",
+        11 => "eleven", 12 => "twelve", 13 => "thirteen", 14 => "fourteen",
+        15 => "fifteen", 16 => "sixteen", 17 => "seventeen", 18 => "eighteen", 19 => "nineteen",
+    );
+
+    my %tens_map = (
+        2 => "twenty", 3 => "thirty", 4 => "forty", 5 => "fifty",
+        6 => "sixty", 7 => "seventy", 8 => "eighty", 9 => "ninety",
+    );
+
+    my $word = '';
+
+    if ($number >= 100) {
+        my $hundreds = int($number / 100);
+        $word .= $map{$hundreds} . " hundred";
+        $number %= 100; # Reduce number to remainder for further processing
+        $word .= " and " if $number > 0; # Add 'and' if there's more to come
+    }
+
+    if ($number >= 20) {
+        my $tens = int($number / 10);
+        $word .= $tens_map{$tens};
+        $number %= 10; # Reduce number to remainder for ones place
+        $word .= "-" if $number > 0; # Add hyphen for numbers like "twenty-one"
+    }
+
+    $word .= $map{$number} if $number > 0 && exists $map{$number};
+
+    return $word;
 }

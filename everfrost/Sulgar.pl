@@ -11,12 +11,12 @@ sub EVENT_SAY {
 	elsif ($text=~/tome/i) {
 		quest::say("This tome details the wheel of Tarton, and the lore on where the pieces of it may be found. Use it in good faith.");		
 		#:: Give 18031 - Tome of the Wheel
-		quest::summonitem(118031);
+		quest::summonitem(18031);
 	}
 	elsif ($text=~/wheel case/i) {
 		quest::say("I will lend you this wheel case - put the ten spokes of the wheel in it when you have collected them. I did say lend, however. I shall need the case back. Once you have constructed the Staff of the Wheel and the Star of Eyes, I will trade you them for two magical runes I have found useful in my research.");
 		#:: Give 17510 - Glowing Chest (quest container)
-		quest::summonitem(117510);
+		quest::summonitem(17510);
 	}
 }
 
@@ -25,9 +25,9 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(14360 => 1, 14361 => 1)) {
 		quest::say("Wonderful, you have brought me the Wheel. Here is the reward I promised you.");
 		#:: Give 11880 - Rune of Frost
-		quest::summonitem(111880);
+		quest::summonitem(11880);
 		#:: Give 11881 - Rune of the Astral
-		quest::summonitem(111881);
+		quest::summonitem(11881);
 		#:: Ding!
 		quest::ding();
 		#:: Grant a large amount of experience

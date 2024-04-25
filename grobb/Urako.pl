@@ -65,7 +65,7 @@ sub EVENT_ITEM {
 		if ($faction <= 4) {
 			quest::say("Tank you. You saved me neck. Kaglari not learn me mistake now. Me give you a [Kaglari mana doll].");
 			#:: Give a 12212 - Kaglari Mana Doll
-			quest::summonitem(112212);
+			quest::summonitem(12212);
 			#:: Ding!
 			quest::ding();
 			#:: Set factions
@@ -79,24 +79,24 @@ sub EVENT_ITEM {
 		elsif ($faction == 5) {
 			quest::say("Darkones no hates you, buts you not helps us enuff.");
 			#:: Return a 12213 - The Baker
-			quest::summonitem(112213);
+			quest::summonitem(12213);
 			#:: Return a 12214 - The Butcher
-			quest::summonitem(112214);
+			quest::summonitem(12214);
 			#:: Return a 12215 - The Captain
-			quest::summonitem(112215);
+			quest::summonitem(12215);
 			#:: Return a 12216 - The Minstrel
-			quest::summonitem(112216);
+			quest::summonitem(12216);
 		}
 		else {
 			quest::say("You die! Me Darkone!  We no frend to you.  You run now!");
 			#:: Return a 12213 - The Baker
-			quest::summonitem(112213);
+			quest::summonitem(12213);
 			#:: Return a 12214 - The Butcher
-			quest::summonitem(112214);
+			quest::summonitem(12214);
 			#:: Return a 12215 - The Captain
-			quest::summonitem(112215);
+			quest::summonitem(12215);
 			#:: Return a 12216 - The Minstrel
-			quest::summonitem(112216);
+			quest::summonitem(12216);
 		}
 	}
 	#:: Return unused items

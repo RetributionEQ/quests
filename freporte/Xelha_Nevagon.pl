@@ -20,7 +20,7 @@ sub EVENT_ITEM {
 		if ($faction <= 5) {
 			quest::say("Let's see here. One.. two.. three.. and.. four. Great!! Just enough for my needs. You are serving Xelha well. I give you Xelha's Sparkler. It is not much, but neither are you. You know what I really need is a cyclops eye. That would be worthy of a great reward.");
 			#:: Give item 12247 - Xelha's Sparkler
-			quest::summonitem(112247);
+			quest::summonitem(12247);
 			#:: Ding!
 			quest::ding();
 			#:: Set factions
@@ -38,10 +38,10 @@ sub EVENT_ITEM {
 			#:: Made up
 			quest::say("You are no ally of the Dismal Rage.  Run while you still have legs!!");
 			#:: Return four 13099 - Spiderling Silk
-			quest::summonitem(113099);
-			quest::summonitem(113099);
-			quest::summonitem(113099);
-			quest::summonitem(113099);
+			quest::summonitem(13099);
+			quest::summonitem(13099);
+			quest::summonitem(13099);
+			quest::summonitem(13099);
 		}
 	}
 	#:: Match four 10307 - Fire Beetle Eye
@@ -68,10 +68,10 @@ sub EVENT_ITEM {
 			#:: Made up
 			quest::say("You are no ally of the Dismal Rage.  Run while you still have legs!!");
 			#:: Return four 10307 - Fire Beetle Eye
-			quest::summonitem(110307);
-			quest::summonitem(110307);
-			quest::summonitem(110307);
-			quest::summonitem(110307);
+			quest::summonitem(10307);
+			quest::summonitem(10307);
+			quest::summonitem(10307);
+			quest::summonitem(10307);
 		}
 	}
 	#:: Match four 13073 - Bone Chips
@@ -96,10 +96,10 @@ sub EVENT_ITEM {
 			#:: Made up
 			quest::say("You are no ally of the Dismal Rage.  Run while you still have legs!!");
 			#:: Return four 13073 - Bone Chips
-			quest::summonitem(113073);
-			quest::summonitem(113073);
-			quest::summonitem(113073);
-			quest::summonitem(113073);
+			quest::summonitem(13073);
+			quest::summonitem(13073);
+			quest::summonitem(13073);
+			quest::summonitem(13073);
 		}	
 	}
 	#:: Match a 13927 - Cyclops Eye
@@ -123,7 +123,7 @@ sub EVENT_ITEM {
 		else {
 			quest::say("I will do nothing to aid beings like you.");
 			#:: Return a 13927 - Cyclops Eye
-			quest::summonitem(113927);
+			quest::summonitem(13927);
 		}
 	}
 	#:: Return unused items

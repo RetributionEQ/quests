@@ -3,7 +3,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18740 => 1)) {
 		quest::say("Welcome to the Academy of Arcane Sciences. I am Lorme Tredore, Master Magician. Here is our guild robe, wear it with pride and represent us well, young $name. Now, let's get to work.");
 		#:: Give a 13559 - Used Violet Robe*
-		quest::summonitem(113559);
+		quest::summonitem(13559);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

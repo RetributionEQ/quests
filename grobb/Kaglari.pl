@@ -27,7 +27,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(13073 => 2, 13187 => 2)) {
 		quest::say("Good. Innoruuk get special gift. Not you, dis time. Here. Learning majik wid dis. You more want to [help Innoruuk]?");
 		#:: Give a 15093 - Spell: Burst of Flame
-		quest::summonitem(115093);
+		quest::summonitem(15093);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions
@@ -41,7 +41,7 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItems(13916 => 1)) {
 		quest::say("Good job. Dat help lerns um. Takes dis ta help ya lerns how ta do more hateful tings. Ya gots a good starts fer Him ta be prouds a ya.");
 		#:: Give a 15272 - Spell: Spirit Pouch
-		quest::summonitem(115272);
+		quest::summonitem(15272);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions
@@ -55,7 +55,7 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItems(18791 => 1)) {
 		quest::say("Good.. Kaglari need you help.. Kaglari teach you majik now.  When you ready for task you tell Kaglari!!  Yooz reeturn to mez when yooz ar strongur, mez teech yooz bout da mor advanced tings.");
 		#:: Give a 13529 - Muck Stained Tunic*
-		quest::summonitem(113529);
+		quest::summonitem(13529);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

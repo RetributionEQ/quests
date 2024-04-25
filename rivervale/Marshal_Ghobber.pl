@@ -35,7 +35,7 @@ sub EVENT_SAY {
 			#:: Ding
 			quest::ding();
 			#:: Give 13936 - Squad Ring
-			quest::summonitem(113936);
+			quest::summonitem(13936);
 			#:: Set faction
 			quest::faction(263, -1000);  	#:: - Guardians of the Vale
 		}

@@ -8,7 +8,7 @@ sub EVENT_SAY {
 	elsif ($text=~/eradicate the piranha/i) {
 		quest::say("Yes. You are new to the word of Marr. Go to the waters surrounding the Hall of Truth. Fill this sack with no fewer than four dead piranha. You'd best keep well fed. I do not want you to eat the fish before you fill the sack and combine it. May Marr be with you.");
 		#:: Give a 17936 - Empty Fish Sack
-		quest::summonitem(117936); 
+		quest::summonitem(17936); 
 	}
 }
 

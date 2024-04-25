@@ -19,7 +19,7 @@ sub EVENT_ITEM {
 		#:: Ding!
 		quest::ding();
 		#:: Give a 10139 - Bone Talisman
-		quest::summonitem(110139);
+		quest::summonitem(10139);
 		#:: Set faction
 		quest::faction(382,30);	# + Kerra Isle
 	}

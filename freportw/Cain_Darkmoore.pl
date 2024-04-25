@@ -42,13 +42,13 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItems(13916 => 1 )) {
 		quest::say("I must have two Deathfist belts.");
 		#:: Return a 13916 - Deathfist Slashed Belt
-		quest::summonitem(113916);
+		quest::summonitem(13916);
 	}
 	#:: Match a 18742 - A Tattered Note
 	elsif (plugin::takeItems(18742 => 1 )) {
 		quest::say("Welcome to the Steel Warriors, young warrior. It is time to prove your mettle. Look to the outskirts of Freeport and join the fray. Show Clan Deathfist what a warrior of the bunker can do.");
 		#:: Give item 13572 - Dirty Training Tunic
-		quest::summonitem(113572);		
+		quest::summonitem(13572);		
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

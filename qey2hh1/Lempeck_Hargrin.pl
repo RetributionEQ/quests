@@ -29,7 +29,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(13954 => 1)) {
 		quest::say("Thank you!! I felt the madness nearing my brain, but now I feel much better. Please take this as thanks - it is all I have to donate to Astaed Wemor. Be sure he gets it. I shall thank Rodcet Nife every day for sending help.");
 		#:: Give a 13970 - Rusty Scythe
-		quest::summonitem(113970);
+		quest::summonitem(13970);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

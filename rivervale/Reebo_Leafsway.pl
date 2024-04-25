@@ -13,7 +13,7 @@ sub EVENT_SAY {
 	elsif ($text=~/trail to karana's wisdom/i) {
 		quest::say("Good. First you should learn that Karana's work is just that.. work. Karana provides us with the tools but it is by the sweat of our brows that we prosper. Common sense and hard work are two things that are highly prized by our people. Time for you to sweat, young one. Take this crate of carrots over to Blinza Toepopal in the Fool's Gold. They need our finest carrots for Mayor Gubbin's stew. When you return I will teach you a lesson of the Rainkeeper.");
 		#:: Give a 13971 - Crate of Rotten Carrots
-		quest::summonitem(113971);
+		quest::summonitem(13971);
 	}
 	elsif ($text=~/crops/i) {
 		quest::say("The crops we grow here are mostly carrots, lettuce and squash. We also are the only place on all of Norrath where the soil can support the mystical Jumjum Stalk.");
@@ -46,7 +46,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(13971 => 1)) {
 		quest::say("Very good. Very good indeed. Karana does not need the blind obedience that so many deities require. Trust your instincts, they are more often right than not. Here, take this to Blinza. Hurry, she is expecting them. You may keep the donation she gives you in return.");
 		#:: Give a 13957 - Crate of Fine Carrots
-		quest::summonitem(113957);
+		quest::summonitem(13957);
 		#:: Ding!
 		quest::ding();
 		#:: Grant a tiny amount of experience
@@ -56,7 +56,7 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItems(13972 => 1)) {
 		quest::say("These carrots are rotten. They were rotten when I gave them to you. Why would you waste time and energy on such a fool's errand? Because I asked you to? Many, even those you trust will ask you to do things which you should not. Use the common sense that Karana has blessed you with to know which tasks can benefit our people and which could harm them. Learn this lesson well. You will need it if you plan to adventure beyond the vale. Now take these fresh carrots to Blinza and apologize for your error. You may keep the donation she gives you as payment.");
 		#:: Give a 13958 - Crate of Carrots
-		quest::summonitem(113958);
+		quest::summonitem(13958);
 		#:: Ding!
 		quest::ding();
 	}
@@ -84,25 +84,25 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItems(13974 => 3)) {
 		quest::say("Oh good! I see you have taugh that nasty Nillipuss a thing or two! Good. But it seems to me that he has stolen more jumjum than this. Perhaps he needs another lesson?");
 		#:: Give a 13974 - Jumjum Stalk
-		quest::summonitem(113974);
+		quest::summonitem(13974);
 		#:: Give a 13974 - Jumjum Stalk
-		quest::summonitem(113974);
+		quest::summonitem(13974);
 		#:: Give a 13974 - Jumjum Stalk
-		quest::summonitem(113974);
+		quest::summonitem(13974);
 	}
 	#:: Match two 13974 - Jumjum Stalk
 	elsif (plugin::takeItems(13974 => 2)) {
 		quest::say("Oh good! I see you have taugh that nasty Nillipuss a thing or two! Good. But it seems to me that he has stolen more jumjum than this. Perhaps he needs another lesson?");
 		#:: Give a 13974 - Jumjum Stalk
-		quest::summonitem(113974);
+		quest::summonitem(13974);
 		#:: Give a 13974 - Jumjum Stalk
-		quest::summonitem(113974);
+		quest::summonitem(13974);
 	}
 	#:: Match two 13974 - Jumjum Stalk
 	elsif (plugin::takeItems(13974 => 1)) {
 		quest::say("Oh good! I see you have taugh that nasty Nillipuss a thing or two! Good. But it seems to me that he has stolen more jumjum than this. Perhaps he needs another lesson?");
 		#:: Give a 13974 - Jumjum Stalk
-		quest::summonitem(113974);
+		quest::summonitem(13974);
 	}
 	#:: Return unused items
 	plugin::returnUnusedItems();

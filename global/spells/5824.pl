@@ -12,6 +12,8 @@ sub EVENT_SPELL_EFFECT_CLIENT {
         $client->SetBucket("Return-H", $client->GetHeading());
         $client->SetBucket("Return-Zone", $zoneid);
         $client->SetBucket("Return-Instance", $instanceid);
+
+        $client->MovePCInstance(151, 0, 185, -834, 4, -125);
     } else {
         quest::debug("We are in Bazaar");
         my $ReturnX = $client->GetBucket("Return-X");
@@ -34,13 +36,18 @@ sub EVENT_SPELL_EFFECT_CLIENT {
             $client->DeleteBucket("Return-H");
             $client->DeleteBucket("Return-Zone");
             $client->DeleteBucket("Return-Instance");            
-
-            $client->MovePCInstance($ReturnZone, $ReturnInstance, $ReturnX, $ReturnY, $ReturnZ, $ReturnH);            
         } else {            
             quest::debug("Returning to default location");
-            plugin::move_startzone();
-            return -1;
+
+            $ReturnX = $client->GetBindX();
+            $ReturnY = $client->GetBindY();
+            $ReturnZ = $client->GetBindZ();
+            $ReturnH = $client->GetBindHeading();
+            $ReturnZone = $client->GetBindZoneID();
+            $ReturnInstance = 0;          
         }
+
+        $client->MovePCInstance($ReturnZone, $ReturnInstance, $ReturnX, $ReturnY, $ReturnZ, $ReturnH);
     }
 }
 

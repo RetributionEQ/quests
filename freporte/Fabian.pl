@@ -24,7 +24,7 @@ sub EVENT_ITEM {
 #::		if ($random_lute_strings_message == 4) {
 #::			quest::say("Many thanks, merry gentlefolk! Let me cross your palm in gratitude for your kindness. Hmmmm where did my lucky coin go?");
 #::			#:: Give a 13710 - Etched Silver Coin
-#::			quest::summonitem(113710);
+#::			quest::summonitem(13710);
 #::		} else {
 			quest::say("Many thanks, merry gentlefolk! Let me cross your palm in gratitude for your kindness.");
 #:: 		}
@@ -46,7 +46,7 @@ sub EVENT_ITEM {
 #::	if (plugin::takeItems(13710 => 1)) {
 #::		quest::say("'My lucky coin! How did it get in there? Well, never mind that. You are an honest person and although honesty is its own reward, I feel obligated to return the favor. Take this to Dionna if you enjoy music. Farewell friend!");
 #::		#:: Give a 13708 - Note from Fabian
-#::		quest::summonitem(113708);
+#::		quest::summonitem(13708);
 #::		#:: Ding!
 #::		quest::ding();
 #::		#:: Set factions

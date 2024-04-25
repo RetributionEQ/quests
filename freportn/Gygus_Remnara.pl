@@ -9,7 +9,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18738 => 1 )) {
 		quest::say("Welcome to the Sentries of Passion. We are the protectors of the Temple of Marr. Wear our tunic with pride, young knight! Find your wisdom within these walls and in the words of our priests. And remember to aid all who follow the twin deities, Mithaniel and Erollisi Marr.");
 		#:: Give item 13556 - White and Blue Tunic*
-		quest::summonitem(113556);
+		quest::summonitem(13556);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

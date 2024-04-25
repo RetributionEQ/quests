@@ -9,7 +9,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18801 => 1)) {
 		quest::say("My sister is in danger. She is all the family I have left. I shall be on my way soon. Please take her my handkerchief, so she knows you have contacted me. Thank you. I am thankful Nerissa ran into you. I just wonder why she did not tell Kane about her suspicions.");
 		#:: Give a 13302 - Monogrammed Cloth
-		quest::summonitem(113302);
+		quest::summonitem(13302);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

@@ -18,7 +18,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(13961 => 1)) {
 		quest::say("Ye've returned!! How wonderful! The people o' Halas thank ye! It isn't often we get to indulge ourselves in the delicacies o' warmer climates. Here ye go, me friend. Ye've completed the delivery in good time. I hope ye deliver more often. Here, try some of me new creation.. Lion Delight.");
 		#:: Give a 12221 - Lion Delight
-		quest::summonitem(112221);
+		quest::summonitem(12221);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

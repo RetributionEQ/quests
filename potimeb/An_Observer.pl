@@ -3,19 +3,20 @@ sub EVENT_SPAWN {
 }
 
 sub EVENT_SAY {
-    if ($text=~/hail/i) {
+    if ($text=~/hail/i) {        
         if (quest::get_data($quarmkey) eq "") {
             quest::set_data($quarmkey, 1);
             quest::say("I have been watching you... since the great before...");
             quest::emote("An Observer beams a smile at you.");
             quest::say("Did you know? Your great deeds are [" . quest::saylink("fabled") . "] even among my kind.");
-            set_subflag($client, 'FNagafen', 'Quarm', 1);
+            plugin::set_subflag($client, 'FNagafen', 'Quarm', 1);
         } else {
             quest::say("Did you know? Your great deeds are [" . quest::saylink("fabled") . "] even among my kind.");
         }
     }
 
-    if ($text =~ /fabled/i && $expansion >= 20) {
+    if ($text =~ /fabled/i) {
+        plugin::set_subflag($client, 'FNagafen', 'Quarm', 1);
         quest::say("Indeed. I remember one particularly harrowing battle...");
     }
 }

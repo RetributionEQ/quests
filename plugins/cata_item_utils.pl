@@ -1,5 +1,5 @@
 sub GetUpgrades {
-    my $base_id = shift;
+    my $base_id = GetBaseID(shift);
     my $dbh = plugin::LoadMysql();
     
     # Prepare and execute the statement

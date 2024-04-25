@@ -67,7 +67,7 @@ sub EVENT_SAY {
 	elsif ($text=~/milea is in east karana/i) {
 		quest::say("You have seen Milea Clothspinner!! This is great news. I wish I could travel to see her, but Cain will not allow me to do so at this time. You must take her a note for me. Here, take this to her. As a master in this order, I command you to do so immediately. Go!!");
 		#:: Give a 18934 - A Sealed Letter "LoveToMilea"
-		quest::summonitem(118934);
+		quest::summonitem(18934);
 	}
 }
 

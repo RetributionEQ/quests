@@ -55,7 +55,7 @@ sub EVENT_ITEM {
 		elsif ($faction == 5) {
 			quest::say("There is no reason to dislike you, but we of the Deepwater Knights must see more done for our cause before we truly accept you.");
 			#:: Return a 13881 -  Nicked Coin
-			quest::summonitem(113881);
+			quest::summonitem(13881);
 		}
 		else {
 			quest::say("A gift for the needy?  Very thoughtful.  May Prexus watch over you.");

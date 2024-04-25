@@ -38,14 +38,14 @@ sub EVENT_ITEM {
 		if ($faction < 5) {
 			quest::say("May the swift and silent spirit of Fizzlethorpe Bristlebane smile upon your frail soul.");
 			#:: Give a 13936 - Squad Ring
-			quest::summonitem(113936);
+			quest::summonitem(13936);
 			#:: Ding!
 			quest::ding();
 		}
 		else {
 			quest::say("Fizzlethorpe Bristlebane only smiles upon the worthy, come back after your deeds have proven your worth.");
 			#:: Give back a 13936 - Squad Ring
-			quest::summonitem(113936);
+			quest::summonitem(13936);
 		}
 	}
 	#:: Return unused items

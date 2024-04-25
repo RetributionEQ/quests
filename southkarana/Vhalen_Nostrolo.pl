@@ -21,7 +21,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(13114 => 1)) {
 		quest::say("Oh, dear! I forgot to repair Cassius' lute. I shall fix and return it to him myself. Thank you for bringing this to me. Here, please return this note to Cassius. He shall be most happy. Thank you again, good citizen!");
 		#:: Give a 18803 - Note To Cassius
-		quest::summonitem(118803);
+		quest::summonitem(18803);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

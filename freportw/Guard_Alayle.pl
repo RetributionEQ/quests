@@ -15,7 +15,7 @@ sub EVENT_ITEM {
 		if ($class eq "Paladin") {
 			quest::say("This is not good news. I must leave immediately. Here. Take this to Kala.. I mean my father. I found it on the floor of Sir Lucan D'Lere's quarters. Thanks again, messenger. I got this just in time");
 			#:: Give a 18818 - A Tattered Flier
-			quest::summonitem(118818);
+			quest::summonitem(18818);
 			#:: Ding!
 			quest::ding();
 			#:: Set factions

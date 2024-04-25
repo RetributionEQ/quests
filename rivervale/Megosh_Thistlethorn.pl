@@ -17,12 +17,12 @@ sub EVENT_SAY {
 	elsif ($text=~/trades/i) {
 		quest::say("I thought you might be one who was interested in the various different trades, but which one would suit you? Ahh, alas, it would be better to let you decide for yourself, perhaps you would even like to master them all! That would be quite a feat. Well, lets not get ahead of ourselves, here, take this book. When you have finished reading it, ask me for the [second book], and I shall give it to you. Inside them you will find the most basic recipes for each trade. These recipes are typically used as a base for more advanced crafting, for instance, if you wished to be a smith, one would need to find some ore and smelt it into something usable. Good luck!");
 		#:: Give a 51121 - Tradeskill Basics : Volume I
-		quest::summonitem(151121);
+		quest::summonitem(51121);
 	}
 	elsif ($text=~/second book/i) {
 		quest::say("Here is the second volume of the book you requested, may it serve you well!");
 		#:: Give a 51122 - Tradeskill Basics : Volume II
-		quest::summonitem(151122);
+		quest::summonitem(51122);
 	}
 }
 
@@ -31,7 +31,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18432 => 1)) {
 		quest::say("Welcome to the Storm Reapers $name! Here is a tunic to keep you warm in your travels. Rivervale, our lovely home is facing dangerous times. From both the east and west forces devoted to the evil Gods Bertoxxulous adn Innoruuk are corrupting and destroying the wilds of Norrath. Also, the Orcs of Clan Deathfist are waging war on this entire region and gathering lumber and stone for some unknown purpose. We must do our best to preserve the lands and way of life of all Karanas people. Once you are ready to begin defending the vale against the evil forces, please return to me. I also posses knowledge of various [trades], seek me out when you wish to learn about them.");
 		#:: Give a 13541 - Jumjum Sack Tunic*
-		quest::summonitem(113541);
+		quest::summonitem(13541);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

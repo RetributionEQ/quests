@@ -12,7 +12,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(10351 => 1)) {
 		quest::say("Outstanding! If you can kill the taskmaster, you might prove useful in recovering the items the orcs took from me when they caught me out in the Faydarks. [Interested] in helping me out?");
 		#:: Give item 13850 - Unfinished Blade Mold
-		quest::summonitem(113850);
+		quest::summonitem(13850);
 		#:: Ding!
 		quest::ding();
 		#:: Grant a moderate amount of experience
@@ -23,7 +23,7 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItems(9307 => 1)) {
 		quest::say("MY SHIELD!! Excellent, laddie! Next item on the list is my ringmail. Once I have my [ringmail], I am out of here for good. I will finally be able to leave!");
 		#:: Give item 13850 - Unfinished Sledge Mold
-		quest::summonitem(113851);
+		quest::summonitem(13851);
 		#:: Ding!
 		quest::ding();
 		#:: Grant a moderate amount of experience

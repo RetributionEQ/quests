@@ -1,18 +1,240 @@
-my %suffix_to_pretty_name = (
-    'A' => 'Antonica',
-    'G' => 'Gunthak',
-    'O' => 'Odus',
-    'F' => 'Faydwer',
-    'K' => 'Kunark',
-    'V' => 'Velious',
-    'L' => 'Luclin',
-    'P' => 'Planes',
-    'T' => 'Taelosia',
-    'D' => 'Discord',
+my @categories = (
+    'Antonica',  # 0 
+    'Faydwer',   # 1 
+    'Odus',      # 2 
+    'Kunark',    # 3 
+    'Velious',   # 4 
+    'Luclin',    # 5 
+    'The Planes',# 6 
+    'Taelosia',  # 7 
+    'Discord'    # 8 
 );
 
-sub get_suffixes {
-    return ('A', 'G', 'O', 'F', 'K', 'V', 'L', 'P', 'T', 'D'); 
+my %waypoints = (
+    'qeynos2'       => ["North Qeynos", 0, 392, 165, 4, 310],
+    'qrg'           => ["Surefall Glade", 0, -66, 45, 4, 200],
+    'freportw'      => ["West Freeport", 0, -396, -283, -23, 500],
+    'rivervale'     => ["Rivervale", 0, -140, -10, 4, 220],
+    'qey2hh1'       => ["Western Plains of Karana (Combine Spires)", 0, -14816, -3570, 36, 400],
+    'northkarana'   => ["Northern Plains of Karana (Gypsy Camp)", 0, -175, -688, -7.5, 10],
+    'southkarana'   => ["Southern Plains of Karana (Aviak Village)", 0, 1027, -6689, 0, 260],
+    'eastkarana'    => ["Eastern Plains of Karana (Druid Ring)", 0, 423, 1333, 1, 210],
+    'blackburrow'   => ["Blackburrow", 0, -7, 38, 3, 300],
+    'commons'       => ["West Commonlands (Roadside Inn)", 0, 503, -127, -51, 128],
+    'erudnext'      => ["Erudin", 2, -240, -1216, 52, 510],
+    'lavastorm'     => ["Lavastorm Mountains (Druid Ring)", 0, 1318, 918, 119, 270],
+    'halas'         => ["Halas", 0, 0, 26, 3.75, 256],
+    'oasis'         => ["Oasis of Marr", 0, 110, 532, 6, 225],
+    'hole'          => ["The Ruins of Old Paineel", 2, -543, 287, -140, 125],
+    'neriakb'       => ["Neriak Commons", 0, -493, 3, -10, 128],
+    'feerrott'      => ["The Feerrott", 0, -1830, 430, 18, 33],
+    'cazicthule'    => ["Accursed Temple of Cazic-Thule", 0, -466, 255, 20, 400],    
+    'oggok'         => ["Oggok", 0, 513, 465, 3.75, 205],
+    'grobb'         => ["Grobb", 0, -200, 223, 3.75, 414],
+    'gfaydark'      => ["Greater Faydark (Druid Ring)", 1, -385, 458, 0, 0],
+    'akanon'        => ["Ak'anon", 1, -761, 1279, -24.25, 182.25],
+    'mistmoore'     => ["Castle of Mistmoore", 1, 122, -294, -179, 135],
+    'kaladima'      => ["Southern Kaladim", 1, 197, 90, 3.75, 492],
+    'felwithea'     => ["Northern Felwithe", 1, -626, 240, -10.25, 330],
+    'oot'           => ["The Ocean of Tears", 0, -9172, 394, 6, 188],
+    'cauldron'      => ["Dagnor's Cauldron (Near Unrest)", 1, -700, -1790, 100, 11],
+    'paineel'       => ["Paineel", 2, 553, 746, -118, 0],
+    'fieldofbone'   => ["The Field of Bone", 3, 1617, -1684, -55, 0],
+    'firiona'       => ["Firiona Vie", 3, 1825, -2397, -98, 423],
+    'lakeofillomen' => ["Lake of Ill Omen", 3, -1070, 985, 78, 145],
+    'dreadlands'    => ["The Dreadlands", 3, 9633, 3005, 1049, 0],
+    'karnor'        => ["Karnor's Castle", 3, 160, 251, 3.75, 310],
+    'cityofmist'    => ["The City of Mist", 3, -784, 0, 3, 115],
+    'skyfire'       => ["The Skyfire Mountains", 3, 780, -3100, -158, 0],
+    'overthere'     => ["The Overthere", 3, 1480, -2757, 11, 500],
+    'trakanon'      => ["Trakanon's Teeth", 3, -4720, -1620, -473, 320],
+    'cabeast'       => ["Eastern Cabilis", 3, -136, 969, 4.68, 271],
+    'iceclad'       => ["The Iceclad Ocean (Tower of Frozen Shadow)", 4, 3127, 1300, 111, 500],
+    'eastwastes'    => ["Eastern Wastes (Crystal Caverns)", 4, 464, -4037, 144, 178],
+    'cobaltscar'    => ["Cobalt Scar", 4, -1633, -1064, 296, 115],
+    'wakening'      => ["The Wakening Land", 4, 4552, 1455, -60, 130],
+    'westwastes'    => ["The Western Wastes (Temple of Veeshan)", 4, 808, 1323, -196, 373],
+    'sharvahl'      => ["The City of Shar Vahl", 5, 250, 55, -188, 400],
+    'ssratemple'    => ["Ssraeshza Temple", 5, -6.5, 0, 4, 0],
+    'dawnshroud'    => ["The Dawnshroud Peaks", 5, -1260, -280, 97, 500],
+    'umbral'        => ["The Umbral Plains", 5, 1840, -640, 24, 0],
+    'hateplaneb'    => ["The Plane of Hate", 6, -400, 680, 4, 330], 
+    'airplane'      => ["The Plane of Sky", 6, 700, 1560, -680, 300],
+    'fearplane'     => ["The Plane of Fear", 6, 1065, -1305, 3, 500],
+    'poknowledge'   => ["The Plane of Knowledge", 6, -215, 50, -160, 128],
+    'potranquility' => ["The Plane of Tranquility", 6, -8, -192, -528, 115],
+    'gunthak'       => ["The Gulf of Gunthak", 0, -410, 1402, 3, 0],
+    'natimbi'       => ["Natimbi, the Broken Shores", 7, -310, 125, 520, 70],
+    'barindu'       => ["Barindu, Hanging Gardens", 7, 210, -515, -117, 510],
+    'kodtaz'        => ["Kod'Taz, Broken Trial Grounds", 7, 1536, -2422, -348, 4],
+    'qvic'          => ["Qvic, Prayer Grounds of Calling", 7, -1018, -1403, -490, 3],
+    'txevu'         => ["Txevu, Lair of the Elite", 7, -316, -20, -420, 430],
+);
+
+sub AwardBonusUnlocks {
+    my $client = plugin::val('$client');
+    my $eligible = quest::get_data($client->AccountID() . "-TL-Account-A") ||
+                   quest::get_data($client->AccountID() . "-TL-Account-O") ||
+                   quest::get_data($client->AccountID() . "-TL-Account-F") ||
+                   quest::get_data($client->AccountID() . "-TL-Account-K") ||
+                   quest::get_data($client->AccountID() . "-TL-Account-V");
+
+    if ($eligible && !$client->IsSeasonal() && !$client->IsHardcore()) {
+        AddWaypoint('qeynos2');
+        AddWaypoint('qrg');
+        AddWaypoint('freportw');
+        AddWaypoint('rivervale');
+        AddWaypoint('qey2hh1');
+        AddWaypoint('northkarana');
+        AddWaypoint('southkarana');
+        AddWaypoint('eastkarana');
+        AddWaypoint('blackburrow');
+        AddWaypoint('commons');
+        AddWaypoint('erudnext');
+        AddWaypoint('lavastorm');
+        AddWaypoint('halas');
+        AddWaypoint('oasis');
+        AddWaypoint('hole');
+        AddWaypoint('neriakb');
+        AddWaypoint('feerrott');
+        AddWaypoint('cazicthule');
+        AddWaypoint('oggok');
+        AddWaypoint('grobb');
+        AddWaypoint('gfaydark');
+        AddWaypoint('akanon');
+        AddWaypoint('mistmoore');
+        AddWaypoint('kaladima');
+        AddWaypoint('felwithea');
+        AddWaypoint('oot');
+        AddWaypoint('cauldron');
+        AddWaypoint('paineel');
+        AddWaypoint('fieldofbone');
+        AddWaypoint('firiona');
+        AddWaypoint('lakeofillomen');
+        AddWaypoint('dreadlands');
+        AddWaypoint('karnor');
+        AddWaypoint('cityofmist');
+        AddWaypoint('skyfire');
+        AddWaypoint('overthere');
+        AddWaypoint('trakanon');
+        AddWaypoint('cabeast');
+        AddWaypoint('iceclad');
+        AddWaypoint('eastwastes');
+        AddWaypoint('cobaltscar');
+        AddWaypoint('wakening');
+        AddWaypoint('westwastes');
+        AddWaypoint('sharvahl');
+        AddWaypoint('ssratemple');
+        AddWaypoint('dawnshroud');
+        AddWaypoint('umbral');
+        AddWaypoint('hateplaneb');
+        AddWaypoint('airplane');
+        AddWaypoint('fearplane');
+        AddWaypoint('poknowledge');
+        AddWaypoint('potranquility');
+        AddWaypoint('gunthak');
+        AddWaypoint('natimbi');
+        AddWaypoint('barindu');
+        AddWaypoint('kodtaz');
+        AddWaypoint('qvic');
+        AddWaypoint('txevu');
+    }
+}
+
+sub AddDefaultAttunement {
+    my $client = shift || plugin::val('$client');
+    if ($client && !($client->IsSeasonal() || $client->IsHardcore())) {
+        AddWaypoint('qeynos2');
+        AddWaypoint('freportw');
+        AddWaypoint('rivervale');
+        AddWaypoint('erudnext');
+        AddWaypoint('halas');
+        AddWaypoint('neriakb');
+        AddWaypoint('oggok');
+        AddWaypoint('grobb');
+        AddWaypoint('gfaydark');
+        AddWaypoint('felwithea');
+        AddWaypoint('akanon');
+        AddWaypoint('kaladima');
+        AddWaypoint('cabeast');
+        AddWaypoint('sharvahl');
+        AddWaypoint('paineel');
+    }
+}
+
+sub GetContinents {
+    return @categories;
+}
+
+sub CheckSpawnWaypoints {
+    my $entity_list = plugin::val('$entity_list');
+    my $zonesn      = plugin::val('$zonesn');
+
+    if (exists $waypoints{$zonesn}) {
+        my @waypoint = @{$waypoints{$zonesn}};
+        if (!$entity_list->IsMobSpawnedByNpcTypeID(26999)) {
+            my $npc = quest::spawn2(26999, 0, 0, $waypoint[2], $waypoint[3], $waypoint[4], $waypoint[5]);
+        }
+    }
+}
+
+sub AddWaypoint {
+    my $waypoint = shift || plugin::val('$zonesn');
+    my $client   = shift || plugin::val('$client');
+    my $return_feedback = 0;
+
+    if ($client) {
+        my %account_data = map { $_ => 1 } split(',', quest::get_data("Waypoints-" . $client->AccountID()));
+        my %character_data = map { $_ => 1 } split(',', $client->GetBucket("Waypoints"));        
+
+        if (exists $waypoints{$waypoint}) {
+            if (!exists $account_data{$waypoint}) {
+                $account_data{$waypoint} = 1;
+                quest::set_data("Waypoints-" . $client->AccountID(), join(',', keys %account_data));
+                $return_feedback = 1;
+            }
+
+            if (!exists $character_data{$waypoint}) {
+                $character_data{$waypoint} = 1;
+                $client->SetBucket("Waypoints", join(',', keys %character_data));
+                if ($client->IsSeasonal() || $client->IsHardcore()) {
+                    $return_feedback = 1;
+                }
+            }
+        } else {
+            quest::debug("Attempted to add an invalid or undefined waypoint to " . $client->GetName());
+        }
+    } else {
+        quest::debug("Attempted to add a waypoint to a nonspecified client.");
+    }
+
+    return $return_feedback;
+}
+
+
+sub GetWaypoints {
+    my $continent = shift;
+    my $client = shift;
+    my %data;
+    my %return;
+    
+    if ($client) {        
+        if (!($client->IsSeasonal() || $client->IsHardcore())) {
+            %data = map { $_ => 1 } split(',', quest::get_data("Waypoints-" . $client->AccountID()));
+        } else {
+            %data = map { $_ => 1 } split(',', $client->GetBucket("Waypoints"));
+        }
+
+        foreach my $key (keys %waypoints) {
+            if (exists $data{$key} && ($continent == -1 || $waypoints{$key}[1] == $continent)) {
+                $return{$key} = $waypoints{$key};
+            }
+        }          
+    } else {
+        quest::debug("Attempted to get waypoints for an invalid or unspecified client.");
+        return undef;
+    }
+    return %return;
 }
 
 sub get_portal_destinations {
@@ -37,199 +259,4 @@ sub get_portal_destinations {
         976013  => ['Scarlet Desert', 111175, 175, -1777, -956, -99],
         976010  => ['Everfrost', 11130, 30, 590, -791, -54],
     };
-}
-
-sub set_default_attunement {
-    my ($accountID, $raceID) = @_;     
-    
-    my %default_attunements = (
-        1 => [
-            ["North Qeynos", ['qeynos2', 392.0, 165.0, 2.75, 310], 'A'],
-            ["West Freeport", ['freportw', -396, -283, -23, 500], 'A'],
-        ],
-        2 => [
-            ["Halas", ['halas', 0, 26, 3.75, 256], 'A'],
-            ["North Qeynos", ['qeynos2', 392.0, 165.0, 2.75, 310], 'A'],
-        ],
-        3 => [
-            ["Erudin", ['erudnext', -240.0, -1216.0, 52.0, 510.0], 'O'],
-            ["Paineel", ['paineel', 553, 746, -118.20, 0], 'O'],
-        ],
-        4 => [
-            ["The Greater Faydark (Kelethin)", ['gfaydark', -175, -50, 77.72, 87], 'F'],
-        ],
-        5 => [
-            ["Northern Felwithe", ['felwithea', -626, 240, -10.25, 330], 'F'],
-        ],
-        6 => [
-            ["Neriak - Commons", ['neriakb', -498, -3, -10, 128], 'A'],
-            ["West Freeport", ['freportw', -396, -283, -23, 500], 'A'],
-        ],
-        7 => [
-            ["The Greater Faydark (Kelethin)", ['gfaydark', -175, -50, 77.72, 87], 'F'],
-            ["North Qeynos", ['qeynos2', 392.0, 165.0, 2.75, 310], 'A'],
-            ["West Freeport", ['freportw', -396, -283, -23, 500], 'A'],
-        ],
-        8 => [
-            ["South Kaladim", ['kaladima', 197, 90, 3.75, 492], 'F'],
-            ["The Greater Faydark (Kelethin)", ['gfaydark', -175, -50, 77.72, 87], 'F'],
-        ],
-        9 => [
-            ["Grobb", ['grobb', -200, 223, 3.75, 414], 'A'],
-            ["Neriak - Commons", ['neriakb', -498, -3, -10, 128], 'A'],
-        ],
-        10 => [
-            ["Oggok", ['oggok', 513, 465, 3.75, 205], 'A'],
-            ["Neriak - Commons", ['neriakb', -498, -3, -10, 128], 'A'],
-        ],
-        11 => [
-            ["Rivervale", ['rivervale', -140, -10, 3.75, 220], 'A'],
-        ],
-        12 => [
-            ["Ak'Anon", ['akanon', -761, 1279, -24.25, 182.25], 'F'],
-            ["South Kaladim", ['kaladima', 197, 90, 3.75, 492], 'F'],
-        ],
-        128 => [
-            ["Cabilis East", ['cabeast', -136, 969, 4.68, 271], 'K'], 
-        ],
-        330 => [
-            ["North Qeynos", ['qeynos2', 392.0, 165.0, 2.75, 310], 'A'],
-            ["The Greater Faydark (Kelethin)", ['gfaydark', -175, -50, 77.72, 87], 'F'],
-            ["Halas", ['halas', 0, 26, 3.75, 256], 'A'],
-        ],   
-    );
-
-   
-    if (exists $default_attunements{$raceID}) {        
-        foreach my $attunement (@{$default_attunements{$raceID}}) {            
-            my ($zoneDesc, $locData, $suffix) = @$attunement;            
-            plugin::add_zone_entry($accountID, $zoneDesc, $locData, $suffix);
-        }
-    }
-}
-
-
-sub get_continent_by_suffix {
-    my ($suffix) = @_;  
-
-    return $suffix_to_pretty_name{$suffix} || $suffix;
-}
-
-sub get_suffix_by_continent {
-    my ($continent) = @_;
-    
-    my %suffix_by_continent;
-    foreach my $suffix (keys %suffix_to_pretty_name) {
-        my $pretty_name = $suffix_to_pretty_name{$suffix};
-        $suffix_by_continent{$pretty_name} = $suffix;
-    }
-
-    return $suffix_by_continent{$continent} || $continent;
-}
-
-# Get a map of zone data for each suffix
-sub get_zone_data {
-    my ($accountID) = @_;
-    my %zone_data_by_suffix;
-
-    foreach my $suffix (get_suffixes()) {
-        my $teleport_zones = get_zone_data_for_account($accountID, $suffix);
-        $zone_data_by_suffix{$suffix} = $teleport_zones;
-    }
-
-    return \%zone_data_by_suffix;
-}
-
-sub get_flat_data {
-    my ($accountID) = @_;
-    my %all_elements;
-
-    # Get the nested hashes from get_zone_data
-    my $zone_data = get_zone_data($accountID);
-
-    foreach my $suffix (keys %{$zone_data}) {
-        my $teleport_zones = $zone_data->{$suffix};
-
-        foreach my $key (keys %{$teleport_zones}) {
-            $all_elements{$key} = $teleport_zones->{$key};            
-        }
-    }
-
-    return \%all_elements;
-}
-
-# Check if a particular piece of data (by zone description) is present
-sub has_zone_entry {
-    my ($accountID, $zone_desc, $suffix) = @_;
-    my $teleport_zones = get_zone_data_for_account($accountID, $suffix);
-
-    return exists($teleport_zones->{$zone_desc});
-}
-
-# Get character's saved zone data
-sub get_zone_data_for_account {
-    my ($accountID, $suffix) = @_;
-    my $charKey = $accountID . "-TL-Account-" . $suffix;
-
-    my $charDataString = quest::get_data($charKey);
-
-    my %teleport_zones;
-    my @zone_entries = split /:/, $charDataString;
-
-    foreach my $entry (@zone_entries) {
-        my @tokens = split /\+/, $entry;
-        $teleport_zones{$tokens[0]} = [@tokens[1..$#tokens]];
-    }
-
-    return \%teleport_zones;
-}
-
-# Add (or overwrite) data to teleport_zones
-# Usage:
-#    add_zone_entry(12345, "Zone4", ['data7', 'data8'], '-K');
-sub add_zone_entry {
-    my ($accountID, $zone_name, $zone_data, $suffix) = @_;
-    my $teleport_zones = get_zone_data_for_account($accountID, $suffix);
-    $teleport_zones->{$zone_name} = $zone_data;
-    set_zone_data_for_account($accountID, $teleport_zones, $suffix);
-}
-
-sub set_zone_data_for_account {
-    my ($accountID, $zone_data_hash_ref, $suffix) = @_;
-    my $charKey = $accountID . "-TL-Account-" . $suffix;
-
-    my @data_entries;
-
-    while (my ($desc, $zone_data) = each %{$zone_data_hash_ref}) {
-        my $entry = join("+", $desc, @{$zone_data});
-        push @data_entries, $entry;
-    }
-
-    my $charDataString = join(":", @data_entries);
-
-    quest::set_data($charKey, $charDataString);
-}
-
-sub update_zone_entry {
-    my ($accountID, $zone_name, $new_zone_data, $suffix) = @_;
-
-    # Fetch the current zone data
-    my $teleport_zones = get_zone_data_for_account($accountID, $suffix);
-    
-    # Check if the zone already exists and if the data is different from the new data
-    if (exists $teleport_zones->{$zone_name}) {
-        # Compare the existing data with the new data
-        my $current_data = $teleport_zones->{$zone_name};
-        if (join('+', @$current_data) eq join('+', @$new_zone_data)) {
-            # The data is the same, return falsey
-            return 0;
-        }
-    }
-
-    # Update the data, whether it is new or a modification of existing data
-    $teleport_zones->{$zone_name} = $new_zone_data;
-    set_zone_data_for_account($accountID, $teleport_zones, $suffix);
-    
-    # Since data was added or changed, return truthy
-    return 1;
 }

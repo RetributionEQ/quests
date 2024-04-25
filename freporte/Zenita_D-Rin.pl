@@ -19,7 +19,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(22298 => 1)) {
 		quest::say("Why I will be.. You got it!! I thought I took it out of the deck. Very well. You win the Spare Lens fair and square. Here you are. Now get out of my sight.");
 		#:: Give item 13279 - Telescope Lens (Phiz's Lens)
-		quest::summonitem(113279);
+		quest::summonitem(13279);
 		#:: Ding!
 		quest::ding();
 		#:: Grant a small amount of experience

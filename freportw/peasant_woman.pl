@@ -13,7 +13,7 @@ sub EVENT_SAY {
 		if ($class== 3) {
 			quest::say("Surely you are a pure soul. If you would take this bucket of water to my brother, I would be forever grateful. I am just so tired, I need to rest... She slumps to the floor and begins to breathe shallowly, in short, harsh gasps.");
 			#:: Give item 29008 - Bucket of Water
-			quest::summonitem(129008);
+			quest::summonitem(29008);
 		}
 	}
 }

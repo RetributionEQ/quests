@@ -9,7 +9,7 @@ sub EVENT_SAY {
 	elsif ($text=~/parchment/i) {
 		quest::say("I believe it is from a spell book of some kind and I do not have a working knowledge of things arcane. Perhaps you could help? Take it. I am sure someone in Qeynos could decipher it. I must remain here to gather more evidence but please return to me with anything you discover.");
 		#:: Give a 13718 - Torn Parchment
-		quest::summonitem(113718);
+		quest::summonitem(13718);
 	}
 }
 
@@ -62,7 +62,7 @@ sub EVENT_ITEM {
 	elsif (plugin::takeItems(13722 => 1)) {
 		quest::say("Excellent! Rodcet smiles upon us this day! Here, please take this pouch of evidence to Jahnda in the Temple of Life. She will know what we must do. I will remain here to keep an eye out for the minions of Bertoxxlous. Also, accept this small reward as a token of my appreciation of your efforts to rid Norrath of the influence of the Plaguebringer.");
 		#:: Give a 13724 - Pouch of Evidence
-		quest::summonitem(113724);
+		quest::summonitem(13724);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

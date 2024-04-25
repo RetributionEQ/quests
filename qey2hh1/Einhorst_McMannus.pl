@@ -31,7 +31,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18831 => 1)) {
 		quest::say("Yes. We almost forgot of the shipment of Karana clovers. Here you are, my friend. Back to the north with you. I am sure the Shamans of Justice will need this.");
 		#:: Give a 13962 - Karana Clover Shipment
-		quest::summonitem(113962);
+		quest::summonitem(13962);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

@@ -13,22 +13,15 @@ sub EVENT_SAY
 	}
 	elsif($text=~/craft/i && $ulevel > 50){
 		quest::emote("Gram Dunnar stops carving and holds up the object between his short fingers. It is a figurine of a swordsman with many intricate details. 'No one really wants to buy them, these days. If there's no magic in it...' he shrugs. 'Still, something to take up some time.' He rummages through some finished pieces on the floor around him, picks up one, and tosses it to you. 'Here,' he says. 'Maybe it'll bring you some luck.");
-		if ($class eq 'Warrior') { quest::summonitem(35001); }
-		elsif ($class eq 'Monk') { quest::summonitem(35007); }
-		elsif ($class eq 'Berserker') { quest::summonitem(35016); }
-		elsif ($class eq 'Rogue') { quest::summonitem(35009); }       
-		elsif ($class eq 'Paladin') { quest::summonitem(35003); }
-		elsif ($class eq 'Ranger') { quest::summonitem(35004); }
-		elsif ($class eq 'Beastlord') { quest::summonitem(35015); }
-		elsif ($class eq 'Shadowknight') { quest::summonitem(35005); }
-		elsif ($class eq 'Bard') { quest::summonitem(35008); }
-		elsif ($class eq 'Druid') { quest::summonitem(35006); }
-		elsif ($class eq 'Cleric') { quest::summonitem(35002); }
-		elsif ($class eq 'Shaman') { quest::summonitem(35010); }
-		elsif ($class eq 'Enchanter') { quest::summonitem(35014); }
-		elsif ($class eq 'Magician') { quest::summonitem(35013); }
-		elsif ($class eq 'Necromancer') { quest::summonitem(35011); }
-                elsif ($class eq 'Wizard') { quest::summonitem(35012); }
+
+		for my $classID (1..16) {        
+			if (plugin::HasClass($classID, $client)) {
+				my $itemId = 2035000 + $classID;
+				if (!plugin::check_hasitem($itemId)) {
+					$client->SummonFixedItem($itemId);
+				}
+			}
+		}
 	}
 	elsif($text=~/stories/i && $ulevel > 50 && defined $qglobals{pop_story} && $qglobals{pop_story} == 1){
 		if(!defined $qglobals{pop_aa_codecay} && defined $qglobals{pop_pod_alder_fuirstel} &&  defined $qglobals{pop_pod_grimmus_planar_projection} &&  defined $qglobals{pop_pod_elder_fuirstel}) {

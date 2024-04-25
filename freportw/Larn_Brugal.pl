@@ -13,7 +13,7 @@ sub EVENT_SAY {
 		if ($faction <= 4) {
 			quest::say("We would be most thankful for your service. Please take this voucher over to Groflah at Groflahs Forge in North Freeport. He will give you the shipment of weapons.");
 			#:: Give item 18820 - Sealed Letter
-			quest::summonitem(118820);
+			quest::summonitem(18820);
 		}
 		else {
 			quest::say("Only a warrior would be capable of this service, but thanks for offering.");
@@ -26,7 +26,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(12241 => 1, 12242 => 1, 12243 => 1, 12244 => 1)) {
 		quest::say("Good work, $name. The bunker shall be well stocked. Here you are, my friend. Take this raw blade. You can take it to Groflah - he will sharpen and polish it for you. It should be a formidable weapon.");
 		#:: Give a 13919 - Reward Raw Short Sword
-		quest::summonitem(113919);
+		quest::summonitem(13919);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions

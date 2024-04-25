@@ -9,7 +9,7 @@ sub EVENT_ITEM {
 	if (plugin::takeItems(18856 => 1)) {
 		quest::say("Hey, Nex, we got another sucker.. er.. volunteer, that is, to help us out around here. Here ya go friend, put this on and let's whip you into shape.");
 		#:: Give item 13566 - Blood Spotted Robe*
-		quest::summonitem(113566);
+		quest::summonitem(13566);
 		#:: Ding!
 		quest::ding();
 		#:: Set factions
