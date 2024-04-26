@@ -35,66 +35,82 @@ sub EVENT_SAY {
   if ($text=~/Warrior/i) {
     quest::summonitem(16267);#Warrior Emblem
     quest::summonitem(17184);#Mystical Furnace of Ro
+    $client->TakeMoneyFromPP(500000, 1); #500pp cost
   }
   elsif ($text=~/Cleric/i) {
     quest::summonitem(16271);#Cleric Emblem
     quest::summonitem(17184);#Mystical Furnace of Ro
+    $client->TakeMoneyFromPP(500000, 1); #500pp cost
   }
   elsif ($text=~/Paladin/i) {
     quest::summonitem(16269);#Paladin Emblem
     quest::summonitem(17184);#Mystical Furnace of Ro
+    $client->TakeMoneyFromPP(500000, 1); #500pp cost
   }
   elsif ($text=~/Ranger/i) {
     quest::summonitem(16272);#Ranger Emblem
     quest::summonitem(17184);#Mystical Furnace of Ro
+    $client->TakeMoneyFromPP(500000, 1); #500pp cost
   }
   elsif ($text=~/Shadowknight/i) {
     quest::summonitem(16270);#Shadowknight Emblem
     quest::summonitem(17184);#Mystical Furnace of Ro
+    $client->TakeMoneyFromPP(500000, 1); #500pp cost
   }
   elsif ($text=~/Druid/i) {
     quest::summonitem(16276);#Druid Emblem
     quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
+    $client->TakeMoneyFromPP(500000, 1); #500pp cost
   }
   elsif ($text=~/Monk/i) {
     quest::summonitem(16275);#Monk Emblem
     quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
+    $client->TakeMoneyFromPP(500000, 1); #500pp cost
   }
   elsif ($text=~/Bard/i) {
     quest::summonitem(16268);#Bard Emblem
     quest::summonitem(17184);#Mystical Furnace of Ro
+    $client->TakeMoneyFromPP(500000, 1); #500pp cost
   }
   elsif ($text=~/Rogue/i) {
     quest::summonitem(16273);#Rogue Emblem
     quest::summonitem(17184);#Mystical Furnace of Ro
+    $client->TakeMoneyFromPP(500000, 1); #500pp cost
   }
   elsif ($text=~/Shaman/i) {
     quest::summonitem(16274);#Shaman Emblem
     quest::summonitem(17184);#Mystical Furnace of Ro
+    $client->TakeMoneyFromPP(500000, 1); #500pp cost
   }
   elsif ($text=~/Necromancer/i) {
     quest::summonitem(16278);#Necromancer Emblem
     quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
+    $client->TakeMoneyFromPP(500000, 1); #500pp cost
   }
   elsif ($text=~/Wizard/i) {
     quest::summonitem(16279);#Wizard Emblem
     quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
+    $client->TakeMoneyFromPP(500000, 1); #500pp cost
   }
   elsif ($text=~/Magician/i) {
     quest::summonitem(16280);#Magician Emblem
     quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
+    $client->TakeMoneyFromPP(500000, 1); #500pp cost
   }
   elsif ($text=~/Enchanter/i) {
     quest::summonitem(16281);#Enchanter Emblem
     quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
+    $client->TakeMoneyFromPP(500000, 1); #500pp cost
   }
   elsif ($text=~/Beastlord/i) {
     quest::summonitem(16277);#Beastlord Emblem
     quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
+    $client->TakeMoneyFromPP(500000, 1); #500pp cost
   }
   elsif ($text=~/Berserker/i) {
     quest::summonitem(32000);#Berserker Emblem
     quest::summonitem(17184);#Mystical Furnace of Ro
+    $client->TakeMoneyFromPP(500000, 1); #500pp cost
   }
 }
 
