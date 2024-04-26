@@ -131,7 +131,7 @@ sub EVENT_SAY {
 			$client->SetBucket("SeasonalCharacter", 0);
 			$client->Message(15, "Seasonal Disabled");
         } elsif ($text =~/test/i) {
-            quest::debug(quest::IsItemDynamic($client->GetItemAt(33)));
+            quest::debug(quest::IsItemDynamic($client->GetItemAt(33)) . " : " $client->GetItemAt(33));
         }
 	}
 }
