@@ -130,7 +130,7 @@ sub EVENT_SAY {
 		} elsif ($text=~/disable seasonal/i) {
 			$client->SetBucket("SeasonalCharacter", 0);
 			$client->Message(15, "Seasonal Disabled");
-        elsif ($text =~/test/i) {
+        } elsif ($text =~/test/i) {
             Message(quest::IsItemDynamic($client->GetItemAt(33)));
         }
 	}
