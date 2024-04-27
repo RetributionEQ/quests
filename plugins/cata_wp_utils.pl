@@ -24,6 +24,7 @@ my %waypoints = (
     'erudnext'      => ["Erudin", 2, -240, -1216, 52, 510],
     'lavastorm'     => ["Lavastorm Mountains (Druid Ring)", 0, 1318, 918, 119, 270],
     'halas'         => ["Halas", 0, 0, 26, 3.75, 256],
+    'highkeep'      => ["High Keep", 0, -1, -17, -4, 388],
     'oasis'         => ["Oasis of Marr", 0, 110, 532, 6, 225],
     'hole'          => ["The Ruins of Old Paineel", 2, -543, 287, -140, 125],
     'neriakb'       => ["Neriak Commons", 0, -493, 3, -10, 128],
@@ -93,6 +94,7 @@ sub AwardBonusUnlocks {
         AddWaypoint('erudnext');
         AddWaypoint('lavastorm');
         AddWaypoint('halas');
+        AddWaypoint('highkeep');
         AddWaypoint('oasis');
         AddWaypoint('hole');
         AddWaypoint('neriakb');
@@ -149,6 +151,7 @@ sub AddDefaultAttunement {
         AddWaypoint('rivervale');
         AddWaypoint('erudnext');
         AddWaypoint('halas');
+        AddWaypoint('highkeep');
         AddWaypoint('neriakb');
         AddWaypoint('oggok');
         AddWaypoint('grobb');
