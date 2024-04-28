@@ -11,7 +11,7 @@ sub EVENT_SAY {
       quest::say("Ye look mighty inexperienced t'be in this area. $name. Come an' seek me out when ye 'ave more knowledge o'the planes!");
     }
     else {
-      quest::say("Well, the emblems dinnae be easy t'craft but I will gladly give ye one fer the price of 500 platinum pieces. They allow a planes traveler with no craftin' skills t'create many fine pieces o'planar armor in a special, magical kit I also 'ave an' will throw in with the price. The kit acts as a focal point fer the wild magic energy o'the Planes. Ye will only be able t'use each emblem an' kit once when ye create the piece, 'owever I dinnae be goin' anywhere soon! Just venture back when ye need another an' dinnae ferget the coin!");
+      quest::say("Well, the emblems dinnae be easy t'craft but I will gladly give ye one fer the price of 500 platinum pieces. They allow a planes traveler with no craftin' skills t'create many fine pieces o'planar armor in a special, magical kit I also 'ave an' will throw in with the price. The kit acts as a focal point fer the wild magic energy o'the Planes. Ye will only be able t'use each emblem an' kit once when ye create the piece, 'owever I dinnae be goin' anywhere soon! Just venture back when ye need another an' dinnae ferget the coin! An' if ye' be needin' an emblem fer another class, just tell me the name of tha' class.");
     }
   }
   if ($text=~/chain/i) {
@@ -28,6 +28,137 @@ sub EVENT_SAY {
   }
   if ($text=~/swatch/i) {
     quest::say("T'make a swatch, ye need t'combine two strands o'ether along with a curing agent in a Tanaan loom. Ye will need t'seek a skilled brew master t'make the curing agent fer ye. Just 'ave them create it by using two celestial essences, soda an' paeala sap");
+  }
+
+  # This adds a way of requesting the emblem for a given class for situations where you're not actually the class
+  # that you want to make the armor for.
+  if ($text=~/Warrior/i) {
+    if ($client->TakeMoneyFromPP(500000, 1)) {
+      quest::summonitem(16267);#Warrior Emblem
+      quest::summonitem(17184);#Mystical Furnace of Ro
+    } else {
+      quest::say("You don't have enough coin for that, come back when you do.");
+    }
+  }
+  elsif ($text=~/Cleric/i) {
+    if ($client->TakeMoneyFromPP(500000, 1)) {
+      quest::summonitem(16271);#Cleric Emblem
+      quest::summonitem(17184);#Mystical Furnace of Ro
+    } else {
+      quest::say("You don't have enough coin for that, come back when you do.");
+    }
+  }
+  elsif ($text=~/Paladin/i) {
+    if ($client->TakeMoneyFromPP(500000, 1)) {
+      quest::summonitem(16269);#Paladin Emblem
+      quest::summonitem(17184);#Mystical Furnace of Ro
+    } else {
+      quest::say("You don't have enough coin for that, come back when you do.");
+    }
+  }
+  elsif ($text=~/Ranger/i) {
+    if ($client->TakeMoneyFromPP(500000, 1)) {
+      quest::summonitem(16272);#Ranger Emblem
+      quest::summonitem(17184);#Mystical Furnace of Ro
+    } else {
+      quest::say("You don't have enough coin for that, come back when you do.");
+    }
+  }
+  elsif ($text=~/Shadowknight/i) {
+    if ($client->TakeMoneyFromPP(500000, 1)) {
+      quest::summonitem(16270);#Shadowknight Emblem
+      quest::summonitem(17184);#Mystical Furnace of Ro
+    } else {
+      quest::say("You don't have enough coin for that, come back when you do.");
+    }
+  }
+  elsif ($text=~/Druid/i) {
+    if ($client->TakeMoneyFromPP(500000, 1)) {
+      quest::summonitem(16276);#Druid Emblem
+      quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
+    } else {
+      quest::say("You don't have enough coin for that, come back when you do.");
+    }
+  }
+  elsif ($text=~/Monk/i) {
+    if ($client->TakeMoneyFromPP(500000, 1)) {
+      quest::summonitem(16275);#Monk Emblem
+      quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
+    } else {
+      quest::say("You don't have enough coin for that, come back when you do.");
+    }
+  }
+  elsif ($text=~/Bard/i) {
+    if ($client->TakeMoneyFromPP(500000, 1)) {
+      quest::summonitem(16268);#Bard Emblem
+      quest::summonitem(17184);#Mystical Furnace of Ro
+    } else {
+      quest::say("You don't have enough coin for that, come back when you do.");
+    }
+  }
+  elsif ($text=~/Rogue/i) {
+    if ($client->TakeMoneyFromPP(500000, 1)) {
+      quest::summonitem(16273);#Rogue Emblem
+      quest::summonitem(17184);#Mystical Furnace of Ro
+    } else {
+      quest::say("You don't have enough coin for that, come back when you do.");
+    }
+  }
+  elsif ($text=~/Shaman/i) {
+    if ($client->TakeMoneyFromPP(500000, 1)) {
+      quest::summonitem(16274);#Shaman Emblem
+      quest::summonitem(17184);#Mystical Furnace of Ro
+    } else {
+      quest::say("You don't have enough coin for that, come back when you do.");
+    }
+  }
+  elsif ($text=~/Necromancer/i) {
+    if ($client->TakeMoneyFromPP(500000, 1)) {
+      quest::summonitem(16278);#Necromancer Emblem
+      quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
+    } else {
+      quest::say("You don't have enough coin for that, come back when you do.");
+    }
+  }
+  elsif ($text=~/Wizard/i) {
+    if ($client->TakeMoneyFromPP(500000, 1)) {
+      quest::summonitem(16279);#Wizard Emblem
+      quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
+    } else {
+      quest::say("You don't have enough coin for that, come back when you do.");
+    }
+  }
+  elsif ($text=~/Magician/i) {
+    if ($client->TakeMoneyFromPP(500000, 1)) {
+      quest::summonitem(16280);#Magician Emblem
+      quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
+    } else {
+      quest::say("You don't have enough coin for that, come back when you do.");
+    }
+  }
+  elsif ($text=~/Enchanter/i) {
+    if ($client->TakeMoneyFromPP(500000, 1)) {
+      quest::summonitem(16281);#Enchanter Emblem
+      quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
+    } else {
+      quest::say("You don't have enough coin for that, come back when you do.");
+    }
+  }
+  elsif ($text=~/Beastlord/i) {
+    if ($client->TakeMoneyFromPP(500000, 1)) {
+      quest::summonitem(16277);#Beastlord Emblem
+      quest::summonitem(17185);#Druzzil's Mystical Sewing Kit
+    } else {
+      quest::say("You don't have enough coin for that, come back when you do.");
+    }
+  }
+  elsif ($text=~/Berserker/i) {
+    if ($client->TakeMoneyFromPP(500000, 1)) {
+      quest::summonitem(32000);#Berserker Emblem
+      quest::summonitem(17184);#Mystical Furnace of Ro
+    } else {
+      quest::say("You don't have enough coin for that, come back when you do.");
+    }
   }
 }
 
