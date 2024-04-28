@@ -65,11 +65,12 @@ sub EVENT_DISCOVER_ITEM {
     my $name = $client->GetCleanName();
     
     # Only announce upgraded items
-    #if ($itemid > 999999) {        
-        plugin::WorldAnnounceItem("$name has discovered: {item}.",$itemid);  
-    #}
+    if ($itemid >= 2000000 && $itemid < 3000000) {        
+        plugin::WorldAnnounceItem("$name has discovered: {item}.",$itemid);
+        return 1;
+    }
 
-    return 1;  
+    return 0;
 }
 
 sub EVENT_COMBINE_VALIDATE {
