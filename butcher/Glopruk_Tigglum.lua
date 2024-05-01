@@ -1,5 +1,5 @@
 local mmcf = {
-  expedition = { name="Mistmoore's Catacombs: Scion Lair of Fury", min_players=6, max_players=54 },
+  expedition = { name="Mistmoore's Catacombs: Scion Lair of Fury", min_players=1, max_players=54 },
   instance   = { zone="mmcf", version=50, duration=eq.seconds("3h") },
   compass    = { zone="lfaydark", x=3877.23, y=-127.446, z=-53.598 },
   safereturn = { zone="lfaydark", x=3847, y=-56, z=-50, h=0 },

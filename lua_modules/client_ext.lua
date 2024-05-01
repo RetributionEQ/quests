@@ -292,7 +292,7 @@ function Client:DoesAnyPartyMemberHaveLockout(expedition_name, event_name, max_m
 	return self:HasExpeditionLockout(expedition_name, event_name)
 end
 
-function Client:GetRaidMemberCountInZone()
+function Client:GetGroupMemberCount()
 	local count = 0
 	local raid = self:GetRaid()
 	if raid.valid then

@@ -1,5 +1,5 @@
 local rujj = {
-  expedition = { name="The Rujarkian Hills: War March of Imal Ojun", min_players=6, max_players=54 },
+  expedition = { name="The Rujarkian Hills: War March of Imal Ojun", min_players=1, max_players=54 },
   instance   = { zone="rujj", version=50, duration=eq.seconds("3h") },
   zonein     = { x=750, y=-134, z=27.125, h=0 },
   compass    = { zone="sro", x=1346.18, y=-2099.33, z=-88.0377 },

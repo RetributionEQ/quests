@@ -24,7 +24,7 @@ function event_say(e)
 		e.other:Message(MT.NPCQuestSay, ("Aganetti the Keeper says, 'As well you should, never return, %s never come back.'"):format(e.other:GetCleanName()))
 	elseif e.message:findi("continue") then
 		if not is_cynosure_alive or is_gm then
-			if not is_gm and e.other:GetRaidMemberCountInZone() < 1 then
+			if not is_gm and e.other:GetGroupMemberCount() < 1 then
 				e.other:Message(MT.NPCQuestSay, "Aganetti the Keeper says, 'I'm sorry, but you don't have enough comrades with you to venture into this dangerous area. Come back when you have at least eighteen friends to join you on this perilous journey.")
 			elseif not is_gm and e.other:DoesAnyPartyMemberHaveLockout(inktuta, "Replay Timer", 54) then
 				e.other:Message(MT.NPCQuestSay, "Aganetti the Keeper says, 'I'm afraid I cannot allow you to begin, someone in your party has been on this expedition too recently and cannot yet go again.'")

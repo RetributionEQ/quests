@@ -85,7 +85,7 @@ function event_say(e)
       e.other:Message(MT.NPCQuestSay, "Kenra Kalekkio says, 'What is it that you believe you're ready to begin? I hope you don't believe it has anything to do with me yet. You still need to finish the second trial and, to do so, you need to find Maroley Nazuey at the Temple of Twin Struggles and have her give you that information.'")
     elseif not is_gm and eq.get_data(preflag_key) == "" then
       e.other:Message(MT.NPCQuestSay, "Kenra Kalekkio says, 'You say you think you're ready to begin something? Does that have anything to do with your [" .. eq.say_link("final test") .. "]?'")
-    elseif not is_gm and e.other:GetGroupMemberCount() < 2 then -- live probably missing speak_mode say flag here
+    elseif not is_gm and e.other:GetGroupMemberCount() < 1 then -- live probably missing speak_mode say flag here
       e.other:Message(MT.NPCQuestSay, "I'm sorry, but you don't have enough comrades with you to venture into this dangerous area. Come back when you have at least two friends to join you on this perilous journey.")
     elseif not is_gm and e.other:DoesAnyPartyMemberHaveLockout(expedition_name, "Replay Timer", 6) then
       e.other:Message(MT.NPCQuestSay, "Kenra Kalekkio says, 'I'm afraid I cannot allow you to begin, someone in your party has been on this expedition too recently and cannot yet go again.'")

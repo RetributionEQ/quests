@@ -21,7 +21,7 @@ local tipt = {
 }
 
 local paladin_epic = {
-  expedition = { name="Vxed, The Crumbling Caverns", min_players=6, max_players=24 },
+  expedition = { name="Vxed, The Crumbling Caverns", min_players=1, max_players=24 },
   instance   = { zone="vxed", version=1, duration=eq.seconds("6h") },
   compass    = compass,
   safereturn = safereturn,

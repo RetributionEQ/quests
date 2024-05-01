@@ -1,6 +1,13 @@
 local tacvi = "Tacvi, Seat of the Slaver"
+local min_players = 18
+local max_players = 54
+if (eq.get_rule("Custom:MulticlassingEnabled") == "true" ) then
+	max_players = 1
+    max_players = 6
+end
+
 local tacvi_raid = {
-	expedition = { name="Tacvi, Seat of the Slaver", min_players=18, max_players=54 },
+	expedition = { name="Tacvi, Seat of the Slaver", min_players=min_players, max_players=max_players },
 	instance   = { zone="tacvi", version=0, duration=eq.seconds("6h") },
 	compass    = { zone="txevu", x=1575.46, y=1745.46, z=-397.62 },
 	safereturn = { zone="txevu", x=-325, y=0, z=-422.12, h=128 },
@@ -19,7 +26,7 @@ function event_click_door(e)
 	elseif door_id == 23 then -- Zun Statue
 		if e.self:GetInventory():HasItem(64034, 1, 32) == Slot.Cursor then 
 			if not eq.get_entity_list():IsMobSpawnedByNpcTypeID(297150) then 
-				if not is_gm and e.self:GetRaidMemberCountInZone() < 18 then
+				if not is_gm and e.self:GetGroupMemberCount() < 1 then
 					e.self:Message(MT.NPCQuestSay, "You don't have enough comrades with you to venture into this dangerous area. Come back when you have at least eighteen friends to join you on this perilous journey.")
 				elseif not is_gm and e.self:DoesAnyPartyMemberHaveLockout(tacvi, "Replay Timer", 54) then
 					e.self:Message(MT.NPCQuestSay, "Someone in your party has been on this expedition too recently and cannot yet go again.'")

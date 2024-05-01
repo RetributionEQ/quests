@@ -23,7 +23,7 @@ function event_say(e)
 		elseif e.message:findi("promise") then
 			e.other:Message(MT.NPCQuestSay, "I cannot tell you how relieved this makes me. Now to the issue at hand. While Xictic and those she chooses can roam freely in and out of the magical dome surrounding the chamber, if anyone else tries to enter they are held back. As a councilman, I was granted a device that allows access into the dome and I've managed to keep it away from the prying eyes of the Mata Muram. Using it is not without its consequences, though. As soon as an outsider shows up within the dome, they will know what has occurred and will come searching for the culprit so be certain you are ready to face the challenges ahead before you embark upon this venture. Only eighteen of you will be allowed into the chamber at one time so gather your forces and tell me you are [ready] to face Xictic.'");
 		elseif e.message:findi("ready") then
-			if e.other:GetRaidMemberCountInZone() >= 3 and e.other:IsRaidGrouped() then
+			if e.other:GetGroupMemberCount() >= 1 or e.other:IsRaidGrouped() then
 				e.self:Emote("pulls out a small stone and closes it in his hand. 'Please be careful. What you are about to see may shock you at first, but don't let yourself be distracted for too long. These beings are merciless and once they have discovered your presence, they will stop at nothing to add your corpse to the others in the area.'");
 
 				if qglobals["gates_thunder_dome_event_1"] == nil and event_up_1.valid and raid_id_by_thunder_dome[1] == nil then

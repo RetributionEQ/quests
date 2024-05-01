@@ -1,5 +1,5 @@
 local mirb = {
-  expedition = { name="Miragul's Menagerie: Frozen Nightmare", min_players=6, max_players=54 },
+  expedition = { name="Miragul's Menagerie: Frozen Nightmare", min_players=1, max_players=54 },
   instance   = { zone="mirb", version=50, duration=eq.seconds("3h") },
   compass    = { zone="everfrost", x=-5457.705, y=-827.538, z=187.38 },
   safereturn = { zone="everfrost", x=-5461.0, y=-848.0, z=190.0, h=0 },
