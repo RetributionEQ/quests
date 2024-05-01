@@ -9,7 +9,7 @@ my @categories = (
     'Taelosia',  # 7 
     'Discord'    # 8 
 );
-
+#     'shortname'       => ["Long Name", category, x, y, z, h],
 my %waypoints = (
     'qeynos2'       => ["North Qeynos", 0, 392, 165, 4, 310],
     'qrg'           => ["Surefall Glade", 0, -66, 45, 4, 200],
@@ -39,7 +39,7 @@ my %waypoints = (
     'felwithea'     => ["Northern Felwithe", 1, -626, 240, -10.25, 330],
     'oot'           => ["The Ocean of Tears", 0, -9172, 394, 6, 188],
     'cauldron'      => ["Dagnor's Cauldron (Near Unrest)", 1, -700, -1790, 100, 11],
-    'paineel'       => ["Paineel", 2, 553, 746, -118, 0],
+    'paineel'       => ["Paineel", 2, 210, 839, 4, 275],
     'fieldofbone'   => ["The Field of Bone", 3, 1617, -1684, -55, 0],
     'firiona'       => ["Firiona Vie", 3, 1825, -2397, -98, 423],
     'lakeofillomen' => ["Lake of Ill Omen", 3, -1070, 985, 78, 145],
