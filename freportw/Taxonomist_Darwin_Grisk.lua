@@ -27,7 +27,7 @@ function event_trade(e)
 		e.self:Say("Alas, it all becomes clear! The Luggalds seek to spread their vile race. I had received word of a dark elf performing arcane rites on the shores of Toxxulia Forest. Now I know she must be attempting to summon other Luggalds. She is expecting an agent of the enemy. Talk with her. Then deal with her and any evil she creates.");
 	elseif(item_lib.check_turn_in(e.trade, {item1 = 63015})) then
 		e.self:Say("Well done. I can only imagine the evil you averted. Here. Take this a token of my personal thanks. May we all continue to benefit from your valor.");
-		if((e.other:HasClass(Class.BARD)) or (e.other:HasClass(Class.BEASTLORD)) or (e.other:HasClass(Class.Paladin)) or (e.other:HasClass(Class.RANGER)) or (e.other:HasClass(Class.ROGUE)) or (e.other:Class() == "shadowknight") or (e.other:HasClass(Class.Warrior))) then
+		if((e.other:HasClass(Class.BARD)) or (e.other:HasClass(Class.BEASTLORD)) or (e.other:HasClass(Class.Paladin)) or (e.other:HasClass(Class.RANGER)) or (e.other:HasClass(Class.ROGUE)) or (e.other:Class() == "shadowknight") or (e.other:HasClass(Class.WARRIOR))) then
 			e.other:SummonItem(63050); -- Item: Bonebite
 			e.other:Ding();
 			e.other:AddEXP(5000);

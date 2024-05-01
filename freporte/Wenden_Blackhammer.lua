@@ -1,6 +1,6 @@
 -- items: 20668, 10037, 10036, 10053, 20671, 20669, 20666, 20677, 20672
 function event_say(e)
-	if(e.other:HasClass(Class.Warrior)) then
+	if(e.other:HasClass(Class.WARRIOR)) then
 		if(e.message:findi("hail")) then
 			e.self:Say("What do you need?  Be specific. I'm busy right now!");
 		elseif(e.message:findi("hilt")) then

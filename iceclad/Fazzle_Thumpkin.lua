@@ -3,7 +3,7 @@
 -- items: 60324, 60323
 function event_say(e)
 	local qglobals = eq.get_qglobals(e.other);
-	if(e.other:HasClass(Class.Warrior)) then
+	if(e.other:HasClass(Class.WARRIOR)) then
 		if(e.message:findi("hail")) then
 			if (qglobals["warrior_epic"] == "17") then
 				e.self:Say("Damnable interruptions! Can't you see I'm looking for my pestle?! I lost that blasted thing months ago and haven't been able to find it! What will I do without my pestle?! My poor, poor pestle. Where have you gone? I thought I'd lost it around here somewhere, but maybe I left it near one of those statues during my surveying of the islands. Drat and double drat! Where did I leave you? Woe...");

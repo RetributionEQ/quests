@@ -2,7 +2,7 @@
 function event_say(e)
 	if(e.message:findi("hail")) then
 		e.self:Say("Well met, "..e.other:GetName()..". I am Arianna Trueblade, Warlord of the Steel Warriors. I am personally in charge of all the training that our young warriors receive. I take pride in knowing that my teaching can help make the foundation of a Freeport Champion. If you are a [warrior] then we might just have something to talk about.");
-	elseif(e.other:HasClass(Class.Warrior)) then
+	elseif(e.other:HasClass(Class.WARRIOR)) then
 		if(e.message:findi("warrior")) then
 			e.self:Say("So you think you have what it takes to become one of Freeports finest? I will warn you now that we expect every single warrior that is brought into our ranks to go through a series of exercises. Rest assured you will be rewarded for your hard work with a set of armor that I will walk you though the process of making. Are you [ready to begin your testing]?");
 		elseif(e.message:findi("ready to begin")) then
@@ -38,7 +38,7 @@ end
 function event_trade(e)
 	local item_lib = require("items");
 
-	if(e.other:HasClass(Class.Warrior)) then
+	if(e.other:HasClass(Class.WARRIOR)) then
 		if(item_lib.check_turn_in(e.trade, {item1 = 9919,item2 = 9918,item3 = 9923})) then -- Pristine Giant Scarab Leg, Lion Paw, Vial of Smoke
 			e.self:Say(""..e.other:GetName()..", you have proven your value to the Steel Warriors. Here is a weapon that will let you slay magical creatures that you couldn't with a normal weapon.");
 			e.other:Ding();
