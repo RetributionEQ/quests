@@ -1,5 +1,5 @@
 local tacvi = "Tacvi, Seat of the Slaver"
-local min_players = 18
+local min_players = 1
 local max_players = 54
 if (eq.get_rule("Custom:MulticlassingEnabled") == "true" ) then
 	max_players = 1
