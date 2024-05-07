@@ -257,7 +257,7 @@ sub HasClassName {
     my $client      = shift;
     my $class_name  = shift;
 
-    return HasClass(GetClassID())
+    return HasClass(GetClassID($class_name));
 }
 
 sub GrantGeneralAA {
