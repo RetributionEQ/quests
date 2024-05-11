@@ -1,4 +1,4 @@
-local TM_minimum_players = 3;
+local TM_minimum_players = 1;
 
 
 function event_say(e)
@@ -6,7 +6,7 @@ function event_say(e)
 			e.self:Say("It's a good thing Taskmistress Krisz doesn't know what we're up to.  Wow, does she have a temper, and enough skill with a blade to back it up.  No one would [" .. eq.say_link("dare") .. "] cross her.");
 	elseif e.message:findi("dare") then
 		if eq.get_entity_list():IsMobSpawnedByNpcTypeID(282115) and not eq.get_entity_list():IsMobSpawnedByNpcTypeID(282105) then
-			if e.other:GetGroupMemberCount() >= TM_minimum_players or e.other:GetRaidMemberCountInZone() >= TM_minimum_players then
+			if e.other:GetGroupMemberCount() >= TM_minimum_players or e.other:GetGroupMemberCount() >= TM_minimum_players then
 				-- if TM trigger is up and TM is not currently spawned and 18 or more in raid, spawn TM
 				e.self:Emote("laughs, 'Think you could teach that old goat a lesson!?");
 				eq.unique_spawn(282105,21,0,-1117,-408,33,502); -- #Taskmistress_Krisz

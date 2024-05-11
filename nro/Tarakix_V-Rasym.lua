@@ -1,5 +1,5 @@
 local taka = {
-  expedition = { name="Takish-Hiz: Sunken Library", min_players=6, max_players=54 },
+  expedition = { name="Takish-Hiz: Sunken Library", min_players=1, max_players=54 },
   instance   = { zone="taka", version=50, duration=eq.seconds("3h") },
   zonein     = { x=-77, y=493, z=3.125, h=0 },
   compass    = { zone="nro", x=92, y=-942, z=-44 },

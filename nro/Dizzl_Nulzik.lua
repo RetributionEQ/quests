@@ -1,5 +1,5 @@
 local take = {
-  expedition = { name="Takish-Hiz: The Palace Grounds", min_players=6, max_players=54 },
+  expedition = { name="Takish-Hiz: The Palace Grounds", min_players=1, max_players=54 },
   instance   = { zone="take", version=50, duration=eq.seconds("3h") },
   zonein     = { x=375, y=-406, z=19.125, h=0 },
   compass    = { zone="nro", x=92, y=-942, z=-44 },

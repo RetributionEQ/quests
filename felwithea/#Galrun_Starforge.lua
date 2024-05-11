@@ -2,7 +2,7 @@
 -- Game Update Notes: April 19, 2017
 -- Valdoon Paladin Epic 2.0 (Raid) - Lowered the minimum number of players necessary to request this raid from 10 to 6.
 -- items: 69975, 69976, 69981, 69956
-local paladin_minimum_players = 10
+local paladin_minimum_players = 1
 
 local paladin_mmcc = {
   expedition = { name="The Asylum of Invoked Stone", min_players=paladin_minimum_players, max_players=54 },
@@ -25,7 +25,7 @@ function event_say(e)
 		elseif(qglobals["paladin_epic_mmcc"] == "1" and e.message:findi("valdoon")) then
 			-- this expedition request requirement is unverified, based on a log posted to allakhazam
 			local is_gm = (e.other:Admin() > 80 and e.other:GetGM())
-			if not is_gm and e.other:GetRaidMemberCountInZone() < paladin_minimum_players then
+			if not is_gm and e.other:GetGroupMemberCount() < paladin_minimum_players then
 				e.self:Say("I'm sorry, " .. e.other:GetCleanName() .. ", but you need more people before we can begin this.")
 			else
 				e.self:Say("Very well, " .. e.other:GetName() .. ". The fate of all of the residents of this continent are now in your hands. Cleanse the Mistmoore Catacombs of the Vampire infestation and put an end to Valdoon Kel`Novar. Bring me his heart when you are finished, for I need proof to show Lord Tynkale that Vampire invasion has been stopped.");

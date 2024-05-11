@@ -1,5 +1,5 @@
 local gukg = {
-  expedition = { name="Deepest Guk: Ritualist of Hate", min_players=6, max_players=54 },
+  expedition = { name="Deepest Guk: Ritualist of Hate", min_players=1, max_players=54 },
   instance   = { zone="gukg", version=50, duration=eq.seconds("3h") },
   zonein     = { x=151, y=-260, z=51.125, h=0 },
   compass    = { zone="innothule", x=1194, y=1322, z=-12 },

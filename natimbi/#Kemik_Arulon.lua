@@ -1,6 +1,6 @@
 -- items: 69953, 69969
 local paladin_dz = {
-	expedition = { name="Dranik's Hollows: Murkglider Hive", min_players=3, max_players=6 },
+	expedition = { name="Dranik's Hollows: Murkglider Hive", min_players=1, max_players=6 },
 	instance   = { zone="dranikhollowsc", version=0, duration=eq.seconds("6h") },
 	compass    = { zone="draniksscar", x=-2059.05, y=574.10, z=209.51 },
 	safereturn = { zone="draniksscar", x=-2038.5, y=589.25, z=201.875, h=0 },

@@ -1,5 +1,5 @@
 local paladin_dz = {
-  expedition = { name="Catacombs of Dranik", min_players=2, max_players=6 },
+  expedition = { name="Catacombs of Dranik", min_players=1, max_players=6 },
   instance   = { zone="dranikcatacombsa", version=1, duration=eq.seconds("2h") },
   compass    = { zone="dranik", x=-292.35, y=1049.05, z=-82.54 },
   safereturn = { zone="dranik", x=-291.375, y=1027.125, z=-76.25, h=0.0 },

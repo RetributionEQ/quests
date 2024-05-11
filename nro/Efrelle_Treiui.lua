@@ -1,7 +1,7 @@
 -- Efrelle_Treiui
 -- 034146
 local takc = {
-  expedition = { name="Takish-Hiz: Within the Compact", min_players=6, max_players=54 },
+  expedition = { name="Takish-Hiz: Within the Compact", min_players=1, max_players=54 },
   instance   = { zone="takc", version=0, duration=eq.seconds("3h") },
   zonein     = { x=251, y=33, z=4.375, h=0 },
   compass    = { zone="nro", x=92, y=-942, z=-44 },

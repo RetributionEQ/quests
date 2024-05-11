@@ -1,5 +1,5 @@
 local rujd = {
-  expedition = { name="The Rujarkian Hills: Prison Break", min_players=6, max_players=54 },
+  expedition = { name="The Rujarkian Hills: Prison Break", min_players=1, max_players=54 },
   instance   = { zone="rujd", version=50, duration=eq.seconds("3h") },
   zonein     = { x=-322, y=1254, z=-95.75, h=0 },
   compass    = { zone="sro", x=1346.18, y=-2099.33, z=-88.0377 },

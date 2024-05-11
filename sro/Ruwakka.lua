@@ -1,5 +1,5 @@
 local guke = {
-  expedition = { name="Deepest Guk: The Curse Reborn", min_players=6, max_players=54 },
+  expedition = { name="Deepest Guk: The Curse Reborn", min_players=1, max_players=54 },
   instance   = { zone="guke", version=50, duration=eq.seconds("3h") },
   zonein     = { x=680, y=-1031, z=59.125, h=0 },
   compass    = { zone="innothule", x=1194, y=1322, z=-12 },
