@@ -134,7 +134,12 @@ sub EVENT_SAY {
           my $expedition_name = "Ikkinz, Chambers of Glorification";
           my $dz_version = 4;
           my $dz_duration = 79200;
-
+my $min_players = 1;
+		      my $max_players = 54;
+		      if (quest::get_rule("Custom:MulticlassingEnabled") ne "false"){
+			      $min_players = 1;
+			      $max_players = 6;
+		      }
           # Define the expedition information
           my %expedition_info = (
               expedition => {
@@ -180,7 +185,12 @@ sub EVENT_SAY {
           my $expedition_name = "Ikkinz, Chambers of Transcendence";
           my $dz_version = 5;
           my $dz_duration = 79200;
-
+my $min_players = 1;
+		      my $max_players = 54;
+		      if (quest::get_rule("Custom:MulticlassingEnabled") ne "false"){
+			      $min_players = 1;
+			      $max_players = 6;
+		      }
           # Define the expedition information
           my %expedition_info = (
               expedition => {
