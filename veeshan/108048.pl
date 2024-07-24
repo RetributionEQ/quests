@@ -5,6 +5,13 @@ sub EVENT_SPAWN {
 	quest::setnexthpevent(80);
 }
 
+sub EVENT_COMBAT {
+	# if phara leaves combat, reset the hp event to stop exploiters / cheaters / baddies
+ 	if ($combat_state == 0) {
+		quest::setnexthpevent(80);
+ 	}
+}
+
 sub EVENT_HP {
 	if($hpevent == 80) {
 		quest::spawn2(108518, 0, 0, $x, $y, $z, $h); # NPC: #Protector_of_Phara_Dar
